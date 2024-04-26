@@ -1,0 +1,10 @@
+{
+  "cave_sound": {
+    "sounds": [
+      {
+        "name": "slsb:cave10",
+        "stream": false
+      }
+    ]
+  }
+}

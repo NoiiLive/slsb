@@ -4,7 +4,7 @@
   "definition": {
     "name": "Solo Leveling: Armor",
     "icon": {
-      "value": "Items.NETHERITE_HELMET"
+      "value": "CUSTOM:JinwoosClothes.body"
     },
     "showSearch": false
   }

@@ -7,7 +7,6 @@ package net.clozynoii.slsb.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
@@ -49,7 +48,7 @@ public class SlsbModTabs {
 
 					.build());
 	public static final RegistryObject<CreativeModeTab> SOLO_LEVELING_ARMOR = REGISTRY.register("solo_leveling_armor",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.slsb.solo_leveling_armor")).icon(() -> new ItemStack(Items.NETHERITE_HELMET)).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.slsb.solo_leveling_armor")).icon(() -> new ItemStack(SlsbModItems.JINWOOS_CLOTHES_CHESTPLATE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_CHESTPLATE.get());
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_LEGGINGS.get());
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_BOOTS.get());

@@ -9909,6 +9909,21 @@
         ]
       },
       "path": "~/Items"
+    },
+    {
+      "name": "HunterPhoneMenu",
+      "type": "gui",
+      "sortid": 461,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_phone_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneMenuMenu.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneMenuScreen.java"
+        ]
+      },
+      "path": "~/GUI"
     }
   ],
   "variable_elements": [

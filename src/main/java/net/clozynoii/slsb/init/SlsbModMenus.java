@@ -11,10 +11,12 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
 
+import net.clozynoii.slsb.world.inventory.HunterPhoneMenuMenu;
 import net.clozynoii.slsb.world.inventory.HunterInfoMenuMenu;
 import net.clozynoii.slsb.SlsbMod;
 
 public class SlsbModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, SlsbMod.MODID);
 	public static final RegistryObject<MenuType<HunterInfoMenuMenu>> HUNTER_INFO_MENU = REGISTRY.register("hunter_info_menu", () -> IForgeMenuType.create(HunterInfoMenuMenu::new));
+	public static final RegistryObject<MenuType<HunterPhoneMenuMenu>> HUNTER_PHONE_MENU = REGISTRY.register("hunter_phone_menu", () -> IForgeMenuType.create(HunterPhoneMenuMenu::new));
 }

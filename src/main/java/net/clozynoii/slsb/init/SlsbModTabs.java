@@ -25,6 +25,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.B_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.A_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.S_RANK_ESSENCE_STONE.get());
+				tabData.accept(SlsbModItems.PHONE.get());
 			})
 
 					.build());

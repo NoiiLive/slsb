@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
 import net.clozynoii.slsb.item.SRankEssenceStoneItem;
+import net.clozynoii.slsb.item.PhoneItem;
 import net.clozynoii.slsb.item.ManaCrystalItem;
 import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
@@ -197,6 +198,7 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> JINWOOS_CLOTHES_LEGGINGS = REGISTRY.register("jinwoos_clothes_leggings", () -> new JinwoosClothesItem.Leggings());
 	public static final RegistryObject<Item> JINWOOS_CLOTHES_BOOTS = REGISTRY.register("jinwoos_clothes_boots", () -> new JinwoosClothesItem.Boots());
 	public static final RegistryObject<Item> UNDEAD_KNIGHT_BOSS_SPAWN_EGG = REGISTRY.register("undead_knight_boss_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.UNDEAD_KNIGHT_BOSS, -3355444, -8512991, new Item.Properties()));
+	public static final RegistryObject<Item> PHONE = REGISTRY.register("phone", () -> new PhoneItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

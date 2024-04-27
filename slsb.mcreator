@@ -9858,6 +9858,57 @@
         ]
       },
       "path": "~/Mobs/C Rank"
+    },
+    {
+      "name": "TesterWhitelist",
+      "type": "procedure",
+      "sortid": 459,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tester_whitelist",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/TesterWhitelistProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
+    },
+    {
+      "name": "Phone",
+      "type": "item",
+      "sortid": 460,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/PhoneItem.java",
+          "src/main/resources/assets/slsb/models/item/phone.json"
+        ]
+      },
+      "path": "~/Items"
     }
   ],
   "variable_elements": [
@@ -10497,6 +10548,7 @@
       "block.slsb.mana_crystal_block_dripstone": "Mana Crystal (Dripstone)",
       "item.slsb.giant_rat_grey_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
       "block.slsb.maze_dungeon_south": "Maze Dungeon South",
+      "item.slsb.phone": "Hunter\u0027s Phone",
       "advancements.heal_skill.descr": "Unlock Heal Skill",
       "block.slsb.orc_dungeon_north": "Orc Dungeon North",
       "block.slsb.sunken_dungeon_enemies": "Sunken Dungeon Enemies",

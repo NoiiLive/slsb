@@ -9924,6 +9924,42 @@
         ]
       },
       "path": "~/GUI"
+    },
+    {
+      "name": "OpenPhoneGUI",
+      "type": "procedure",
+      "sortid": 462,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_phone_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/OpenPhoneGUIProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
     }
   ],
   "variable_elements": [
@@ -10682,6 +10718,10 @@
               },
               {
                 "name": "Overlay",
+                "children": []
+              },
+              {
+                "name": "Phone",
                 "children": []
               }
             ]

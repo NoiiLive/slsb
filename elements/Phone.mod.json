@@ -2,9 +2,9 @@
   "_fv": 57,
   "_type": "item",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "phone",
-    "customModelName": "Normal",
+    "customModelName": "phone:default",
     "customProperties": {},
     "states": [],
     "name": "Hunter's Phone",
@@ -39,6 +39,9 @@
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
       "name": "OpenPhoneGUI"
+    },
+    "onRightClickedOnBlock": {
+      "name": "OpenGateClaim"
     },
     "enableRanged": false,
     "shootConstantly": false,

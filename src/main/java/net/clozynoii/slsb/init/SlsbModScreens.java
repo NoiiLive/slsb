@@ -11,7 +11,9 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
-import net.clozynoii.slsb.client.gui.HunterPhoneMenuScreen;
+import net.clozynoii.slsb.client.gui.HunterPhonePurchaseScreen;
+import net.clozynoii.slsb.client.gui.HunterPhoneClaimScreen;
+import net.clozynoii.slsb.client.gui.HunterPhoneBackupScreen;
 import net.clozynoii.slsb.client.gui.HunterInfoMenuScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -20,7 +22,9 @@ public class SlsbModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(SlsbModMenus.HUNTER_INFO_MENU.get(), HunterInfoMenuScreen::new);
-			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_MENU.get(), HunterPhoneMenuScreen::new);
+			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_BACKUP.get(), HunterPhoneBackupScreen::new);
+			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_CLAIM.get(), HunterPhoneClaimScreen::new);
+			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_PURCHASE.get(), HunterPhonePurchaseScreen::new);
 		});
 	}
 }

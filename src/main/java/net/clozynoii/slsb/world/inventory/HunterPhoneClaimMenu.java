@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class HunterPhoneMenuMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class HunterPhoneClaimMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -35,8 +35,8 @@ public class HunterPhoneMenuMenu extends AbstractContainerMenu implements Suppli
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public HunterPhoneMenuMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(SlsbModMenus.HUNTER_PHONE_MENU.get(), id);
+	public HunterPhoneClaimMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(SlsbModMenus.HUNTER_PHONE_CLAIM.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(0);

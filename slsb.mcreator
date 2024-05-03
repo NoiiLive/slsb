@@ -9911,21 +9911,6 @@
       "path": "~/Items"
     },
     {
-      "name": "HunterPhoneMenu",
-      "type": "gui",
-      "sortid": 461,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hunter_phone_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneMenuMenu.java",
-          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneMenuScreen.java"
-        ]
-      },
-      "path": "~/GUI"
-    },
-    {
       "name": "OpenPhoneGUI",
       "type": "procedure",
       "sortid": 462,
@@ -9940,6 +9925,235 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "HunterPhoneBackup",
+      "type": "gui",
+      "sortid": 463,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_phone_backup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "HunterPhoneClaim",
+      "type": "gui",
+      "sortid": 464,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_phone_claim",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneClaimScreen.java",
+          "src/main/java/net/clozynoii/slsb/network/HunterPhoneClaimButtonMessage.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneClaimMenu.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "HunterPhonePurchase",
+      "type": "gui",
+      "sortid": 465,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_phone_purchase",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhonePurchaseMenu.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhonePurchaseScreen.java",
+          "src/main/java/net/clozynoii/slsb/network/HunterPhonePurchaseButtonMessage.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "OpenGateClaim",
+      "type": "procedure",
+      "sortid": 466,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_gate_claim",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/OpenGateClaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "CreateGuildCMD",
+      "type": "procedure",
+      "sortid": 467,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_guild_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/CreateGuildCMDProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "ReturnPhoneGateOwned",
+      "type": "procedure",
+      "sortid": 468,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_gate_owned",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneGateOwnedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ReturnPhoneGateCost",
+      "type": "procedure",
+      "sortid": 469,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_gate_cost",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneGateCostProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "PurchaseGate",
+      "type": "procedure",
+      "sortid": 470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purchase_gate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PurchaseGateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "BuyGate",
+      "type": "procedure",
+      "sortid": 471,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buy_gate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/BuyGateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
           },
           {
             "name": "x",
@@ -10402,6 +10616,7 @@
   ],
   "language_map": {
     "en_us": {
+      "gui.slsb.hunter_phone_purchase.NewPrice": "0",
       "effect.slsb.wind_burst_active": "Wind Burst",
       "block.slsb.blue_gate_medium": "Blue Gate Medium",
       "item_group.slsb.solo_leveling_items": "Solo Leveling: Items",
@@ -10423,6 +10638,7 @@
       "advancements.assassin_class.descr": "Become the Assassin Class.",
       "block.slsb.forest_dungeon_north": "Forest Dungeon North",
       "block.slsb.library_dungeon_west": "Library Dungeon West",
+      "gui.slsb.hunter_phone_claim.button_claim_gate": "Claim Gate",
       "effect.slsb.disguise": "Disguised",
       "block.slsb.orc_dungeon_west": "Orc Dungeon West",
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
@@ -10433,6 +10649,7 @@
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
+      "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
       "block.slsb.catacomb_dungeon_east": "Catacomb Dungeon East",
       "item_group.slsb.solo_leveling_blocks": "Solo Leveling: Blocks",
@@ -10477,6 +10694,7 @@
       "block.slsb.naga_dungeon_west": "Naga Dungeon West",
       "item.slsb.b_rank_essence_stone": "§bB-Rank Essence Stone",
       "key.slsb.use_skill": "Use Skill",
+      "gui.slsb.hunter_phone_purchase.label_new_cost": "New Cost",
       "advancements.awakening.title": "Awakening",
       "block.slsb.subway_dungeon_east": "Subway Dungeon East",
       "effect.slsb.berserker": "Berserker",
@@ -10495,6 +10713,7 @@
       "block.slsb.catacomb_dungeon_boss": "Catacomb Dungeon Boss",
       "advancements.stealth_skill.descr": "Unlock Stealth Skill",
       "block.slsb.coliseum_dungeon_west": "Coliseum Dungeon West",
+      "gui.slsb.hunter_phone_backup.button_request": "Request",
       "block.slsb.maze_dungeon_east": "Maze Dungeon East",
       "block.slsb.ice_dungeon_west": "Ice Dungeon West",
       "subtitles.stab": "",
@@ -10528,6 +10747,7 @@
       "block.slsb.coliseum_dungeon_north": "Coliseum Dungeon North",
       "item.slsb.jinwoos_clothes_boots": "Jinwoo\u0027s Shoes",
       "block.slsb.mana_crystal_block_diorite": "Mana Crystal (Diorite)",
+      "gui.slsb.hunter_phone_backup.label_request_hunter_aid": "Request Hunter Aid?",
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
       "block.slsb.mana_crystal_block_pure": "Mana Crystal (Pure)",
@@ -10537,9 +10757,12 @@
       "block.slsb.goblin_dungeon_east": "Goblin Dungeon East",
       "block.slsb.cathedral_dungeon_enemies": "Cathedral Dungeon Enemies",
       "block.slsb.sand_dungeon_west": "Sand Dungeon West",
+      "gui.slsb.hunter_phone_purchase.label_gatecost": "GateCost",
       "effect.slsb.prediction": "Prediction",
       "block.slsb.sunken_dungeon_west": "Sunken Dungeon West",
+      "gui.slsb.hunter_phone_claim.GatePrice": "0",
       "effect.slsb.stealth": "Stealth",
+      "gui.slsb.hunter_phone_purchase.button_buy_gate": "Buy Gate",
       "biome.slsb.dungeon": "Dungeon",
       "block.slsb.lich_dungeon_enemies": "Lich Dungeon Enemies",
       "item.slsb.jinwoos_clothes_chestplate": "Jinwoo\u0027s Jacket",
@@ -10593,6 +10816,7 @@
       "block.slsb.goblin_dungeon_south": "Goblin Dungeon South",
       "block.slsb.giant_dungeon_east": "Giant Dungeon East",
       "item.slsb.whirlwind_entity_spawn_egg": "Whirlwind Spawn Egg",
+      "gui.slsb.hunter_phone_purchase.label_gateguild": "GateGuild",
       "block.slsb.sand_dungeon_enemies": "Sand Dungeon Enemies",
       "block.slsb.spider_dungeon_south": "Spider Dungeon South",
       "block.slsb.spider_dungeon_boss": "Spider Dungeon Boss",

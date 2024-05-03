@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "slsb:custom/phone",
   "textures": {
-    "layer0": "slsb:item/phone"
+    "0": "slsb:block/phone_texture",
+    "particle": "slsb:item/phone"
   }
 }

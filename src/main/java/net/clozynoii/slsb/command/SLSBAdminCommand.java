@@ -42,6 +42,7 @@ import net.clozynoii.slsb.procedures.RandomMovesCommandProcedure;
 import net.clozynoii.slsb.procedures.RandomGateCommandProcedure;
 import net.clozynoii.slsb.procedures.RandomClassCommandProcedure;
 import net.clozynoii.slsb.procedures.PlaceGateProcedure;
+import net.clozynoii.slsb.procedures.CreateGuildCMDProcedure;
 import net.clozynoii.slsb.procedures.ClearAbilitiesCommandProcedure;
 import net.clozynoii.slsb.procedures.AwakenCommandProcedure;
 
@@ -459,6 +460,20 @@ public class SLSBAdminCommand {
 						direction = entity.getDirection();
 
 					SetStatsMaxProcedure.execute(arguments);
+					return 0;
+				})))).then(Commands.literal("guild").then(Commands.literal("create").then(Commands.argument("name", StringArgumentType.word()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					CreateGuildCMDProcedure.execute(arguments, entity);
 					return 0;
 				})))));
 	}

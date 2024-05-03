@@ -11,9 +11,21 @@
     "doesPauseGame": false,
     "components": [
       {
+        "type": "button",
+        "data": {
+          "name": "button_request",
+          "text": "Request",
+          "isUndecorated": false,
+          "width": 61,
+          "height": 20,
+          "x": 183,
+          "y": 118
+        }
+      },
+      {
         "type": "image",
         "data": {
-          "image": "phone_screen.png",
+          "image": "phone_aid.png",
           "use1Xscale": false,
           "x": 0,
           "y": 0

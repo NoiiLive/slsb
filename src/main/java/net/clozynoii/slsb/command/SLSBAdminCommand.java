@@ -45,6 +45,7 @@ import net.clozynoii.slsb.procedures.PlaceGateProcedure;
 import net.clozynoii.slsb.procedures.CreateGuildCMDProcedure;
 import net.clozynoii.slsb.procedures.ClearAbilitiesCommandProcedure;
 import net.clozynoii.slsb.procedures.AwakenCommandProcedure;
+import net.clozynoii.slsb.procedures.AddMoneyCMDProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
@@ -461,7 +462,23 @@ public class SLSBAdminCommand {
 
 					SetStatsMaxProcedure.execute(arguments);
 					return 0;
-				})))).then(Commands.literal("guild").then(Commands.literal("create").then(Commands.argument("name", StringArgumentType.word()).executes(arguments -> {
+				})))).then(Commands.literal("guild").then(
+						Commands.literal("set").then(Commands.argument("name", EntityArgument.player()).then(Commands.argument("color", StringArgumentType.word()).then(Commands.argument("guild", MessageArgument.message()).executes(arguments -> {
+							Level world = arguments.getSource().getUnsidedLevel();
+							double x = arguments.getSource().getPosition().x();
+							double y = arguments.getSource().getPosition().y();
+							double z = arguments.getSource().getPosition().z();
+							Entity entity = arguments.getSource().getEntity();
+							if (entity == null && world instanceof ServerLevel _servLevel)
+								entity = FakePlayerFactory.getMinecraft(_servLevel);
+							Direction direction = Direction.DOWN;
+							if (entity != null)
+								direction = entity.getDirection();
+
+							CreateGuildCMDProcedure.execute(arguments, entity);
+							return 0;
+						}))))))
+				.then(Commands.literal("money").then(Commands.literal("add").then(Commands.argument("name", EntityArgument.player()).then(Commands.argument("amount", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -473,8 +490,8 @@ public class SLSBAdminCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					CreateGuildCMDProcedure.execute(arguments, entity);
+					AddMoneyCMDProcedure.execute(arguments);
 					return 0;
-				})))));
+				}))))));
 	}
 }

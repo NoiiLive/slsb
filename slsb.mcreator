@@ -10174,6 +10174,166 @@
         ]
       },
       "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ReturnPhoneGateRank",
+      "type": "procedure",
+      "sortid": 472,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_gate_rank",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneGateRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ReturnPhoneGateTimer",
+      "type": "procedure",
+      "sortid": 473,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_gate_timer",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneGateTimerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ReturnPhoneRedGate",
+      "type": "procedure",
+      "sortid": 474,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_red_gate",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneRedGateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ReturnPhoneBlueGate",
+      "type": "procedure",
+      "sortid": 475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_phone_blue_gate",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnPhoneBlueGateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "NewGatePrice",
+      "type": "procedure",
+      "sortid": 476,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "new_gate_price",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/NewGatePriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "HunterPhoneNewPrice",
+      "type": "gui",
+      "sortid": 477,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_phone_new_price",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/network/HunterPhoneNewPriceButtonMessage.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneNewPriceScreen.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneNewPriceMenu.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "AddMoneyCMD",
+      "type": "procedure",
+      "sortid": 478,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "add_money_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/AddMoneyCMDProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
     }
   ],
   "variable_elements": [
@@ -10602,6 +10762,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
+    },
+    {
+      "name": "GuildLeader",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "GuildColor",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
     }
   ],
   "sound_elements": [
@@ -10620,8 +10792,8 @@
       "effect.slsb.wind_burst_active": "Wind Burst",
       "block.slsb.blue_gate_medium": "Blue Gate Medium",
       "item_group.slsb.solo_leveling_items": "Solo Leveling: Items",
-      "effect.slsb.overwhelmed": "Overwhelmed",
       "block.slsb.ice_dungeon_south": "Ice Dungeon South",
+      "effect.slsb.overwhelmed": "Overwhelmed",
       "item.slsb.c_rank_essence_stone": "§aC-Rank Essence Stone",
       "block.slsb.double_dungeon_west": "Double Dungeon West",
       "block.slsb.library_dungeon_north": "Library Dungeon North",
@@ -10645,9 +10817,11 @@
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
       "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
+      "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
       "block.slsb.cathedral_dungeon_south": "Cathedral Dungeon South",
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
+      "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
@@ -10665,6 +10839,7 @@
       "block.slsb.catacomb_dungeon_south": "Catacomb Dungeon South",
       "block.slsb.coliseum_dungeon_south": "Coliseum Dungeon South",
       "item_group.slsb.solo_leveling_armor": "Solo Leveling: Armor",
+      "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
       "key.categories.slsb": "Solo Leveling: System Break",
       "entity.slsb.whirlwind_entity": "Whirlwind",
       "effect.slsb.evade": "Evasion",
@@ -10672,8 +10847,8 @@
       "block.slsb.mine_dungeon_east": "Mine Dungeon East",
       "item.slsb.mana_crystal": "§bMana Crystal",
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
-      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
+      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -10710,6 +10885,7 @@
       "block.slsb.forest_dungeon_west": "Forest Dungeon West",
       "block.slsb.goblin_dungeon_north": "Goblin Dungeon North",
       "block.slsb.lich_dungeon_north": "Lich Dungeon North",
+      "gui.slsb.hunter_phone_claim.button_claim": "Claim",
       "block.slsb.catacomb_dungeon_boss": "Catacomb Dungeon Boss",
       "advancements.stealth_skill.descr": "Unlock Stealth Skill",
       "block.slsb.coliseum_dungeon_west": "Coliseum Dungeon West",
@@ -10751,6 +10927,7 @@
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
       "block.slsb.mana_crystal_block_pure": "Mana Crystal (Pure)",
+      "gui.slsb.hunter_phone_new_price.button_set": "Set",
       "advancements.healer_class.title": "Healer",
       "block.slsb.mine_dungeon_enemies": "Mine Dungeon Enemies",
       "block.slsb.mine_dungeon_west": "Mine Dungeon West",
@@ -10772,6 +10949,7 @@
       "block.slsb.coliseum_dungeon_east": "Coliseum Dungeon East",
       "block.slsb.blue_gate_small": "Blue Gate Small",
       "effect.slsb.healing_aura": "Healing Aura",
+      "gui.slsb.hunter_phone_purchase.button_buy": "Buy",
       "block.slsb.lich_dungeon_west": "Lich Dungeon West",
       "effect.slsb.reinforcement": "Reinforcement",
       "item_group.slsb.solo_leveling_weapons": "Solo Leveling: Weapons",
@@ -10807,13 +10985,16 @@
       "block.slsb.forest_dungeon_south": "Forest Dungeon South",
       "block.slsb.subway_dungeon_south": "Subway Dungeon South",
       "item.slsb.undead_knight_boss_spawn_egg": "Undead Knight (C-Rank) Spawn Egg",
+      "gui.slsb.hunter_phone_new_price.GateNewPrice": "0",
       "effect.slsb.rallied": "Rallied",
       "effect.slsb.turbulence": "Turbulence",
       "effect.slsb.whirlwind": "Whirlwind",
+      "gui.slsb.hunter_phone_new_price.label_gaterank": "GateRank",
       "advancements.strength_skill.descr": "Unlock Haste Skill [§lA skill that temporarily increases the user\u0027s strength§r]",
       "block.slsb.cathedral_dungeon_north": "Cathedral Dungeon North",
       "block.slsb.sand_dungeon_north": "Sand Dungeon North",
       "block.slsb.goblin_dungeon_south": "Goblin Dungeon South",
+      "gui.slsb.hunter_phone_new_price.label_gateprice": "GatePrice",
       "block.slsb.giant_dungeon_east": "Giant Dungeon East",
       "item.slsb.whirlwind_entity_spawn_egg": "Whirlwind Spawn Egg",
       "gui.slsb.hunter_phone_purchase.label_gateguild": "GateGuild",
@@ -10839,6 +11020,7 @@
       "block.slsb.mana_crystal_block_granite": "Mana Crystal (Granite)",
       "block.slsb.library_dungeon_enemies": "Library Dungeon Enemies",
       "block.slsb.spider_dungeon_enemies": "Spider Dungeon Enemies",
+      "gui.slsb.hunter_phone_new_price.button_request": "Request",
       "block.slsb.double_dungeon_south": "Double Dungeon South",
       "block.slsb.orc_dungeon_boss": "Orc Dungeon Boss"
     }

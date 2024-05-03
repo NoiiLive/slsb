@@ -12,12 +12,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.components.EditBox;
 
-import net.clozynoii.slsb.network.SlsbModVariables;
 import net.clozynoii.slsb.init.SlsbModBlocks;
 
 import java.util.HashMap;
 
-public class PurchaseGateProcedure {
+public class NewGatePriceProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
 			return;
@@ -44,7 +43,7 @@ public class PurchaseGateProcedure {
 									}
 									return 0;
 								}
-							}.convert(guistate.containsKey("text:GatePrice") ? ((EditBox) guistate.get("text:GatePrice")).getValue() : "") > 999999999) {
+							}.convert(guistate.containsKey("text:GateNewPrice") ? ((EditBox) guistate.get("text:GateNewPrice")).getValue() : "") > 999999999) {
 								if (!world.isClientSide()) {
 									BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
 									BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -68,19 +67,10 @@ public class PurchaseGateProcedure {
 												}
 												return 0;
 											}
-										}.convert(guistate.containsKey("text:GatePrice") ? ((EditBox) guistate.get("text:GatePrice")).getValue() : ""));
+										}.convert(guistate.containsKey("text:GateNewPrice") ? ((EditBox) guistate.get("text:GateNewPrice")).getValue() : ""));
 									if (world instanceof Level _level)
 										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 								}
-							}
-							if (!world.isClientSide()) {
-								BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-								BlockEntity _blockEntity = world.getBlockEntity(_bp);
-								BlockState _bs = world.getBlockState(_bp);
-								if (_blockEntity != null)
-									_blockEntity.getPersistentData().putString("GuildOwned", ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterGuild));
-								if (world instanceof Level _level)
-									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}
 							if (!world.isClientSide() && world.getServer() != null)
 								world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(((new Object() {
@@ -98,10 +88,7 @@ public class PurchaseGateProcedure {
 										return "";
 									}
 								}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "GateRank")) + " \u00A7fGate at: " + new java.text.DecimalFormat("##").format(x + xi) + " " + new java.text.DecimalFormat("##").format(y + i) + " "
-										+ new java.text.DecimalFormat("##").format(z + zi) + ", Has Been Claimed by "
-										+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).GuildColor + "\u00A7l"
-										+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterGuild + "\u00A7f, and Priced at \u00A7a"
-										+ new java.text.DecimalFormat("##").format(new Object() {
+										+ new java.text.DecimalFormat("##").format(z + zi) + ", Has Been Re-Priced to \u00A7a" + new java.text.DecimalFormat("##").format(new Object() {
 											public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 												BlockEntity blockEntity = world.getBlockEntity(pos);
 												if (blockEntity != null)

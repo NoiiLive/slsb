@@ -13,7 +13,7 @@
       {
         "type": "image",
         "data": {
-          "image": "phone_screen.png",
+          "image": "phone_buygate.png",
           "use1Xscale": false,
           "x": 0,
           "y": 0
@@ -31,7 +31,7 @@
             "value": -6710887,
             "falpha": 0.0
           },
-          "x": 160,
+          "x": 201,
           "y": 76
         }
       },
@@ -47,23 +47,8 @@
             "value": -6710887,
             "falpha": 0.0
           },
-          "x": 162,
+          "x": 201,
           "y": 88
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_buy_gate",
-          "text": "Buy Gate",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "BuyGate"
-          },
-          "width": 66,
-          "height": 20,
-          "x": 179,
-          "y": 140
         }
       },
       {
@@ -71,25 +56,65 @@
         "data": {
           "placeholder": "0",
           "name": "NewPrice",
-          "width": 111,
+          "width": 109,
           "height": 20,
-          "x": 157,
-          "y": 117
+          "x": 159,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_buy",
+          "text": "Buy",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "BuyGate"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 193,
+          "y": 151
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_new_cost",
+          "name": "label_gaterank",
           "text": {
-            "fixedValue": "New Cost"
+            "fixedValue": "GateRank",
+            "name": "ReturnPhoneGateRank"
           },
           "color": {
             "value": -6710887,
             "falpha": 0.0
           },
-          "x": 190,
-          "y": 104
+          "x": 201,
+          "y": 64
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "redgate.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ReturnPhoneRedGate"
+          },
+          "x": 163,
+          "y": 64
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bluegate.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ReturnPhoneBlueGate"
+          },
+          "x": 163,
+          "y": 64
         }
       }
     ],

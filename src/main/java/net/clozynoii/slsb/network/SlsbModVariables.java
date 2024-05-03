@@ -135,6 +135,8 @@ public class SlsbModVariables {
 			clone.Money = original.Money;
 			clone.HunterGuild = original.HunterGuild;
 			clone.DungeonLeaveTimer = original.DungeonLeaveTimer;
+			clone.GuildLeader = original.GuildLeader;
+			clone.GuildColor = original.GuildColor;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -402,6 +404,8 @@ public class SlsbModVariables {
 		public double Money = 100.0;
 		public String HunterGuild = "None";
 		public double DungeonLeaveTimer = 0.0;
+		public String GuildLeader = "";
+		public String GuildColor = "";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -475,6 +479,8 @@ public class SlsbModVariables {
 			nbt.putDouble("Money", Money);
 			nbt.putString("HunterGuild", HunterGuild);
 			nbt.putDouble("DungeonLeaveTimer", DungeonLeaveTimer);
+			nbt.putString("GuildLeader", GuildLeader);
+			nbt.putString("GuildColor", GuildColor);
 			return nbt;
 		}
 
@@ -545,6 +551,8 @@ public class SlsbModVariables {
 			Money = nbt.getDouble("Money");
 			HunterGuild = nbt.getString("HunterGuild");
 			DungeonLeaveTimer = nbt.getDouble("DungeonLeaveTimer");
+			GuildLeader = nbt.getString("GuildLeader");
+			GuildColor = nbt.getString("GuildColor");
 		}
 	}
 
@@ -643,6 +651,8 @@ public class SlsbModVariables {
 					variables.Money = message.data.Money;
 					variables.HunterGuild = message.data.HunterGuild;
 					variables.DungeonLeaveTimer = message.data.DungeonLeaveTimer;
+					variables.GuildLeader = message.data.GuildLeader;
+					variables.GuildColor = message.data.GuildColor;
 				}
 			});
 			context.setPacketHandled(true);

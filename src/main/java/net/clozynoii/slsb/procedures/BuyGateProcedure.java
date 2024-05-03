@@ -58,22 +58,42 @@ public class BuyGateProcedure {
 										capability.syncPlayerVariables(entity);
 									});
 								}
-								if (!world.isClientSide()) {
-									BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-									BlockEntity _blockEntity = world.getBlockEntity(_bp);
-									BlockState _bs = world.getBlockState(_bp);
-									if (_blockEntity != null)
-										_blockEntity.getPersistentData().putDouble("GatePrice", new Object() {
-											double convert(String s) {
-												try {
-													return Double.parseDouble(s.trim());
-												} catch (Exception e) {
+								if (new Object() {
+									double convert(String s) {
+										try {
+											return Double.parseDouble(s.trim());
+										} catch (Exception e) {
+										}
+										return 0;
+									}
+								}.convert(guistate.containsKey("text:NewPrice") ? ((EditBox) guistate.get("text:NewPrice")).getValue() : "") > 999999999) {
+									if (!world.isClientSide()) {
+										BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+										BlockEntity _blockEntity = world.getBlockEntity(_bp);
+										BlockState _bs = world.getBlockState(_bp);
+										if (_blockEntity != null)
+											_blockEntity.getPersistentData().putDouble("GatePrice", 999999999);
+										if (world instanceof Level _level)
+											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+									}
+								} else {
+									if (!world.isClientSide()) {
+										BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+										BlockEntity _blockEntity = world.getBlockEntity(_bp);
+										BlockState _bs = world.getBlockState(_bp);
+										if (_blockEntity != null)
+											_blockEntity.getPersistentData().putDouble("GatePrice", new Object() {
+												double convert(String s) {
+													try {
+														return Double.parseDouble(s.trim());
+													} catch (Exception e) {
+													}
+													return 0;
 												}
-												return 0;
-											}
-										}.convert(guistate.containsKey("text:NewPrice") ? ((EditBox) guistate.get("text:NewPrice")).getValue() : ""));
-									if (world instanceof Level _level)
-										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+											}.convert(guistate.containsKey("text:NewPrice") ? ((EditBox) guistate.get("text:NewPrice")).getValue() : ""));
+										if (world instanceof Level _level)
+											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+									}
 								}
 								if (!world.isClientSide()) {
 									BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
@@ -86,6 +106,33 @@ public class BuyGateProcedure {
 								}
 								if (entity instanceof Player _player && !_player.level().isClientSide())
 									_player.displayClientMessage(Component.literal("Gate Purchased!"), true);
+								if (!world.isClientSide() && world.getServer() != null)
+									world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(((new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getPersistentData().getString(tag);
+											return "";
+										}
+									}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "ColorCode")) + "" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getPersistentData().getString(tag);
+											return "";
+										}
+									}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "GateRank")) + " \u00A7fGate at: " + new java.text.DecimalFormat("##").format(x + xi) + " " + new java.text.DecimalFormat("##").format(y + i) + " "
+											+ new java.text.DecimalFormat("##").format(z + zi) + ", Has Been Bought by "
+											+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).GuildColor + "\u00A7l"
+											+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterGuild + "\u00A7f, and Re-Priced to \u00A7a"
+											+ new java.text.DecimalFormat("##").format(new Object() {
+												public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getPersistentData().getDouble(tag);
+													return -1;
+												}
+											}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "GatePrice")) + " \u20A9")), false);
 							} else {
 								if (entity instanceof Player _player && !_player.level().isClientSide())
 									_player.displayClientMessage(Component.literal("You Do Not Have Enough Money"), true);

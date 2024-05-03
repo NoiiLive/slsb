@@ -10,28 +10,27 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
-import net.clozynoii.slsb.world.inventory.HunterPhonePurchaseMenu;
+import net.clozynoii.slsb.world.inventory.HunterPhoneNewPriceMenu;
 import net.clozynoii.slsb.procedures.ReturnPhoneRedGateProcedure;
 import net.clozynoii.slsb.procedures.ReturnPhoneGateRankProcedure;
-import net.clozynoii.slsb.procedures.ReturnPhoneGateOwnedProcedure;
 import net.clozynoii.slsb.procedures.ReturnPhoneGateCostProcedure;
 import net.clozynoii.slsb.procedures.ReturnPhoneBlueGateProcedure;
-import net.clozynoii.slsb.network.HunterPhonePurchaseButtonMessage;
+import net.clozynoii.slsb.network.HunterPhoneNewPriceButtonMessage;
 import net.clozynoii.slsb.SlsbMod;
 
 import java.util.HashMap;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPhonePurchaseMenu> {
-	private final static HashMap<String, Object> guistate = HunterPhonePurchaseMenu.guistate;
+public class HunterPhoneNewPriceScreen extends AbstractContainerScreen<HunterPhoneNewPriceMenu> {
+	private final static HashMap<String, Object> guistate = HunterPhoneNewPriceMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	EditBox NewPrice;
-	Button button_buy;
+	EditBox GateNewPrice;
+	Button button_set;
 
-	public HunterPhonePurchaseScreen(HunterPhonePurchaseMenu container, Inventory inventory, Component text) {
+	public HunterPhoneNewPriceScreen(HunterPhoneNewPriceMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -42,13 +41,13 @@ public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPho
 		this.imageHeight = 0;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("slsb:textures/screens/hunter_phone_purchase.png");
+	private static final ResourceLocation texture = new ResourceLocation("slsb:textures/screens/hunter_phone_new_price.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		NewPrice.render(guiGraphics, mouseX, mouseY, partialTicks);
+		GateNewPrice.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
@@ -59,7 +58,7 @@ public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPho
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		guiGraphics.blit(new ResourceLocation("slsb:textures/screens/phone_buygate.png"), this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		guiGraphics.blit(new ResourceLocation("slsb:textures/screens/phone_newprice.png"), this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 
 		if (ReturnPhoneRedGateProcedure.execute(entity)) {
 			guiGraphics.blit(new ResourceLocation("slsb:textures/screens/redgate.png"), this.leftPos + -51, this.topPos + -56, 0, 0, 32, 32, 32, 32);
@@ -76,28 +75,25 @@ public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPho
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		if (NewPrice.isFocused())
-			return NewPrice.keyPressed(key, b, c);
+		if (GateNewPrice.isFocused())
+			return GateNewPrice.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void containerTick() {
 		super.containerTick();
-		NewPrice.tick();
+		GateNewPrice.tick();
 	}
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				ReturnPhoneGateOwnedProcedure.execute(entity), -13, -44, -6710887, false);
+				ReturnPhoneGateRankProcedure.execute(entity), -13, -50, -6710887, false);
 		guiGraphics.drawString(this.font,
 
-				ReturnPhoneGateCostProcedure.execute(entity), -13, -32, -6710887, false);
-		guiGraphics.drawString(this.font,
-
-				ReturnPhoneGateRankProcedure.execute(entity), -13, -56, -6710887, false);
+				ReturnPhoneGateCostProcedure.execute(entity), -13, -38, -6710887, false);
 	}
 
 	@Override
@@ -108,12 +104,12 @@ public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPho
 	@Override
 	public void init() {
 		super.init();
-		NewPrice = new EditBox(this.font, this.leftPos + -54, this.topPos + -3, 107, 18, Component.translatable("gui.slsb.hunter_phone_purchase.NewPrice")) {
+		GateNewPrice = new EditBox(this.font, this.leftPos + -54, this.topPos + -3, 107, 18, Component.translatable("gui.slsb.hunter_phone_new_price.GateNewPrice")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.slsb.hunter_phone_purchase.NewPrice").getString());
+					setSuggestion(Component.translatable("gui.slsb.hunter_phone_new_price.GateNewPrice").getString());
 				else
 					setSuggestion(null);
 			}
@@ -122,22 +118,22 @@ public class HunterPhonePurchaseScreen extends AbstractContainerScreen<HunterPho
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.slsb.hunter_phone_purchase.NewPrice").getString());
+					setSuggestion(Component.translatable("gui.slsb.hunter_phone_new_price.GateNewPrice").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		NewPrice.setSuggestion(Component.translatable("gui.slsb.hunter_phone_purchase.NewPrice").getString());
-		NewPrice.setMaxLength(32767);
-		guistate.put("text:NewPrice", NewPrice);
-		this.addWidget(this.NewPrice);
-		button_buy = Button.builder(Component.translatable("gui.slsb.hunter_phone_purchase.button_buy"), e -> {
+		GateNewPrice.setSuggestion(Component.translatable("gui.slsb.hunter_phone_new_price.GateNewPrice").getString());
+		GateNewPrice.setMaxLength(32767);
+		guistate.put("text:GateNewPrice", GateNewPrice);
+		this.addWidget(this.GateNewPrice);
+		button_set = Button.builder(Component.translatable("gui.slsb.hunter_phone_new_price.button_set"), e -> {
 			if (true) {
-				SlsbMod.PACKET_HANDLER.sendToServer(new HunterPhonePurchaseButtonMessage(0, x, y, z));
-				HunterPhonePurchaseButtonMessage.handleButtonAction(entity, 0, x, y, z);
+				SlsbMod.PACKET_HANDLER.sendToServer(new HunterPhoneNewPriceButtonMessage(0, x, y, z));
+				HunterPhoneNewPriceButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + -21, this.topPos + 31, 40, 20).build();
-		guistate.put("button:button_buy", button_buy);
-		this.addRenderableWidget(button_buy);
+		}).bounds(this.leftPos + -20, this.topPos + 31, 40, 20).build();
+		guistate.put("button:button_set", button_set);
+		this.addRenderableWidget(button_set);
 	}
 }

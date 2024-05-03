@@ -11,6 +11,10 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.clozynoii.slsb.world.inventory.HunterPhoneClaimMenu;
+import net.clozynoii.slsb.procedures.ReturnPhoneRedGateProcedure;
+import net.clozynoii.slsb.procedures.ReturnPhoneGateTimerProcedure;
+import net.clozynoii.slsb.procedures.ReturnPhoneGateRankProcedure;
+import net.clozynoii.slsb.procedures.ReturnPhoneBlueGateProcedure;
 import net.clozynoii.slsb.network.HunterPhoneClaimButtonMessage;
 import net.clozynoii.slsb.SlsbMod;
 
@@ -24,7 +28,7 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 	private final int x, y, z;
 	private final Player entity;
 	EditBox GatePrice;
-	Button button_claim_gate;
+	Button button_claim;
 
 	public HunterPhoneClaimScreen(HunterPhoneClaimMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -54,8 +58,14 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		guiGraphics.blit(new ResourceLocation("slsb:textures/screens/phone_screen.png"), this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		guiGraphics.blit(new ResourceLocation("slsb:textures/screens/phone_claimgate.png"), this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 
+		if (ReturnPhoneRedGateProcedure.execute(entity)) {
+			guiGraphics.blit(new ResourceLocation("slsb:textures/screens/redgate.png"), this.leftPos + -51, this.topPos + -56, 0, 0, 32, 32, 32, 32);
+		}
+		if (ReturnPhoneBlueGateProcedure.execute(entity)) {
+			guiGraphics.blit(new ResourceLocation("slsb:textures/screens/bluegate.png"), this.leftPos + -51, this.topPos + -56, 0, 0, 32, 32, 32, 32);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -78,7 +88,12 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.hunter_phone_claim.label_gate_price"), -28, -39, -6710887, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnPhoneGateRankProcedure.execute(entity), -13, -50, -6710887, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnPhoneGateTimerProcedure.execute(entity), -13, -38, -6710887, false);
 	}
 
 	@Override
@@ -89,7 +104,7 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 	@Override
 	public void init() {
 		super.init();
-		GatePrice = new EditBox(this.font, this.leftPos + -56, this.topPos + -23, 109, 18, Component.translatable("gui.slsb.hunter_phone_claim.GatePrice")) {
+		GatePrice = new EditBox(this.font, this.leftPos + -54, this.topPos + -3, 107, 18, Component.translatable("gui.slsb.hunter_phone_claim.GatePrice")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -112,13 +127,13 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 		GatePrice.setMaxLength(32767);
 		guistate.put("text:GatePrice", GatePrice);
 		this.addWidget(this.GatePrice);
-		button_claim_gate = Button.builder(Component.translatable("gui.slsb.hunter_phone_claim.button_claim_gate"), e -> {
+		button_claim = Button.builder(Component.translatable("gui.slsb.hunter_phone_claim.button_claim"), e -> {
 			if (true) {
 				SlsbMod.PACKET_HANDLER.sendToServer(new HunterPhoneClaimButtonMessage(0, x, y, z));
 				HunterPhoneClaimButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + -39, this.topPos + 0, 77, 20).build();
-		guistate.put("button:button_claim_gate", button_claim_gate);
-		this.addRenderableWidget(button_claim_gate);
+		}).bounds(this.leftPos + -25, this.topPos + 31, 51, 20).build();
+		guistate.put("button:button_claim", button_claim);
+		this.addRenderableWidget(button_claim);
 	}
 }

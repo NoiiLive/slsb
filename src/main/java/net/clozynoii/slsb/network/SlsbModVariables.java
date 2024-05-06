@@ -151,6 +151,7 @@ public class SlsbModVariables {
 				clone.AbilityCooldown8 = original.AbilityCooldown8;
 				clone.AbilityCooldown9 = original.AbilityCooldown9;
 				clone.DefeatedBoss = original.DefeatedBoss;
+				clone.SummonAid = original.SummonAid;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -406,6 +407,7 @@ public class SlsbModVariables {
 		public double DungeonLeaveTimer = 0.0;
 		public String GuildLeader = "";
 		public String GuildColor = "";
+		public boolean SummonAid = true;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -481,6 +483,7 @@ public class SlsbModVariables {
 			nbt.putDouble("DungeonLeaveTimer", DungeonLeaveTimer);
 			nbt.putString("GuildLeader", GuildLeader);
 			nbt.putString("GuildColor", GuildColor);
+			nbt.putBoolean("SummonAid", SummonAid);
 			return nbt;
 		}
 
@@ -553,6 +556,7 @@ public class SlsbModVariables {
 			DungeonLeaveTimer = nbt.getDouble("DungeonLeaveTimer");
 			GuildLeader = nbt.getString("GuildLeader");
 			GuildColor = nbt.getString("GuildColor");
+			SummonAid = nbt.getBoolean("SummonAid");
 		}
 	}
 
@@ -653,6 +657,7 @@ public class SlsbModVariables {
 					variables.DungeonLeaveTimer = message.data.DungeonLeaveTimer;
 					variables.GuildLeader = message.data.GuildLeader;
 					variables.GuildColor = message.data.GuildColor;
+					variables.SummonAid = message.data.SummonAid;
 				}
 			});
 			context.setPacketHandled(true);

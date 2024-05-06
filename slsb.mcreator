@@ -9955,8 +9955,9 @@
       "registry_name": "hunter_phone_backup",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java",
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java"
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java",
+          "src/main/java/net/clozynoii/slsb/network/HunterPhoneBackupButtonMessage.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java"
         ]
       },
       "path": "~/GUI"
@@ -10350,22 +10351,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -10394,22 +10379,23 @@
       "registry_name": "hunter_npc",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/entity/HunterNPCEntity.java",
-          "src/main/java/net/clozynoii/slsb/client/renderer/HunterNPCRenderer.java"
+          "src/main/resources/assets/slsb/models/item/hunter_npc_spawn_egg.json",
+          "src/main/java/net/clozynoii/slsb/client/renderer/HunterNPCRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/HunterNPCEntity.java"
         ]
       },
       "path": "~/Mobs/Misc"
     },
     {
-      "name": "RequestAID",
+      "name": "HunterNPCTick",
       "type": "procedure",
-      "sortid": 482,
+      "sortid": 483,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "request_aid",
+      "registry_name": "hunter_npc_tick",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/procedures/RequestAIDProcedure.java"
+          "src/main/java/net/clozynoii/slsb/procedures/HunterNPCTickProcedure.java"
         ],
         "dependencies": [
           {
@@ -10434,7 +10420,60 @@
           }
         ]
       },
-      "path": "~/GUI/Procedures"
+      "path": "~/Mobs/Misc/Procedures"
+    },
+    {
+      "name": "PhoneAidRequest",
+      "type": "procedure",
+      "sortid": 484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phone_aid_request",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PhoneAidRequestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "ERankArmor",
+      "type": "armor",
+      "sortid": 485,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "e_rank_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_chestplate.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_boots.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankArmorItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_leggings.json"
+        ]
+      },
+      "path": "~/Armors"
     }
   ],
   "variable_elements": [
@@ -10875,6 +10914,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": ""
+    },
+    {
+      "name": "SummonAid",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "true"
     }
   ],
   "sound_elements": [
@@ -10954,6 +10999,7 @@
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
       "effect.slsb.clear_mind": "Clear Mind",
+      "item.slsb.e_rank_armor_leggings": "E-Rank Fighter Leggings",
       "item.slsb.e_rank_essence_stone": "E-Rank Essence Stone",
       "block.slsb.forest_dungeon_east": "Forest Dungeon East",
       "effect.slsb.charged": "Charged",
@@ -11028,6 +11074,7 @@
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
       "block.slsb.mana_crystal_block_pure": "Mana Crystal (Pure)",
+      "item.slsb.e_rank_armor_boots": "E-Rank Fighter Boots",
       "gui.slsb.hunter_phone_new_price.button_set": "Set",
       "advancements.healer_class.title": "Healer",
       "block.slsb.mine_dungeon_enemies": "Mine Dungeon Enemies",
@@ -11040,6 +11087,7 @@
       "block.slsb.sunken_dungeon_west": "Sunken Dungeon West",
       "gui.slsb.hunter_phone_claim.GatePrice": "0",
       "effect.slsb.stealth": "Stealth",
+      "item.slsb.hunter_npc_spawn_egg": "Hunter NPC Spawn Egg",
       "gui.slsb.hunter_phone_purchase.button_buy_gate": "Buy Gate",
       "biome.slsb.dungeon": "Dungeon",
       "block.slsb.lich_dungeon_enemies": "Lich Dungeon Enemies",
@@ -11116,6 +11164,7 @@
       "effect.slsb.bash": "Bash",
       "block.slsb.red_gate_small": "Red Gate Small",
       "item.slsb.giant_rat_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
+      "item.slsb.e_rank_armor_chestplate": "E-Rank Fighter Chestplate",
       "block.slsb.rat_dungeon_west": "Rat Dungeon West",
       "block.slsb.giant_dungeon_north": "Giant Dungeon North",
       "block.slsb.dragon_dungeon_north": "Dragon Dungeon North",
@@ -11527,12 +11576,7 @@
       },
       {
         "name": "GUI",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "name": "Damage Sources",

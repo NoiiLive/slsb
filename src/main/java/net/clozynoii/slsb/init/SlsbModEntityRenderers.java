@@ -15,6 +15,7 @@ import net.clozynoii.slsb.client.renderer.WindBarrierMobRenderer;
 import net.clozynoii.slsb.client.renderer.WhirlwindEntityRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadSoldierRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadKnightBossRenderer;
+import net.clozynoii.slsb.client.renderer.HunterNPCRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatBossRenderer;
 import net.clozynoii.slsb.client.renderer.AfterImageRenderer;
@@ -32,5 +33,6 @@ public class SlsbModEntityRenderers {
 		event.registerEntityRenderer(SlsbModEntities.UNDEAD_SOLDIER.get(), UndeadSoldierRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.WHIRLWIND_ENTITY.get(), WhirlwindEntityRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.UNDEAD_KNIGHT_BOSS.get(), UndeadKnightBossRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.HUNTER_NPC.get(), HunterNPCRenderer::new);
 	}
 }

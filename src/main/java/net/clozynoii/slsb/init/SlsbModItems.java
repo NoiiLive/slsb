@@ -20,6 +20,7 @@ import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
 import net.clozynoii.slsb.item.ERankEssenceStoneItem;
+import net.clozynoii.slsb.item.ERankArmorItem;
 import net.clozynoii.slsb.item.DRankEssenceStoneItem;
 import net.clozynoii.slsb.item.CRankEssenceStoneItem;
 import net.clozynoii.slsb.item.BRankEssenceStoneItem;
@@ -199,6 +200,10 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> JINWOOS_CLOTHES_BOOTS = REGISTRY.register("jinwoos_clothes_boots", () -> new JinwoosClothesItem.Boots());
 	public static final RegistryObject<Item> UNDEAD_KNIGHT_BOSS_SPAWN_EGG = REGISTRY.register("undead_knight_boss_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.UNDEAD_KNIGHT_BOSS, -3355444, -8512991, new Item.Properties()));
 	public static final RegistryObject<Item> PHONE = REGISTRY.register("phone", () -> new PhoneItem());
+	public static final RegistryObject<Item> HUNTER_NPC_SPAWN_EGG = REGISTRY.register("hunter_npc_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.HUNTER_NPC, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> E_RANK_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_armor_chestplate", () -> new ERankArmorItem.Chestplate());
+	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
+	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

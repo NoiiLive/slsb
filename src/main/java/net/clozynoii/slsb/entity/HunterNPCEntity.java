@@ -12,6 +12,7 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -38,6 +39,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.clozynoii.slsb.procedures.HunterNPCTickProcedure;
 import net.clozynoii.slsb.procedures.HunterNPCOnInitialEntitySpawnProcedure;
 import net.clozynoii.slsb.init.SlsbModEntities;
 
@@ -63,16 +65,18 @@ public class HunterNPCEntity extends TamableAnimal {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.4, true) {
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, GiantRatEntity.class, false, false));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, UndeadSoldierEntity.class, false, false));
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.4, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new FloatGoal(this));
 	}
 
 	@Override
@@ -98,7 +102,7 @@ public class HunterNPCEntity extends TamableAnimal {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		HunterNPCOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		HunterNPCOnInitialEntitySpawnProcedure.execute(this);
 		return retval;
 	}
 
@@ -143,6 +147,12 @@ public class HunterNPCEntity extends TamableAnimal {
 			}
 		}
 		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		HunterNPCTickProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

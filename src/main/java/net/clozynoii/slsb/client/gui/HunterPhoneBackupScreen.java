@@ -10,6 +10,8 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.clozynoii.slsb.world.inventory.HunterPhoneBackupMenu;
+import net.clozynoii.slsb.network.HunterPhoneBackupButtonMessage;
+import net.clozynoii.slsb.SlsbMod;
 
 import java.util.HashMap;
 
@@ -81,6 +83,10 @@ public class HunterPhoneBackupScreen extends AbstractContainerScreen<HunterPhone
 	public void init() {
 		super.init();
 		button_request = Button.builder(Component.translatable("gui.slsb.hunter_phone_backup.button_request"), e -> {
+			if (true) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new HunterPhoneBackupButtonMessage(0, x, y, z));
+				HunterPhoneBackupButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
 		}).bounds(this.leftPos + -31, this.topPos + -2, 61, 20).build();
 		guistate.put("button:button_request", button_request);
 		this.addRenderableWidget(button_request);

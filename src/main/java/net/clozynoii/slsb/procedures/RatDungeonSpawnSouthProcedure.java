@@ -25,14 +25,14 @@ public class RatDungeonSpawnSouthProcedure {
 					&& (world.getBlockState(BlockPos.containing(x - 21, y, z + 43))).is(BlockTags.create(new ResourceLocation("slsb:dungeon_unplaceable"))) == false
 					&& (world.getBlockState(BlockPos.containing(x + 21, y, z + 43))).is(BlockTags.create(new ResourceLocation("slsb:dungeon_unplaceable"))) == false) {
 				if (SlsbModVariables.MapVariables.get(world).DungeonBossRoom == true) {
-					if (SlsbModVariables.MapVariables.get(world).DungeonRoomCount >= 15) {
+					if (SlsbModVariables.MapVariables.get(world).DungeonRoomCount >= 10) {
 						random = 2;
 						SlsbMod.LOGGER.debug("Dungeon End");
 					} else {
 						random = Mth.nextInt(RandomSource.create(), 3, 10);
 					}
 				} else {
-					if (SlsbModVariables.MapVariables.get(world).DungeonRoomCount > 10) {
+					if (SlsbModVariables.MapVariables.get(world).DungeonRoomCount > 5) {
 						random = 1;
 					} else {
 						random = Mth.nextInt(RandomSource.create(), 3, 10);

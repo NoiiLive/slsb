@@ -9955,8 +9955,8 @@
       "registry_name": "hunter_phone_backup",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java",
-          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java"
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java"
         ]
       },
       "path": "~/GUI"
@@ -10334,6 +10334,107 @@
         ]
       },
       "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "HunterNPCOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 479,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_npc_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HunterNPCOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures"
+    },
+    {
+      "name": "NPCcooldown",
+      "type": "potioneffect",
+      "sortid": 480,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "np_ccooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/potion/NPCcooldownMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "HunterNPC",
+      "type": "livingentity",
+      "sortid": 481,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hunter_npc",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/HunterNPCEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/HunterNPCRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Misc"
+    },
+    {
+      "name": "RequestAID",
+      "type": "procedure",
+      "sortid": 482,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "request_aid",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/RequestAIDProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
     }
   ],
   "variable_elements": [
@@ -10946,6 +11047,7 @@
       "block.slsb.sunken_dungeon_north": "Sunken Dungeon North",
       "block.slsb.maze_dungeon_boss": "Maze Dungeon Boss",
       "entity.slsb.undead_knight_boss": "Undead Knight (C-Rank)",
+      "effect.slsb.np_ccooldown": "Cooldown",
       "block.slsb.coliseum_dungeon_east": "Coliseum Dungeon East",
       "block.slsb.blue_gate_small": "Blue Gate Small",
       "effect.slsb.healing_aura": "Healing Aura",
@@ -10998,6 +11100,7 @@
       "block.slsb.giant_dungeon_east": "Giant Dungeon East",
       "item.slsb.whirlwind_entity_spawn_egg": "Whirlwind Spawn Egg",
       "gui.slsb.hunter_phone_purchase.label_gateguild": "GateGuild",
+      "entity.slsb.hunter_npc": "Hunter NPC",
       "block.slsb.sand_dungeon_enemies": "Sand Dungeon Enemies",
       "block.slsb.spider_dungeon_south": "Spider Dungeon South",
       "block.slsb.spider_dungeon_boss": "Spider Dungeon Boss",
@@ -11424,7 +11527,12 @@
       },
       {
         "name": "GUI",
-        "children": []
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Damage Sources",

@@ -137,6 +137,7 @@ public class SlsbModVariables {
 			clone.DungeonLeaveTimer = original.DungeonLeaveTimer;
 			clone.GuildLeader = original.GuildLeader;
 			clone.GuildColor = original.GuildColor;
+			clone.SpeedToggle = original.SpeedToggle;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -408,6 +409,7 @@ public class SlsbModVariables {
 		public String GuildLeader = "";
 		public String GuildColor = "";
 		public boolean SummonAid = true;
+		public boolean SpeedToggle = true;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -484,6 +486,7 @@ public class SlsbModVariables {
 			nbt.putString("GuildLeader", GuildLeader);
 			nbt.putString("GuildColor", GuildColor);
 			nbt.putBoolean("SummonAid", SummonAid);
+			nbt.putBoolean("SpeedToggle", SpeedToggle);
 			return nbt;
 		}
 
@@ -557,6 +560,7 @@ public class SlsbModVariables {
 			GuildLeader = nbt.getString("GuildLeader");
 			GuildColor = nbt.getString("GuildColor");
 			SummonAid = nbt.getBoolean("SummonAid");
+			SpeedToggle = nbt.getBoolean("SpeedToggle");
 		}
 	}
 
@@ -658,6 +662,7 @@ public class SlsbModVariables {
 					variables.GuildLeader = message.data.GuildLeader;
 					variables.GuildColor = message.data.GuildColor;
 					variables.SummonAid = message.data.SummonAid;
+					variables.SpeedToggle = message.data.SpeedToggle;
 				}
 			});
 			context.setPacketHandled(true);

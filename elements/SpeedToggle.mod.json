@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "LSHIFT",
+    "keyBindingName": "Speed Toggle (Double-Tap)",
+    "keyBindingCategoryKey": "slsb",
+    "onKeyPressed": {
+      "name": "SpeedToggleButton"
+    }
+  }
+}

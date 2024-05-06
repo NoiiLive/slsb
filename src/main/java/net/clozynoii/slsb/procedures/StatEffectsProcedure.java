@@ -38,7 +38,6 @@ public class StatEffectsProcedure {
 		VIT = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality * 0.12;
 		if (!((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Rank).isEmpty()) {
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).setBaseValue(Math.round(1 + STR));
-			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue((0.1 + AGL));
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).setBaseValue(Math.round(20 + VIT));
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR).setBaseValue(Math.round(0 + VIT));
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR_TOUGHNESS).setBaseValue(Math.round(0 + VIT));
@@ -58,6 +57,26 @@ public class StatEffectsProcedure {
 			if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality >= 350) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 2, false, false));
+			}
+			if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).SpeedToggle == true) {
+				if (entity.isSprinting()) {
+					if (entity.getPersistentData().getDouble("SpeedIncrease") < AGL) {
+						entity.getPersistentData().putDouble("SpeedIncrease", (entity.getPersistentData().getDouble("SpeedIncrease") + 0.005));
+					}
+					if (entity.getPersistentData().getDouble("SpeedIncrease") > AGL) {
+						entity.getPersistentData().putDouble("SpeedIncrease", AGL);
+					}
+				} else {
+					if (entity.getPersistentData().getDouble("SpeedIncrease") > 0) {
+						entity.getPersistentData().putDouble("SpeedIncrease", (entity.getPersistentData().getDouble("SpeedIncrease") - 0.01));
+					}
+					if (entity.getPersistentData().getDouble("SpeedIncrease") < 0) {
+						entity.getPersistentData().putDouble("SpeedIncrease", 0);
+					}
+				}
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue((0.1 + entity.getPersistentData().getDouble("SpeedIncrease")));
+			} else {
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(0.1);
 			}
 		} else {
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).setBaseValue(1);

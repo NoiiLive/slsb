@@ -22,7 +22,6 @@ import net.clozynoii.slsb.entity.WhirlwindEntityEntity;
 import net.clozynoii.slsb.entity.UndeadSoldierEntity;
 import net.clozynoii.slsb.entity.UndeadKnightBossEntity;
 import net.clozynoii.slsb.entity.SwordSliceProjectileEntity;
-import net.clozynoii.slsb.entity.HunterNPCEntity;
 import net.clozynoii.slsb.entity.GiantRatEntity;
 import net.clozynoii.slsb.entity.GiantRatBossEntity;
 import net.clozynoii.slsb.entity.AfterImageEntity;
@@ -57,10 +56,6 @@ public class SlsbModEntities {
 			EntityType.Builder.<UndeadKnightBossEntity>of(UndeadKnightBossEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UndeadKnightBossEntity::new)
 
 					.sized(0.8f, 2.4f));
-	public static final RegistryObject<EntityType<HunterNPCEntity>> HUNTER_NPC = register("hunter_npc",
-			EntityType.Builder.<HunterNPCEntity>of(HunterNPCEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HunterNPCEntity::new)
-
-					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -76,7 +71,6 @@ public class SlsbModEntities {
 			UndeadSoldierEntity.init();
 			WhirlwindEntityEntity.init();
 			UndeadKnightBossEntity.init();
-			HunterNPCEntity.init();
 		});
 	}
 
@@ -89,6 +83,5 @@ public class SlsbModEntities {
 		event.put(UNDEAD_SOLDIER.get(), UndeadSoldierEntity.createAttributes().build());
 		event.put(WHIRLWIND_ENTITY.get(), WhirlwindEntityEntity.createAttributes().build());
 		event.put(UNDEAD_KNIGHT_BOSS.get(), UndeadKnightBossEntity.createAttributes().build());
-		event.put(HUNTER_NPC.get(), HunterNPCEntity.createAttributes().build());
 	}
 }

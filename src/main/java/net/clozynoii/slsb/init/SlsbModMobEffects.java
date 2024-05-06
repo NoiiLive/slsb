@@ -20,7 +20,6 @@ import net.clozynoii.slsb.potion.ReinforcementMobEffect;
 import net.clozynoii.slsb.potion.RalliedMobEffect;
 import net.clozynoii.slsb.potion.PredictionMobEffect;
 import net.clozynoii.slsb.potion.OverwhelmedMobEffect;
-import net.clozynoii.slsb.potion.NPCcooldownMobEffect;
 import net.clozynoii.slsb.potion.HealingAuraMobEffect;
 import net.clozynoii.slsb.potion.GuardianMobEffect;
 import net.clozynoii.slsb.potion.FinalStandMobEffect;
@@ -55,5 +54,4 @@ public class SlsbModMobEffects {
 	public static final RegistryObject<MobEffect> BERSERKER = REGISTRY.register("berserker", () -> new BerserkerMobEffect());
 	public static final RegistryObject<MobEffect> WHIRLWIND = REGISTRY.register("whirlwind", () -> new WhirlwindMobEffect());
 	public static final RegistryObject<MobEffect> PREDICTION = REGISTRY.register("prediction", () -> new PredictionMobEffect());
-	public static final RegistryObject<MobEffect> NP_CCOOLDOWN = REGISTRY.register("np_ccooldown", () -> new NPCcooldownMobEffect());
 }

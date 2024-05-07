@@ -45,6 +45,7 @@ public class SlsbModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.slsb.solo_leveling_weapons")).icon(() -> new ItemStack(SlsbModItems.KASAKAS_VENOM_FANG.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(SlsbModItems.KASAKAS_VENOM_FANG.get());
 				tabData.accept(SlsbModItems.KNIGHT_KILLER.get());
+				tabData.accept(SlsbModItems.E_RANK_SWORD.get());
 			})
 
 					.build());

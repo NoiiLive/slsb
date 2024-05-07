@@ -1,0 +1,7 @@
+{
+  "parent": "slsb:custom/eranksword",
+  "textures": {
+    "0": "slsb:block/erankswordtexture",
+    "particle": "slsb:item/magicsword"
+  }
+}

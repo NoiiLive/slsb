@@ -19,6 +19,7 @@ import net.clozynoii.slsb.item.ManaCrystalItem;
 import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
+import net.clozynoii.slsb.item.ERankSwordItem;
 import net.clozynoii.slsb.item.ERankEssenceStoneItem;
 import net.clozynoii.slsb.item.ERankArmorItem;
 import net.clozynoii.slsb.item.DRankEssenceStoneItem;
@@ -204,6 +205,7 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_armor_chestplate", () -> new ERankArmorItem.Chestplate());
 	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
 	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
+	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -10508,6 +10508,21 @@
         ]
       },
       "path": "~/Procedures/Player"
+    },
+    {
+      "name": "ERankSword",
+      "type": "tool",
+      "sortid": 488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankSwordItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_sword.json"
+        ]
+      },
+      "path": "~/Weapons"
     }
   ],
   "variable_elements": [
@@ -10978,8 +10993,8 @@
       "effect.slsb.wind_burst_active": "Wind Burst",
       "block.slsb.blue_gate_medium": "Blue Gate Medium",
       "item_group.slsb.solo_leveling_items": "Solo Leveling: Items",
-      "effect.slsb.overwhelmed": "Overwhelmed",
       "block.slsb.ice_dungeon_south": "Ice Dungeon South",
+      "effect.slsb.overwhelmed": "Overwhelmed",
       "item.slsb.c_rank_essence_stone": "§aC-Rank Essence Stone",
       "block.slsb.double_dungeon_west": "Double Dungeon West",
       "block.slsb.library_dungeon_north": "Library Dungeon North",
@@ -11002,12 +11017,12 @@
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
-      "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
       "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
+      "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
       "block.slsb.cathedral_dungeon_south": "Cathedral Dungeon South",
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
-      "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
+      "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
@@ -11024,8 +11039,8 @@
       "block.slsb.dragon_dungeon_west": "Dragon Dungeon West",
       "block.slsb.catacomb_dungeon_south": "Catacomb Dungeon South",
       "block.slsb.coliseum_dungeon_south": "Coliseum Dungeon South",
-      "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
       "item_group.slsb.solo_leveling_armor": "Solo Leveling: Armor",
+      "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
       "key.categories.slsb": "Solo Leveling: System Break",
       "entity.slsb.whirlwind_entity": "Whirlwind",
       "effect.slsb.evade": "Evasion",
@@ -11033,8 +11048,8 @@
       "block.slsb.mine_dungeon_east": "Mine Dungeon East",
       "item.slsb.mana_crystal": "§bMana Crystal",
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
-      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
+      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -11122,6 +11137,7 @@
       "block.slsb.mine_dungeon_west": "Mine Dungeon West",
       "block.slsb.goblin_dungeon_east": "Goblin Dungeon East",
       "block.slsb.cathedral_dungeon_enemies": "Cathedral Dungeon Enemies",
+      "item.slsb.e_rank_sword": "E-Rank Sword",
       "block.slsb.sand_dungeon_west": "Sand Dungeon West",
       "gui.slsb.hunter_phone_purchase.label_gatecost": "GateCost",
       "effect.slsb.prediction": "Prediction",

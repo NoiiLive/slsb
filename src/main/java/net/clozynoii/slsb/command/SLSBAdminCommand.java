@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
+import net.minecraft.commands.arguments.coordinates.BlockPosArgument;
 import net.minecraft.commands.arguments.MessageArgument;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
@@ -44,6 +45,7 @@ import net.clozynoii.slsb.procedures.RandomClassCommandProcedure;
 import net.clozynoii.slsb.procedures.PlaceGateProcedure;
 import net.clozynoii.slsb.procedures.CreateGuildCMDProcedure;
 import net.clozynoii.slsb.procedures.ClearAbilitiesCommandProcedure;
+import net.clozynoii.slsb.procedures.BreakGateCommandProcedure;
 import net.clozynoii.slsb.procedures.AwakenCommandProcedure;
 import net.clozynoii.slsb.procedures.AddMoneyCMDProcedure;
 
@@ -97,7 +99,21 @@ public class SLSBAdminCommand {
 
 			PlaceGateProcedure.execute(world, arguments, entity);
 			return 0;
-		}))))).then(Commands.literal("hunter").then(Commands.literal("awaken").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+		})))).then(Commands.literal("break").then(Commands.argument("position", BlockPosArgument.blockPos()).executes(arguments -> {
+			Level world = arguments.getSource().getUnsidedLevel();
+			double x = arguments.getSource().getPosition().x();
+			double y = arguments.getSource().getPosition().y();
+			double z = arguments.getSource().getPosition().z();
+			Entity entity = arguments.getSource().getEntity();
+			if (entity == null && world instanceof ServerLevel _servLevel)
+				entity = FakePlayerFactory.getMinecraft(_servLevel);
+			Direction direction = Direction.DOWN;
+			if (entity != null)
+				direction = entity.getDirection();
+
+			BreakGateCommandProcedure.execute(world, arguments);
+			return 0;
+		})))).then(Commands.literal("hunter").then(Commands.literal("awaken").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();

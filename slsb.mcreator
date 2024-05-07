@@ -10691,6 +10691,30 @@
         ]
       },
       "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "BreakGateCommand",
+      "type": "procedure",
+      "sortid": 497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "break_gate_command",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/BreakGateCommandProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
     }
   ],
   "variable_elements": [

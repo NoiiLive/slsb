@@ -52,6 +52,9 @@ public class HunterNPCEntity extends TamableAnimal {
 	public static final EntityDataAccessor<String> DATA_HunterClass = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> DATA_HunterRank = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_Skin = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Strength = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Vitality = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Agility = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
 
 	public HunterNPCEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(SlsbModEntities.HUNTER_NPC.get(), world);
@@ -60,7 +63,7 @@ public class HunterNPCEntity extends TamableAnimal {
 	public HunterNPCEntity(EntityType<HunterNPCEntity> type, Level world) {
 		super(type, world);
 		setMaxUpStep(0.6f);
-		xpReward = 0;
+		xpReward = 5;
 		setNoAi(false);
 	}
 
@@ -75,6 +78,9 @@ public class HunterNPCEntity extends TamableAnimal {
 		this.entityData.define(DATA_HunterClass, "");
 		this.entityData.define(DATA_HunterRank, "");
 		this.entityData.define(DATA_Skin, 0);
+		this.entityData.define(DATA_Strength, 0);
+		this.entityData.define(DATA_Vitality, 0);
+		this.entityData.define(DATA_Agility, 0);
 	}
 
 	@Override
@@ -127,6 +133,9 @@ public class HunterNPCEntity extends TamableAnimal {
 		compound.putString("DataHunterClass", this.entityData.get(DATA_HunterClass));
 		compound.putString("DataHunterRank", this.entityData.get(DATA_HunterRank));
 		compound.putInt("DataSkin", this.entityData.get(DATA_Skin));
+		compound.putInt("DataStrength", this.entityData.get(DATA_Strength));
+		compound.putInt("DataVitality", this.entityData.get(DATA_Vitality));
+		compound.putInt("DataAgility", this.entityData.get(DATA_Agility));
 	}
 
 	@Override
@@ -138,6 +147,12 @@ public class HunterNPCEntity extends TamableAnimal {
 			this.entityData.set(DATA_HunterRank, compound.getString("DataHunterRank"));
 		if (compound.contains("DataSkin"))
 			this.entityData.set(DATA_Skin, compound.getInt("DataSkin"));
+		if (compound.contains("DataStrength"))
+			this.entityData.set(DATA_Strength, compound.getInt("DataStrength"));
+		if (compound.contains("DataVitality"))
+			this.entityData.set(DATA_Vitality, compound.getInt("DataVitality"));
+		if (compound.contains("DataAgility"))
+			this.entityData.set(DATA_Agility, compound.getInt("DataAgility"));
 	}
 
 	@Override
@@ -207,10 +222,10 @@ public class HunterNPCEntity extends TamableAnimal {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 20);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
 		return builder;
 	}
 }

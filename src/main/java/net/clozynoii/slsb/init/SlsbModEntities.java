@@ -58,7 +58,7 @@ public class SlsbModEntities {
 
 					.sized(0.8f, 2.4f));
 	public static final RegistryObject<EntityType<HunterNPCEntity>> HUNTER_NPC = register("hunter_npc",
-			EntityType.Builder.<HunterNPCEntity>of(HunterNPCEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HunterNPCEntity::new)
+			EntityType.Builder.<HunterNPCEntity>of(HunterNPCEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HunterNPCEntity::new)
 
 					.sized(0.6f, 1.8f));
 

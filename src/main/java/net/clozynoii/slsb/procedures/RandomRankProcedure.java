@@ -290,28 +290,28 @@ public class RandomRankProcedure {
 				});
 			}
 			{
-				double _setval = Mth.nextInt(RandomSource.create(), 250, 300);
+				double _setval = Mth.nextInt(RandomSource.create(), 250, 350);
 				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MaxStrength = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = Mth.nextInt(RandomSource.create(), 250, 300);
+				double _setval = Mth.nextInt(RandomSource.create(), 250, 350);
 				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MaxAgility = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = Mth.nextInt(RandomSource.create(), 250, 300);
+				double _setval = Mth.nextInt(RandomSource.create(), 250, 350);
 				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MaxVitality = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = Mth.nextInt(RandomSource.create(), 250, 300);
+				double _setval = Mth.nextInt(RandomSource.create(), 250, 350);
 				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MaxIntelligence = _setval;
 					capability.syncPlayerVariables(entity);

@@ -36,7 +36,7 @@ public abstract class JinwoosClothesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 40;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 700;
 			}
 
 			@Override
@@ -66,7 +66,7 @@ public abstract class JinwoosClothesItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 10f;
 			}
 
 			@Override

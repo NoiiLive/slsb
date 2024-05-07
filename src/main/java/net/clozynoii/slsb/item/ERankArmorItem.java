@@ -67,7 +67,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 5f;
 			}
 
 			@Override

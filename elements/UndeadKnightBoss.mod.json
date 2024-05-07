@@ -33,22 +33,22 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "Items.IRON_SWORD"
+      "value": "CUSTOM:ERankSword"
     },
     "equipmentOffHand": {
       "value": ""
     },
     "equipmentHelmet": {
-      "value": "Items.IRON_HELMET"
+      "value": ""
     },
     "equipmentBody": {
-      "value": "Items.IRON_CHESTPLATE"
+      "value": "CUSTOM:ERankArmor.body"
     },
     "equipmentLeggings": {
-      "value": "Items.IRON_LEGGINGS"
+      "value": "CUSTOM:ERankArmor.legs"
     },
     "equipmentBoots": {
-      "value": "Items.IRON_BOOTS"
+      "value": "CUSTOM:ERankArmor.boots"
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEAD",

@@ -38,6 +38,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.clozynoii.slsb.init.SlsbModMobEffects;
 import net.clozynoii.slsb.init.SlsbModEntities;
+import net.clozynoii.slsb.entity.HunterNPCEntity;
 import net.clozynoii.slsb.entity.AfterImageEntity;
 import net.clozynoii.slsb.SlsbMod;
 
@@ -51,7 +52,7 @@ public class HunterNPCTickProcedure {
 		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(SlsbModMobEffects.NP_CCOOLDOWN.get()))) {
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 				if (Math.random() < 0.05) {
-					if ((entity.getPersistentData().getString("Class")).equals("Ranger")) {
+					if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
 						if (entity instanceof LivingEntity _entity)
 							_entity.swing(InteractionHand.MAIN_HAND, true);
 						{
@@ -77,7 +78,7 @@ public class HunterNPCTickProcedure {
 					}
 				}
 				if (Math.random() < 0.005) {
-					if ((entity.getPersistentData().getString("Class")).equals("Healer")) {
+					if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									"particle minecraft:dust 0 1 0 2 ^0 ^0 ^0 6 0.2 6 0 35");
@@ -101,13 +102,13 @@ public class HunterNPCTickProcedure {
 					}
 				}
 				if (Math.random() < 0.009) {
-					if ((entity.getPersistentData().getString("Class")).equals("Assassin")) {
+					if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.EVADE.get(), 70, 0, false, true));
 					}
 				}
 				if (Math.random() < 0.005) {
-					if ((entity.getPersistentData().getString("Class")).equals("Assassin")) {
+					if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 						entity.getPersistentData().putBoolean("singletarget", false);
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 0.1, 2, 0.1, 0);

@@ -33,7 +33,7 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "Items.IRON_SWORD"
+      "value": "CUSTOM:ERankSword"
     },
     "equipmentOffHand": {
       "value": ""

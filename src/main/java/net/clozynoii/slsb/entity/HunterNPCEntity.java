@@ -35,6 +35,9 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
@@ -46,6 +49,10 @@ import net.clozynoii.slsb.init.SlsbModEntities;
 import javax.annotation.Nullable;
 
 public class HunterNPCEntity extends TamableAnimal {
+	public static final EntityDataAccessor<String> DATA_HunterClass = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> DATA_HunterRank = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_Skin = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+
 	public HunterNPCEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(SlsbModEntities.HUNTER_NPC.get(), world);
 	}
@@ -60,6 +67,14 @@ public class HunterNPCEntity extends TamableAnimal {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_HunterClass, "");
+		this.entityData.define(DATA_HunterRank, "");
+		this.entityData.define(DATA_Skin, 0);
 	}
 
 	@Override
@@ -104,6 +119,25 @@ public class HunterNPCEntity extends TamableAnimal {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		HunterNPCOnInitialEntitySpawnProcedure.execute(this);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putString("DataHunterClass", this.entityData.get(DATA_HunterClass));
+		compound.putString("DataHunterRank", this.entityData.get(DATA_HunterRank));
+		compound.putInt("DataSkin", this.entityData.get(DATA_Skin));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataHunterClass"))
+			this.entityData.set(DATA_HunterClass, compound.getString("DataHunterClass"));
+		if (compound.contains("DataHunterRank"))
+			this.entityData.set(DATA_HunterRank, compound.getString("DataHunterRank"));
+		if (compound.contains("DataSkin"))
+			this.entityData.set(DATA_Skin, compound.getInt("DataSkin"));
 	}
 
 	@Override

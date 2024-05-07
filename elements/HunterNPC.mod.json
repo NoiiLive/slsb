@@ -21,7 +21,72 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "hunter_1a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter1a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_1b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter1b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_2a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter2a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_2b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter2b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_3a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter3a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_3b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter3b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_4a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter4a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_4b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter4b"
+        }
+      }
+    ],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
@@ -114,7 +179,25 @@
     "stepSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "name": "HunterClass",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "name": "HunterRank",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Skin",
+        "type": "integer",
+        "value": 0
+      }
+    ],
     "onMobTickUpdate": {
       "name": "HunterNPCTick"
     },

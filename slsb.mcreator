@@ -10354,7 +10354,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Misc/Procedures"
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
     },
     {
       "name": "NPCcooldown",
@@ -10420,7 +10420,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Misc/Procedures"
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
     },
     {
       "name": "PhoneAidRequest",
@@ -10523,6 +10523,174 @@
         ]
       },
       "path": "~/Weapons"
+    },
+    {
+      "name": "ReturnHunter1a",
+      "type": "procedure",
+      "sortid": 489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_1a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter1aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter1b",
+      "type": "procedure",
+      "sortid": 490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_1b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter1bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter2a",
+      "type": "procedure",
+      "sortid": 491,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_2a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter2aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter2b",
+      "type": "procedure",
+      "sortid": 492,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_2b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter2bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter3a",
+      "type": "procedure",
+      "sortid": 493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_3a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter3aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter3b",
+      "type": "procedure",
+      "sortid": 494,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_3b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter3bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter4a",
+      "type": "procedure",
+      "sortid": 495,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_4a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter4aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter4b",
+      "type": "procedure",
+      "sortid": 496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_4b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter4bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
     }
   ],
   "variable_elements": [
@@ -10993,8 +11161,8 @@
       "effect.slsb.wind_burst_active": "Wind Burst",
       "block.slsb.blue_gate_medium": "Blue Gate Medium",
       "item_group.slsb.solo_leveling_items": "Solo Leveling: Items",
-      "block.slsb.ice_dungeon_south": "Ice Dungeon South",
       "effect.slsb.overwhelmed": "Overwhelmed",
+      "block.slsb.ice_dungeon_south": "Ice Dungeon South",
       "item.slsb.c_rank_essence_stone": "§aC-Rank Essence Stone",
       "block.slsb.double_dungeon_west": "Double Dungeon West",
       "block.slsb.library_dungeon_north": "Library Dungeon North",
@@ -11017,12 +11185,12 @@
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
-      "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
+      "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
       "block.slsb.cathedral_dungeon_south": "Cathedral Dungeon South",
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
-      "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
       "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
+      "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
@@ -11039,8 +11207,8 @@
       "block.slsb.dragon_dungeon_west": "Dragon Dungeon West",
       "block.slsb.catacomb_dungeon_south": "Catacomb Dungeon South",
       "block.slsb.coliseum_dungeon_south": "Coliseum Dungeon South",
-      "item_group.slsb.solo_leveling_armor": "Solo Leveling: Armor",
       "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
+      "item_group.slsb.solo_leveling_armor": "Solo Leveling: Armor",
       "key.categories.slsb": "Solo Leveling: System Break",
       "entity.slsb.whirlwind_entity": "Whirlwind",
       "effect.slsb.evade": "Evasion",
@@ -11048,8 +11216,8 @@
       "block.slsb.mine_dungeon_east": "Mine Dungeon East",
       "item.slsb.mana_crystal": "§bMana Crystal",
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
-      "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
       "block.slsb.maze_dungeon_west": "Maze Dungeon West",
+      "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -11746,7 +11914,12 @@
             "children": [
               {
                 "name": "Procedures",
-                "children": []
+                "children": [
+                  {
+                    "name": "HunterNPC",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Effects",

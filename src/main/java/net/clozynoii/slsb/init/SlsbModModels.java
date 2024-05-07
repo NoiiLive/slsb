@@ -21,12 +21,12 @@ import net.clozynoii.slsb.client.model.ModelERankUndeadArmor;
 public class SlsbModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(ModelJinwooShoes.LAYER_LOCATION, ModelJinwooShoes::createBodyLayer);
 		event.registerLayerDefinition(ModelJinwooPants.LAYER_LOCATION, ModelJinwooPants::createBodyLayer);
-		event.registerLayerDefinition(ModelJinwooJacket.LAYER_LOCATION, ModelJinwooJacket::createBodyLayer);
-		event.registerLayerDefinition(ModelERankUndeadLeggings.LAYER_LOCATION, ModelERankUndeadLeggings::createBodyLayer);
 		event.registerLayerDefinition(ModelERankUndeadChestplate.LAYER_LOCATION, ModelERankUndeadChestplate::createBodyLayer);
 		event.registerLayerDefinition(ModelERankUndeadArmor.LAYER_LOCATION, ModelERankUndeadArmor::createBodyLayer);
 		event.registerLayerDefinition(ModelERankUndeadBoots.LAYER_LOCATION, ModelERankUndeadBoots::createBodyLayer);
+		event.registerLayerDefinition(ModelJinwooShoes.LAYER_LOCATION, ModelJinwooShoes::createBodyLayer);
+		event.registerLayerDefinition(ModelJinwooJacket.LAYER_LOCATION, ModelJinwooJacket::createBodyLayer);
+		event.registerLayerDefinition(ModelERankUndeadLeggings.LAYER_LOCATION, ModelERankUndeadLeggings::createBodyLayer);
 	}
 }

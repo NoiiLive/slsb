@@ -1,0 +1,7 @@
+{
+  "parent": "slsb:custom/erankshieldblocking",
+  "textures": {
+    "0": "slsb:block/erankshieldtexture",
+    "particle": "slsb:item/magicshield"
+  }
+}

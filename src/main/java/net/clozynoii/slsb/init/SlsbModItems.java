@@ -7,11 +7,18 @@ package net.clozynoii.slsb.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.clozynoii.slsb.item.SRankEssenceStoneItem;
 import net.clozynoii.slsb.item.PhoneItem;
@@ -20,7 +27,9 @@ import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
 import net.clozynoii.slsb.item.ERankSwordItem;
+import net.clozynoii.slsb.item.ERankShieldItem;
 import net.clozynoii.slsb.item.ERankEssenceStoneItem;
+import net.clozynoii.slsb.item.ERankAxeItem;
 import net.clozynoii.slsb.item.ERankArmorItem;
 import net.clozynoii.slsb.item.DRankEssenceStoneItem;
 import net.clozynoii.slsb.item.CRankEssenceStoneItem;
@@ -39,6 +48,7 @@ import net.clozynoii.slsb.block.display.BlueGateMediumDisplayItem;
 import net.clozynoii.slsb.block.display.AwakeningOrbDisplayItem;
 import net.clozynoii.slsb.SlsbMod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class SlsbModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, SlsbMod.MODID);
 	public static final RegistryObject<Item> KASAKAS_VENOM_FANG = REGISTRY.register("kasakas_venom_fang", () -> new KasakasVenomFangItem());
@@ -206,8 +216,17 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
 	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
 	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
+	public static final RegistryObject<Item> E_RANK_AXE = REGISTRY.register("e_rank_axe", () -> new ERankAxeItem());
+	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
+
+	@SubscribeEvent
+	public static void clientLoad(FMLClientSetupEvent event) {
+		event.enqueueWork(() -> {
+			ItemProperties.register(E_RANK_SHIELD.get(), new ResourceLocation("blocking"), ItemProperties.getProperty(Items.SHIELD, new ResourceLocation("blocking")));
+		});
 	}
 }

@@ -68,12 +68,15 @@ public class StatEffectsProcedure {
 					if (entity.getPersistentData().getDouble("SpeedIncrease") > AGL) {
 						entity.getPersistentData().putDouble("SpeedIncrease", AGL);
 					}
+					entity.getPersistentData().putDouble("SpeedCD", 10);
 				} else {
-					if (entity.getPersistentData().getDouble("SpeedIncrease") > 0) {
-						entity.getPersistentData().putDouble("SpeedIncrease", (entity.getPersistentData().getDouble("SpeedIncrease") - 0.01));
-					}
-					if (entity.getPersistentData().getDouble("SpeedIncrease") < 0) {
-						entity.getPersistentData().putDouble("SpeedIncrease", 0);
+					if (entity.getPersistentData().getDouble("SpeedCD") == 0) {
+						if (entity.getPersistentData().getDouble("SpeedIncrease") > 0) {
+							entity.getPersistentData().putDouble("SpeedIncrease", (entity.getPersistentData().getDouble("SpeedIncrease") - 0.01));
+						}
+						if (entity.getPersistentData().getDouble("SpeedIncrease") < 0) {
+							entity.getPersistentData().putDouble("SpeedIncrease", 0);
+						}
 					}
 				}
 				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue((0.1 + entity.getPersistentData().getDouble("SpeedIncrease")));

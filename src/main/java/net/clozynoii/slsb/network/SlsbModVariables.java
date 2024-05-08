@@ -135,9 +135,10 @@ public class SlsbModVariables {
 			clone.Money = original.Money;
 			clone.HunterGuild = original.HunterGuild;
 			clone.DungeonLeaveTimer = original.DungeonLeaveTimer;
-			clone.GuildLeader = original.GuildLeader;
+			clone.GuildRank = original.GuildRank;
 			clone.GuildColor = original.GuildColor;
 			clone.SpeedToggle = original.SpeedToggle;
+			clone.DungeonsCleared = original.DungeonsCleared;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -225,6 +226,7 @@ public class SlsbModVariables {
 		public double DungeonRoomCount = 0;
 		public double DungeonRoomTimer = 0.0;
 		public double DungeonEntranceTimer = 0.0;
+		public String GuildNames = "";
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -239,6 +241,7 @@ public class SlsbModVariables {
 			DungeonRoomCount = nbt.getDouble("DungeonRoomCount");
 			DungeonRoomTimer = nbt.getDouble("DungeonRoomTimer");
 			DungeonEntranceTimer = nbt.getDouble("DungeonEntranceTimer");
+			GuildNames = nbt.getString("GuildNames");
 		}
 
 		@Override
@@ -249,6 +252,7 @@ public class SlsbModVariables {
 			nbt.putDouble("DungeonRoomCount", DungeonRoomCount);
 			nbt.putDouble("DungeonRoomTimer", DungeonRoomTimer);
 			nbt.putDouble("DungeonEntranceTimer", DungeonEntranceTimer);
+			nbt.putString("GuildNames", GuildNames);
 			return nbt;
 		}
 
@@ -406,10 +410,11 @@ public class SlsbModVariables {
 		public double Money = 100.0;
 		public String HunterGuild = "None";
 		public double DungeonLeaveTimer = 0.0;
-		public String GuildLeader = "";
+		public String GuildRank = "";
 		public String GuildColor = "";
 		public boolean SummonAid = true;
 		public boolean SpeedToggle = true;
+		public double DungeonsCleared = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -483,10 +488,11 @@ public class SlsbModVariables {
 			nbt.putDouble("Money", Money);
 			nbt.putString("HunterGuild", HunterGuild);
 			nbt.putDouble("DungeonLeaveTimer", DungeonLeaveTimer);
-			nbt.putString("GuildLeader", GuildLeader);
+			nbt.putString("GuildRank", GuildRank);
 			nbt.putString("GuildColor", GuildColor);
 			nbt.putBoolean("SummonAid", SummonAid);
 			nbt.putBoolean("SpeedToggle", SpeedToggle);
+			nbt.putDouble("DungeonsCleared", DungeonsCleared);
 			return nbt;
 		}
 
@@ -557,10 +563,11 @@ public class SlsbModVariables {
 			Money = nbt.getDouble("Money");
 			HunterGuild = nbt.getString("HunterGuild");
 			DungeonLeaveTimer = nbt.getDouble("DungeonLeaveTimer");
-			GuildLeader = nbt.getString("GuildLeader");
+			GuildRank = nbt.getString("GuildRank");
 			GuildColor = nbt.getString("GuildColor");
 			SummonAid = nbt.getBoolean("SummonAid");
 			SpeedToggle = nbt.getBoolean("SpeedToggle");
+			DungeonsCleared = nbt.getDouble("DungeonsCleared");
 		}
 	}
 
@@ -659,10 +666,11 @@ public class SlsbModVariables {
 					variables.Money = message.data.Money;
 					variables.HunterGuild = message.data.HunterGuild;
 					variables.DungeonLeaveTimer = message.data.DungeonLeaveTimer;
-					variables.GuildLeader = message.data.GuildLeader;
+					variables.GuildRank = message.data.GuildRank;
 					variables.GuildColor = message.data.GuildColor;
 					variables.SummonAid = message.data.SummonAid;
 					variables.SpeedToggle = message.data.SpeedToggle;
+					variables.DungeonsCleared = message.data.DungeonsCleared;
 				}
 			});
 			context.setPacketHandled(true);

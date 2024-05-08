@@ -94,9 +94,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79E-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -131,7 +138,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76E-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
@@ -333,9 +340,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79D-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -370,7 +384,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76D-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
@@ -572,9 +586,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79C-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -609,7 +630,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76C-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
@@ -811,9 +832,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79B-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -848,7 +876,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76B-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
@@ -1050,9 +1078,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79A-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -1087,7 +1122,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76A-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
@@ -1289,9 +1324,16 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
 				entity.setCustomName(Component.literal("\u00A79S-Rank Assassin"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
@@ -1326,7 +1368,7 @@ public class HunterNPCOnInitialEntitySpawnProcedure {
 			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
 				entity.setCustomName(Component.literal("\u00A76S-Rank Mage"));
 				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
 					_setstack.setCount(1);
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)

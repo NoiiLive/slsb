@@ -1420,9 +1420,23 @@ public class EnterGateProcedure {
 								}
 							}
 							{
+								double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).DungeonsCleared + 1;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.DungeonsCleared = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
 								boolean _setval = true;
 								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.SummonAid = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								boolean _setval = false;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.DefeatedBoss = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
@@ -1562,6 +1576,27 @@ public class EnterGateProcedure {
 								return false;
 							}
 						}.getValue(world, BlockPos.containing(x, y, z), "GateCompleted")) == true) {
+							{
+								double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).DungeonsCleared + 1;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.DungeonsCleared = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								boolean _setval = true;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.SummonAid = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								boolean _setval = false;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.DefeatedBoss = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 							if ((new Object() {
 								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 									BlockEntity blockEntity = world.getBlockEntity(pos);

@@ -27,8 +27,10 @@ import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
 import net.clozynoii.slsb.item.ERankSwordItem;
+import net.clozynoii.slsb.item.ERankStaffItem;
 import net.clozynoii.slsb.item.ERankShieldItem;
 import net.clozynoii.slsb.item.ERankEssenceStoneItem;
+import net.clozynoii.slsb.item.ERankDaggerItem;
 import net.clozynoii.slsb.item.ERankAxeItem;
 import net.clozynoii.slsb.item.ERankArmorItem;
 import net.clozynoii.slsb.item.DRankEssenceStoneItem;
@@ -218,6 +220,8 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
 	public static final RegistryObject<Item> E_RANK_AXE = REGISTRY.register("e_rank_axe", () -> new ERankAxeItem());
 	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
+	public static final RegistryObject<Item> E_RANK_DAGGER = REGISTRY.register("e_rank_dagger", () -> new ERankDaggerItem());
+	public static final RegistryObject<Item> E_RANK_STAFF = REGISTRY.register("e_rank_staff", () -> new ERankStaffItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

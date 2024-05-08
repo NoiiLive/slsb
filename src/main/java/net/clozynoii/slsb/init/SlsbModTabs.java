@@ -48,6 +48,8 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.E_RANK_SWORD.get());
 				tabData.accept(SlsbModItems.E_RANK_AXE.get());
 				tabData.accept(SlsbModItems.E_RANK_SHIELD.get());
+				tabData.accept(SlsbModItems.E_RANK_DAGGER.get());
+				tabData.accept(SlsbModItems.E_RANK_STAFF.get());
 			})
 
 					.build());

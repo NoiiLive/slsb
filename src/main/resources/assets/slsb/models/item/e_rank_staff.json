@@ -1,0 +1,7 @@
+{
+  "parent": "slsb:custom/erankstaff",
+  "textures": {
+    "0": "slsb:block/erankstafftexture",
+    "particle": "slsb:item/magicstaff"
+  }
+}

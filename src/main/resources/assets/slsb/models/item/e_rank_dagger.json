@@ -1,0 +1,7 @@
+{
+  "parent": "slsb:custom/erankdagger",
+  "textures": {
+    "0": "slsb:block/erankdaggertexture",
+    "particle": "slsb:item/magicdagger"
+  }
+}

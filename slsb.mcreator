@@ -10776,6 +10776,213 @@
         ]
       },
       "path": "~/Weapons"
+    },
+    {
+      "name": "ERankSpellBook",
+      "type": "animateditem",
+      "sortid": 503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_spell_book",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_spell_book.json",
+          "src/main/java/net/clozynoii/slsb/item/renderer/ERankSpellBookItemRenderer.java",
+          "src/main/java/net/clozynoii/slsb/item/model/ERankSpellBookItemModel.java",
+          "src/main/java/net/clozynoii/slsb/item/ERankSpellBookItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "ERankBow",
+      "type": "item",
+      "sortid": 504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_bow.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankBowItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "ERankBowUse",
+      "type": "procedure",
+      "sortid": 505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ERankBowUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "ERankBowUseFail",
+      "type": "procedure",
+      "sortid": 506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow_use_fail",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ERankBowUseFailProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "EssenceStoneArrow",
+      "type": "item",
+      "sortid": 507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/EssenceStoneArrowItem.java",
+          "src/main/resources/assets/slsb/models/item/essence_stone_arrow.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "EssenceStoneArrowProjectile",
+      "type": "projectile",
+      "sortid": 508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/client/renderer/EssenceStoneArrowProjectileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/EssenceStoneArrowProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "ManaArrowProjectile",
+      "type": "projectile",
+      "sortid": 510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/client/renderer/ManaArrowProjectileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/ManaArrowProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "ManaArrow",
+      "type": "item",
+      "sortid": 509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/mana_arrow.json",
+          "src/main/java/net/clozynoii/slsb/item/ManaArrowItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "EssenceStoneArrowDrop",
+      "type": "procedure",
+      "sortid": 511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow_drop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/EssenceStoneArrowDropProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "ManaArrowDrop",
+      "type": "procedure",
+      "sortid": 512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow_drop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ManaArrowDropProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
     }
   ],
   "variable_elements": [
@@ -11316,8 +11523,8 @@
       "block.slsb.mine_dungeon_east": "Mine Dungeon East",
       "item.slsb.mana_crystal": "§bMana Crystal",
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
-      "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
       "block.slsb.maze_dungeon_west": "Maze Dungeon West",
+      "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -11363,6 +11570,7 @@
       "gui.slsb.hunter_phone_backup.button_request": "Request",
       "block.slsb.maze_dungeon_east": "Maze Dungeon East",
       "block.slsb.ice_dungeon_west": "Ice Dungeon West",
+      "item.slsb.mana_arrow": "Mana Arrow",
       "subtitles.stab": "",
       "block.slsb.mine_dungeon_north": "Mine Dungeon North",
       "block.slsb.giant_dungeon_south": "Giant Dungeon South",
@@ -11373,6 +11581,7 @@
       "effect.slsb.guardian": "Guardian",
       "block.slsb.ice_dungeon_enemies": "Ice Dungeon Enemies",
       "block.slsb.crystal_dungeon_east": "Crystal Dungeon East",
+      "item.slsb.e_rank_spell_book": "E-Rank Spell Book",
       "advancements.assassin_class.title": "Assassin",
       "block.slsb.sunken_dungeon_boss": "Sunken Dungeon Boss",
       "block.slsb.naga_dungeon_enemies": "Naga Dungeon Enemies",
@@ -11422,6 +11631,7 @@
       "block.slsb.maze_dungeon_boss": "Maze Dungeon Boss",
       "entity.slsb.undead_knight_boss": "Undead Knight (C-Rank)",
       "effect.slsb.np_ccooldown": "Cooldown",
+      "item.slsb.e_rank_bow": "E-Rank Bow",
       "block.slsb.coliseum_dungeon_east": "Coliseum Dungeon East",
       "block.slsb.blue_gate_small": "Blue Gate Small",
       "effect.slsb.healing_aura": "Healing Aura",
@@ -11449,6 +11659,7 @@
       "block.slsb.orc_dungeon_enemies": "Orc Dungeon Enemies",
       "block.slsb.naga_dungeon_north": "Naga Dungeon North",
       "block.slsb.goblin_dungeon_west": "Goblin Dungeon West",
+      "item.slsb.essence_stone_arrow": "Essence Stone Arrow",
       "block.slsb.rat_dungeon_east": "Rat Dungeon East",
       "key.slsb.info_menu": "Info Menu",
       "advancements.haste_skill.title": "Haste Skill",
@@ -11742,6 +11953,10 @@
           },
           {
             "name": "Mobs",
+            "children": []
+          },
+          {
+            "name": "Misc",
             "children": []
           }
         ]

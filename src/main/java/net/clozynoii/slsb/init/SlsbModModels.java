@@ -16,11 +16,13 @@ import net.clozynoii.slsb.client.model.ModelERankUndeadLeggings;
 import net.clozynoii.slsb.client.model.ModelERankUndeadChestplate;
 import net.clozynoii.slsb.client.model.ModelERankUndeadBoots;
 import net.clozynoii.slsb.client.model.ModelERankUndeadArmor;
+import net.clozynoii.slsb.client.model.ModelCustomArrow;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class SlsbModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(ModelCustomArrow.LAYER_LOCATION, ModelCustomArrow::createBodyLayer);
 		event.registerLayerDefinition(ModelJinwooPants.LAYER_LOCATION, ModelJinwooPants::createBodyLayer);
 		event.registerLayerDefinition(ModelERankUndeadChestplate.LAYER_LOCATION, ModelERankUndeadChestplate::createBodyLayer);
 		event.registerLayerDefinition(ModelERankUndeadArmor.LAYER_LOCATION, ModelERankUndeadArmor::createBodyLayer);

@@ -23,14 +23,18 @@ import net.minecraft.client.renderer.item.ItemProperties;
 import net.clozynoii.slsb.item.SRankEssenceStoneItem;
 import net.clozynoii.slsb.item.PhoneItem;
 import net.clozynoii.slsb.item.ManaCrystalItem;
+import net.clozynoii.slsb.item.ManaArrowItem;
 import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
+import net.clozynoii.slsb.item.EssenceStoneArrowItem;
 import net.clozynoii.slsb.item.ERankSwordItem;
 import net.clozynoii.slsb.item.ERankStaffItem;
+import net.clozynoii.slsb.item.ERankSpellBookItem;
 import net.clozynoii.slsb.item.ERankShieldItem;
 import net.clozynoii.slsb.item.ERankEssenceStoneItem;
 import net.clozynoii.slsb.item.ERankDaggerItem;
+import net.clozynoii.slsb.item.ERankBowItem;
 import net.clozynoii.slsb.item.ERankAxeItem;
 import net.clozynoii.slsb.item.ERankArmorItem;
 import net.clozynoii.slsb.item.DRankEssenceStoneItem;
@@ -213,7 +217,7 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> JINWOOS_CLOTHES_BOOTS = REGISTRY.register("jinwoos_clothes_boots", () -> new JinwoosClothesItem.Boots());
 	public static final RegistryObject<Item> UNDEAD_KNIGHT_BOSS_SPAWN_EGG = REGISTRY.register("undead_knight_boss_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.UNDEAD_KNIGHT_BOSS, -3355444, -8512991, new Item.Properties()));
 	public static final RegistryObject<Item> PHONE = REGISTRY.register("phone", () -> new PhoneItem());
-	public static final RegistryObject<Item> HUNTER_NPC_SPAWN_EGG = REGISTRY.register("hunter_npc_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.HUNTER_NPC, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> HUNTER_NPC_SPAWN_EGG = REGISTRY.register("hunter_npc_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.HUNTER_NPC, -6710887, -10669019, new Item.Properties()));
 	public static final RegistryObject<Item> E_RANK_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_armor_chestplate", () -> new ERankArmorItem.Chestplate());
 	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
 	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
@@ -222,6 +226,10 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
 	public static final RegistryObject<Item> E_RANK_DAGGER = REGISTRY.register("e_rank_dagger", () -> new ERankDaggerItem());
 	public static final RegistryObject<Item> E_RANK_STAFF = REGISTRY.register("e_rank_staff", () -> new ERankStaffItem());
+	public static final RegistryObject<Item> E_RANK_SPELL_BOOK = REGISTRY.register("e_rank_spell_book", () -> new ERankSpellBookItem());
+	public static final RegistryObject<Item> E_RANK_BOW = REGISTRY.register("e_rank_bow", () -> new ERankBowItem());
+	public static final RegistryObject<Item> ESSENCE_STONE_ARROW = REGISTRY.register("essence_stone_arrow", () -> new EssenceStoneArrowItem());
+	public static final RegistryObject<Item> MANA_ARROW = REGISTRY.register("mana_arrow", () -> new ManaArrowItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

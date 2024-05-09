@@ -28,7 +28,7 @@ public class PlaceGateProcedure {
 		double RandomY = 0;
 		double RandomZ = 0;
 		double GateRandomize = 0;
-		SlsbModVariables.MapVariables.get(world).GateTimer = Mth.nextInt(RandomSource.create(), 18000, 30000);
+		SlsbModVariables.MapVariables.get(world).GateTimer = Mth.nextInt(RandomSource.create(), 18000, 30000) * 20;
 		SlsbModVariables.MapVariables.get(world).syncData(world);
 		RandomX = entity.getX() + 1;
 		RandomY = entity.getY() - 1;

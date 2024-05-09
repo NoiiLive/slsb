@@ -1,0 +1,6 @@
+{
+  "parent": "slsb:displaysettings/erankspellbook.item",
+  "textures": {
+    "layer0": "slsb:item/erankspellbooktexture"
+  }
+}

@@ -1,0 +1,49 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ERankSpellBook",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "book",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "book_left",
+					"parent": "book",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 0, -90],
+					"cubes": [
+						{"origin": [0, -1, -5], "size": [7, 1, 10], "inflate": 0.01, "uv": [0, 11]},
+						{"origin": [0, -0.75, -4.75], "size": [6.75, 1, 9.5], "uv": [21, 23]}
+					]
+				},
+				{
+					"name": "page",
+					"parent": "book_left",
+					"pivot": [0, 0.25, 0],
+					"cubes": [
+						{"origin": [0.0891, 0.24976, -4.75], "size": [6.65, 0, 9.5], "uv": [15, 0]}
+					]
+				},
+				{
+					"name": "book_right",
+					"parent": "book",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 0, 90],
+					"cubes": [
+						{"origin": [-7, -1, -5], "size": [7, 1, 10], "inflate": 0.01, "uv": [0, 0]},
+						{"origin": [-6.75, -0.75, -4.75], "size": [6.75, 1, 9.5], "uv": [0, 22]}
+					]
+				}
+			]
+		}
+	]
+}

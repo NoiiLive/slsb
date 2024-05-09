@@ -1,0 +1,22 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:ManaArrow"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 1.2000000000000002,
+    "damage": 4.0,
+    "knockback": 0,
+    "entityModel": "ModelCustomArrow",
+    "customModelTexture": "manaarrowtexture.png",
+    "onHitsBlock": {
+      "name": "ManaArrowDrop"
+    }
+  }
+}

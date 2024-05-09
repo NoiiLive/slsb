@@ -22,9 +22,11 @@ import net.clozynoii.slsb.entity.WhirlwindEntityEntity;
 import net.clozynoii.slsb.entity.UndeadSoldierEntity;
 import net.clozynoii.slsb.entity.UndeadKnightBossEntity;
 import net.clozynoii.slsb.entity.SwordSliceProjectileEntity;
+import net.clozynoii.slsb.entity.ManaArrowProjectileEntity;
 import net.clozynoii.slsb.entity.HunterNPCEntity;
 import net.clozynoii.slsb.entity.GiantRatEntity;
 import net.clozynoii.slsb.entity.GiantRatBossEntity;
+import net.clozynoii.slsb.entity.EssenceStoneArrowProjectileEntity;
 import net.clozynoii.slsb.entity.AfterImageEntity;
 import net.clozynoii.slsb.SlsbMod;
 
@@ -61,6 +63,11 @@ public class SlsbModEntities {
 			EntityType.Builder.<HunterNPCEntity>of(HunterNPCEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HunterNPCEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<EssenceStoneArrowProjectileEntity>> ESSENCE_STONE_ARROW_PROJECTILE = register("projectile_essence_stone_arrow_projectile",
+			EntityType.Builder.<EssenceStoneArrowProjectileEntity>of(EssenceStoneArrowProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(EssenceStoneArrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ManaArrowProjectileEntity>> MANA_ARROW_PROJECTILE = register("projectile_mana_arrow_projectile", EntityType.Builder.<ManaArrowProjectileEntity>of(ManaArrowProjectileEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(ManaArrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

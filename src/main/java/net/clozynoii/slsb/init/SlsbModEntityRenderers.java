@@ -15,9 +15,11 @@ import net.clozynoii.slsb.client.renderer.WindBarrierMobRenderer;
 import net.clozynoii.slsb.client.renderer.WhirlwindEntityRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadSoldierRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadKnightBossRenderer;
+import net.clozynoii.slsb.client.renderer.ManaArrowProjectileRenderer;
 import net.clozynoii.slsb.client.renderer.HunterNPCRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatBossRenderer;
+import net.clozynoii.slsb.client.renderer.EssenceStoneArrowProjectileRenderer;
 import net.clozynoii.slsb.client.renderer.AfterImageRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -34,5 +36,7 @@ public class SlsbModEntityRenderers {
 		event.registerEntityRenderer(SlsbModEntities.WHIRLWIND_ENTITY.get(), WhirlwindEntityRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.UNDEAD_KNIGHT_BOSS.get(), UndeadKnightBossRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.HUNTER_NPC.get(), HunterNPCRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.ESSENCE_STONE_ARROW_PROJECTILE.get(), EssenceStoneArrowProjectileRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.MANA_ARROW_PROJECTILE.get(), ManaArrowProjectileRenderer::new);
 	}
 }

@@ -18,6 +18,7 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
 
 import net.clozynoii.slsb.procedures.UnawakenCommandProcedure;
+import net.clozynoii.slsb.procedures.SetTitleCMDProcedure;
 import net.clozynoii.slsb.procedures.SetTankerProcedure;
 import net.clozynoii.slsb.procedures.SetStatsMaxProcedure;
 import net.clozynoii.slsb.procedures.SetStatVitalityProcedure;
@@ -35,13 +36,16 @@ import net.clozynoii.slsb.procedures.SetRangerProcedure;
 import net.clozynoii.slsb.procedures.SetMoveProcedure;
 import net.clozynoii.slsb.procedures.SetManaProcedure;
 import net.clozynoii.slsb.procedures.SetMageProcedure;
+import net.clozynoii.slsb.procedures.SetLevelProcedure;
 import net.clozynoii.slsb.procedures.SetHealerProcedure;
 import net.clozynoii.slsb.procedures.SetFighterProcedure;
+import net.clozynoii.slsb.procedures.SetEXPProcedure;
 import net.clozynoii.slsb.procedures.SetAssassinProcedure;
 import net.clozynoii.slsb.procedures.RandomRankCommandProcedure;
 import net.clozynoii.slsb.procedures.RandomMovesCommandProcedure;
 import net.clozynoii.slsb.procedures.RandomGateCommandProcedure;
 import net.clozynoii.slsb.procedures.RandomClassCommandProcedure;
+import net.clozynoii.slsb.procedures.PlayerSystemCMDProcedure;
 import net.clozynoii.slsb.procedures.PlaceGateProcedure;
 import net.clozynoii.slsb.procedures.CreateGuildCMDProcedure;
 import net.clozynoii.slsb.procedures.ClearAbilitiesCommandProcedure;
@@ -113,7 +117,7 @@ public class SLSBAdminCommand {
 
 			BreakGateCommandProcedure.execute(world, arguments);
 			return 0;
-		})))).then(Commands.literal("hunter").then(Commands.literal("awaken").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+		})))).then(Commands.literal("player").then(Commands.literal("awaken").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();
@@ -141,7 +145,21 @@ public class SLSBAdminCommand {
 
 			UnawakenCommandProcedure.execute(world, arguments);
 			return 0;
-		})))).then(Commands.literal("class").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("fighter").executes(arguments -> {
+		}))).then(Commands.literal("system").then(Commands.argument("logic", BoolArgumentType.bool()).then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+			Level world = arguments.getSource().getUnsidedLevel();
+			double x = arguments.getSource().getPosition().x();
+			double y = arguments.getSource().getPosition().y();
+			double z = arguments.getSource().getPosition().z();
+			Entity entity = arguments.getSource().getEntity();
+			if (entity == null && world instanceof ServerLevel _servLevel)
+				entity = FakePlayerFactory.getMinecraft(_servLevel);
+			Direction direction = Direction.DOWN;
+			if (entity != null)
+				direction = entity.getDirection();
+
+			PlayerSystemCMDProcedure.execute(arguments, entity);
+			return 0;
+		}))))).then(Commands.literal("class").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("fighter").executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();
@@ -464,6 +482,34 @@ public class SLSBAdminCommand {
 
 					SetStatSenseProcedure.execute(arguments);
 					return 0;
+				})))).then(Commands.literal("level").then(Commands.argument("amount", DoubleArgumentType.doubleArg()).then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetLevelProcedure.execute(arguments);
+					return 0;
+				})))).then(Commands.literal("exp").then(Commands.argument("amount", DoubleArgumentType.doubleArg()).then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetEXPProcedure.execute(arguments, entity);
+					return 0;
 				})))).then(Commands.literal("max").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
@@ -507,6 +553,20 @@ public class SLSBAdminCommand {
 						direction = entity.getDirection();
 
 					AddMoneyCMDProcedure.execute(arguments);
+					return 0;
+				}))))).then(Commands.literal("title").then(Commands.literal("set").then(Commands.argument("name", EntityArgument.player()).then(Commands.argument("title", MessageArgument.message()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetTitleCMDProcedure.execute(arguments);
 					return 0;
 				}))))));
 	}

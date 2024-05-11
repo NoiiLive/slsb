@@ -181,8 +181,8 @@
       "registry_name": "kasakas_venom_fang",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/KasakasVenomFangItem.java",
-          "src/main/resources/assets/slsb/models/item/kasakas_venom_fang.json"
+          "src/main/resources/assets/slsb/models/item/kasakas_venom_fang.json",
+          "src/main/java/net/clozynoii/slsb/item/KasakasVenomFangItem.java"
         ]
       },
       "path": "~/Weapons"
@@ -464,16 +464,16 @@
       "registry_name": "blue_gate_small",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/model/BlueGateSmallBlockModel.java",
-          "src/main/java/net/clozynoii/slsb/block/model/BlueGateSmallDisplayModel.java",
-          "src/main/resources/assets/slsb/models/item/blue_gate_small.json",
           "src/main/java/net/clozynoii/slsb/block/entity/BlueGateSmallTileEntity.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateSmallDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateSmallTileRenderer.java",
           "src/main/resources/assets/slsb/models/custom/blue_gate_small_particle.json",
           "src/main/resources/assets/slsb/blockstates/blue_gate_small.json",
+          "src/main/java/net/clozynoii/slsb/block/model/BlueGateSmallDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateSmallTileRenderer.java",
           "src/main/java/net/clozynoii/slsb/block/BlueGateSmallBlock.java",
-          "src/main/java/net/clozynoii/slsb/block/display/BlueGateSmallDisplayItem.java"
+          "src/main/resources/assets/slsb/models/item/blue_gate_small.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateSmallDisplayItemRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/display/BlueGateSmallDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/model/BlueGateSmallBlockModel.java"
         ]
       },
       "path": "~/Blocks/Gates"
@@ -487,16 +487,16 @@
       "registry_name": "red_gate_small",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/renderer/RedGateSmallTileRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/model/RedGateSmallBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/RedGateSmallDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/RedGateSmallBlock.java",
-          "src/main/java/net/clozynoii/slsb/block/entity/RedGateSmallTileEntity.java",
-          "src/main/resources/assets/slsb/models/custom/red_gate_small_particle.json",
           "src/main/resources/assets/slsb/blockstates/red_gate_small.json",
+          "src/main/resources/assets/slsb/models/item/red_gate_small.json",
+          "src/main/resources/assets/slsb/models/custom/red_gate_small_particle.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/RedGateSmallTileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/RedGateSmallBlock.java",
+          "src/main/java/net/clozynoii/slsb/block/model/RedGateSmallBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/model/RedGateSmallDisplayModel.java",
           "src/main/java/net/clozynoii/slsb/block/display/RedGateSmallDisplayItem.java",
-          "src/main/resources/assets/slsb/models/item/red_gate_small.json"
+          "src/main/java/net/clozynoii/slsb/block/entity/RedGateSmallTileEntity.java"
         ]
       },
       "path": "~/Blocks/Gates"
@@ -2531,16 +2531,16 @@
       "registry_name": "blue_gate_medium",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/BlueGateMediumBlock.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateMediumDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/display/BlueGateMediumDisplayItem.java",
+          "src/main/resources/assets/slsb/models/custom/blue_gate_medium_particle.json",
           "src/main/java/net/clozynoii/slsb/block/entity/BlueGateMediumTileEntity.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateMediumTileRenderer.java",
+          "src/main/resources/assets/slsb/models/item/blue_gate_medium.json",
           "src/main/resources/assets/slsb/blockstates/blue_gate_medium.json",
           "src/main/java/net/clozynoii/slsb/block/model/BlueGateMediumBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/model/BlueGateMediumDisplayModel.java",
-          "src/main/java/net/clozynoii/slsb/block/BlueGateMediumBlock.java",
-          "src/main/resources/assets/slsb/models/item/blue_gate_medium.json",
-          "src/main/resources/assets/slsb/models/custom/blue_gate_medium_particle.json",
-          "src/main/java/net/clozynoii/slsb/block/renderer/BlueGateMediumTileRenderer.java"
+          "src/main/java/net/clozynoii/slsb/block/display/BlueGateMediumDisplayItem.java"
         ]
       },
       "path": "~/Blocks/Gates"
@@ -2876,8 +2876,8 @@
       "registry_name": "knight_killer",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/KnightKillerItem.java",
-          "src/main/resources/assets/slsb/models/item/knight_killer.json"
+          "src/main/resources/assets/slsb/models/item/knight_killer.json",
+          "src/main/java/net/clozynoii/slsb/item/KnightKillerItem.java"
         ]
       },
       "path": "~/Weapons"
@@ -2891,16 +2891,16 @@
       "registry_name": "mana_crystal_block_stone",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_stone.json",
           "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockStoneBlock.java",
-          "src/main/resources/assets/slsb/models/item/mana_crystal_block_stone.json",
-          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockStoneTileEntity.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockStoneDisplayItemRenderer.java",
-          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_stone_particle.json",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockStoneDisplayModel.java",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockStoneBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockStoneTileRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockStoneDisplayItem.java"
+          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockStoneDisplayItem.java",
+          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_stone.json",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockStoneBlockModel.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockStoneDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockStoneTileEntity.java",
+          "src/main/resources/assets/slsb/models/item/mana_crystal_block_stone.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockStoneDisplayItemRenderer.java",
+          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_stone_particle.json"
         ]
       },
       "path": "~/Blocks/Mana Crystals"
@@ -2915,15 +2915,15 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/custom/mana_crystal_block_pure_particle.json",
-          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockPureTileEntity.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockPureTileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockPureBlockModel.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockPureDisplayItemRenderer.java",
           "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockPureDisplayModel.java",
+          "src/main/resources/assets/slsb/models/item/mana_crystal_block_pure.json",
+          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockPureBlock.java",
           "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockPureDisplayItem.java",
           "src/main/resources/assets/slsb/blockstates/mana_crystal_block_pure.json",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockPureDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockPureTileRenderer.java",
-          "src/main/resources/assets/slsb/models/item/mana_crystal_block_pure.json",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockPureBlockModel.java",
-          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockPureBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockPureTileEntity.java"
         ]
       },
       "path": "~/Blocks/Mana Crystals"
@@ -2937,15 +2937,15 @@
       "registry_name": "mana_crystal_block_granite",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_granite.json",
+          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_granite_particle.json",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockGraniteDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockGraniteBlock.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockGraniteTileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockGraniteBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockGraniteDisplayItem.java",
           "src/main/resources/assets/slsb/models/item/mana_crystal_block_granite.json",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockGraniteDisplayModel.java",
           "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockGraniteTileEntity.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockGraniteTileRenderer.java",
-          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_granite.json",
-          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockGraniteBlock.java",
-          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_granite_particle.json",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockGraniteBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockGraniteDisplayItemRenderer.java"
         ]
       },
@@ -2960,16 +2960,16 @@
       "registry_name": "mana_crystal_block_diorite",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_diorite.json",
-          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockDioriteBlock.java",
-          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockDioriteTileEntity.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDioriteDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDioriteDisplayItem.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDioriteTileRenderer.java",
-          "src/main/resources/assets/slsb/models/item/mana_crystal_block_diorite.json",
-          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_diorite_particle.json",
           "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDioriteDisplayModel.java",
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDioriteBlockModel.java"
+          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDioriteDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDioriteBlockModel.java",
+          "src/main/resources/assets/slsb/models/item/mana_crystal_block_diorite.json",
+          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockDioriteBlock.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDioriteTileRenderer.java",
+          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_diorite.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDioriteDisplayItemRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockDioriteTileEntity.java",
+          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_diorite_particle.json"
         ]
       },
       "path": "~/Blocks/Mana Crystals"
@@ -2983,16 +2983,16 @@
       "registry_name": "mana_crystal_block_deepslate",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDeepslateDisplayModel.java",
-          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_deepslate.json",
-          "src/main/resources/assets/slsb/models/item/mana_crystal_block_deepslate.json",
-          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_deepslate_particle.json",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDeepslateTileRenderer.java",
           "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDeepslateBlockModel.java",
-          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockDeepslateTileEntity.java",
+          "src/main/resources/assets/slsb/models/custom/mana_crystal_block_deepslate_particle.json",
           "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockDeepslateBlock.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDeepslateDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDeepslateDisplayItem.java"
+          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_deepslate.json",
+          "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockDeepslateTileEntity.java",
+          "src/main/resources/assets/slsb/models/item/mana_crystal_block_deepslate.json",
+          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDeepslateDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDeepslateTileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDeepslateDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDeepslateDisplayItemRenderer.java"
         ]
       },
       "path": "~/Blocks/Mana Crystals"
@@ -3021,16 +3021,16 @@
       "registry_name": "mana_crystal_block_dripstone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDripstoneDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDripstoneDisplayItem.java",
           "src/main/java/net/clozynoii/slsb/block/entity/ManaCrystalBlockDripstoneTileEntity.java",
+          "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDripstoneDisplayModel.java",
+          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_dripstone.json",
           "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDripstoneDisplayItemRenderer.java",
-          "src/main/resources/assets/slsb/models/item/mana_crystal_block_dripstone.json",
           "src/main/resources/assets/slsb/models/custom/mana_crystal_block_dripstone_particle.json",
           "src/main/java/net/clozynoii/slsb/block/renderer/ManaCrystalBlockDripstoneTileRenderer.java",
           "src/main/java/net/clozynoii/slsb/block/model/ManaCrystalBlockDripstoneBlockModel.java",
-          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockDripstoneBlock.java",
-          "src/main/java/net/clozynoii/slsb/block/display/ManaCrystalBlockDripstoneDisplayItem.java",
-          "src/main/resources/assets/slsb/blockstates/mana_crystal_block_dripstone.json"
+          "src/main/resources/assets/slsb/models/item/mana_crystal_block_dripstone.json",
+          "src/main/java/net/clozynoii/slsb/block/ManaCrystalBlockDripstoneBlock.java"
         ]
       },
       "path": "~/Blocks/Mana Crystals"
@@ -3068,16 +3068,16 @@
       "registry_name": "awakening_orb",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/renderer/AwakeningOrbDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/display/AwakeningOrbDisplayItem.java",
           "src/main/java/net/clozynoii/slsb/block/model/AwakeningOrbDisplayModel.java",
-          "src/main/java/net/clozynoii/slsb/block/AwakeningOrbBlock.java",
-          "src/main/resources/assets/slsb/models/custom/awakening_orb_particle.json",
+          "src/main/resources/assets/slsb/models/item/awakening_orb.json",
           "src/main/java/net/clozynoii/slsb/block/model/AwakeningOrbBlockModel.java",
           "src/main/java/net/clozynoii/slsb/block/entity/AwakeningOrbTileEntity.java",
-          "src/main/java/net/clozynoii/slsb/block/renderer/AwakeningOrbTileRenderer.java",
-          "src/main/resources/assets/slsb/models/item/awakening_orb.json",
-          "src/main/resources/assets/slsb/blockstates/awakening_orb.json"
+          "src/main/resources/assets/slsb/models/custom/awakening_orb_particle.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/AwakeningOrbDisplayItemRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/display/AwakeningOrbDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/AwakeningOrbBlock.java",
+          "src/main/resources/assets/slsb/blockstates/awakening_orb.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/AwakeningOrbTileRenderer.java"
         ]
       },
       "path": "~/Blocks"
@@ -3903,8 +3903,8 @@
       "metadata": {
         "files": [
           "src/main/resources/data/slsb/worldgen/configured_feature/dungeon_tree.json",
-          "src/main/resources/data/slsb/worldgen/placed_feature/dungeon_tree.json",
-          "src/main/resources/data/slsb/worldgen/biome/dungeon.json"
+          "src/main/resources/data/slsb/worldgen/biome/dungeon.json",
+          "src/main/resources/data/slsb/worldgen/placed_feature/dungeon_tree.json"
         ]
       },
       "path": "~/Biomes"
@@ -4702,10 +4702,10 @@
       "registry_name": "rat_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/rat_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/rat_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/rat_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/RatDungeonNorthBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/RatDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/block/rat_dungeon_north.json",
+          "src/main/resources/assets/slsb/blockstates/rat_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Rat Dungeon"
@@ -4719,10 +4719,10 @@
       "registry_name": "rat_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/rat_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/rat_dungeon_east.json",
           "src/main/resources/assets/slsb/models/block/rat_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/RatDungeonEastBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/RatDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/item/rat_dungeon_east.json",
+          "src/main/resources/assets/slsb/blockstates/rat_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Rat Dungeon"
@@ -4736,10 +4736,10 @@
       "registry_name": "rat_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/rat_dungeon_south.json",
           "src/main/resources/assets/slsb/models/block/rat_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/rat_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/RatDungeonSouthBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/RatDungeonSouthBlock.java",
+          "src/main/resources/assets/slsb/models/item/rat_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Rat Dungeon"
@@ -4753,10 +4753,10 @@
       "registry_name": "rat_dungeon_west",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/rat_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/rat_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/RatDungeonWestBlock.java",
           "src/main/resources/assets/slsb/models/item/rat_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/rat_dungeon_west.json"
+          "src/main/java/net/clozynoii/slsb/block/RatDungeonWestBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Rat Dungeon"
@@ -4770,10 +4770,10 @@
       "registry_name": "mine_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/mine_dungeon_north.json",
           "src/main/resources/assets/slsb/models/block/mine_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/MineDungeonNorthBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/MineDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/blockstates/mine_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Mine Dungeon"
@@ -4787,10 +4787,10 @@
       "registry_name": "mine_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/mine_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/mine_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/MineDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_east.json"
+          "src/main/resources/assets/slsb/models/block/mine_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_east.json",
+          "src/main/resources/assets/slsb/blockstates/mine_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Mine Dungeon"
@@ -4804,10 +4804,10 @@
       "registry_name": "mine_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/mine_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/MineDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/mine_dungeon_south.json"
+          "src/main/resources/assets/slsb/blockstates/mine_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/mine_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Mine Dungeon"
@@ -4821,10 +4821,10 @@
       "registry_name": "mine_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/MineDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/models/block/mine_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/mine_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/mine_dungeon_west.json"
+          "src/main/java/net/clozynoii/slsb/block/MineDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Mine Dungeon"
@@ -4838,10 +4838,10 @@
       "registry_name": "forest_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/forest_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/forest_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/ForestDungeonNorthBlock.java",
-          "src/main/resources/assets/slsb/models/block/forest_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/block/forest_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/item/forest_dungeon_north.json",
+          "src/main/resources/assets/slsb/blockstates/forest_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Forest Dungeon"
@@ -4855,10 +4855,10 @@
       "registry_name": "forest_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/forest_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/forest_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/forest_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/ForestDungeonEastBlock.java"
+          "src/main/resources/assets/slsb/models/item/forest_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/ForestDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/forest_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Forest Dungeon"
@@ -4873,8 +4873,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/ForestDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/block/forest_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/forest_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/forest_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/forest_dungeon_south.json"
         ]
       },
@@ -4891,8 +4891,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/block/forest_dungeon_west.json",
           "src/main/resources/assets/slsb/models/item/forest_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/ForestDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/blockstates/forest_dungeon_west.json"
+          "src/main/resources/assets/slsb/blockstates/forest_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/ForestDungeonWestBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Forest Dungeon"
@@ -4906,10 +4906,10 @@
       "registry_name": "subway_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/SubwayDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/blockstates/subway_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/block/subway_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/subway_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/subway_dungeon_north.json"
+          "src/main/java/net/clozynoii/slsb/block/SubwayDungeonNorthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Subway Dungeon"
@@ -4923,9 +4923,9 @@
       "registry_name": "subway_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/subway_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/SubwayDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/block/subway_dungeon_east.json",
+          "src/main/resources/assets/slsb/blockstates/subway_dungeon_east.json",
           "src/main/resources/assets/slsb/models/item/subway_dungeon_east.json"
         ]
       },
@@ -4940,10 +4940,10 @@
       "registry_name": "subway_dungeon_south",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/item/subway_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/subway_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/SubwayDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/block/subway_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/item/subway_dungeon_south.json"
+          "src/main/resources/assets/slsb/models/block/subway_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Subway Dungeon"
@@ -4957,10 +4957,10 @@
       "registry_name": "subway_dungeon_west",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/item/subway_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/subway_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/subway_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/SubwayDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/item/subway_dungeon_west.json"
+          "src/main/resources/assets/slsb/blockstates/subway_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Subway Dungeon"
@@ -4975,8 +4975,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/RatDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/item/rat_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/rat_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/rat_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/rat_dungeon_enemies.json"
         ]
       },
@@ -4991,10 +4991,10 @@
       "registry_name": "rat_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/rat_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/block/rat_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/RatDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/rat_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/rat_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/rat_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Rat Dungeon"
@@ -5008,9 +5008,9 @@
       "registry_name": "mine_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/mine_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/mine_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/blockstates/mine_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/MineDungeonEnemiesBlock.java"
         ]
       },
@@ -5025,10 +5025,10 @@
       "registry_name": "mine_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/mine_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/mine_dungeon_boss.json",
           "src/main/resources/assets/slsb/blockstates/mine_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/MineDungeonBossBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/MineDungeonBossBlock.java",
+          "src/main/resources/assets/slsb/models/block/mine_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/item/mine_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Mine Dungeon"
@@ -5042,10 +5042,10 @@
       "registry_name": "forest_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/forest_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/forest_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/ForestDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/item/forest_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/forest_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/item/forest_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Forest Dungeon"
@@ -5061,8 +5061,8 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/block/ForestDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/forest_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/forest_dungeon_boss.json",
-          "src/main/resources/assets/slsb/blockstates/forest_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/forest_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/block/forest_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Forest Dungeon"
@@ -5076,10 +5076,10 @@
       "registry_name": "subway_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/subway_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/SubwayDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/blockstates/subway_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/item/subway_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/block/subway_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/blockstates/subway_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Subway Dungeon"
@@ -5094,9 +5094,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/SubwayDungeonBossBlock.java",
+          "src/main/resources/assets/slsb/blockstates/subway_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/block/subway_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/item/subway_dungeon_boss.json",
-          "src/main/resources/assets/slsb/blockstates/subway_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/item/subway_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/E Rank/Subway Dungeon"
@@ -5111,9 +5111,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/CatacombDungeonNorthBlock.java",
-          "src/main/resources/assets/slsb/models/item/catacomb_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/item/catacomb_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5128,9 +5128,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/item/catacomb_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/CatacombDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_east.json"
+          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5146,8 +5146,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/item/catacomb_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/CatacombDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_south.json"
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_south.json",
+          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5163,8 +5163,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/item/catacomb_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/CatacombDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/CatacombDungeonWestBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5178,10 +5178,10 @@
       "registry_name": "catacomb_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/CatacombDungeonEnemiesBlock.java",
+          "src/main/resources/assets/slsb/models/item/catacomb_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/item/catacomb_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_enemies.json",
+          "src/main/java/net/clozynoii/slsb/block/CatacombDungeonEnemiesBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5195,10 +5195,10 @@
       "registry_name": "catacomb_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/CatacombDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/catacomb_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/catacomb_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/catacomb_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Catacomb Dungeon"
@@ -5214,8 +5214,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/block/spider_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/spider_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/spider_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonNorthBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/blockstates/spider_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5229,10 +5229,10 @@
       "registry_name": "spider_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/blockstates/spider_dungeon_east.json",
           "src/main/resources/assets/slsb/models/item/spider_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/spider_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/spider_dungeon_east.json"
+          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/spider_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5247,9 +5247,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/blockstates/spider_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/spider_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/spider_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/block/spider_dungeon_south.json"
+          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonSouthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5263,10 +5263,10 @@
       "registry_name": "spider_dungeon_west",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/spider_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/SpiderDungeonWestBlock.java",
           "src/main/resources/assets/slsb/blockstates/spider_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/item/spider_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/spider_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/item/spider_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5280,10 +5280,10 @@
       "registry_name": "spider_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/spider_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/block/spider_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/SpiderDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/item/spider_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/block/spider_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/blockstates/spider_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5297,10 +5297,10 @@
       "registry_name": "spider_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonBossBlock.java",
           "src/main/resources/assets/slsb/blockstates/spider_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/spider_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/spider_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/block/spider_dungeon_boss.json",
+          "src/main/java/net/clozynoii/slsb/block/SpiderDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Spider Dungeon"
@@ -5314,9 +5314,9 @@
       "registry_name": "sunken_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/sunken_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/sunken_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/SunkenDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/sunken_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/block/sunken_dungeon_north.json",
           "src/main/resources/assets/slsb/blockstates/sunken_dungeon_north.json"
         ]
       },
@@ -5332,8 +5332,8 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/item/sunken_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/sunken_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/SunkenDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/sunken_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/sunken_dungeon_east.json"
         ]
       },
@@ -5348,10 +5348,10 @@
       "registry_name": "sunken_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/sunken_dungeon_south.json",
-          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/SunkenDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/block/sunken_dungeon_south.json"
+          "src/main/resources/assets/slsb/models/block/sunken_dungeon_south.json",
+          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/item/sunken_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Sunken Dungeon"
@@ -5365,10 +5365,10 @@
       "registry_name": "sunken_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/sunken_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/sunken_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/sunken_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/SunkenDungeonWestBlock.java"
+          "src/main/resources/assets/slsb/models/item/sunken_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/SunkenDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/models/block/sunken_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Sunken Dungeon"
@@ -5382,10 +5382,10 @@
       "registry_name": "sunken_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/SunkenDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/sunken_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/item/sunken_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/SunkenDungeonEnemiesBlock.java"
+          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Sunken Dungeon"
@@ -5399,10 +5399,10 @@
       "registry_name": "sunken_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/sunken_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/sunken_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/SunkenDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/sunken_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/sunken_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Sunken Dungeon"
@@ -5416,10 +5416,10 @@
       "registry_name": "ice_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/ice_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/ice_dungeon_north.json",
           "src/main/resources/assets/slsb/models/block/ice_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/IceDungeonNorthBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/IceDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/ice_dungeon_north.json",
+          "src/main/resources/assets/slsb/blockstates/ice_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5433,10 +5433,10 @@
       "registry_name": "ice_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/ice_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/IceDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/ice_dungeon_east.json",
           "src/main/resources/assets/slsb/models/item/ice_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/ice_dungeon_east.json"
+          "src/main/resources/assets/slsb/blockstates/ice_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5450,10 +5450,10 @@
       "registry_name": "ice_dungeon_south",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/IceDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/models/item/ice_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/ice_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/ice_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/IceDungeonSouthBlock.java"
+          "src/main/resources/assets/slsb/models/block/ice_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5467,10 +5467,10 @@
       "registry_name": "ice_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/ice_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/IceDungeonWestBlock.java",
           "src/main/resources/assets/slsb/models/item/ice_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/ice_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/IceDungeonWestBlock.java"
+          "src/main/resources/assets/slsb/models/block/ice_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5484,10 +5484,10 @@
       "registry_name": "ice_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/ice_dungeon_enemies.json",
+          "src/main/java/net/clozynoii/slsb/block/IceDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/ice_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/ice_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/IceDungeonEnemiesBlock.java"
+          "src/main/resources/assets/slsb/models/item/ice_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5501,10 +5501,10 @@
       "registry_name": "ice_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/ice_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/ice_dungeon_boss.json",
           "src/main/resources/assets/slsb/blockstates/ice_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/IceDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/models/block/ice_dungeon_boss.json"
+          "src/main/java/net/clozynoii/slsb/block/IceDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Ice Dungeon"
@@ -5518,9 +5518,9 @@
       "registry_name": "double_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/double_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/double_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/DoubleDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/block/double_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/item/double_dungeon_north.json",
           "src/main/resources/assets/slsb/blockstates/double_dungeon_north.json"
         ]
       },
@@ -5536,8 +5536,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/DoubleDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/item/double_dungeon_east.json",
           "src/main/resources/assets/slsb/models/block/double_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/item/double_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/double_dungeon_east.json"
         ]
       },
@@ -5552,10 +5552,10 @@
       "registry_name": "double_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/DoubleDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/blockstates/double_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/double_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/double_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/double_dungeon_south.json"
+          "src/main/resources/assets/slsb/blockstates/double_dungeon_south.json",
+          "src/main/java/net/clozynoii/slsb/block/DoubleDungeonSouthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Double Dungeon"
@@ -5569,9 +5569,9 @@
       "registry_name": "double_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/DoubleDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/item/double_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/double_dungeon_west.json",
+          "src/main/resources/assets/slsb/models/item/double_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/DoubleDungeonWestBlock.java",
           "src/main/resources/assets/slsb/models/block/double_dungeon_west.json"
         ]
       },
@@ -5587,9 +5587,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/blockstates/double_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/block/double_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/DoubleDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/item/double_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/item/double_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/block/double_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Double Dungeon"
@@ -5604,9 +5604,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/DoubleDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/double_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/block/double_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/item/double_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/item/double_dungeon_boss.json",
+          "src/main/resources/assets/slsb/blockstates/double_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Double Dungeon"
@@ -5620,10 +5620,10 @@
       "registry_name": "library_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/models/block/library_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/library_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/library_dungeon_north.json"
+          "src/main/resources/assets/slsb/blockstates/library_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonNorthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Library Dungeon"
@@ -5637,10 +5637,10 @@
       "registry_name": "library_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/library_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/item/library_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/library_dungeon_east.json"
+          "src/main/resources/assets/slsb/blockstates/library_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/block/library_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonEastBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Library Dungeon"
@@ -5654,10 +5654,10 @@
       "registry_name": "library_dungeon_south",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/models/block/library_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/item/library_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/library_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonSouthBlock.java"
+          "src/main/resources/assets/slsb/models/item/library_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Library Dungeon"
@@ -5688,10 +5688,10 @@
       "registry_name": "library_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/library_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/library_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/LibraryDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/blockstates/library_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/item/library_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/block/library_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Library Dungeon"
@@ -5705,10 +5705,10 @@
       "registry_name": "library_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/library_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/library_dungeon_boss.json",
           "src/main/resources/assets/slsb/blockstates/library_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/models/block/library_dungeon_boss.json"
+          "src/main/java/net/clozynoii/slsb/block/LibraryDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Library Dungeon"
@@ -5722,10 +5722,10 @@
       "registry_name": "maze_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/MazeDungeonNorthBlock.java",
-          "src/main/resources/assets/slsb/blockstates/maze_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/block/maze_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/maze_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/maze_dungeon_north.json"
+          "src/main/resources/assets/slsb/blockstates/maze_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/MazeDungeonNorthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Maze Dungeon"
@@ -5741,8 +5741,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/item/maze_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/maze_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/maze_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/MazeDungeonEastBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/MazeDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/maze_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Maze Dungeon"
@@ -5756,10 +5756,10 @@
       "registry_name": "maze_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/maze_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/maze_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/MazeDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/blockstates/maze_dungeon_south.json"
+          "src/main/resources/assets/slsb/blockstates/maze_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/maze_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Maze Dungeon"
@@ -5773,9 +5773,9 @@
       "registry_name": "maze_dungeon_west",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/maze_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/maze_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/MazeDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/block/maze_dungeon_west.json",
           "src/main/resources/assets/slsb/models/item/maze_dungeon_west.json"
         ]
       },
@@ -5790,9 +5790,9 @@
       "registry_name": "maze_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/MazeDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/blockstates/maze_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/item/maze_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/MazeDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/maze_dungeon_enemies.json"
         ]
       },
@@ -5807,10 +5807,10 @@
       "registry_name": "maze_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/maze_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/maze_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/MazeDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/maze_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/item/maze_dungeon_boss.json",
+          "src/main/resources/assets/slsb/blockstates/maze_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/block/maze_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/D Rank/Maze Dungeon"
@@ -5824,10 +5824,10 @@
       "registry_name": "goblin_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/goblin_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/blockstates/goblin_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/goblin_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/block/goblin_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/goblin_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Goblin Dungeon"
@@ -5841,10 +5841,10 @@
       "registry_name": "goblin_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/goblin_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/block/goblin_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonEastBlock.java"
+          "src/main/resources/assets/slsb/models/item/goblin_dungeon_east.json",
+          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Goblin Dungeon"
@@ -5859,8 +5859,8 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/block/goblin_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/models/item/goblin_dungeon_south.json",
+          "src/main/java/net/clozynoii/slsb/block/GoblinDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/blockstates/goblin_dungeon_south.json"
         ]
       },
@@ -5875,10 +5875,10 @@
       "registry_name": "goblin_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/goblin_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/goblin_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/GoblinDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/item/goblin_dungeon_west.json",
+          "src/main/resources/assets/slsb/models/block/goblin_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Goblin Dungeon"
@@ -5894,8 +5894,8 @@
         "files": [
           "src/main/resources/assets/slsb/blockstates/goblin_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/GoblinDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/item/goblin_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/block/goblin_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/block/goblin_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/goblin_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Goblin Dungeon"
@@ -5909,10 +5909,10 @@
       "registry_name": "goblin_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/block/goblin_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/GoblinDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/goblin_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/goblin_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/goblin_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Goblin Dungeon"
@@ -5926,10 +5926,10 @@
       "registry_name": "sand_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/SandDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/block/sand_dungeon_north.json",
           "src/main/resources/assets/slsb/blockstates/sand_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/sand_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/sand_dungeon_north.json"
+          "src/main/java/net/clozynoii/slsb/block/SandDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/sand_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Sand Dungeon"
@@ -5943,10 +5943,10 @@
       "registry_name": "sand_dungeon_east",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/sand_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/SandDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/item/sand_dungeon_east.json",
-          "src/main/resources/assets/slsb/blockstates/sand_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/sand_dungeon_east.json"
+          "src/main/resources/assets/slsb/blockstates/sand_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Sand Dungeon"
@@ -5961,9 +5961,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/item/sand_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/sand_dungeon_south.json",
+          "src/main/java/net/clozynoii/slsb/block/SandDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/blockstates/sand_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/SandDungeonSouthBlock.java"
+          "src/main/resources/assets/slsb/models/block/sand_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Sand Dungeon"
@@ -5977,10 +5977,10 @@
       "registry_name": "sand_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/SandDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/item/sand_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/sand_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/sand_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/item/sand_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/sand_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/SandDungeonWestBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Sand Dungeon"
@@ -5994,9 +5994,9 @@
       "registry_name": "sand_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/sand_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/item/sand_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/sand_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/sand_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/blockstates/sand_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/SandDungeonEnemiesBlock.java"
         ]
       },
@@ -6011,10 +6011,10 @@
       "registry_name": "sand_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/sand_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/item/sand_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/SandDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/sand_dungeon_boss.json"
+          "src/main/resources/assets/slsb/blockstates/sand_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/block/sand_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/item/sand_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/C Rank/Sand Dungeon"
@@ -6030,8 +6030,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/item/crystal_dungeon_north.json",
           "src/main/resources/assets/slsb/blockstates/crystal_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonNorthBlock.java",
-          "src/main/resources/assets/slsb/models/block/crystal_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/block/crystal_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonNorthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Crystal Dungeon"
@@ -6045,10 +6045,10 @@
       "registry_name": "crystal_dungeon_east",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_east.json",
           "src/main/resources/assets/slsb/models/item/crystal_dungeon_east.json",
           "src/main/resources/assets/slsb/models/block/crystal_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_east.json"
+          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonEastBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Crystal Dungeon"
@@ -6062,9 +6062,9 @@
       "registry_name": "crystal_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/crystal_dungeon_south.json",
           "src/main/resources/assets/slsb/models/block/crystal_dungeon_south.json",
+          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/CrystalDungeonSouthBlock.java"
         ]
       },
@@ -6079,10 +6079,10 @@
       "registry_name": "crystal_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/crystal_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/CrystalDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/models/item/crystal_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/block/crystal_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_west.json",
+          "src/main/resources/assets/slsb/models/item/crystal_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Crystal Dungeon"
@@ -6096,8 +6096,8 @@
       "registry_name": "crystal_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/crystal_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/crystal_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/crystal_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/CrystalDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/crystal_dungeon_enemies.json"
         ]
@@ -6113,10 +6113,10 @@
       "registry_name": "crystal_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/crystal_dungeon_boss.json",
+          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/crystal_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/crystal_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/block/crystal_dungeon_boss.json",
+          "src/main/java/net/clozynoii/slsb/block/CrystalDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Crystal Dungeon"
@@ -6130,10 +6130,10 @@
       "registry_name": "coliseum_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6147,10 +6147,10 @@
       "registry_name": "coliseum_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_east.json",
           "src/main/resources/assets/slsb/models/item/coliseum_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_east.json"
+          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6165,9 +6165,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/item/coliseum_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_south.json"
+          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonSouthBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6181,10 +6181,10 @@
       "registry_name": "coliseum_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonWestBlock.java",
           "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/coliseum_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonWestBlock.java"
+          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6198,10 +6198,10 @@
       "registry_name": "coliseum_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/block/coliseum_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6215,10 +6215,10 @@
       "registry_name": "coliseum_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/block/coliseum_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/item/coliseum_dungeon_boss.json",
+          "src/main/resources/assets/slsb/blockstates/coliseum_dungeon_boss.json",
+          "src/main/java/net/clozynoii/slsb/block/ColiseumDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/B Rank/Coliseum Dungeon"
@@ -6232,10 +6232,10 @@
       "registry_name": "orc_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/OrcDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/models/block/orc_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/orc_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/orc_dungeon_north.json"
+          "src/main/java/net/clozynoii/slsb/block/OrcDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/blockstates/orc_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/item/orc_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Orc Dungeon"
@@ -6249,9 +6249,9 @@
       "registry_name": "orc_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/orc_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/OrcDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/item/orc_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/OrcDungeonEastBlock.java",
+          "src/main/resources/assets/slsb/models/block/orc_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/orc_dungeon_east.json"
         ]
       },
@@ -6267,9 +6267,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/item/orc_dungeon_south.json",
+          "src/main/java/net/clozynoii/slsb/block/OrcDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/blockstates/orc_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/block/orc_dungeon_south.json",
-          "src/main/java/net/clozynoii/slsb/block/OrcDungeonSouthBlock.java"
+          "src/main/resources/assets/slsb/models/block/orc_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Orc Dungeon"
@@ -6283,10 +6283,10 @@
       "registry_name": "orc_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/orc_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/orc_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/orc_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/OrcDungeonWestBlock.java"
+          "src/main/java/net/clozynoii/slsb/block/OrcDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/models/item/orc_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/orc_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Orc Dungeon"
@@ -6300,10 +6300,10 @@
       "registry_name": "orc_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/orc_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/orc_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/OrcDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/item/orc_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/orc_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/item/orc_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Orc Dungeon"
@@ -6317,10 +6317,10 @@
       "registry_name": "orc_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/OrcDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/orc_dungeon_boss.json",
           "src/main/resources/assets/slsb/blockstates/orc_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/orc_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/block/orc_dungeon_boss.json",
+          "src/main/java/net/clozynoii/slsb/block/OrcDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Orc Dungeon"
@@ -6334,10 +6334,10 @@
       "registry_name": "lich_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/lich_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/lich_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/LichDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/LichDungeonNorthBlock.java"
+          "src/main/resources/assets/slsb/blockstates/lich_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Lich Dungeon"
@@ -6352,8 +6352,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/LichDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/item/lich_dungeon_east.json",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/item/lich_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/lich_dungeon_east.json"
         ]
       },
@@ -6368,8 +6368,8 @@
       "registry_name": "lich_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/LichDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/blockstates/lich_dungeon_south.json",
+          "src/main/java/net/clozynoii/slsb/block/LichDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_south.json",
           "src/main/resources/assets/slsb/models/item/lich_dungeon_south.json"
         ]
@@ -6385,8 +6385,8 @@
       "registry_name": "lich_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/lich_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/lich_dungeon_west.json",
           "src/main/resources/assets/slsb/models/item/lich_dungeon_west.json",
           "src/main/java/net/clozynoii/slsb/block/LichDungeonWestBlock.java"
         ]
@@ -6402,9 +6402,9 @@
       "registry_name": "lich_dungeon_enemies",
       "metadata": {
         "files": [
+          "src/main/java/net/clozynoii/slsb/block/LichDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/blockstates/lich_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/item/lich_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/LichDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_enemies.json"
         ]
       },
@@ -6419,10 +6419,10 @@
       "registry_name": "lich_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/LichDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/block/lich_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/item/lich_dungeon_boss.json",
-          "src/main/resources/assets/slsb/blockstates/lich_dungeon_boss.json"
+          "src/main/java/net/clozynoii/slsb/block/LichDungeonBossBlock.java",
+          "src/main/resources/assets/slsb/blockstates/lich_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/item/lich_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Lich Dungeon"
@@ -6436,9 +6436,9 @@
       "registry_name": "naga_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/naga_dungeon_north.json",
-          "src/main/resources/assets/slsb/blockstates/naga_dungeon_north.json",
           "src/main/resources/assets/slsb/models/item/naga_dungeon_north.json",
+          "src/main/resources/assets/slsb/blockstates/naga_dungeon_north.json",
+          "src/main/resources/assets/slsb/models/block/naga_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/NagaDungeonNorthBlock.java"
         ]
       },
@@ -6453,10 +6453,10 @@
       "registry_name": "naga_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/naga_dungeon_east.json",
+          "src/main/resources/assets/slsb/blockstates/naga_dungeon_east.json",
           "src/main/resources/assets/slsb/models/block/naga_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/NagaDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/blockstates/naga_dungeon_east.json"
+          "src/main/resources/assets/slsb/models/item/naga_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Naga Dungeon"
@@ -6470,10 +6470,10 @@
       "registry_name": "naga_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/naga_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/NagaDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/models/block/naga_dungeon_south.json",
-          "src/main/resources/assets/slsb/blockstates/naga_dungeon_south.json"
+          "src/main/resources/assets/slsb/blockstates/naga_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/item/naga_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Naga Dungeon"
@@ -6487,10 +6487,10 @@
       "registry_name": "naga_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/NagaDungeonWestBlock.java",
           "src/main/resources/assets/slsb/models/item/naga_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/naga_dungeon_west.json",
-          "src/main/resources/assets/slsb/blockstates/naga_dungeon_west.json"
+          "src/main/java/net/clozynoii/slsb/block/NagaDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/blockstates/naga_dungeon_west.json",
+          "src/main/resources/assets/slsb/models/block/naga_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Naga Dungeon"
@@ -6505,9 +6505,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/blockstates/naga_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/NagaDungeonEnemiesBlock.java",
+          "src/main/resources/assets/slsb/models/item/naga_dungeon_enemies.json",
           "src/main/resources/assets/slsb/models/block/naga_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/models/item/naga_dungeon_enemies.json"
+          "src/main/java/net/clozynoii/slsb/block/NagaDungeonEnemiesBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Naga Dungeon"
@@ -6522,9 +6522,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/block/naga_dungeon_boss.json",
-          "src/main/resources/assets/slsb/blockstates/naga_dungeon_boss.json",
+          "src/main/java/net/clozynoii/slsb/block/NagaDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/naga_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/NagaDungeonBossBlock.java"
+          "src/main/resources/assets/slsb/blockstates/naga_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/A Rank/Naga Dungeon"
@@ -6538,10 +6538,10 @@
       "registry_name": "dragon_dungeon_north",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/dragon_dungeon_north.json",
           "src/main/java/net/clozynoii/slsb/block/DragonDungeonNorthBlock.java",
           "src/main/resources/assets/slsb/blockstates/dragon_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/dragon_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/block/dragon_dungeon_north.json"
+          "src/main/resources/assets/slsb/models/item/dragon_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Dragon Dungeon"
@@ -6556,8 +6556,8 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/models/block/dragon_dungeon_east.json",
-          "src/main/java/net/clozynoii/slsb/block/DragonDungeonEastBlock.java",
           "src/main/resources/assets/slsb/models/item/dragon_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/DragonDungeonEastBlock.java",
           "src/main/resources/assets/slsb/blockstates/dragon_dungeon_east.json"
         ]
       },
@@ -6572,10 +6572,10 @@
       "registry_name": "dragon_dungeon_south",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/item/dragon_dungeon_south.json",
           "src/main/resources/assets/slsb/models/block/dragon_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/DragonDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_south.json",
-          "src/main/resources/assets/slsb/models/item/dragon_dungeon_south.json"
+          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_south.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Dragon Dungeon"
@@ -6589,10 +6589,10 @@
       "registry_name": "dragon_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_west.json",
           "src/main/resources/assets/slsb/models/item/dragon_dungeon_west.json",
-          "src/main/resources/assets/slsb/models/block/dragon_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/DragonDungeonWestBlock.java"
+          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/DragonDungeonWestBlock.java",
+          "src/main/resources/assets/slsb/models/block/dragon_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Dragon Dungeon"
@@ -6606,10 +6606,10 @@
       "registry_name": "dragon_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/dragon_dungeon_enemies.json",
-          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/block/dragon_dungeon_enemies.json",
           "src/main/java/net/clozynoii/slsb/block/DragonDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/block/dragon_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_enemies.json",
+          "src/main/resources/assets/slsb/models/item/dragon_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Dragon Dungeon"
@@ -6623,9 +6623,9 @@
       "registry_name": "dragon_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/item/dragon_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/DragonDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/blockstates/dragon_dungeon_boss.json",
           "src/main/resources/assets/slsb/models/block/dragon_dungeon_boss.json"
         ]
       },
@@ -6640,10 +6640,10 @@
       "registry_name": "giant_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/giant_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/giant_dungeon_north.json",
           "src/main/resources/assets/slsb/models/block/giant_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/GiantDungeonNorthBlock.java"
+          "src/main/resources/assets/slsb/blockstates/giant_dungeon_north.json",
+          "src/main/java/net/clozynoii/slsb/block/GiantDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/giant_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Giant Dungeon"
@@ -6657,10 +6657,10 @@
       "registry_name": "giant_dungeon_east",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/GiantDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/item/giant_dungeon_east.json",
           "src/main/resources/assets/slsb/blockstates/giant_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/giant_dungeon_east.json"
+          "src/main/resources/assets/slsb/models/block/giant_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/item/giant_dungeon_east.json",
+          "src/main/java/net/clozynoii/slsb/block/GiantDungeonEastBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Giant Dungeon"
@@ -6674,9 +6674,9 @@
       "registry_name": "giant_dungeon_south",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/giant_dungeon_south.json",
           "src/main/java/net/clozynoii/slsb/block/GiantDungeonSouthBlock.java",
           "src/main/resources/assets/slsb/blockstates/giant_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/item/giant_dungeon_south.json",
           "src/main/resources/assets/slsb/models/block/giant_dungeon_south.json"
         ]
       },
@@ -6691,10 +6691,10 @@
       "registry_name": "giant_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/giant_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/GiantDungeonWestBlock.java",
           "src/main/resources/assets/slsb/models/block/giant_dungeon_west.json",
           "src/main/resources/assets/slsb/blockstates/giant_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/GiantDungeonWestBlock.java"
+          "src/main/resources/assets/slsb/models/item/giant_dungeon_west.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Giant Dungeon"
@@ -6710,8 +6710,8 @@
         "files": [
           "src/main/resources/assets/slsb/models/item/giant_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/giant_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/GiantDungeonEnemiesBlock.java",
-          "src/main/resources/assets/slsb/models/block/giant_dungeon_enemies.json"
+          "src/main/resources/assets/slsb/models/block/giant_dungeon_enemies.json",
+          "src/main/java/net/clozynoii/slsb/block/GiantDungeonEnemiesBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Giant Dungeon"
@@ -6725,10 +6725,10 @@
       "registry_name": "giant_dungeon_boss",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/block/giant_dungeon_boss.json",
           "src/main/resources/assets/slsb/blockstates/giant_dungeon_boss.json",
-          "src/main/java/net/clozynoii/slsb/block/GiantDungeonBossBlock.java",
           "src/main/resources/assets/slsb/models/item/giant_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/giant_dungeon_boss.json"
+          "src/main/java/net/clozynoii/slsb/block/GiantDungeonBossBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Giant Dungeon"
@@ -6742,10 +6742,10 @@
       "registry_name": "cathedral_dungeon_north",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_north.json",
-          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_north.json",
           "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_north.json",
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_north.json"
+          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonNorthBlock.java",
+          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_north.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Cathedral Dungeon"
@@ -6760,9 +6760,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_east.json",
-          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_east.json",
           "src/main/java/net/clozynoii/slsb/block/CathedralDungeonEastBlock.java",
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_east.json"
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_east.json",
+          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_east.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Cathedral Dungeon"
@@ -6777,8 +6777,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/block/CathedralDungeonSouthBlock.java",
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_south.json",
           "src/main/resources/assets/slsb/models/block/cathedral_dungeon_south.json",
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_south.json",
           "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_south.json"
         ]
       },
@@ -6793,10 +6793,10 @@
       "registry_name": "cathedral_dungeon_west",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_west.json",
           "src/main/resources/assets/slsb/models/block/cathedral_dungeon_west.json",
-          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonWestBlock.java",
-          "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_west.json"
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_west.json",
+          "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_west.json",
+          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonWestBlock.java"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Cathedral Dungeon"
@@ -6810,10 +6810,10 @@
       "registry_name": "cathedral_dungeon_enemies",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_enemies.json",
+          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonEnemiesBlock.java",
           "src/main/resources/assets/slsb/models/block/cathedral_dungeon_enemies.json",
           "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_enemies.json",
-          "src/main/java/net/clozynoii/slsb/block/CathedralDungeonEnemiesBlock.java"
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_enemies.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Cathedral Dungeon"
@@ -6827,10 +6827,10 @@
       "registry_name": "cathedral_dungeon_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_boss.json",
-          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_boss.json",
           "src/main/java/net/clozynoii/slsb/block/CathedralDungeonBossBlock.java",
-          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_boss.json"
+          "src/main/resources/assets/slsb/models/block/cathedral_dungeon_boss.json",
+          "src/main/resources/assets/slsb/models/item/cathedral_dungeon_boss.json",
+          "src/main/resources/assets/slsb/blockstates/cathedral_dungeon_boss.json"
         ]
       },
       "path": "~/Blocks/Dungeon Blocks/S Rank/Cathedral Dungeon"
@@ -6972,16 +6972,16 @@
       "registry_name": "red_gate_medium",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/block/RedGateMediumBlock.java",
           "src/main/java/net/clozynoii/slsb/block/entity/RedGateMediumTileEntity.java",
-          "src/main/resources/assets/slsb/models/item/red_gate_medium.json",
-          "src/main/resources/assets/slsb/models/custom/red_gate_medium_particle.json",
           "src/main/resources/assets/slsb/blockstates/red_gate_medium.json",
-          "src/main/java/net/clozynoii/slsb/block/model/RedGateMediumBlockModel.java",
-          "src/main/java/net/clozynoii/slsb/block/display/RedGateMediumDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/RedGateMediumBlock.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/RedGateMediumTileRenderer.java",
           "src/main/java/net/clozynoii/slsb/block/renderer/RedGateMediumDisplayItemRenderer.java",
-          "src/main/java/net/clozynoii/slsb/block/model/RedGateMediumDisplayModel.java"
+          "src/main/java/net/clozynoii/slsb/block/model/RedGateMediumDisplayModel.java",
+          "src/main/resources/assets/slsb/models/item/red_gate_medium.json",
+          "src/main/resources/assets/slsb/models/custom/red_gate_medium_particle.json",
+          "src/main/java/net/clozynoii/slsb/block/model/RedGateMediumBlockModel.java",
+          "src/main/java/net/clozynoii/slsb/block/display/RedGateMediumDisplayItem.java"
         ]
       },
       "path": "~/Blocks/Gates"
@@ -6995,9 +6995,9 @@
       "registry_name": "rat_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension_type/rat_dungeon.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/RatDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension/rat_dungeon.json"
+          "src/main/resources/data/slsb/dimension/rat_dungeon.json",
+          "src/main/resources/data/slsb/dimension_type/rat_dungeon.json"
         ]
       },
       "path": "~/Dimensions/E Rank"
@@ -7027,9 +7027,9 @@
       "registry_name": "forest_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension_type/forest_dungeon.json",
           "src/main/resources/data/slsb/dimension/forest_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/ForestDungeonDimension.java"
+          "src/main/java/net/clozynoii/slsb/world/dimension/ForestDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension_type/forest_dungeon.json"
         ]
       },
       "path": "~/Dimensions/E Rank"
@@ -7044,8 +7044,8 @@
       "metadata": {
         "files": [
           "src/main/resources/data/slsb/dimension_type/hapjeong_dungeon.json",
-          "src/main/resources/data/slsb/dimension/hapjeong_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/HapjeongDungeonDimension.java"
+          "src/main/java/net/clozynoii/slsb/world/dimension/HapjeongDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension/hapjeong_dungeon.json"
         ]
       },
       "path": "~/Dimensions/E Rank"
@@ -7059,8 +7059,8 @@
       "registry_name": "double_dungeon",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/dimension/DoubleDungeonDimension.java",
           "src/main/resources/data/slsb/dimension/double_dungeon.json",
+          "src/main/java/net/clozynoii/slsb/world/dimension/DoubleDungeonDimension.java",
           "src/main/resources/data/slsb/dimension_type/double_dungeon.json"
         ]
       },
@@ -7075,9 +7075,9 @@
       "registry_name": "catacomb_dungeon",
       "metadata": {
         "files": [
+          "src/main/resources/data/slsb/dimension/catacomb_dungeon.json",
           "src/main/resources/data/slsb/dimension_type/catacomb_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/CatacombDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension/catacomb_dungeon.json"
+          "src/main/java/net/clozynoii/slsb/world/dimension/CatacombDungeonDimension.java"
         ]
       },
       "path": "~/Dimensions/D Rank"
@@ -7091,8 +7091,8 @@
       "registry_name": "library_dungeon",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/dimension/LibraryDungeonDimension.java",
           "src/main/resources/data/slsb/dimension_type/library_dungeon.json",
+          "src/main/java/net/clozynoii/slsb/world/dimension/LibraryDungeonDimension.java",
           "src/main/resources/data/slsb/dimension/library_dungeon.json"
         ]
       },
@@ -7108,8 +7108,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/world/dimension/MazeDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension/maze_dungeon.json",
-          "src/main/resources/data/slsb/dimension_type/maze_dungeon.json"
+          "src/main/resources/data/slsb/dimension_type/maze_dungeon.json",
+          "src/main/resources/data/slsb/dimension/maze_dungeon.json"
         ]
       },
       "path": "~/Dimensions/D Rank"
@@ -7123,8 +7123,8 @@
       "registry_name": "insect_dungeon",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/dimension/InsectDungeonDimension.java",
           "src/main/resources/data/slsb/dimension_type/insect_dungeon.json",
+          "src/main/java/net/clozynoii/slsb/world/dimension/InsectDungeonDimension.java",
           "src/main/resources/data/slsb/dimension/insect_dungeon.json"
         ]
       },
@@ -7140,8 +7140,8 @@
       "metadata": {
         "files": [
           "src/main/resources/data/slsb/dimension/goblin_dungeon.json",
-          "src/main/resources/data/slsb/dimension_type/goblin_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/GoblinDungeonDimension.java"
+          "src/main/java/net/clozynoii/slsb/world/dimension/GoblinDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension_type/goblin_dungeon.json"
         ]
       },
       "path": "~/Dimensions/C Rank"
@@ -7155,9 +7155,9 @@
       "registry_name": "sandy_dungeon",
       "metadata": {
         "files": [
+          "src/main/resources/data/slsb/dimension_type/sandy_dungeon.json",
           "src/main/resources/data/slsb/dimension/sandy_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/SandyDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension_type/sandy_dungeon.json"
+          "src/main/java/net/clozynoii/slsb/world/dimension/SandyDungeonDimension.java"
         ]
       },
       "path": "~/Dimensions/C Rank"
@@ -7171,9 +7171,9 @@
       "registry_name": "sunken_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension_type/sunken_dungeon.json",
           "src/main/resources/data/slsb/dimension/sunken_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/SunkenDungeonDimension.java"
+          "src/main/java/net/clozynoii/slsb/world/dimension/SunkenDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension_type/sunken_dungeon.json"
         ]
       },
       "path": "~/Dimensions/B Rank"
@@ -7187,9 +7187,9 @@
       "registry_name": "crystal_dungeon",
       "metadata": {
         "files": [
+          "src/main/resources/data/slsb/dimension_type/crystal_dungeon.json",
           "src/main/resources/data/slsb/dimension/crystal_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/CrystalDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension_type/crystal_dungeon.json"
+          "src/main/java/net/clozynoii/slsb/world/dimension/CrystalDungeonDimension.java"
         ]
       },
       "path": "~/Dimensions/B Rank"
@@ -7204,8 +7204,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/world/dimension/ColiseumDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension_type/coliseum_dungeon.json",
-          "src/main/resources/data/slsb/dimension/coliseum_dungeon.json"
+          "src/main/resources/data/slsb/dimension/coliseum_dungeon.json",
+          "src/main/resources/data/slsb/dimension_type/coliseum_dungeon.json"
         ]
       },
       "path": "~/Dimensions/B Rank"
@@ -7235,9 +7235,9 @@
       "registry_name": "orc_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension/orc_dungeon.json",
+          "src/main/resources/data/slsb/dimension_type/orc_dungeon.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/OrcDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension_type/orc_dungeon.json"
+          "src/main/resources/data/slsb/dimension/orc_dungeon.json"
         ]
       },
       "path": "~/Dimensions/A Rank"
@@ -7251,8 +7251,8 @@
       "registry_name": "lich_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension_type/lich_dungeon.json",
           "src/main/resources/data/slsb/dimension/lich_dungeon.json",
+          "src/main/resources/data/slsb/dimension_type/lich_dungeon.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/LichDungeonDimension.java"
         ]
       },
@@ -7267,9 +7267,9 @@
       "registry_name": "naga_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension/naga_dungeon.json",
+          "src/main/java/net/clozynoii/slsb/world/dimension/NagaDungeonDimension.java",
           "src/main/resources/data/slsb/dimension_type/naga_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/NagaDungeonDimension.java"
+          "src/main/resources/data/slsb/dimension/naga_dungeon.json"
         ]
       },
       "path": "~/Dimensions/A Rank"
@@ -7283,9 +7283,9 @@
       "registry_name": "dragon_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension_type/dragon_dungeon.json",
           "src/main/resources/data/slsb/dimension/dragon_dungeon.json",
-          "src/main/java/net/clozynoii/slsb/world/dimension/DragonDungeonDimension.java"
+          "src/main/java/net/clozynoii/slsb/world/dimension/DragonDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension_type/dragon_dungeon.json"
         ]
       },
       "path": "~/Dimensions/S Rank"
@@ -7299,9 +7299,9 @@
       "registry_name": "giant_dungeon",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/dimension/GiantDungeonDimension.java",
           "src/main/resources/data/slsb/dimension/giant_dungeon.json",
-          "src/main/resources/data/slsb/dimension_type/giant_dungeon.json"
+          "src/main/resources/data/slsb/dimension_type/giant_dungeon.json",
+          "src/main/java/net/clozynoii/slsb/world/dimension/GiantDungeonDimension.java"
         ]
       },
       "path": "~/Dimensions/S Rank"
@@ -7315,8 +7315,8 @@
       "registry_name": "citadel_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension/citadel_dungeon.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/CitadelDungeonDimension.java",
+          "src/main/resources/data/slsb/dimension/citadel_dungeon.json",
           "src/main/resources/data/slsb/dimension_type/citadel_dungeon.json"
         ]
       },
@@ -7332,8 +7332,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/world/dimension/DemonCastleDimension.java",
-          "src/main/resources/data/slsb/dimension/demon_castle.json",
-          "src/main/resources/data/slsb/dimension_type/demon_castle.json"
+          "src/main/resources/data/slsb/dimension_type/demon_castle.json",
+          "src/main/resources/data/slsb/dimension/demon_castle.json"
         ]
       },
       "path": "~/Dimensions/S Rank"
@@ -7347,8 +7347,8 @@
       "registry_name": "penalty_zone",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension/penalty_zone.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/PenaltyZoneDimension.java",
+          "src/main/resources/data/slsb/dimension/penalty_zone.json",
           "src/main/resources/data/slsb/dimension_type/penalty_zone.json"
         ]
       },
@@ -7363,9 +7363,9 @@
       "registry_name": "jog_change_dungeon",
       "metadata": {
         "files": [
-          "src/main/resources/data/slsb/dimension/jog_change_dungeon.json",
+          "src/main/resources/data/slsb/dimension_type/jog_change_dungeon.json",
           "src/main/java/net/clozynoii/slsb/world/dimension/JogChangeDungeonDimension.java",
-          "src/main/resources/data/slsb/dimension_type/jog_change_dungeon.json"
+          "src/main/resources/data/slsb/dimension/jog_change_dungeon.json"
         ]
       },
       "path": "~/Dimensions/B Rank"
@@ -7873,8 +7873,8 @@
       "registry_name": "wind_barrier_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/client/renderer/WindBarrierMobRenderer.java",
-          "src/main/java/net/clozynoii/slsb/entity/WindBarrierMobEntity.java"
+          "src/main/java/net/clozynoii/slsb/entity/WindBarrierMobEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/WindBarrierMobRenderer.java"
         ]
       },
       "path": "~/Mobs/Misc"
@@ -8058,8 +8058,8 @@
       "registry_name": "c_rank_essence_stone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/CRankEssenceStoneItem.java",
-          "src/main/resources/assets/slsb/models/item/c_rank_essence_stone.json"
+          "src/main/resources/assets/slsb/models/item/c_rank_essence_stone.json",
+          "src/main/java/net/clozynoii/slsb/item/CRankEssenceStoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -8093,8 +8093,8 @@
       "registry_name": "s_rank_essence_stone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/SRankEssenceStoneItem.java",
-          "src/main/resources/assets/slsb/models/item/s_rank_essence_stone.json"
+          "src/main/resources/assets/slsb/models/item/s_rank_essence_stone.json",
+          "src/main/java/net/clozynoii/slsb/item/SRankEssenceStoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -8155,8 +8155,8 @@
       "registry_name": "a_rank_essence_stone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/ARankEssenceStoneItem.java",
-          "src/main/resources/assets/slsb/models/item/a_rank_essence_stone.json"
+          "src/main/resources/assets/slsb/models/item/a_rank_essence_stone.json",
+          "src/main/java/net/clozynoii/slsb/item/ARankEssenceStoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -8202,8 +8202,8 @@
       "registry_name": "e_rank_essence_stone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/ERankEssenceStoneItem.java",
-          "src/main/resources/assets/slsb/models/item/e_rank_essence_stone.json"
+          "src/main/resources/assets/slsb/models/item/e_rank_essence_stone.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankEssenceStoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -8217,8 +8217,8 @@
       "registry_name": "b_rank_essence_stone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/BRankEssenceStoneItem.java",
-          "src/main/resources/assets/slsb/models/item/b_rank_essence_stone.json"
+          "src/main/resources/assets/slsb/models/item/b_rank_essence_stone.json",
+          "src/main/java/net/clozynoii/slsb/item/BRankEssenceStoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -8463,10 +8463,10 @@
       "registry_name": "giant_rat",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/giant_rat_spawn_egg.json",
           "src/main/java/net/clozynoii/slsb/entity/model/GiantRatModel.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatRenderer.java",
           "src/main/java/net/clozynoii/slsb/entity/GiantRatEntity.java",
-          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatRenderer.java"
+          "src/main/resources/assets/slsb/models/item/giant_rat_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/E Rank"
@@ -8522,10 +8522,10 @@
       "registry_name": "giant_rat_boss",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/entity/GiantRatBossEntity.java",
-          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatBossModel.java",
+          "src/main/resources/assets/slsb/models/item/giant_rat_boss_spawn_egg.json",
           "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatBossRenderer.java",
-          "src/main/resources/assets/slsb/models/item/giant_rat_boss_spawn_egg.json"
+          "src/main/java/net/clozynoii/slsb/entity/GiantRatBossEntity.java",
+          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatBossModel.java"
         ]
       },
       "path": "~/Mobs/D Rank"
@@ -8539,8 +8539,8 @@
       "registry_name": "hunter_info_menu",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterInfoMenuMenu.java",
-          "src/main/java/net/clozynoii/slsb/client/gui/HunterInfoMenuScreen.java"
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterInfoMenuScreen.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterInfoMenuMenu.java"
         ]
       },
       "path": "~/GUI"
@@ -8691,8 +8691,8 @@
       "registry_name": "heal_effect",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/client/particle/HealEffectParticle.java",
-          "src/main/resources/assets/slsb/particles/heal_effect.json"
+          "src/main/resources/assets/slsb/particles/heal_effect.json",
+          "src/main/java/net/clozynoii/slsb/client/particle/HealEffectParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -9833,8 +9833,8 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/entity/model/UndeadKnightBossModel.java",
           "src/main/java/net/clozynoii/slsb/entity/UndeadKnightBossEntity.java",
-          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadKnightBossRenderer.java",
-          "src/main/resources/assets/slsb/models/item/undead_knight_boss_spawn_egg.json"
+          "src/main/resources/assets/slsb/models/item/undead_knight_boss_spawn_egg.json",
+          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadKnightBossRenderer.java"
         ]
       },
       "path": "~/Mobs/C Rank"
@@ -9884,8 +9884,8 @@
       "registry_name": "phone",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/PhoneItem.java",
-          "src/main/resources/assets/slsb/models/item/phone.json"
+          "src/main/resources/assets/slsb/models/item/phone.json",
+          "src/main/java/net/clozynoii/slsb/item/PhoneItem.java"
         ]
       },
       "path": "~/Items"
@@ -9936,7 +9936,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneBackupScreen.java",
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java"
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneBackupMenu.java",
+          "src/main/java/net/clozynoii/slsb/network/HunterPhoneBackupButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -9950,9 +9951,9 @@
       "registry_name": "hunter_phone_claim",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneClaimScreen.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneClaimMenu.java",
           "src/main/java/net/clozynoii/slsb/network/HunterPhoneClaimButtonMessage.java",
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneClaimMenu.java"
+          "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneClaimScreen.java"
         ]
       },
       "path": "~/GUI"
@@ -9966,9 +9967,9 @@
       "registry_name": "hunter_phone_purchase",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhonePurchaseMenu.java",
           "src/main/java/net/clozynoii/slsb/client/gui/HunterPhonePurchaseScreen.java",
-          "src/main/java/net/clozynoii/slsb/network/HunterPhonePurchaseButtonMessage.java"
+          "src/main/java/net/clozynoii/slsb/network/HunterPhonePurchaseButtonMessage.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhonePurchaseMenu.java"
         ]
       },
       "path": "~/GUI"
@@ -10288,9 +10289,9 @@
       "registry_name": "hunter_phone_new_price",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/network/HunterPhoneNewPriceButtonMessage.java",
+          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneNewPriceMenu.java",
           "src/main/java/net/clozynoii/slsb/client/gui/HunterPhoneNewPriceScreen.java",
-          "src/main/java/net/clozynoii/slsb/world/inventory/HunterPhoneNewPriceMenu.java"
+          "src/main/java/net/clozynoii/slsb/network/HunterPhoneNewPriceButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -10330,22 +10331,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -10375,6 +10360,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/clozynoii/slsb/entity/HunterNPCEntity.java",
+          "src/main/resources/assets/slsb/models/item/hunter_npc_spawn_egg.json",
           "src/main/java/net/clozynoii/slsb/client/renderer/HunterNPCRenderer.java"
         ]
       },
@@ -10427,7 +10413,12 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SetLevelProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
       },
       "path": "~/Procedures/Commands/Stats"
     },
@@ -10458,7 +10449,12 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SystemReturnSkillPointsProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/GUI/System"
     },
@@ -10564,10 +10560,10 @@
       "registry_name": "e_rank_spell_book",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/e_rank_spell_book.json",
-          "src/main/java/net/clozynoii/slsb/item/renderer/ERankSpellBookItemRenderer.java",
           "src/main/java/net/clozynoii/slsb/item/model/ERankSpellBookItemModel.java",
-          "src/main/java/net/clozynoii/slsb/item/ERankSpellBookItem.java"
+          "src/main/resources/assets/slsb/models/item/e_rank_spell_book.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankSpellBookItem.java",
+          "src/main/java/net/clozynoii/slsb/item/renderer/ERankSpellBookItemRenderer.java"
         ]
       },
       "path": "~/Weapons"
@@ -10712,7 +10708,12 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SystemReturnLevelProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/GUI/System"
     },
@@ -10784,7 +10785,16 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SetEXPProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/Commands/Stats"
     },
@@ -10871,7 +10881,12 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SetTitleCMDProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
       },
       "path": "~/Procedures/Commands"
     },
@@ -10940,7 +10955,12 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/procedures/SystemReturnTitleProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/GUI/System"
     },
@@ -11330,6 +11350,169 @@
         ]
       },
       "path": "~/GUI"
+    },
+    {
+      "name": "PushupsValue",
+      "type": "procedure",
+      "sortid": 531,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pushups_value",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PushupsValueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "SitupsValue",
+      "type": "procedure",
+      "sortid": 532,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "situps_value",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SitupsValueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "SquatsValue",
+      "type": "procedure",
+      "sortid": 533,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "squats_value",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SquatsValueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "RunningValue",
+      "type": "procedure",
+      "sortid": 534,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "running_value",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/RunningValueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "Train",
+      "type": "keybind",
+      "sortid": 536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "train",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/network/TrainMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "SetupAnimations",
+      "type": "procedure",
+      "sortid": 537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setup_animations",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SetupAnimationsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "TrainingCooldown",
+      "type": "potioneffect",
+      "sortid": 538,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "training_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/potion/TrainingCooldownMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "TrainOnKeyPressed",
+      "type": "procedure",
+      "sortid": 539,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "train_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/TrainOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
     }
   ],
   "variable_elements": [
@@ -11824,6 +12007,48 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "Quest",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Pushups",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Situps",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Squats",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Running",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Crouched",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "TrainingType",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -11842,12 +12067,14 @@
       "effect.slsb.wind_burst_active": "Wind Burst",
       "block.slsb.blue_gate_medium": "Blue Gate Medium",
       "item_group.slsb.solo_leveling_items": "Solo Leveling: Items",
-      "effect.slsb.overwhelmed": "Overwhelmed",
       "block.slsb.ice_dungeon_south": "Ice Dungeon South",
+      "effect.slsb.overwhelmed": "Overwhelmed",
+      "item.slsb.e_rank_staff": "E-Rank Staff",
       "item.slsb.c_rank_essence_stone": "§aC-Rank Essence Stone",
       "block.slsb.double_dungeon_west": "Double Dungeon West",
       "block.slsb.library_dungeon_north": "Library Dungeon North",
       "block.slsb.subway_dungeon_boss": "Subway Dungeon Boss",
+      "item.slsb.e_rank_dagger": "E-Rank Dagger",
       "block.slsb.naga_dungeon_boss": "Naga Dungeon Boss",
       "block.slsb.sand_dungeon_south": "Sand Dungeon South",
       "gui.slsb.hunter_info_menu.label_as_a_verified_hunter": "§8As A Verified Hunter",
@@ -11866,15 +12093,16 @@
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
-      "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
+      "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
       "block.slsb.cathedral_dungeon_south": "Cathedral Dungeon South",
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
-      "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
+      "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "item.slsb.e_rank_tanker_armor_leggings": "E-Rank Tanker Leggings",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
+      "gui.slsb.system_daily_quest.label_has_arrived": "Has Arrived.",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
       "block.slsb.catacomb_dungeon_east": "Catacomb Dungeon East",
       "item_group.slsb.solo_leveling_blocks": "Solo Leveling: Blocks",
@@ -11884,13 +12112,15 @@
       "block.slsb.crystal_dungeon_south": "Crystal Dungeon South",
       "block.slsb.double_dungeon_boss": "Double Dungeon Boss",
       "block.slsb.catacomb_dungeon_west": "Catacomb Dungeon West",
+      "gui.slsb.system_daily_quest.label_ssnssbsslgoal": "§n§b§lGoal",
       "block.slsb.dragon_dungeon_enemies": "Dragon Dungeon Enemies",
       "advancements.healer_class.descr": "Become the Healer Class.",
       "block.slsb.dragon_dungeon_west": "Dragon Dungeon West",
       "block.slsb.catacomb_dungeon_south": "Catacomb Dungeon South",
       "block.slsb.coliseum_dungeon_south": "Coliseum Dungeon South",
-      "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
+      "item.slsb.e_rank_shield": "E-Rank Shield",
       "item_group.slsb.solo_leveling_armor": "Solo Leveling: Armor",
+      "gui.slsb.hunter_phone_claim.label_gatetimer": "GateTimer",
       "key.categories.slsb": "Solo Leveling: System Break",
       "entity.slsb.whirlwind_entity": "Whirlwind",
       "effect.slsb.evade": "Evasion",
@@ -11898,8 +12128,8 @@
       "block.slsb.mine_dungeon_east": "Mine Dungeon East",
       "item.slsb.mana_crystal": "§bMana Crystal",
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
-      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
+      "block.slsb.maze_dungeon_west": "Maze Dungeon West",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -11910,6 +12140,7 @@
       "effect.slsb.charged": "Charged",
       "block.slsb.cathedral_dungeon_boss": "Cathedral Dungeon Boss",
       "block.slsb.awakening_orb": "Awakening Orb",
+      "key.slsb.speed_toggle": "Speed Toggle (Double-Tap)",
       "block.slsb.subway_dungeon_enemies": "Subway Dungeon Enemies",
       "block.slsb.coliseum_dungeon_boss": "Coliseum Dungeon Boss",
       "block.slsb.ice_dungeon_boss": "Ice Dungeon Boss",
@@ -11945,12 +12176,14 @@
       "gui.slsb.hunter_phone_backup.button_request": "Request",
       "block.slsb.maze_dungeon_east": "Maze Dungeon East",
       "block.slsb.ice_dungeon_west": "Ice Dungeon West",
+      "item.slsb.mana_arrow": "Mana Arrow",
       "subtitles.stab": "",
       "block.slsb.mine_dungeon_north": "Mine Dungeon North",
       "block.slsb.giant_dungeon_south": "Giant Dungeon South",
       "entity.slsb.giant_rat_grey": "Giant Rat (E-Rank)",
       "effect.slsb.tornado_active": "TornadoActive",
       "block.slsb.cathedral_dungeon_west": "Cathedral Dungeon West",
+      "item.slsb.e_rank_axe": "E-Rank Axe",
       "effect.slsb.guardian": "Guardian",
       "block.slsb.ice_dungeon_enemies": "Ice Dungeon Enemies",
       "block.slsb.crystal_dungeon_east": "Crystal Dungeon East",
@@ -11989,6 +12222,7 @@
       "block.slsb.mine_dungeon_west": "Mine Dungeon West",
       "block.slsb.goblin_dungeon_east": "Goblin Dungeon East",
       "block.slsb.cathedral_dungeon_enemies": "Cathedral Dungeon Enemies",
+      "item.slsb.e_rank_sword": "E-Rank Sword",
       "block.slsb.sand_dungeon_west": "Sand Dungeon West",
       "gui.slsb.hunter_phone_purchase.label_gatecost": "GateCost",
       "effect.slsb.prediction": "Prediction",
@@ -12000,10 +12234,12 @@
       "biome.slsb.dungeon": "Dungeon",
       "block.slsb.lich_dungeon_enemies": "Lich Dungeon Enemies",
       "item.slsb.jinwoos_clothes_chestplate": "Jinwoo\u0027s Jacket",
+      "key.slsb.train": "Train",
       "block.slsb.sunken_dungeon_north": "Sunken Dungeon North",
       "block.slsb.maze_dungeon_boss": "Maze Dungeon Boss",
       "entity.slsb.undead_knight_boss": "Undead Knight (C-Rank)",
       "effect.slsb.np_ccooldown": "Cooldown",
+      "item.slsb.e_rank_bow": "E-Rank Bow",
       "block.slsb.coliseum_dungeon_east": "Coliseum Dungeon East",
       "block.slsb.blue_gate_small": "Blue Gate Small",
       "effect.slsb.healing_aura": "Healing Aura",
@@ -12031,11 +12267,13 @@
       "block.slsb.orc_dungeon_enemies": "Orc Dungeon Enemies",
       "block.slsb.naga_dungeon_north": "Naga Dungeon North",
       "block.slsb.goblin_dungeon_west": "Goblin Dungeon West",
+      "item.slsb.essence_stone_arrow": "Essence Stone Arrow",
       "block.slsb.rat_dungeon_east": "Rat Dungeon East",
       "key.slsb.info_menu": "Info Menu",
       "advancements.haste_skill.title": "Haste Skill",
       "block.slsb.library_dungeon_south": "Library Dungeon South",
       "block.slsb.coliseum_dungeon_enemies": "Coliseum Dungeon Enemies",
+      "effect.slsb.training_cooldown": "Training Cooldown",
       "item.slsb.knight_killer": "§cKnight Killer",
       "block.slsb.goblin_dungeon_enemies": "Goblin Dungeon Enemies",
       "key.slsb.switch_skill": "Switch Skill",
@@ -12043,6 +12281,7 @@
       "block.slsb.forest_dungeon_south": "Forest Dungeon South",
       "block.slsb.subway_dungeon_south": "Subway Dungeon South",
       "item.slsb.undead_knight_boss_spawn_egg": "Undead Knight (C-Rank) Spawn Egg",
+      "gui.slsb.system_daily_quest.label_strength_training_has_arrived": "Strength Training",
       "gui.slsb.hunter_phone_new_price.GateNewPrice": "0",
       "effect.slsb.rallied": "Rallied",
       "effect.slsb.turbulence": "Turbulence",
@@ -12069,6 +12308,7 @@
       "block.slsb.sunken_dungeon_enemies": "Sunken Dungeon Enemies",
       "block.slsb.lich_dungeon_south": "Lich Dungeon South",
       "advancements.stealth_skill.title": "Stealth Skill",
+      "gui.slsb.system_daily_quest.label_daily_quest_strength_training": "Daily Quest:",
       "effect.slsb.bash": "Bash",
       "block.slsb.red_gate_small": "Red Gate Small",
       "item.slsb.giant_rat_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
@@ -12334,6 +12574,10 @@
           {
             "name": "Mobs",
             "children": []
+          },
+          {
+            "name": "System",
+            "children": []
           }
         ]
       },
@@ -12493,7 +12737,12 @@
       },
       {
         "name": "GUI",
-        "children": []
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Damage Sources",
@@ -12632,7 +12881,12 @@
       },
       {
         "name": "Keybinds",
-        "children": []
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Commands",

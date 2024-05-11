@@ -134,6 +134,13 @@ public class SlsbModVariables {
 			clone.GuildRank = original.GuildRank;
 			clone.SystemMaxEXP = original.SystemMaxEXP;
 			clone.SpeedToggle = original.SpeedToggle;
+			clone.Quest = original.Quest;
+			clone.Pushups = original.Pushups;
+			clone.Situps = original.Situps;
+			clone.Squats = original.Squats;
+			clone.Running = original.Running;
+			clone.Crouched = original.Crouched;
+			clone.TrainingType = original.TrainingType;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -410,6 +417,13 @@ public class SlsbModVariables {
 		public double SystemMaxEXP = 100.0;
 		public boolean SummonAid = true;
 		public boolean SpeedToggle = true;
+		public String Quest = "";
+		public double Pushups = 0;
+		public double Situps = 0;
+		public double Squats = 0;
+		public double Running = 0;
+		public boolean Crouched = false;
+		public double TrainingType = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -493,6 +507,13 @@ public class SlsbModVariables {
 			nbt.putDouble("SystemMaxEXP", SystemMaxEXP);
 			nbt.putBoolean("SummonAid", SummonAid);
 			nbt.putBoolean("SpeedToggle", SpeedToggle);
+			nbt.putString("Quest", Quest);
+			nbt.putDouble("Pushups", Pushups);
+			nbt.putDouble("Situps", Situps);
+			nbt.putDouble("Squats", Squats);
+			nbt.putDouble("Running", Running);
+			nbt.putBoolean("Crouched", Crouched);
+			nbt.putDouble("TrainingType", TrainingType);
 			return nbt;
 		}
 
@@ -573,6 +594,13 @@ public class SlsbModVariables {
 			SystemMaxEXP = nbt.getDouble("SystemMaxEXP");
 			SummonAid = nbt.getBoolean("SummonAid");
 			SpeedToggle = nbt.getBoolean("SpeedToggle");
+			Quest = nbt.getString("Quest");
+			Pushups = nbt.getDouble("Pushups");
+			Situps = nbt.getDouble("Situps");
+			Squats = nbt.getDouble("Squats");
+			Running = nbt.getDouble("Running");
+			Crouched = nbt.getBoolean("Crouched");
+			TrainingType = nbt.getDouble("TrainingType");
 		}
 	}
 
@@ -672,6 +700,13 @@ public class SlsbModVariables {
 					variables.SystemMaxEXP = message.data.SystemMaxEXP;
 					variables.SummonAid = message.data.SummonAid;
 					variables.SpeedToggle = message.data.SpeedToggle;
+					variables.Quest = message.data.Quest;
+					variables.Pushups = message.data.Pushups;
+					variables.Situps = message.data.Situps;
+					variables.Squats = message.data.Squats;
+					variables.Running = message.data.Running;
+					variables.Crouched = message.data.Crouched;
+					variables.TrainingType = message.data.TrainingType;
 				}
 			});
 			context.setPacketHandled(true);

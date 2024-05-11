@@ -15,8 +15,132 @@
         "data": {
           "image": "system_quest.png",
           "use1Xscale": false,
-          "x": 0,
-          "y": 0
+          "x": 1,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_daily_quest_strength_training",
+          "text": {
+            "fixedValue": "Daily Quest:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_strength_training_has_arrived",
+          "text": {
+            "fixedValue": "Strength Training"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 171,
+          "y": 72
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_has_arrived",
+          "text": {
+            "fixedValue": "Has Arrived."
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 185,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ssnssbsslgoal",
+          "text": {
+            "fixedValue": "§n§b§lGoal"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 188,
+          "y": 97
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_situps_value",
+          "text": {
+            "fixedValue": "",
+            "name": "PushupsValue"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 177,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_situps_value1",
+          "text": {
+            "fixedValue": "",
+            "name": "SitupsValue"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 177,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_squats_value",
+          "text": {
+            "fixedValue": "",
+            "name": "SquatsValue"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 177,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_running_value",
+          "text": {
+            "fixedValue": "",
+            "name": "RunningValue"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 177,
+          "y": 170
         }
       }
     ],
@@ -25,7 +149,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": false
+      "snapOnGrid": true
     }
   }
 }

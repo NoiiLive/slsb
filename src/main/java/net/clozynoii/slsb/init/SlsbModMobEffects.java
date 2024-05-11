@@ -14,6 +14,7 @@ import net.clozynoii.slsb.potion.WindPullActiveMobEffect;
 import net.clozynoii.slsb.potion.WindBurstActiveMobEffect;
 import net.clozynoii.slsb.potion.WhirlwindMobEffect;
 import net.clozynoii.slsb.potion.TurbulenceMobEffect;
+import net.clozynoii.slsb.potion.TrainingCooldownMobEffect;
 import net.clozynoii.slsb.potion.SuffocationActiveMobEffect;
 import net.clozynoii.slsb.potion.StealthMobEffect;
 import net.clozynoii.slsb.potion.ReinforcementMobEffect;
@@ -56,4 +57,5 @@ public class SlsbModMobEffects {
 	public static final RegistryObject<MobEffect> WHIRLWIND = REGISTRY.register("whirlwind", () -> new WhirlwindMobEffect());
 	public static final RegistryObject<MobEffect> PREDICTION = REGISTRY.register("prediction", () -> new PredictionMobEffect());
 	public static final RegistryObject<MobEffect> NP_CCOOLDOWN = REGISTRY.register("np_ccooldown", () -> new NPCcooldownMobEffect());
+	public static final RegistryObject<MobEffect> TRAINING_COOLDOWN = REGISTRY.register("training_cooldown", () -> new TrainingCooldownMobEffect());
 }

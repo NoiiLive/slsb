@@ -47,6 +47,7 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "normal": "erankspellbook.geo.json",
-    "armPoseList": []
+    "armPoseList": [],
+    "disableSwing": false
   }
 }

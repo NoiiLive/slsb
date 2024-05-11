@@ -1,8 +1,26 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.resources.ResourceLocation;
+
+import net.clozynoii.slsb.network.SlsbModVariables;
+import net.clozynoii.slsb.init.SlsbModItems;
+import net.clozynoii.slsb.init.SlsbModEntities;
+import net.clozynoii.slsb.entity.ManaArrowProjectileEntity;
+import net.clozynoii.slsb.entity.EssenceStoneArrowProjectileEntity;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ERankBowUseProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -17,7 +35,7 @@ public class ERankBowUseProcedure {
 				for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 					ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
 					if (singleitem == false) {
-						if (itemstackiterator.getItem() == SlsbModItems.DELETED_MOD_ELEMENT.get()) {
+						if (itemstackiterator.getItem() == SlsbModItems.ESSENCE_STONE_ARROW.get()) {
 							singleitem = true;
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
@@ -30,7 +48,7 @@ public class ERankBowUseProcedure {
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = new Object() {
 										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
-											AbstractArrow entityToSpawn = new EssenceStoneArrowProjectileEntity(SlsbModEntities.DELETED_MOD_ELEMENT.get(), level);
+											AbstractArrow entityToSpawn = new EssenceStoneArrowProjectileEntity(SlsbModEntities.ESSENCE_STONE_ARROW_PROJECTILE.get(), level);
 											entityToSpawn.setOwner(shooter);
 											entityToSpawn.setBaseDamage(damage);
 											entityToSpawn.setKnockback(knockback);
@@ -65,7 +83,7 @@ public class ERankBowUseProcedure {
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = new Object() {
 										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
-											AbstractArrow entityToSpawn = new ManaArrowProjectileEntity(SlsbModEntities.DELETED_MOD_ELEMENT.get(), level);
+											AbstractArrow entityToSpawn = new ManaArrowProjectileEntity(SlsbModEntities.MANA_ARROW_PROJECTILE.get(), level);
 											entityToSpawn.setOwner(shooter);
 											entityToSpawn.setBaseDamage(damage);
 											entityToSpawn.setKnockback(knockback);

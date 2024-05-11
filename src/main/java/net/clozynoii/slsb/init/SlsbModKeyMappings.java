@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.clozynoii.slsb.network.UseSkillMessage;
+import net.clozynoii.slsb.network.TrainMessage;
 import net.clozynoii.slsb.network.SwitchSkillMessage;
 import net.clozynoii.slsb.network.SpeedToggleMessage;
 import net.clozynoii.slsb.network.InfoMenuMessage;
@@ -75,6 +76,19 @@ public class SlsbModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping TRAIN = new KeyMapping("key.slsb.train", GLFW.GLFW_KEY_V, "key.categories.slsb") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new TrainMessage(0, 0));
+				TrainMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -82,6 +96,7 @@ public class SlsbModKeyMappings {
 		event.register(USE_SKILL);
 		event.register(INFO_MENU);
 		event.register(SPEED_TOGGLE);
+		event.register(TRAIN);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -93,6 +108,7 @@ public class SlsbModKeyMappings {
 				USE_SKILL.consumeClick();
 				INFO_MENU.consumeClick();
 				SPEED_TOGGLE.consumeClick();
+				TRAIN.consumeClick();
 			}
 		}
 	}

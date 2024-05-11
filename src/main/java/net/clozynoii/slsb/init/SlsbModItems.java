@@ -28,6 +28,7 @@ import net.clozynoii.slsb.item.KnightKillerItem;
 import net.clozynoii.slsb.item.KasakasVenomFangItem;
 import net.clozynoii.slsb.item.JinwoosClothesItem;
 import net.clozynoii.slsb.item.EssenceStoneArrowItem;
+import net.clozynoii.slsb.item.ERankTankerArmorItem;
 import net.clozynoii.slsb.item.ERankSwordItem;
 import net.clozynoii.slsb.item.ERankStaffItem;
 import net.clozynoii.slsb.item.ERankSpellBookItem;
@@ -230,6 +231,10 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_BOW = REGISTRY.register("e_rank_bow", () -> new ERankBowItem());
 	public static final RegistryObject<Item> ESSENCE_STONE_ARROW = REGISTRY.register("essence_stone_arrow", () -> new EssenceStoneArrowItem());
 	public static final RegistryObject<Item> MANA_ARROW = REGISTRY.register("mana_arrow", () -> new ManaArrowItem());
+	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_HELMET = REGISTRY.register("e_rank_tanker_armor_helmet", () -> new ERankTankerArmorItem.Helmet());
+	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_tanker_armor_chestplate", () -> new ERankTankerArmorItem.Chestplate());
+	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_LEGGINGS = REGISTRY.register("e_rank_tanker_armor_leggings", () -> new ERankTankerArmorItem.Leggings());
+	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_BOOTS = REGISTRY.register("e_rank_tanker_armor_boots", () -> new ERankTankerArmorItem.Boots());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -39,7 +39,7 @@ public class ERankSpellBookItem extends Item implements GeoItem {
 	public static ItemDisplayContext transformType;
 
 	public ERankSpellBookItem() {
-		super(new Item.Properties().durability(10000).rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(200).rarity(Rarity.COMMON));
 	}
 
 	@Override

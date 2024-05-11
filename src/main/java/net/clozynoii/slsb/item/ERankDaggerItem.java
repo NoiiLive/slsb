@@ -18,7 +18,7 @@ public class ERankDaggerItem extends SwordItem {
 	public ERankDaggerItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 10000;
+				return 200;
 			}
 
 			public float getSpeed() {

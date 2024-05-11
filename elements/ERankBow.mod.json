@@ -16,7 +16,7 @@
     "enchantability": 9,
     "useDuration": 20,
     "toolType": 1.0,
-    "damageCount": 10000,
+    "damageCount": 250,
     "recipeRemainder": {
       "value": ""
     },

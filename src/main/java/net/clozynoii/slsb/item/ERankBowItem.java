@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ERankBowItem extends Item {
 	public ERankBowItem() {
-		super(new Item.Properties().durability(10000).rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(250).rarity(Rarity.COMMON));
 	}
 
 	@Override

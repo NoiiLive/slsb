@@ -23,26 +23,27 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.Minecraft;
 
 import net.clozynoii.slsb.init.SlsbModItems;
-import net.clozynoii.slsb.client.model.ModelERankUndeadLeggings;
-import net.clozynoii.slsb.client.model.ModelERankUndeadChestplate;
-import net.clozynoii.slsb.client.model.ModelERankUndeadBoots;
+import net.clozynoii.slsb.client.model.ModelERankTankerLeggings;
+import net.clozynoii.slsb.client.model.ModelERankTankerHelmet;
+import net.clozynoii.slsb.client.model.ModelERankTankerChestplate;
+import net.clozynoii.slsb.client.model.ModelERankTankerBoots;
 
 import java.util.function.Consumer;
 import java.util.Map;
 import java.util.List;
 import java.util.Collections;
 
-public abstract class ERankArmorItem extends ArmorItem {
-	public ERankArmorItem(ArmorItem.Type type, Item.Properties properties) {
+public abstract class ERankTankerArmorItem extends ArmorItem {
+	public ERankTankerArmorItem(ArmorItem.Type type, Item.Properties properties) {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 10;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 11;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{3, 6, 8, 3}[type.getSlot().getIndex()];
+				return new int[]{4, 6, 8, 4}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -62,12 +63,12 @@ public abstract class ERankArmorItem extends ArmorItem {
 
 			@Override
 			public String getName() {
-				return "e_rank_armor";
+				return "e_rank_tanker_armor";
 			}
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 3.2f;
 			}
 
 			@Override
@@ -77,7 +78,46 @@ public abstract class ERankArmorItem extends ArmorItem {
 		}, type, properties);
 	}
 
-	public static class Chestplate extends ERankArmorItem {
+	public static class Helmet extends ERankTankerArmorItem {
+		public Helmet() {
+			super(ArmorItem.Type.HELMET, new Item.Properties());
+		}
+
+		@Override
+		public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+			consumer.accept(new IClientItemExtensions() {
+				@Override
+				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
+					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
+							Map.of("head", new ModelERankTankerHelmet(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerHelmet.LAYER_LOCATION)).head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",
+									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm",
+									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
+									new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+					armorModel.crouching = living.isShiftKeyDown();
+					armorModel.riding = defaultModel.riding;
+					armorModel.young = living.isBaby();
+					return armorModel;
+				}
+			});
+		}
+
+		@Override
+		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, world, list, flag);
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "slsb:textures/entities/eranktankerarmortexture.png";
+		}
+
+		@Override
+		public boolean makesPiglinsNeutral(ItemStack itemstack, LivingEntity entity) {
+			return false;
+		}
+	}
+
+	public static class Chestplate extends ERankTankerArmorItem {
 		public Chestplate() {
 			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
 		}
@@ -89,9 +129,9 @@ public abstract class ERankArmorItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("body", new ModelERankUndeadChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadChestplate.LAYER_LOCATION)).torso, "left_arm",
-									new ModelERankUndeadChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadChestplate.LAYER_LOCATION)).left_arm, "right_arm",
-									new ModelERankUndeadChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadChestplate.LAYER_LOCATION)).right_arm, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+							Map.of("body", new ModelERankTankerChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerChestplate.LAYER_LOCATION)).torso, "left_arm",
+									new ModelERankTankerChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerChestplate.LAYER_LOCATION)).left_arm, "right_arm",
+									new ModelERankTankerChestplate(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerChestplate.LAYER_LOCATION)).right_arm, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
@@ -109,7 +149,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "slsb:textures/entities/erankundeadarmortexture.png";
+			return "slsb:textures/entities/eranktankerarmortexture.png";
 		}
 
 		@Override
@@ -118,7 +158,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 		}
 	}
 
-	public static class Leggings extends ERankArmorItem {
+	public static class Leggings extends ERankTankerArmorItem {
 		public Leggings() {
 			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
 		}
@@ -130,9 +170,9 @@ public abstract class ERankArmorItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new ModelERankUndeadLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadLeggings.LAYER_LOCATION)).left_leg, "right_leg",
-									new ModelERankUndeadLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadLeggings.LAYER_LOCATION)).right_leg, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
-									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelERankUndeadLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadLeggings.LAYER_LOCATION)).body, "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+							Map.of("left_leg", new ModelERankTankerLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerLeggings.LAYER_LOCATION)).left_leg, "right_leg",
+									new ModelERankTankerLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerLeggings.LAYER_LOCATION)).right_leg, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelERankTankerLeggings(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerLeggings.LAYER_LOCATION)).body, "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
 					armorModel.riding = defaultModel.riding;
@@ -149,7 +189,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "slsb:textures/entities/erankundeadarmortexture.png";
+			return "slsb:textures/entities/eranktankerarmortexture.png";
 		}
 
 		@Override
@@ -158,7 +198,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 		}
 	}
 
-	public static class Boots extends ERankArmorItem {
+	public static class Boots extends ERankTankerArmorItem {
 		public Boots() {
 			super(ArmorItem.Type.BOOTS, new Item.Properties());
 		}
@@ -170,8 +210,8 @@ public abstract class ERankArmorItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new ModelERankUndeadBoots(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadBoots.LAYER_LOCATION)).left_boot, "right_leg",
-									new ModelERankUndeadBoots(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankUndeadBoots.LAYER_LOCATION)).right_boot, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+							Map.of("left_leg", new ModelERankTankerBoots(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerBoots.LAYER_LOCATION)).left_boot, "right_leg",
+									new ModelERankTankerBoots(Minecraft.getInstance().getEntityModels().bakeLayer(ModelERankTankerBoots.LAYER_LOCATION)).right_boot, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
@@ -189,7 +229,7 @@ public abstract class ERankArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "slsb:textures/entities/erankundeadarmortexture.png";
+			return "slsb:textures/entities/eranktankerarmortexture.png";
 		}
 
 		@Override

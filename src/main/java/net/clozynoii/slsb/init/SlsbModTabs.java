@@ -64,6 +64,10 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get());
 				tabData.accept(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get());
 				tabData.accept(SlsbModItems.E_RANK_ARMOR_BOOTS.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get());
 			})
 
 					.build());

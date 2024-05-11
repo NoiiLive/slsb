@@ -18,7 +18,7 @@ public class ERankAxeItem extends AxeItem {
 	public ERankAxeItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 10000;
+				return 250;
 			}
 
 			public float getSpeed() {

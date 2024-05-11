@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ERankShieldItem extends ShieldItem {
 	public ERankShieldItem() {
-		super(new Item.Properties().durability(10000));
+		super(new Item.Properties().durability(250));
 	}
 
 	@Override

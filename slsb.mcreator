@@ -11332,6 +11332,24 @@
         ]
       },
       "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankTankerArmor",
+      "type": "armor",
+      "sortid": 530,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "e_rank_tanker_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_leggings.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_boots.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_helmet.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankTankerArmorItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_chestplate.json"
+        ]
+      },
+      "path": "~/Armors"
     }
   ],
   "variable_elements": [
@@ -11876,6 +11894,7 @@
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
       "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
+      "item.slsb.e_rank_tanker_armor_leggings": "E-Rank Tanker Leggings",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
@@ -11936,6 +11955,7 @@
       "item.slsb.undead_soldier_spawn_egg": "Undead Soldier (D-Rank) Spawn Egg",
       "block.slsb.maze_dungeon_enemies": "Maze Dungeon Enemies",
       "block.slsb.dragon_dungeon_east": "Dragon Dungeon East",
+      "item.slsb.e_rank_tanker_armor_chestplate": "E-Rank Tanker Chestplate",
       "entity.slsb.after_image": "After Image",
       "block.slsb.giant_dungeon_boss": "Giant Dungeon Boss",
       "item.slsb.d_rank_essence_stone": "§eD-Rank Essence Stone",
@@ -11983,6 +12003,7 @@
       "block.slsb.coliseum_dungeon_north": "Coliseum Dungeon North",
       "item.slsb.jinwoos_clothes_boots": "Jinwoo\u0027s Shoes",
       "block.slsb.mana_crystal_block_diorite": "Mana Crystal (Diorite)",
+      "item.slsb.e_rank_tanker_armor_helmet": "E-Rank Tanker Helmet",
       "gui.slsb.hunter_phone_backup.label_request_hunter_aid": "Request Hunter Aid?",
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
@@ -12081,6 +12102,7 @@
       "block.slsb.red_gate_small": "Red Gate Small",
       "item.slsb.giant_rat_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
       "item.slsb.e_rank_armor_chestplate": "E-Rank Fighter Chestplate",
+      "item.slsb.e_rank_tanker_armor_boots": "E-Rank Tanker Boots",
       "block.slsb.rat_dungeon_west": "Rat Dungeon West",
       "block.slsb.giant_dungeon_north": "Giant Dungeon North",
       "block.slsb.dragon_dungeon_north": "Dragon Dungeon North",

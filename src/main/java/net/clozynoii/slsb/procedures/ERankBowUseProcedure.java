@@ -54,6 +54,7 @@ public class ERankBowUseProcedure {
 											entityToSpawn.setKnockback(knockback);
 											entityToSpawn.setSilent(true);
 											entityToSpawn.setPierceLevel(piercing);
+											entityToSpawn.setCritArrow(true);
 											entityToSpawn.pickup = AbstractArrow.Pickup.ALLOWED;
 											return entityToSpawn;
 										}

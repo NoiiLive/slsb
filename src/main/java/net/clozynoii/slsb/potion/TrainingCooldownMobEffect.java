@@ -3,11 +3,15 @@ package net.clozynoii.slsb.potion;
 
 import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
 
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
 import net.minecraft.client.gui.GuiGraphics;
+
+import net.clozynoii.slsb.procedures.TrainingCooldownEffectExpiresProcedure;
 
 public class TrainingCooldownMobEffect extends MobEffect {
 	public TrainingCooldownMobEffect() {
@@ -17,6 +21,12 @@ public class TrainingCooldownMobEffect extends MobEffect {
 	@Override
 	public String getDescriptionId() {
 		return "effect.slsb.training_cooldown";
+	}
+
+	@Override
+	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
+		super.removeAttributeModifiers(entity, attributeMap, amplifier);
+		TrainingCooldownEffectExpiresProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

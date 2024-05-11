@@ -27,7 +27,7 @@
             "fixedValue": "Daily Quest:"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
           "x": 186,
@@ -42,7 +42,7 @@
             "fixedValue": "Strength Training"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
           "x": 171,
@@ -57,7 +57,7 @@
             "fixedValue": "Has Arrived."
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
           "x": 185,
@@ -75,7 +75,7 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 188,
+          "x": 202,
           "y": 97
         }
       },
@@ -88,11 +88,11 @@
             "name": "PushupsValue"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
-          "x": 177,
-          "y": 116
+          "x": 166,
+          "y": 117
         }
       },
       {
@@ -104,10 +104,10 @@
             "name": "SitupsValue"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
-          "x": 177,
+          "x": 166,
           "y": 134
         }
       },
@@ -120,10 +120,10 @@
             "name": "SquatsValue"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
-          "x": 177,
+          "x": 166,
           "y": 152
         }
       },
@@ -136,11 +136,53 @@
             "name": "RunningValue"
           },
           "color": {
-            "value": -1,
+            "value": -722689,
             "falpha": 0.0
           },
-          "x": 177,
+          "x": 166,
           "y": 170
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_stats",
+          "image": "button_stats.png",
+          "hoveredImage": "button_stats_h.png",
+          "onClick": {
+            "name": "OpenInfoMenu"
+          },
+          "x": 319,
+          "y": 17
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_stat_menu",
+          "text": {
+            "fixedValue": "Stat Menu"
+          },
+          "width": 26,
+          "height": 26,
+          "x": 320,
+          "y": 18
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_quest_timer",
+          "text": {
+            "fixedValue": "",
+            "name": "QuestTimer"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 202,
+          "y": 190
         }
       }
     ],
@@ -149,7 +191,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

@@ -6,13 +6,17 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.clozynoii.slsb.world.inventory.SystemDailyQuestMenu;
 import net.clozynoii.slsb.procedures.SquatsValueProcedure;
 import net.clozynoii.slsb.procedures.SitupsValueProcedure;
 import net.clozynoii.slsb.procedures.RunningValueProcedure;
+import net.clozynoii.slsb.procedures.QuestTimerProcedure;
 import net.clozynoii.slsb.procedures.PushupsValueProcedure;
+import net.clozynoii.slsb.network.SystemDailyQuestButtonMessage;
+import net.clozynoii.slsb.SlsbMod;
 
 import java.util.HashMap;
 
@@ -23,6 +27,7 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	ImageButton imagebutton_button_stats;
 
 	public SystemDailyQuestScreen(SystemDailyQuestMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -42,6 +47,8 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
+		if (mouseX > leftPos + 106 && mouseX < leftPos + 132 && mouseY > topPos + -102 && mouseY < topPos + -76)
+			guiGraphics.renderTooltip(font, Component.translatable("gui.slsb.system_daily_quest.tooltip_stat_menu"), mouseX, mouseY);
 	}
 
 	@Override
@@ -72,22 +79,25 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_daily_quest_strength_training"), -28, -58, -1, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_strength_training_has_arrived"), -43, -48, -1, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_has_arrived"), -29, -38, -1, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_ssnssbsslgoal"), -26, -23, -1, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_daily_quest_strength_training"), -28, -58, -722689, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_strength_training_has_arrived"), -43, -48, -722689, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_has_arrived"), -29, -38, -722689, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.slsb.system_daily_quest.label_ssnssbsslgoal"), -12, -23, -1, false);
 		guiGraphics.drawString(this.font,
 
-				PushupsValueProcedure.execute(entity), -37, -4, -1, false);
+				PushupsValueProcedure.execute(entity), -48, -3, -722689, false);
 		guiGraphics.drawString(this.font,
 
-				SitupsValueProcedure.execute(entity), -37, 14, -1, false);
+				SitupsValueProcedure.execute(entity), -48, 14, -722689, false);
 		guiGraphics.drawString(this.font,
 
-				SquatsValueProcedure.execute(entity), -37, 32, -1, false);
+				SquatsValueProcedure.execute(entity), -48, 32, -722689, false);
 		guiGraphics.drawString(this.font,
 
-				RunningValueProcedure.execute(entity), -37, 50, -1, false);
+				RunningValueProcedure.execute(entity), -48, 50, -722689, false);
+		guiGraphics.drawString(this.font,
+
+				QuestTimerProcedure.execute(world), -12, 70, -722689, false);
 	}
 
 	@Override
@@ -98,5 +108,13 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	@Override
 	public void init() {
 		super.init();
+		imagebutton_button_stats = new ImageButton(this.leftPos + 105, this.topPos + -103, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_stats.png"), 28, 56, e -> {
+			if (true) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemDailyQuestButtonMessage(0, x, y, z));
+				SystemDailyQuestButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_button_stats", imagebutton_button_stats);
+		this.addRenderableWidget(imagebutton_button_stats);
 	}
 }

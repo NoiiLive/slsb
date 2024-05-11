@@ -31,8 +31,8 @@
             "value": -722689,
             "falpha": 0.0
           },
-          "x": 187,
-          "y": 92
+          "x": 216,
+          "y": 91
         }
       },
       {
@@ -47,8 +47,8 @@
             "value": -722689,
             "falpha": 0.0
           },
-          "x": 239,
-          "y": 92
+          "x": 166,
+          "y": 102
         }
       },
       {
@@ -193,6 +193,32 @@
           },
           "x": 255,
           "y": 167
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_daily",
+          "image": "button_daily.png",
+          "hoveredImage": "button_daily_h.png",
+          "onClick": {
+            "name": "SystemDailyQuestOpen"
+          },
+          "x": 345,
+          "y": 50
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_daily_quest",
+          "text": {
+            "fixedValue": "Daily Quest"
+          },
+          "width": 26,
+          "height": 26,
+          "x": 346,
+          "y": 51
         }
       }
     ],

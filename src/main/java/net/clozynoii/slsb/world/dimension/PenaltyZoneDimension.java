@@ -26,7 +26,7 @@ public class PenaltyZoneDimension {
 
 				@Override
 				public boolean isFoggyAt(int x, int y) {
-					return true;
+					return false;
 				}
 			};
 			event.register(new ResourceLocation("slsb:penalty_zone"), customEffect);

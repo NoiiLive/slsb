@@ -6,6 +6,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.clozynoii.slsb.world.inventory.SystemStatsMenuMenu;
@@ -20,6 +21,8 @@ import net.clozynoii.slsb.procedures.SystemReturnJobProcedure;
 import net.clozynoii.slsb.procedures.SystemReturnIntelligenceProcedure;
 import net.clozynoii.slsb.procedures.SystemReturnHPProcedure;
 import net.clozynoii.slsb.procedures.SystemReturnAgilityProcedure;
+import net.clozynoii.slsb.network.SystemStatsMenuButtonMessage;
+import net.clozynoii.slsb.SlsbMod;
 
 import java.util.HashMap;
 
@@ -30,6 +33,7 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	ImageButton imagebutton_button_daily;
 
 	public SystemStatsMenuScreen(SystemStatsMenuMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -49,6 +53,8 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
+		if (mouseX > leftPos + 132 && mouseX < leftPos + 158 && mouseY > topPos + -69 && mouseY < topPos + -43)
+			guiGraphics.renderTooltip(font, Component.translatable("gui.slsb.system_stats_menu.tooltip_daily_quest"), mouseX, mouseY);
 	}
 
 	@Override
@@ -81,10 +87,10 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				SystemReturnLevelProcedure.execute(entity), -27, -28, -722689, false);
+				SystemReturnLevelProcedure.execute(entity), 2, -29, -722689, false);
 		guiGraphics.drawString(this.font,
 
-				SystemReturnJobProcedure.execute(entity), 25, -28, -722689, false);
+				SystemReturnJobProcedure.execute(entity), -48, -18, -722689, false);
 		guiGraphics.drawString(this.font,
 
 				SystemReturnTitleProcedure.execute(entity), 35, -18, -722689, false);
@@ -122,5 +128,13 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	@Override
 	public void init() {
 		super.init();
+		imagebutton_button_daily = new ImageButton(this.leftPos + 131, this.topPos + -70, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_daily.png"), 28, 56, e -> {
+			if (true) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(0, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_button_daily", imagebutton_button_daily);
+		this.addRenderableWidget(imagebutton_button_daily);
 	}
 }

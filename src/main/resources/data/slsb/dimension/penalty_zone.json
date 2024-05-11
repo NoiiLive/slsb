@@ -6,7 +6,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "slsb:dungeon",
+          "biome": "slsb:penalty",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -27,10 +27,10 @@
       "aquifers_enabled": true,
       "ore_veins_enabled": true,
       "default_block": {
-        "Name": "minecraft:stone"
+        "Name": "minecraft:sandstone"
       },
       "default_fluid": {
-        "Name": "minecraft:stone"
+        "Name": "minecraft:sand"
       },
       "spawn_target": [],
       "noise": {
@@ -380,7 +380,7 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "slsb:dungeon"
+                "slsb:penalty"
               ]
             },
             "then_run": {
@@ -414,14 +414,14 @@
                           "then_run": {
                             "type": "minecraft:block",
                             "result_state": {
-                              "Name": "minecraft:stone"
+                              "Name": "minecraft:sand"
                             }
                           }
                         },
                         {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "minecraft:stone"
+                            "Name": "minecraft:sand"
                           }
                         }
                       ]
@@ -439,7 +439,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "minecraft:stone"
+                        "Name": "minecraft:sandstone"
                       }
                     }
                   }

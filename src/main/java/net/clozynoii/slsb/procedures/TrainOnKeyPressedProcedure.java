@@ -16,6 +16,7 @@ import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.clozynoii.slsb.network.SlsbModVariables;
 import net.clozynoii.slsb.init.SlsbModMobEffects;
+import net.clozynoii.slsb.SlsbMod;
 
 import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
 import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
@@ -29,7 +30,7 @@ public class TrainOnKeyPressedProcedure {
 			return;
 		if (entity.isShiftKeyDown()) {
 			if (!(entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Crouched) {
-				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType < 3) {
+				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType <= 3) {
 					{
 						double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType + 1;
 						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -37,14 +38,23 @@ public class TrainOnKeyPressedProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType >= 4) {
+						{
+							double _setval = 1;
+							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.TrainingType = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					}
 					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 1) {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal("\u00A7lPushups"), true);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6, false);
 							}
 						}
 					} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 2) {
@@ -52,9 +62,9 @@ public class TrainOnKeyPressedProcedure {
 							_player.displayClientMessage(Component.literal("\u00A7lSitups"), true);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6, false);
 							}
 						}
 					} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 3) {
@@ -62,19 +72,11 @@ public class TrainOnKeyPressedProcedure {
 							_player.displayClientMessage(Component.literal("\u00A7lSquats"), true);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.NEUTRAL, 1, (float) 0.6, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.PLAYERS, 1, (float) 0.6, false);
 							}
 						}
-					}
-				} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 3) {
-					{
-						double _setval = 1;
-						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.TrainingType = _setval;
-							capability.syncPlayerVariables(entity);
-						});
 					}
 				}
 			}
@@ -97,7 +99,13 @@ public class TrainOnKeyPressedProcedure {
 						});
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 45, 0, false, false));
+						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 47, 0, false, false));
+					SlsbMod.queueServerWork(47, () -> {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups) + "/100")),
+									true);
+					});
 				} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 2) {
 					if (world.isClientSide()) {
 						if (entity instanceof AbstractClientPlayer player) {
@@ -115,7 +123,13 @@ public class TrainOnKeyPressedProcedure {
 						});
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 20, 0, false, false));
+						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 47, 0, false, false));
+					SlsbMod.queueServerWork(47, () -> {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps) + "/100")),
+									true);
+					});
 				} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 3) {
 					if (world.isClientSide()) {
 						if (entity instanceof AbstractClientPlayer player) {
@@ -133,7 +147,13 @@ public class TrainOnKeyPressedProcedure {
 						});
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 20, 0, false, false));
+						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 22, 0, false, false));
+					SlsbMod.queueServerWork(22, () -> {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats) + "/100")),
+									true);
+					});
 				}
 			}
 		}

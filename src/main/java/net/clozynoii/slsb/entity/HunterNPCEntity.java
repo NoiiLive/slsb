@@ -12,10 +12,14 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -34,16 +38,27 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.clozynoii.slsb.procedures.HunterNPCTickProcedure;
 import net.clozynoii.slsb.procedures.HunterNPCOnInitialEntitySpawnProcedure;
 import net.clozynoii.slsb.init.SlsbModEntities;
 
 import javax.annotation.Nullable;
 
 public class HunterNPCEntity extends TamableAnimal {
+	public static final EntityDataAccessor<String> DATA_HunterClass = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> DATA_HunterRank = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_Skin = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Strength = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Vitality = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Agility = SynchedEntityData.defineId(HunterNPCEntity.class, EntityDataSerializers.INT);
+
 	public HunterNPCEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(SlsbModEntities.HUNTER_NPC.get(), world);
 	}
@@ -51,7 +66,7 @@ public class HunterNPCEntity extends TamableAnimal {
 	public HunterNPCEntity(EntityType<HunterNPCEntity> type, Level world) {
 		super(type, world);
 		setMaxUpStep(0.6f);
-		xpReward = 0;
+		xpReward = 5;
 		setNoAi(false);
 	}
 
@@ -61,18 +76,34 @@ public class HunterNPCEntity extends TamableAnimal {
 	}
 
 	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_HunterClass, "");
+		this.entityData.define(DATA_HunterRank, "");
+		this.entityData.define(DATA_Skin, 0);
+		this.entityData.define(DATA_Strength, 0);
+		this.entityData.define(DATA_Vitality, 0);
+		this.entityData.define(DATA_Agility, 0);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.4, true) {
+		this.targetSelector.addGoal(1, new OwnerHurtTargetGoal(this));
+		this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
+		this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false));
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.4, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(8, new FloatGoal(this));
+		this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, GiantRatEntity.class, false, false));
+		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, UndeadSoldierEntity.class, false, false));
 	}
 
 	@Override
@@ -98,8 +129,36 @@ public class HunterNPCEntity extends TamableAnimal {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		HunterNPCOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		HunterNPCOnInitialEntitySpawnProcedure.execute(this);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putString("DataHunterClass", this.entityData.get(DATA_HunterClass));
+		compound.putString("DataHunterRank", this.entityData.get(DATA_HunterRank));
+		compound.putInt("DataSkin", this.entityData.get(DATA_Skin));
+		compound.putInt("DataStrength", this.entityData.get(DATA_Strength));
+		compound.putInt("DataVitality", this.entityData.get(DATA_Vitality));
+		compound.putInt("DataAgility", this.entityData.get(DATA_Agility));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataHunterClass"))
+			this.entityData.set(DATA_HunterClass, compound.getString("DataHunterClass"));
+		if (compound.contains("DataHunterRank"))
+			this.entityData.set(DATA_HunterRank, compound.getString("DataHunterRank"));
+		if (compound.contains("DataSkin"))
+			this.entityData.set(DATA_Skin, compound.getInt("DataSkin"));
+		if (compound.contains("DataStrength"))
+			this.entityData.set(DATA_Strength, compound.getInt("DataStrength"));
+		if (compound.contains("DataVitality"))
+			this.entityData.set(DATA_Vitality, compound.getInt("DataVitality"));
+		if (compound.contains("DataAgility"))
+			this.entityData.set(DATA_Agility, compound.getInt("DataAgility"));
 	}
 
 	@Override
@@ -146,6 +205,12 @@ public class HunterNPCEntity extends TamableAnimal {
 	}
 
 	@Override
+	public void baseTick() {
+		super.baseTick();
+		HunterNPCTickProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
 		HunterNPCEntity retval = SlsbModEntities.HUNTER_NPC.get().create(serverWorld);
 		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -163,10 +228,10 @@ public class HunterNPCEntity extends TamableAnimal {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 20);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
 		return builder;
 	}
 }

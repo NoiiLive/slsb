@@ -1,0 +1,207 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "system_stats.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_level",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnLevel"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 187,
+          "y": 92
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_job",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnJob"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 239,
+          "y": 92
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_title",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnTitle"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_hp",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnHP"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 124
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_mp",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnMP"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 233,
+          "y": 124
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_strength",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnStrength"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 178,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_agility",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnAgility"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 178,
+          "y": 155
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_perception",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnPerception"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 178,
+          "y": 167
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_vitality",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnVitality"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 251,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_intelligence",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnIntelligence"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 251,
+          "y": 155
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_system_return_skill_points",
+          "text": {
+            "fixedValue": "",
+            "name": "SystemReturnSkillPoints"
+          },
+          "color": {
+            "value": -722689,
+            "falpha": 0.0
+          },
+          "x": 255,
+          "y": 167
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

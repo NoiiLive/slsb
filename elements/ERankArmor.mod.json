@@ -1,0 +1,93 @@
+{
+  "_fv": 57,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": false,
+    "textureHelmet": "",
+    "enableBody": true,
+    "textureBody": "erank_fighter_chest",
+    "enableLeggings": true,
+    "textureLeggings": "erank_fighter_pants",
+    "enableBoots": true,
+    "textureBoots": "erank_fighter_boots",
+    "creativeTab": {
+      "value": "CUSTOM:SoloLevelingArmor"
+    },
+    "armorTextureFile": "blank",
+    "helmetName": "E Rank Armor Helmet",
+    "bodyName": "E-Rank Fighter Chestplate",
+    "leggingsName": "E-Rank Fighter Leggings",
+    "bootsName": "E-Rank Fighter Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "ModelERankUndeadChestplate",
+    "bodyModelPart": "torso",
+    "armsModelPartL": "left_arm",
+    "armsModelPartR": "right_arm",
+    "bodyModelTexture": "erankundeadarmortexture.png",
+    "leggingsModelName": "ModelERankUndeadLeggings",
+    "leggingsModelPartL": "left_leg",
+    "leggingsModelPartR": "right_leg",
+    "leggingsModelTexture": "erankundeadarmortexture.png",
+    "bootsModelName": "ModelERankUndeadBoots",
+    "bootsModelPartL": "left_boot",
+    "bootsModelPartR": "right_boot",
+    "bootsModelTexture": "erankundeadarmortexture.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 10,
+    "damageValueHelmet": 3,
+    "damageValueBody": 8,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 3,
+    "enchantability": 9,
+    "toughness": 3.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:ManaCrystal"
+      },
+      {
+        "value": "CUSTOM:ERankEssenceStone"
+      }
+    ]
+  }
+}

@@ -21,22 +21,87 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "hunter_1a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter1a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_1b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter1b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_2a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter2a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_2b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter2b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_3a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter3a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_3b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter3b"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_4a.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter4a"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hunter_4b.png",
+        "glow": false,
+        "condition": {
+          "name": "ReturnHunter4b"
+        }
+      }
+    ],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
-    "hasSpawnEgg": false,
+    "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -6710887,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -10669019,
       "falpha": 0.0
     },
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:SoloLevelingNPCs"
     },
     "isBoss": false,
     "bossBarColor": "PINK",
@@ -68,9 +133,9 @@
     "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
-    "followRange": 16,
-    "health": 10,
-    "xpAmount": 0,
+    "followRange": 64,
+    "health": 20,
+    "xpAmount": 5,
     "waterMob": false,
     "breatheUnderwater": {
       "fixedValue": false
@@ -114,13 +179,55 @@
     "stepSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "name": "HunterClass",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "name": "HunterRank",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Skin",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Strength",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Vitality",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Agility",
+        "type": "integer",
+        "value": 0
+      }
+    ],
+    "onMobTickUpdate": {
+      "name": "HunterNPCTick"
+    },
     "onInitialSpawn": {
       "name": "HunterNPCOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.4</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.4</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">CUSTOM:GiantRat</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">CUSTOM:UndeadSoldier</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": true,
     "tameable": true,
     "breedTriggerItems": [],
@@ -134,7 +241,7 @@
     "spawnThisMob": false,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 1,
-    "mobSpawningType": "ambient",
+    "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 1,
     "restrictionBiomes": [],

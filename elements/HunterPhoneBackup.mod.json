@@ -16,6 +16,9 @@
           "name": "button_request",
           "text": "Request",
           "isUndecorated": false,
+          "onClick": {
+            "name": "PhoneAidRequest"
+          },
           "width": 61,
           "height": 20,
           "x": 183,

@@ -1,0 +1,15 @@
+{
+  "parent": "slsb:custom/erankshield",
+  "textures": {
+    "0": "slsb:block/erankshieldtexture",
+    "particle": "slsb:item/magicshield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "slsb:item/e_rank_shield_0"
+    }
+  ]
+}

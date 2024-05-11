@@ -79,7 +79,7 @@ public class SkillOverlayOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (true) {
+		if (ReturnOverlayActivateProcedure.execute(entity)) {
 			if (ReturnOverlayActivateProcedure.execute(entity)) {
 				event.getGuiGraphics().blit(new ResourceLocation("slsb:textures/screens/abilityoveerlay.png"), 4, 4, 0, 0, 140, 36, 140, 36);
 			}

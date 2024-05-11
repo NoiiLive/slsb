@@ -45,6 +45,14 @@ public class SlsbModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.slsb.solo_leveling_weapons")).icon(() -> new ItemStack(SlsbModItems.KASAKAS_VENOM_FANG.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(SlsbModItems.KASAKAS_VENOM_FANG.get());
 				tabData.accept(SlsbModItems.KNIGHT_KILLER.get());
+				tabData.accept(SlsbModItems.E_RANK_SWORD.get());
+				tabData.accept(SlsbModItems.E_RANK_AXE.get());
+				tabData.accept(SlsbModItems.E_RANK_SHIELD.get());
+				tabData.accept(SlsbModItems.E_RANK_DAGGER.get());
+				tabData.accept(SlsbModItems.E_RANK_STAFF.get());
+				tabData.accept(SlsbModItems.E_RANK_SPELL_BOOK.get());
+				tabData.accept(SlsbModItems.E_RANK_BOW.get());
+				tabData.accept(SlsbModItems.ESSENCE_STONE_ARROW.get());
 			})
 
 					.build());
@@ -53,6 +61,19 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_CHESTPLATE.get());
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_LEGGINGS.get());
 				tabData.accept(SlsbModItems.JINWOOS_CLOTHES_BOOTS.get());
+				tabData.accept(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get());
+				tabData.accept(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get());
+				tabData.accept(SlsbModItems.E_RANK_ARMOR_BOOTS.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get());
+				tabData.accept(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get());
+			})
+
+					.build());
+	public static final RegistryObject<CreativeModeTab> SOLO_LEVELING_NP_CS = REGISTRY.register("solo_leveling_np_cs",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.slsb.solo_leveling_np_cs")).icon(() -> new ItemStack(SlsbModItems.GIANT_RAT_BOSS_SPAWN_EGG.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(SlsbModItems.HUNTER_NPC_SPAWN_EGG.get());
 			})
 
 					.build());

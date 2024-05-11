@@ -16,7 +16,6 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
@@ -74,11 +73,10 @@ public class UndeadKnightBossEntity extends Monster implements GeoEntity {
 		setCustomName(Component.literal("Nycolas, The Faithful"));
 		setCustomNameVisible(true);
 		setPersistenceRequired();
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
-		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.IRON_LEGGINGS));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(SlsbModItems.E_RANK_SWORD.get()));
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
 	}
 
 	@Override

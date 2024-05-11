@@ -11,6 +11,8 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.clozynoii.slsb.client.gui.SystemStatsMenuScreen;
+import net.clozynoii.slsb.client.gui.SystemDailyQuestScreen;
 import net.clozynoii.slsb.client.gui.HunterPhonePurchaseScreen;
 import net.clozynoii.slsb.client.gui.HunterPhoneNewPriceScreen;
 import net.clozynoii.slsb.client.gui.HunterPhoneClaimScreen;
@@ -27,6 +29,8 @@ public class SlsbModScreens {
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_CLAIM.get(), HunterPhoneClaimScreen::new);
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_PURCHASE.get(), HunterPhonePurchaseScreen::new);
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_NEW_PRICE.get(), HunterPhoneNewPriceScreen::new);
+			MenuScreens.register(SlsbModMenus.SYSTEM_STATS_MENU.get(), SystemStatsMenuScreen::new);
+			MenuScreens.register(SlsbModMenus.SYSTEM_DAILY_QUEST.get(), SystemDailyQuestScreen::new);
 		});
 	}
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "slsb:custom/erankaxe",
+  "textures": {
+    "0": "slsb:block/erankaxetexture",
+    "particle": "slsb:item/magicaxe"
+  }
+}

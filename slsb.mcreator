@@ -149,26 +149,6 @@
       "path": "~/Procedures/Gates"
     },
     {
-      "name": "GateTimer",
-      "type": "procedure",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gate_timer",
-      "metadata": {
-        "files": [
-          "src/main/java/net/clozynoii/slsb/procedures/GateTimerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Procedures/Gates"
-    },
-    {
       "name": "RandomGateCommand",
       "type": "procedure",
       "sortid": 9,
@@ -10401,15 +10381,15 @@
       "path": "~/Mobs/Misc"
     },
     {
-      "name": "RequestAID",
+      "name": "HunterNPCTick",
       "type": "procedure",
-      "sortid": 482,
+      "sortid": 483,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "request_aid",
+      "registry_name": "hunter_npc_tick",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/procedures/RequestAIDProcedure.java"
+          "src/main/java/net/clozynoii/slsb/procedures/HunterNPCTickProcedure.java"
         ],
         "dependencies": [
           {
@@ -10434,7 +10414,922 @@
           }
         ]
       },
-      "path": "~/GUI/Procedures"
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "SetLevel",
+      "type": "procedure",
+      "sortid": 519,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_level",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SetLevelProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Commands/Stats"
+    },
+    {
+      "name": "ManaArrow",
+      "type": "item",
+      "sortid": 509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ManaArrowItem.java",
+          "src/main/resources/assets/slsb/models/item/mana_arrow.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "SystemReturnSkillPoints",
+      "type": "procedure",
+      "sortid": 529,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_skill_points",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnSkillPointsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "SystemReturnVitality",
+      "type": "procedure",
+      "sortid": 527,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_vitality",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnVitalityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankAxe",
+      "type": "tool",
+      "sortid": 498,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_axe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankAxeItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_axe.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SystemReturnHP",
+      "type": "procedure",
+      "sortid": 522,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_hp",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnHPProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankBowUse",
+      "type": "procedure",
+      "sortid": 505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ERankBowUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "ERankSpellBook",
+      "type": "animateditem",
+      "sortid": 503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_spell_book",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_spell_book.json",
+          "src/main/java/net/clozynoii/slsb/item/renderer/ERankSpellBookItemRenderer.java",
+          "src/main/java/net/clozynoii/slsb/item/model/ERankSpellBookItemModel.java",
+          "src/main/java/net/clozynoii/slsb/item/ERankSpellBookItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "ERankBow",
+      "type": "item",
+      "sortid": 504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankBowItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_bow.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "EssenceStoneArrowProjectile",
+      "type": "projectile",
+      "sortid": 508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/client/renderer/EssenceStoneArrowProjectileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/EssenceStoneArrowProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "ReturnHunter3b",
+      "type": "procedure",
+      "sortid": 494,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_3b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter3bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "BreakGateCommand",
+      "type": "procedure",
+      "sortid": 497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "break_gate_command",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/BreakGateCommandProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "EssenceStoneArrowDrop",
+      "type": "procedure",
+      "sortid": 511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow_drop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/EssenceStoneArrowDropProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "ReturnHunter3a",
+      "type": "procedure",
+      "sortid": 493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_3a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter3aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "SystemReturnLevel",
+      "type": "procedure",
+      "sortid": 515,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_level",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnLevelProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ReturnHunter2b",
+      "type": "procedure",
+      "sortid": 492,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_2b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter2bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "SystemReturnJob",
+      "type": "procedure",
+      "sortid": 516,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_job",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnJobProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankStaff",
+      "type": "tool",
+      "sortid": 502,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_staff",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankStaffItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_staff.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SetEXP",
+      "type": "procedure",
+      "sortid": 520,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_exp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SetEXPProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Commands/Stats"
+    },
+    {
+      "name": "SystemReturnPerception",
+      "type": "procedure",
+      "sortid": 526,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_perception",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnPerceptionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankDagger",
+      "type": "tool",
+      "sortid": 501,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_dagger",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankDaggerItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_dagger.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "PhoneAidRequest",
+      "type": "procedure",
+      "sortid": 484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phone_aid_request",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PhoneAidRequestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Phone"
+    },
+    {
+      "name": "SetTitleCMD",
+      "type": "procedure",
+      "sortid": 521,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_title_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SetTitleCMDProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "SystemReturnAgility",
+      "type": "procedure",
+      "sortid": 525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_agility",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnAgilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ManaArrowDrop",
+      "type": "procedure",
+      "sortid": 512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow_drop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ManaArrowDropProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "SystemReturnTitle",
+      "type": "procedure",
+      "sortid": 517,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_title",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnTitleProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "SpeedToggleButton",
+      "type": "procedure",
+      "sortid": 487,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speed_toggle_button",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SpeedToggleButtonProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
+    },
+    {
+      "name": "PlayerSystemCMD",
+      "type": "procedure",
+      "sortid": 518,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_system_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PlayerSystemCMDProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "ERankBowUseFail",
+      "type": "procedure",
+      "sortid": 506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow_use_fail",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ERankBowUseFailProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "SpeedToggle",
+      "type": "keybind",
+      "sortid": 486,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speed_toggle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/network/SpeedToggleMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "EssenceStoneArrow",
+      "type": "item",
+      "sortid": 507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_stone_arrow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/EssenceStoneArrowItem.java",
+          "src/main/resources/assets/slsb/models/item/essence_stone_arrow.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "ReturnHunter4a",
+      "type": "procedure",
+      "sortid": 495,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_4a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter4aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "SystemReturnMP",
+      "type": "procedure",
+      "sortid": 523,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_mp",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnMPProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankTankerArmor",
+      "type": "armor",
+      "sortid": 530,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "e_rank_tanker_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_leggings.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_boots.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_helmet.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankTankerArmorItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_tanker_armor_chestplate.json"
+        ]
+      },
+      "path": "~/Armors"
+    },
+    {
+      "name": "ReturnHunter2a",
+      "type": "procedure",
+      "sortid": 491,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_2a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter2aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter4b",
+      "type": "procedure",
+      "sortid": 496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_4b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter4bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "ReturnHunter1b",
+      "type": "procedure",
+      "sortid": 490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_1b",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter1bProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "GatePlaceTimer",
+      "type": "procedure",
+      "sortid": 500,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gate_place_timer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/GatePlaceTimerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Gates"
+    },
+    {
+      "name": "ReturnHunter1a",
+      "type": "procedure",
+      "sortid": 489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_hunter_1a",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnHunter1aProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures/HunterNPC"
+    },
+    {
+      "name": "SystemDailyQuest",
+      "type": "gui",
+      "sortid": 514,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_daily_quest",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/world/inventory/SystemDailyQuestMenu.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/SystemDailyQuestScreen.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "SystemReturnStrength",
+      "type": "procedure",
+      "sortid": 524,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_strength",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnStrengthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ERankArmor",
+      "type": "armor",
+      "sortid": 485,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "e_rank_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_chestplate.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_boots.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankArmorItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_armor_leggings.json"
+        ]
+      },
+      "path": "~/Armors"
+    },
+    {
+      "name": "ERankSword",
+      "type": "tool",
+      "sortid": 488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slsb/models/item/e_rank_sword.json",
+          "src/main/java/net/clozynoii/slsb/item/ERankSwordItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "ERankShield",
+      "type": "tool",
+      "sortid": 499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_shield",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/ERankShieldItem.java",
+          "src/main/resources/assets/slsb/models/item/e_rank_shield.json",
+          "src/main/resources/assets/slsb/models/item/e_rank_shield_0.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SystemReturnIntelligence",
+      "type": "procedure",
+      "sortid": 528,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_return_intelligence",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SystemReturnIntelligenceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ManaArrowProjectile",
+      "type": "projectile",
+      "sortid": 510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/client/renderer/ManaArrowProjectileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/ManaArrowProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "SystemStatsMenu",
+      "type": "gui",
+      "sortid": 513,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "system_stats_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/world/inventory/SystemStatsMenuMenu.java",
+          "src/main/java/net/clozynoii/slsb/client/gui/SystemStatsMenuScreen.java"
+        ]
+      },
+      "path": "~/GUI"
     }
   ],
   "variable_elements": [
@@ -10865,16 +11760,70 @@
       "value": "0.0"
     },
     {
-      "name": "GuildLeader",
+      "name": "GuildColor",
       "type": "string",
       "scope": "player_persistent",
       "value": ""
     },
     {
-      "name": "GuildColor",
+      "name": "SystemEXP",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "SystemTitle",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "None"
+    },
+    {
+      "name": "SystemSkillPoints",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "SystemLevel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "DungeonsCleared",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "GuildRank",
       "type": "string",
       "scope": "player_persistent",
       "value": ""
+    },
+    {
+      "name": "GuildNames",
+      "type": "string",
+      "scope": "map",
+      "value": ""
+    },
+    {
+      "name": "SystemMaxEXP",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "SummonAid",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "true"
+    },
+    {
+      "name": "SpeedToggle",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "true"
     }
   ],
   "sound_elements": [
@@ -10923,6 +11872,7 @@
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
       "gui.slsb.hunter_phone_new_price.button_set_price": "Set Price",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
+      "item.slsb.e_rank_tanker_armor_leggings": "E-Rank Tanker Leggings",
       "block.slsb.goblin_dungeon_boss": "Goblin Dungeon Boss",
       "gui.slsb.hunter_phone_claim.label_gate_price": "Gate Price",
       "block.slsb.subway_dungeon_west": "Subway Dungeon West",
@@ -10954,6 +11904,7 @@
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
       "effect.slsb.clear_mind": "Clear Mind",
+      "item.slsb.e_rank_armor_leggings": "E-Rank Fighter Leggings",
       "item.slsb.e_rank_essence_stone": "E-Rank Essence Stone",
       "block.slsb.forest_dungeon_east": "Forest Dungeon East",
       "effect.slsb.charged": "Charged",
@@ -10980,6 +11931,7 @@
       "item.slsb.undead_soldier_spawn_egg": "Undead Soldier (D-Rank) Spawn Egg",
       "block.slsb.maze_dungeon_enemies": "Maze Dungeon Enemies",
       "block.slsb.dragon_dungeon_east": "Dragon Dungeon East",
+      "item.slsb.e_rank_tanker_armor_chestplate": "E-Rank Tanker Chestplate",
       "entity.slsb.after_image": "After Image",
       "block.slsb.giant_dungeon_boss": "Giant Dungeon Boss",
       "item.slsb.d_rank_essence_stone": "§eD-Rank Essence Stone",
@@ -11002,6 +11954,7 @@
       "effect.slsb.guardian": "Guardian",
       "block.slsb.ice_dungeon_enemies": "Ice Dungeon Enemies",
       "block.slsb.crystal_dungeon_east": "Crystal Dungeon East",
+      "item.slsb.e_rank_spell_book": "E-Rank Spell Book",
       "advancements.assassin_class.title": "Assassin",
       "block.slsb.sunken_dungeon_boss": "Sunken Dungeon Boss",
       "block.slsb.naga_dungeon_enemies": "Naga Dungeon Enemies",
@@ -11024,10 +11977,12 @@
       "block.slsb.coliseum_dungeon_north": "Coliseum Dungeon North",
       "item.slsb.jinwoos_clothes_boots": "Jinwoo\u0027s Shoes",
       "block.slsb.mana_crystal_block_diorite": "Mana Crystal (Diorite)",
+      "item.slsb.e_rank_tanker_armor_helmet": "E-Rank Tanker Helmet",
       "gui.slsb.hunter_phone_backup.label_request_hunter_aid": "Request Hunter Aid?",
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
       "block.slsb.mana_crystal_block_pure": "Mana Crystal (Pure)",
+      "item.slsb.e_rank_armor_boots": "E-Rank Fighter Boots",
       "gui.slsb.hunter_phone_new_price.button_set": "Set",
       "advancements.healer_class.title": "Healer",
       "block.slsb.mine_dungeon_enemies": "Mine Dungeon Enemies",
@@ -11040,6 +11995,7 @@
       "block.slsb.sunken_dungeon_west": "Sunken Dungeon West",
       "gui.slsb.hunter_phone_claim.GatePrice": "0",
       "effect.slsb.stealth": "Stealth",
+      "item.slsb.hunter_npc_spawn_egg": "Hunter NPC Spawn Egg",
       "gui.slsb.hunter_phone_purchase.button_buy_gate": "Buy Gate",
       "biome.slsb.dungeon": "Dungeon",
       "block.slsb.lich_dungeon_enemies": "Lich Dungeon Enemies",
@@ -11116,6 +12072,8 @@
       "effect.slsb.bash": "Bash",
       "block.slsb.red_gate_small": "Red Gate Small",
       "item.slsb.giant_rat_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
+      "item.slsb.e_rank_armor_chestplate": "E-Rank Fighter Chestplate",
+      "item.slsb.e_rank_tanker_armor_boots": "E-Rank Tanker Boots",
       "block.slsb.rat_dungeon_west": "Rat Dungeon West",
       "block.slsb.giant_dungeon_north": "Giant Dungeon North",
       "block.slsb.dragon_dungeon_north": "Dragon Dungeon North",
@@ -11138,18 +12096,6 @@
       {
         "name": "Procedures",
         "children": [
-          {
-            "name": "Awakening",
-            "children": []
-          },
-          {
-            "name": "Player",
-            "children": []
-          },
-          {
-            "name": "Gates",
-            "children": []
-          },
           {
             "name": "Dungeons",
             "children": [
@@ -11205,6 +12151,10 @@
                 "children": []
               },
               {
+                "name": "System",
+                "children": []
+              },
+              {
                 "name": "Slots",
                 "children": [
                   {
@@ -11243,6 +12193,35 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Misc",
+            "children": []
+          },
+          {
+            "name": "Awakening",
+            "children": []
+          },
+          {
+            "name": "Commands",
+            "children": [
+              {
+                "name": "Classes",
+                "children": []
+              },
+              {
+                "name": "Ranks",
+                "children": []
+              },
+              {
+                "name": "Stats",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Player",
+            "children": []
           },
           {
             "name": "Skills",
@@ -11349,21 +12328,8 @@
             ]
           },
           {
-            "name": "Commands",
-            "children": [
-              {
-                "name": "Classes",
-                "children": []
-              },
-              {
-                "name": "Ranks",
-                "children": []
-              },
-              {
-                "name": "Stats",
-                "children": []
-              }
-            ]
+            "name": "Gates",
+            "children": []
           },
           {
             "name": "Mobs",
@@ -11527,12 +12493,7 @@
       },
       {
         "name": "GUI",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "name": "Damage Sources",
@@ -11621,19 +12582,7 @@
             "children": []
           },
           {
-            "name": "D Rank",
-            "children": []
-          },
-          {
-            "name": "C Rank",
-            "children": []
-          },
-          {
             "name": "B Rank",
-            "children": []
-          },
-          {
-            "name": "A Rank",
             "children": []
           },
           {
@@ -11641,17 +12590,34 @@
             "children": []
           },
           {
+            "name": "A Rank",
+            "children": []
+          },
+          {
             "name": "Misc",
             "children": [
               {
-                "name": "Procedures",
+                "name": "Effects",
                 "children": []
               },
               {
-                "name": "Effects",
-                "children": []
+                "name": "Procedures",
+                "children": [
+                  {
+                    "name": "HunterNPC",
+                    "children": []
+                  }
+                ]
               }
             ]
+          },
+          {
+            "name": "D Rank",
+            "children": []
+          },
+          {
+            "name": "C Rank",
+            "children": []
           }
         ]
       },

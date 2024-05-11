@@ -111,6 +111,14 @@ public class CooldownTimerProcedure {
 		if (entity.getPersistentData().getDouble("PortalCooldown") > 0) {
 			entity.getPersistentData().putDouble("PortalCooldown", (entity.getPersistentData().getDouble("PortalCooldown") - 1));
 		}
+		if (entity.getPersistentData().getDouble("ToggleShift") > 0) {
+			entity.getPersistentData().putDouble("ToggleShift", (entity.getPersistentData().getDouble("ToggleShift") - 1));
+		}
+		if (!entity.isSprinting()) {
+			if (entity.getPersistentData().getDouble("SpeedCD") > 0) {
+				entity.getPersistentData().putDouble("SpeedCD", (entity.getPersistentData().getDouble("SpeedCD") - 1));
+			}
+		}
 		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).DungeonEnterTimerPlayer > 1) {
 			{
 				double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).DungeonEnterTimerPlayer - 1;

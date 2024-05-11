@@ -1,262 +1,1576 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.Arrow;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
-import net.clozynoii.slsb.init.SlsbModMobEffects;
-import net.clozynoii.slsb.init.SlsbModEntities;
-import net.clozynoii.slsb.entity.AfterImageEntity;
-import net.clozynoii.slsb.SlsbMod;
-
-import java.util.List;
-import java.util.Comparator;
+import net.clozynoii.slsb.init.SlsbModItems;
+import net.clozynoii.slsb.entity.HunterNPCEntity;
 
 public class HunterNPCOnInitialEntitySpawnProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		double cooldown = 0;
-		boolean singletarget = false;
-		entity.getPersistentData().putDouble("randomclass", 6);
-		if (entity.getPersistentData().getDouble("randomclass") == 1) {
-			entity.getPersistentData().putString("Class", "Fighter");
-			entity.setCustomName(Component.literal("\u00A7cHealer Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Fighter Fighter");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Fighter @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-		} else if (entity.getPersistentData().getDouble("randomclass") == 2) {
-			entity.getPersistentData().putString("Class", "Assassin");
-			entity.setCustomName(Component.literal("\u00A79Assassin Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Assassin Assassin");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Assassin @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-			if (entity instanceof LivingEntity _entity) {
-				ItemStack _setstack = new ItemStack(Items.IRON_SWORD);
-				_setstack.setCount(1);
-				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-				if (_entity instanceof Player _player)
-					_player.getInventory().setChanged();
+		double random = 0;
+		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+			_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 40, 9, true, true));
+		if (entity instanceof HunterNPCEntity _datEntSetI)
+			_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Skin, Mth.nextInt(RandomSource.create(), 1, 8));
+		random = Mth.nextInt(RandomSource.create(), 1, 6);
+		if (random == 1) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Fighter");
+		} else if (random == 2) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Assassin");
+		} else if (random == 3) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Mage");
+		} else if (random == 4) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Healer");
+		} else if (random == 5) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Ranger");
+		} else if (random == 6) {
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterClass, "Tanker");
+		}
+		random = Mth.nextInt(RandomSource.create(), 1, 6);
+		if (random == 1) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 5, 15));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 5, 15));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 5, 15));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "E-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cE-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
 			}
-		} else if (entity.getPersistentData().getDouble("randomclass") == 3) {
-			entity.getPersistentData().putString("Class", "Mage");
-			entity.setCustomName(Component.literal("\u00A76Mage Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Mage Mage");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Mage @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-		} else if (entity.getPersistentData().getDouble("randomclass") == 4) {
-			entity.getPersistentData().putString("Class", "Healer");
-			entity.setCustomName(Component.literal("\u00A7aHealer Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Healer Healer");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Healer @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-		} else if (entity.getPersistentData().getDouble("randomclass") == 5) {
-			entity.getPersistentData().putString("Class", "Ranger");
-			entity.setCustomName(Component.literal("\u00A72Mage Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Ranger Ranger");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Ranger @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-			if (entity instanceof LivingEntity _entity) {
-				ItemStack _setstack = new ItemStack(Items.BOW);
-				_setstack.setCount(1);
-				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-				if (_entity instanceof Player _player)
-					_player.getInventory().setChanged();
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79E-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
 			}
-		} else if (entity.getPersistentData().getDouble("randomclass") == 6) {
-			entity.getPersistentData().putString("Class", "Tanker");
-			entity.setCustomName(Component.literal("\u00A7eTanker Hunter"));
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team add Tanker Tanker");
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"team join Tanker @p");
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 0, false, false));
-			if (entity instanceof LivingEntity _entity) {
-				ItemStack _setstack = new ItemStack(Items.IRON_AXE);
-				_setstack.setCount(1);
-				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-				if (_entity instanceof Player _player)
-					_player.getInventory().setChanged();
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76E-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aE-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72E-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eE-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+					}
+				}
 			}
 		}
-		if (!(entity instanceof LivingEntity _livEnt40 && _livEnt40.hasEffect(SlsbModMobEffects.NP_CCOOLDOWN.get()))) {
-			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
-				if (Math.random() < 0.05) {
-					if ((entity.getPersistentData().getString("Class")).equals("Ranger")) {
-						if (entity instanceof LivingEntity _entity)
-							_entity.swing(InteractionHand.MAIN_HAND, true);
-						{
-							Entity _shootFrom = entity;
-							Level projectileLevel = _shootFrom.level();
-							if (!projectileLevel.isClientSide()) {
-								Projectile _entityToSpawn = new Object() {
-									public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-										AbstractArrow entityToSpawn = new Arrow(EntityType.ARROW, level);
-										entityToSpawn.setOwner(shooter);
-										entityToSpawn.setBaseDamage(damage);
-										entityToSpawn.setKnockback(knockback);
-										return entityToSpawn;
-									}
-								}.getArrow(projectileLevel, entity, 5, 1);
-								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 0);
-								projectileLevel.addFreshEntity(_entityToSpawn);
-							}
-						}
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.NP_CCOOLDOWN.get(), 30, 0, false, false));
+		if (random == 2) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 25, 40));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 25, 40));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 25, 40));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "D-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cD-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
 					}
 				}
-				if (Math.random() < 0.005) {
-					if ((entity.getPersistentData().getString("Class")).equals("Healer")) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-									"particle minecraft:dust 0 1 0 2 ^0 ^0 ^0 6 0.2 6 0 35");
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.beacon.activate")), SoundSource.NEUTRAL, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.beacon.activate")), SoundSource.NEUTRAL, 1, 1, false);
-							}
-						}
-						{
-							final Vec3 _center = new Vec3(x, y, z);
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (!(entityiterator instanceof LivingEntity _livEnt51 && _livEnt51.hasEffect(MobEffects.REGENERATION))) {
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 35, 3, false, true));
-								}
-							}
-						}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
 					}
 				}
-				if (Math.random() < 0.009) {
-					if ((entity.getPersistentData().getString("Class")).equals("Assassin")) {
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.EVADE.get(), 70, 0, false, true));
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
 					}
 				}
-				if (Math.random() < 0.005) {
-					if ((entity.getPersistentData().getString("Class")).equals("Assassin")) {
-						entity.getPersistentData().putBoolean("singletarget", false);
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 0.1, 2, 0.1, 0);
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = SlsbModEntities.AFTER_IMAGE.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-							if (entityToSpawn != null) {
-								entityToSpawn.setDeltaMovement(0, 0, 0);
-							}
-						}
-						{
-							final Vec3 _center = new Vec3(x, y, z);
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (!(entity == entityiterator)) {
-									if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-										_toTame.tame(_owner);
-								}
-							}
-						}
-						{
-							final Vec3 _center = new Vec3(
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (entity.getPersistentData().getBoolean("singletarget") == false) {
-									if (!(entity == entityiterator) && !(entityiterator instanceof AfterImageEntity)) {
-										entity.getPersistentData().putBoolean("singletarget", true);
-										{
-											Entity _ent = entity;
-											_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
-											if (_ent instanceof ServerPlayer _serverPlayer)
-												_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
-										}
-										if (entity instanceof LivingEntity _entity)
-											_entity.swing(InteractionHand.MAIN_HAND, true);
-										if (world instanceof Level _level) {
-											if (!_level.isClientSide()) {
-												_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()),
-														ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.evoker_fangs.attack")), SoundSource.NEUTRAL, 1, 1);
-											} else {
-												_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.evoker_fangs.attack")),
-														SoundSource.NEUTRAL, 1, 1, false);
-											}
-										}
-										SlsbMod.queueServerWork(3, () -> {
-											if (world instanceof ServerLevel _level)
-												_level.sendParticles(ParticleTypes.SWEEP_ATTACK, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 3, 0.1, 2, 0.1, 0);
-											world.levelEvent(2001, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), Block.getId(Blocks.REDSTONE_BLOCK.defaultBlockState()));
-											entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), entity), 10);
-										});
-									}
-								}
-							}
-						}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79D-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76D-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aD-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72D-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eD-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+		}
+		if (random == 3) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 50, 75));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 50, 75));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 50, 75));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "C-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cC-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79C-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76C-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aC-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72C-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eC-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+		}
+		if (random == 4) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 80, 100));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 80, 100));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 80, 100));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "B-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cB-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79B-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76B-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aB-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72B-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eB-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+		}
+		if (random == 5) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 150, 200));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 150, 200));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 150, 200));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "A-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cA-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79A-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76A-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aA-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72A-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eA-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+		}
+		if (random == 6) {
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Strength, Mth.nextInt(RandomSource.create(), 250, 350));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Vitality, Mth.nextInt(RandomSource.create(), 250, 350));
+			if (entity instanceof HunterNPCEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HunterNPCEntity.DATA_Agility, Mth.nextInt(RandomSource.create(), 250, 350));
+			if (entity instanceof HunterNPCEntity _datEntSetS)
+				_datEntSetS.getEntityData().set(HunterNPCEntity.DATA_HunterRank, "S-Rank");
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Fighter")) {
+				entity.setCustomName(Component.literal("\u00A7cS-Rank Fighter"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SWORD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Assassin")) {
+				entity.setCustomName(Component.literal("\u00A79S-Rank Assassin"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_DAGGER.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Mage")) {
+				entity.setCustomName(Component.literal("\u00A76S-Rank Mage"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_STAFF.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Healer")) {
+				entity.setCustomName(Component.literal("\u00A7aS-Rank Healer"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SPELL_BOOK.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Ranger")) {
+				entity.setCustomName(Component.literal("\u00A72S-Rank Ranger"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_BOW.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
+					}
+				}
+			}
+			if ((entity instanceof HunterNPCEntity _datEntS ? _datEntS.getEntityData().get(HunterNPCEntity.DATA_HunterClass) : "").equals("Tanker")) {
+				entity.setCustomName(Component.literal("\u00A7eS-Rank Tanker"));
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_AXE.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(SlsbModItems.E_RANK_SHIELD.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_HELMET.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_CHESTPLATE.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_LEGGINGS.get()));
+					}
+				}
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_TANKER_ARMOR_BOOTS.get()));
 					}
 				}
 			}

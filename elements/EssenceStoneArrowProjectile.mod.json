@@ -1,0 +1,22 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:EssenceStoneArrow"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 1.0,
+    "damage": 3.0,
+    "knockback": 0,
+    "entityModel": "ModelCustomArrow",
+    "customModelTexture": "essencestonearrowtexture.png",
+    "onHitsBlock": {
+      "name": "EssenceStoneArrowDrop"
+    }
+  }
+}

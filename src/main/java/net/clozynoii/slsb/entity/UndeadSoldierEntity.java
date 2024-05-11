@@ -16,7 +16,6 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
@@ -69,10 +68,10 @@ public class UndeadSoldierEntity extends Monster implements GeoEntity {
 		xpReward = 10;
 		setNoAi(false);
 		setPersistenceRequired();
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(SlsbModItems.E_RANK_SWORD.get()));
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(SlsbModItems.E_RANK_ARMOR_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(SlsbModItems.E_RANK_ARMOR_BOOTS.get()));
 	}
 
 	@Override
@@ -100,16 +99,17 @@ public class UndeadSoldierEntity extends Monster implements GeoEntity {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, true, true));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false) {
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, HunterNPCEntity.class, true, true));
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new FloatGoal(this));
 	}
 
 	@Override

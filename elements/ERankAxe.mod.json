@@ -1,0 +1,40 @@
+{
+  "_fv": 57,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Axe",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "magicaxe",
+    "customModelName": "erankaxe:default",
+    "blockingModelName": "Normal blocking",
+    "name": "E-Rank Axe",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTab": {
+      "value": "CUSTOM:SoloLevelingWeapons"
+    },
+    "harvestLevel": 4,
+    "efficiency": 8.0,
+    "attackSpeed": 0.8,
+    "enchantability": 2,
+    "damageVsEntity": 12.0,
+    "usageCount": 250,
+    "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:ManaCrystal"
+      },
+      {
+        "value": "CUSTOM:ERankEssenceStone"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

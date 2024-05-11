@@ -79,6 +79,13 @@ public class DailyQuestResetProcedure {
 					}
 				}
 				{
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).SystemEXP + 150;
+					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.SystemEXP = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
 					boolean _setval = false;
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.DailyRewardClaimed = _setval;

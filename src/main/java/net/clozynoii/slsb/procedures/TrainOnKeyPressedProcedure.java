@@ -112,7 +112,7 @@ public class TrainOnKeyPressedProcedure {
 					SlsbMod.queueServerWork(47, () -> {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(
-									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups) + "/50")),
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups) + "/25")),
 									true);
 					});
 				} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 2) {
@@ -136,7 +136,7 @@ public class TrainOnKeyPressedProcedure {
 					SlsbMod.queueServerWork(47, () -> {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(
-									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps) + "/50")),
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps) + "/25")),
 									true);
 					});
 				} else if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).TrainingType == 3) {
@@ -160,7 +160,7 @@ public class TrainOnKeyPressedProcedure {
 					SlsbMod.queueServerWork(22, () -> {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(
-									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats) + "/50")),
+									Component.literal(("\u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats) + "/25")),
 									true);
 					});
 				}

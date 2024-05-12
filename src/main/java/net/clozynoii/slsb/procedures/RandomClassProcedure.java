@@ -29,6 +29,13 @@ public class RandomClassProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				{
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Intelligence + Mth.nextInt(RandomSource.create(), 5, 10);
+					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Intelligence = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 			if (randomclass == 2) {
 				{
@@ -46,9 +53,9 @@ public class RandomClassProcedure {
 					});
 				}
 				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxAgility + Mth.nextInt(RandomSource.create(), 5, 10);
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Agility + Mth.nextInt(RandomSource.create(), 5, 10);
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.MaxAgility = _setval;
+						capability.Agility = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
@@ -69,9 +76,9 @@ public class RandomClassProcedure {
 					});
 				}
 				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxVitality + Mth.nextInt(RandomSource.create(), 5, 10);
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality + Mth.nextInt(RandomSource.create(), 5, 10);
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.MaxVitality = _setval;
+						capability.Vitality = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
@@ -92,9 +99,9 @@ public class RandomClassProcedure {
 					});
 				}
 				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxStrength + Mth.nextInt(RandomSource.create(), 5, 10);
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Strength + Mth.nextInt(RandomSource.create(), 5, 10);
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.MaxStrength = _setval;
+						capability.Strength = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
@@ -115,9 +122,9 @@ public class RandomClassProcedure {
 					});
 				}
 				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxVitality + Mth.nextInt(RandomSource.create(), 5, 10);
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality + Mth.nextInt(RandomSource.create(), 5, 10);
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.MaxVitality = _setval;
+						capability.Vitality = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
@@ -138,9 +145,9 @@ public class RandomClassProcedure {
 					});
 				}
 				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxAgility + Mth.nextInt(RandomSource.create(), 5, 10);
+					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Agility + Mth.nextInt(RandomSource.create(), 5, 10);
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.MaxAgility = _setval;
+						capability.Agility = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
@@ -216,34 +223,6 @@ public class RandomClassProcedure {
 				});
 			}
 			RandomMovesProcedure.execute(world, entity);
-		}
-		{
-			double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxStrength;
-			entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.Strength = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxAgility;
-			entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.Agility = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxVitality;
-			entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.Vitality = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxIntelligence;
-			entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.Intelligence = _setval;
-				capability.syncPlayerVariables(entity);
-			});
 		}
 	}
 }

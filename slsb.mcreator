@@ -8463,10 +8463,10 @@
       "registry_name": "giant_rat",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slsb/models/item/giant_rat_spawn_egg.json",
           "src/main/java/net/clozynoii/slsb/entity/model/GiantRatModel.java",
-          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatRenderer.java",
           "src/main/java/net/clozynoii/slsb/entity/GiantRatEntity.java",
-          "src/main/resources/assets/slsb/models/item/giant_rat_spawn_egg.json"
+          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatRenderer.java"
         ]
       },
       "path": "~/Mobs/E Rank"
@@ -8522,10 +8522,10 @@
       "registry_name": "giant_rat_boss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/giant_rat_boss_spawn_egg.json",
-          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatBossRenderer.java",
           "src/main/java/net/clozynoii/slsb/entity/GiantRatBossEntity.java",
-          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatBossModel.java"
+          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatBossModel.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatBossRenderer.java",
+          "src/main/resources/assets/slsb/models/item/giant_rat_boss_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/D Rank"
@@ -9833,8 +9833,8 @@
         "files": [
           "src/main/java/net/clozynoii/slsb/entity/model/UndeadKnightBossModel.java",
           "src/main/java/net/clozynoii/slsb/entity/UndeadKnightBossEntity.java",
-          "src/main/resources/assets/slsb/models/item/undead_knight_boss_spawn_egg.json",
-          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadKnightBossRenderer.java"
+          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadKnightBossRenderer.java",
+          "src/main/resources/assets/slsb/models/item/undead_knight_boss_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/C Rank"
@@ -11894,6 +11894,26 @@
         ]
       },
       "path": "~/Procedures/Player"
+    },
+    {
+      "name": "CRankHealthUpdate",
+      "type": "procedure",
+      "sortid": 556,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c_rank_health_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/CRankHealthUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Mobs"
     }
   ],
   "variable_elements": [
@@ -12246,25 +12266,7 @@
       "value": "false"
     },
     {
-      "name": "MaxStrength",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
       "name": "Intelligence",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "MaxAgility",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "MaxVitality",
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
@@ -12277,12 +12279,6 @@
     },
     {
       "name": "MaxSense",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "MaxIntelligence",
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
@@ -12441,19 +12437,19 @@
       "name": "PlayerHealth",
       "type": "number",
       "scope": "player_lifetime",
-      "value": "0"
+      "value": "20.0"
     },
     {
       "name": "PlayerMaxHealth",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "20.0"
     },
     {
       "name": "HealTimer",
       "type": "number",
       "scope": "player_lifetime",
-      "value": "0"
+      "value": "0.0"
     }
   ],
   "sound_elements": [

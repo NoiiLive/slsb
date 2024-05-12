@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "slsb:mana_crystal",
+    "slsb:e_rank_essence_stone",
+    "slsb:d_rank_essence_stone",
+    "slsb:c_rank_essence_stone"
+  ]
+}

@@ -13,6 +13,7 @@ import net.minecraft.core.BlockPos;
 
 import net.clozynoii.slsb.world.inventory.SystemDailyQuestMenu;
 import net.clozynoii.slsb.procedures.OpenInfoMenuProcedure;
+import net.clozynoii.slsb.procedures.FinisheDailyQuestProcedure;
 import net.clozynoii.slsb.SlsbMod;
 
 import java.util.function.Supplier;
@@ -65,6 +66,10 @@ public class SystemDailyQuestButtonMessage {
 		if (buttonID == 0) {
 
 			OpenInfoMenuProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			FinisheDailyQuestProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

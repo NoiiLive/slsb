@@ -1,0 +1,73 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.RandomLootBox",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "box",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3.5, 0, -3.5], "size": [7, 0, 7], "uv": [0, 7]}
+					]
+				},
+				{
+					"name": "top",
+					"parent": "box",
+					"pivot": [0, 7, 0],
+					"cubes": [
+						{"origin": [-3.5, 7, -3.5], "size": [7, 0, 7], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "front_flap",
+					"parent": "box",
+					"pivot": [0, 0, -3.5],
+					"cubes": [
+						{"origin": [0, 0, -14], "size": [0, 7, 7], "pivot": [3.5, 0, -7], "rotation": [0, 90, 0], "uv": [0, 7]}
+					]
+				},
+				{
+					"name": "left_flap",
+					"parent": "box",
+					"pivot": [3.5, 0, 0],
+					"cubes": [
+						{"origin": [3.5, 0, -3.5], "size": [0, 7, 7], "uv": [14, 14]}
+					]
+				},
+				{
+					"name": "right_flap",
+					"parent": "box",
+					"pivot": [-3.5, 0, 0],
+					"cubes": [
+						{"origin": [-3.5, 0, -3.5], "size": [0, 7, 7], "uv": [14, 7]}
+					]
+				},
+				{
+					"name": "back_flap",
+					"parent": "box",
+					"pivot": [0, 0, 3.5],
+					"cubes": [
+						{"origin": [0, 0, 0], "size": [0, 7, 7], "pivot": [0, 3.5, 3.5], "rotation": [0, -90, 0], "uv": [0, 14]}
+					]
+				},
+				{
+					"name": "orb",
+					"pivot": [0, 3.66667, 0],
+					"cubes": [
+						{"origin": [-1, 2.5, -1], "size": [2, 2, 2], "uv": [21, 0]},
+						{"origin": [0, 0.75, -2], "size": [0, 6, 4], "uv": [0, 24]},
+						{"origin": [0, 0.75, -2], "size": [0, 6, 4], "pivot": [0, 3.75, 0], "rotation": [0, -90, 0], "uv": [21, 0]}
+					]
+				}
+			]
+		}
+	]
+}

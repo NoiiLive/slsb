@@ -10431,8 +10431,8 @@
       "registry_name": "mana_arrow",
       "metadata": {
         "files": [
-          "src/main/java/net/clozynoii/slsb/item/ManaArrowItem.java",
-          "src/main/resources/assets/slsb/models/item/mana_arrow.json"
+          "src/main/resources/assets/slsb/models/item/mana_arrow.json",
+          "src/main/java/net/clozynoii/slsb/item/ManaArrowItem.java"
         ]
       },
       "path": "~/Items"
@@ -11622,18 +11622,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -11694,6 +11682,134 @@
         ]
       },
       "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "RandomLootBox",
+      "type": "animateditem",
+      "sortid": 547,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_loot_box",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/item/RandomLootBoxItem.java",
+          "src/main/resources/assets/slsb/models/item/random_loot_box.json",
+          "src/main/java/net/clozynoii/slsb/item/model/RandomLootBoxItemModel.java",
+          "src/main/java/net/clozynoii/slsb/item/renderer/RandomLootBoxItemRenderer.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "RandomLootboxOpen",
+      "type": "procedure",
+      "sortid": 548,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_lootbox_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/RandomLootboxOpenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "LootboxLoot",
+      "type": "tag",
+      "sortid": 549,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lootbox_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/tags/items/lootbox_loot.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ReturnQuestComplete",
+      "type": "procedure",
+      "sortid": 550,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_quest_complete",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnQuestCompleteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "FinisheDailyQuest",
+      "type": "procedure",
+      "sortid": 551,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "finishe_daily_quest",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/FinisheDailyQuestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
     }
   ],
   "variable_elements": [
@@ -12151,7 +12267,7 @@
       "name": "SystemLevel",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0.0"
+      "value": "1.0"
     },
     {
       "name": "DungeonsCleared",
@@ -12199,25 +12315,25 @@
       "name": "Pushups",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "Situps",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "Squats",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "Running",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "Crouched",
@@ -12229,7 +12345,7 @@
       "name": "TrainingType",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "DailyRewardClaimed",
@@ -12492,6 +12608,7 @@
       "item.slsb.giant_rat_grey_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
       "block.slsb.maze_dungeon_south": "Maze Dungeon South",
       "item.slsb.phone": "Hunter\u0027s Phone",
+      "item.slsb.random_loot_box": "Random Loot Box",
       "advancements.heal_skill.descr": "Unlock Heal Skill",
       "block.slsb.orc_dungeon_north": "Orc Dungeon North",
       "block.slsb.sunken_dungeon_enemies": "Sunken Dungeon Enemies",

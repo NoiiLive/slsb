@@ -26,6 +26,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.A_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.S_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.PHONE.get());
+				tabData.accept(SlsbModItems.RANDOM_LOOT_BOX.get());
 			})
 
 					.build());
@@ -53,6 +54,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.E_RANK_SPELL_BOOK.get());
 				tabData.accept(SlsbModItems.E_RANK_BOW.get());
 				tabData.accept(SlsbModItems.ESSENCE_STONE_ARROW.get());
+				tabData.accept(SlsbModItems.MANA_ARROW.get());
 			})
 
 					.build());

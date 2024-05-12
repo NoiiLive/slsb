@@ -27,7 +27,7 @@ public class WorldCreatedProcedure {
 		if (SlsbModVariables.MapVariables.get(world).WorldCreated == false) {
 			SlsbModVariables.MapVariables.get(world).WorldCreated = true;
 			SlsbModVariables.MapVariables.get(world).syncData(world);
-			SlsbModVariables.MapVariables.get(world).GateTimer = 72000;
+			SlsbModVariables.MapVariables.get(world).GateTimer = 72000 * 20;
 			SlsbModVariables.MapVariables.get(world).syncData(world);
 			SlsbMod.LOGGER.debug("World Created!");
 		}

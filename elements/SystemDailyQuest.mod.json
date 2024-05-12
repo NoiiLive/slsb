@@ -184,6 +184,22 @@
           "x": 202,
           "y": 190
         }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_complete_h",
+          "image": "button_complete_h.png",
+          "hoveredImage": "button_complete.png",
+          "onClick": {
+            "name": "FinisheDailyQuest"
+          },
+          "displayCondition": {
+            "name": "ReturnQuestComplete"
+          },
+          "x": 259,
+          "y": 187
+        }
       }
     ],
     "gridSettings": {

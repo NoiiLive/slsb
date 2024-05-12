@@ -1,0 +1,6 @@
+{
+  "parent": "slsb:displaysettings/randomlootbox.item",
+  "textures": {
+    "layer0": "slsb:item/lootboxtexture"
+  }
+}

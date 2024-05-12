@@ -13,6 +13,7 @@ import net.clozynoii.slsb.world.inventory.SystemDailyQuestMenu;
 import net.clozynoii.slsb.procedures.SquatsValueProcedure;
 import net.clozynoii.slsb.procedures.SitupsValueProcedure;
 import net.clozynoii.slsb.procedures.RunningValueProcedure;
+import net.clozynoii.slsb.procedures.ReturnQuestCompleteProcedure;
 import net.clozynoii.slsb.procedures.QuestTimerProcedure;
 import net.clozynoii.slsb.procedures.PushupsValueProcedure;
 import net.clozynoii.slsb.network.SystemDailyQuestButtonMessage;
@@ -28,6 +29,7 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	private final int x, y, z;
 	private final Player entity;
 	ImageButton imagebutton_button_stats;
+	ImageButton imagebutton_button_complete_h;
 
 	public SystemDailyQuestScreen(SystemDailyQuestMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -116,5 +118,19 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 		});
 		guistate.put("button:imagebutton_button_stats", imagebutton_button_stats);
 		this.addRenderableWidget(imagebutton_button_stats);
+		imagebutton_button_complete_h = new ImageButton(this.leftPos + 45, this.topPos + 67, 16, 16, 0, 0, 16, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_complete_h.png"), 16, 32, e -> {
+			if (ReturnQuestCompleteProcedure.execute(entity)) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemDailyQuestButtonMessage(1, x, y, z));
+				SystemDailyQuestButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnQuestCompleteProcedure.execute(entity))
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_complete_h", imagebutton_button_complete_h);
+		this.addRenderableWidget(imagebutton_button_complete_h);
 	}
 }

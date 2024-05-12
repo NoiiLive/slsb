@@ -1,7 +1,5 @@
 package net.clozynoii.slsb.procedures;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
@@ -38,10 +36,10 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Fighter")) {
 			abilitylist = "SwordSlash,Berserker,SwordDance,Shatter,Adrenaline,Whirlwind,Precision,Prediction,ManaBlade,Zone,";
-			abilitycount = 8;
+			abilitycount = 10;
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Mage")) {
-			magemagic = Mth.nextInt(RandomSource.create(), 3, 3);
+			magemagic = Mth.nextInt(RandomSource.create(), 1, 10);
 			if (magemagic == 1) {
 				{
 					String _setval = "Flame";
@@ -73,7 +71,7 @@ public class RandomMovesProcedure {
 					});
 				}
 				abilitylist = "WindSlice,Turbulence,WindBurst,WindPull,Suffocation,Tornado,WindBarrier,";
-				abilitycount = 5;
+				abilitycount = 7;
 			}
 			if (magemagic == 4) {
 				{
@@ -155,7 +153,7 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Assassin")) {
 			abilitylist = "Stealth,Quickstep,Backstab,Evasion,Mark,Smokescreen,Clone,Flurry,";
-			abilitycount = 5;
+			abilitycount = 8;
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Ranger")) {
 			abilitylist = "MagicArrows,RapidShot,ArrowRain,PiercingShot,Tracking,SnareTrap,RotatingShots,";
@@ -167,17 +165,12 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Healer")) {
 			abilitylist = "Healing,HasteBuff,StrengthBuff,Disguise,Purify,Fortify,SacredBarrier,";
-			abilitycount = 6;
+			abilitycount = 7;
 		}
 		for (int index0 = 0; index0 < (int) totalabilities; index0++) {
 			if (!(abilitylist).isEmpty()) {
 				SlsbMod.LOGGER.debug(("Slot: " + new java.text.DecimalFormat("##").format(abilitiesselected)));
-				selectedability = new Object() {
-					private String split(String text, String space, int index) {
-						String s = text.split(space)[index];
-						return s;
-					}
-				}.split(abilitylist, ",", (int) (Mth.nextInt(RandomSource.create(), 0, (int) (abilitycount - abilitiesselected))));
+				selectedability = (abilitylist).split(",")[(Mth.nextInt(RandomSource.create(), 0, (int) (abilitycount - abilitiesselected)))];
 				abilitylist = abilitylist.replace(selectedability + ",", "");
 				SlsbMod.LOGGER.debug(("Ability Selected: " + selectedability));
 				SlsbMod.LOGGER.debug(("Abilities Left: " + abilitylist));

@@ -13,7 +13,7 @@ public class RandomClassProcedure {
 			return;
 		double randomclass = 0;
 		if (!((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Rank).equals("E-Rank")) {
-			randomclass = Mth.nextInt(RandomSource.create(), 1, 5);
+			randomclass = Mth.nextInt(RandomSource.create(), 1, 6);
 			if (randomclass == 1) {
 				{
 					String _setval = "Mage";

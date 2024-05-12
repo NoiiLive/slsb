@@ -152,6 +152,7 @@ public class SlsbModVariables {
 			clone.Crouched = original.Crouched;
 			clone.TrainingType = original.TrainingType;
 			clone.DailyRewardClaimed = original.DailyRewardClaimed;
+			clone.PlayerMaxHealth = original.PlayerMaxHealth;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -167,6 +168,8 @@ public class SlsbModVariables {
 				clone.AbilityCooldown9 = original.AbilityCooldown9;
 				clone.DefeatedBoss = original.DefeatedBoss;
 				clone.SummonAid = original.SummonAid;
+				clone.PlayerHealth = original.PlayerHealth;
+				clone.HealTimer = original.HealTimer;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -441,6 +444,9 @@ public class SlsbModVariables {
 		public boolean Crouched = false;
 		public double TrainingType = 0.0;
 		public boolean DailyRewardClaimed = false;
+		public double PlayerHealth = 0;
+		public double PlayerMaxHealth = 0;
+		public double HealTimer = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -532,6 +538,9 @@ public class SlsbModVariables {
 			nbt.putBoolean("Crouched", Crouched);
 			nbt.putDouble("TrainingType", TrainingType);
 			nbt.putBoolean("DailyRewardClaimed", DailyRewardClaimed);
+			nbt.putDouble("PlayerHealth", PlayerHealth);
+			nbt.putDouble("PlayerMaxHealth", PlayerMaxHealth);
+			nbt.putDouble("HealTimer", HealTimer);
 			return nbt;
 		}
 
@@ -620,6 +629,9 @@ public class SlsbModVariables {
 			Crouched = nbt.getBoolean("Crouched");
 			TrainingType = nbt.getDouble("TrainingType");
 			DailyRewardClaimed = nbt.getBoolean("DailyRewardClaimed");
+			PlayerHealth = nbt.getDouble("PlayerHealth");
+			PlayerMaxHealth = nbt.getDouble("PlayerMaxHealth");
+			HealTimer = nbt.getDouble("HealTimer");
 		}
 	}
 
@@ -736,6 +748,9 @@ public class SlsbModVariables {
 					variables.Crouched = message.data.Crouched;
 					variables.TrainingType = message.data.TrainingType;
 					variables.DailyRewardClaimed = message.data.DailyRewardClaimed;
+					variables.PlayerHealth = message.data.PlayerHealth;
+					variables.PlayerMaxHealth = message.data.PlayerMaxHealth;
+					variables.HealTimer = message.data.HealTimer;
 				}
 			});
 			context.setPacketHandled(true);

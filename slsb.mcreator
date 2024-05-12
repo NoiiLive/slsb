@@ -11810,6 +11810,90 @@
         ]
       },
       "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "PlayerTrueHealth",
+      "type": "procedure",
+      "sortid": 552,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_true_health",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PlayerTrueHealthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
+    },
+    {
+      "name": "PlayerHealTimer",
+      "type": "procedure",
+      "sortid": 553,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_heal_timer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PlayerHealTimerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
+    },
+    {
+      "name": "PlayerRespawn",
+      "type": "procedure",
+      "sortid": 554,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_respawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PlayerRespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
+    },
+    {
+      "name": "PlayerDeath",
+      "type": "procedure",
+      "sortid": 555,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/PlayerDeathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Player"
     }
   ],
   "variable_elements": [
@@ -12352,6 +12436,24 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "PlayerHealth",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "PlayerMaxHealth",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "HealTimer",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [

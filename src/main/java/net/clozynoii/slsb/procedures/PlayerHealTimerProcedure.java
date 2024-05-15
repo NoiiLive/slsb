@@ -58,7 +58,7 @@ public class PlayerHealTimerProcedure {
 				}.checkGamemode(entity)) {
 					{
 						double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth + 1
-								+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality / 5;
+								+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality;
 						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.PlayerHealth = _setval;
 							capability.syncPlayerVariables(entity);
@@ -68,7 +68,7 @@ public class PlayerHealTimerProcedure {
 					if (entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(MobEffects.REGENERATION)) {
 						{
 							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth + 1
-									+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality / 10;
+									+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality;
 							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.PlayerHealth = _setval;
 								capability.syncPlayerVariables(entity);
@@ -84,17 +84,35 @@ public class PlayerHealTimerProcedure {
 					} else if (entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.HEAL)) {
 						{
 							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth + 1
-									+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality / 10;
+									+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality;
 							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.PlayerHealth = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
 					} else {
-						if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) >= 16) {
+						if ((entity instanceof Player _plr ? _plr.getFoodData().getSaturationLevel() : 0) > 0) {
 							{
 								double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth + 1
-										+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality / 10;
+										+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.PlayerHealth = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							if (entity instanceof Player _player)
+								_player.getFoodData().setSaturation((float) ((entity instanceof Player _plr ? _plr.getFoodData().getSaturationLevel() : 0) - 1));
+							{
+								double _setval = 40;
+								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.HealTimer = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) >= 16) {
+							{
+								double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth + 1
+										+ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Vitality;
 								entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.PlayerHealth = _setval;
 									capability.syncPlayerVariables(entity);
@@ -112,6 +130,16 @@ public class PlayerHealTimerProcedure {
 						}
 					}
 				}
+			}
+		}
+		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth > (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new SlsbModVariables.PlayerVariables())).PlayerMaxHealth) {
+			{
+				double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerMaxHealth;
+				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PlayerHealth = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

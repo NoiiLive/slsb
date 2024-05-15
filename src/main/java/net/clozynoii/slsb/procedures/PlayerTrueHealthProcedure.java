@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 
 import net.clozynoii.slsb.network.SlsbModVariables;
+import net.clozynoii.slsb.SlsbMod;
 
 import javax.annotation.Nullable;
 
@@ -37,6 +38,7 @@ public class PlayerTrueHealthProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			SlsbMod.LOGGER.info((new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth)));
 		}
 	}
 }

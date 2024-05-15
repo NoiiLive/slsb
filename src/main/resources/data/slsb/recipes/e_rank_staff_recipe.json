@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    " c",
+    " c"
+  ],
+  "key": {
+    "a": {
+      "item": "slsb:mana_crystal"
+    },
+    "b": {
+      "item": "slsb:e_rank_essence_stone"
+    },
+    "c": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "slsb:e_rank_staff",
+    "count": 1
+  }
+}

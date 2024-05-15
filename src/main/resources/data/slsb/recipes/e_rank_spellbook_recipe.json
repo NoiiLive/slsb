@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "slsb:mana_crystal"
+    },
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "slsb:e_rank_essence_stone"
+    }
+  ],
+  "result": {
+    "item": "slsb:e_rank_spell_book",
+    "count": 1
+  }
+}

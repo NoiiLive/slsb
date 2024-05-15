@@ -39,6 +39,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModBlocks.MANA_CRYSTAL_BLOCK_GRANITE.get().asItem());
 				tabData.accept(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DRIPSTONE.get().asItem());
 				tabData.accept(SlsbModBlocks.AWAKENING_ORB.get().asItem());
+				tabData.accept(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get().asItem());
 			})
 
 					.build());

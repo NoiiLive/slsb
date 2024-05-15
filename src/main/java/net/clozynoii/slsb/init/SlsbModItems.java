@@ -51,6 +51,7 @@ import net.clozynoii.slsb.block.display.ManaCrystalBlockGraniteDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDripstoneDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDioriteDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDeepslateDisplayItem;
+import net.clozynoii.slsb.block.display.DoubleDungeonAltarDisplayItem;
 import net.clozynoii.slsb.block.display.BlueGateSmallDisplayItem;
 import net.clozynoii.slsb.block.display.BlueGateMediumDisplayItem;
 import net.clozynoii.slsb.block.display.AwakeningOrbDisplayItem;
@@ -237,6 +238,7 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_LEGGINGS = REGISTRY.register("e_rank_tanker_armor_leggings", () -> new ERankTankerArmorItem.Leggings());
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_BOOTS = REGISTRY.register("e_rank_tanker_armor_boots", () -> new ERankTankerArmorItem.Boots());
 	public static final RegistryObject<Item> RANDOM_LOOT_BOX = REGISTRY.register("random_loot_box", () -> new RandomLootBoxItem());
+	public static final RegistryObject<Item> DOUBLE_DUNGEON_ALTAR = REGISTRY.register(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.getId().getPath(), () -> new DoubleDungeonAltarDisplayItem(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get(), new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

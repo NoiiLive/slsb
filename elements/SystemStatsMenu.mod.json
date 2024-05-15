@@ -220,6 +220,86 @@
           "x": 346,
           "y": 51
         }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_add",
+          "image": "button_add.png",
+          "hoveredImage": "button_add_h.png",
+          "onClick": {
+            "name": "StatAddStrength"
+          },
+          "displayCondition": {
+            "name": "ReturnStatStrength"
+          },
+          "x": 206,
+          "y": 141
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_add1",
+          "image": "button_add.png",
+          "hoveredImage": "button_add_h.png",
+          "onClick": {
+            "name": "StatAddAgility"
+          },
+          "displayCondition": {
+            "name": "ReturnStatAgility"
+          },
+          "x": 206,
+          "y": 153
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_add2",
+          "image": "button_add.png",
+          "hoveredImage": "button_add_h.png",
+          "onClick": {
+            "name": "StatAddSense"
+          },
+          "displayCondition": {
+            "name": "ReturnStatSense"
+          },
+          "x": 206,
+          "y": 165
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_add3",
+          "image": "button_add.png",
+          "hoveredImage": "button_add_h.png",
+          "onClick": {
+            "name": "StatAddVitality"
+          },
+          "displayCondition": {
+            "name": "ReturnStatVitality"
+          },
+          "x": 273,
+          "y": 141
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button_add4",
+          "image": "button_add.png",
+          "hoveredImage": "button_add_h.png",
+          "onClick": {
+            "name": "StatAddIntelligence"
+          },
+          "displayCondition": {
+            "name": "ReturnStatIntelligence"
+          },
+          "x": 273,
+          "y": 153
+        }
       }
     ],
     "gridSettings": {

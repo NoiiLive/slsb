@@ -83,6 +83,7 @@ public class SlsbModVariables {
 			event.getOriginal().revive();
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			clone.AbilitySelected = original.AbilitySelected;
 			clone.AbilitySlot1 = original.AbilitySlot1;
 			clone.AbilitySlot2 = original.AbilitySlot2;
 			clone.AbilitySlot3 = original.AbilitySlot3;
@@ -102,6 +103,7 @@ public class SlsbModVariables {
 			clone.ManaMax = original.ManaMax;
 			clone.Mastery = original.Mastery;
 			clone.PlayerTimer = original.PlayerTimer;
+			clone.SwitcherSlot = original.SwitcherSlot;
 			clone.AbilityCost1 = original.AbilityCost1;
 			clone.AbilityCost2 = original.AbilityCost2;
 			clone.AbilityCost3 = original.AbilityCost3;
@@ -124,7 +126,6 @@ public class SlsbModVariables {
 			clone.DungeonEnterTimerPlayer = original.DungeonEnterTimerPlayer;
 			clone.Intelligence = original.Intelligence;
 			clone.Agility = original.Agility;
-			clone.MaxSense = original.MaxSense;
 			clone.Vitality = original.Vitality;
 			clone.Strength = original.Strength;
 			clone.Sense = original.Sense;
@@ -150,9 +151,7 @@ public class SlsbModVariables {
 			clone.DailyRewardClaimed = original.DailyRewardClaimed;
 			clone.PlayerMaxHealth = original.PlayerMaxHealth;
 			if (!event.isWasDeath()) {
-				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
-				clone.SwitcherSlot = original.SwitcherSlot;
 				clone.AbilityCooldown1 = original.AbilityCooldown1;
 				clone.AbilityCooldown2 = original.AbilityCooldown2;
 				clone.AbilityCooldown3 = original.AbilityCooldown3;
@@ -411,7 +410,6 @@ public class SlsbModVariables {
 		public boolean DefeatedBoss = false;
 		public double Intelligence = 0.0;
 		public double Agility = 0.0;
-		public double MaxSense = 0.0;
 		public double Vitality = 0.0;
 		public double Strength = 0.0;
 		public double Sense = 0.0;
@@ -501,7 +499,6 @@ public class SlsbModVariables {
 			nbt.putBoolean("DefeatedBoss", DefeatedBoss);
 			nbt.putDouble("Intelligence", Intelligence);
 			nbt.putDouble("Agility", Agility);
-			nbt.putDouble("MaxSense", MaxSense);
 			nbt.putDouble("Vitality", Vitality);
 			nbt.putDouble("Strength", Strength);
 			nbt.putDouble("Sense", Sense);
@@ -588,7 +585,6 @@ public class SlsbModVariables {
 			DefeatedBoss = nbt.getBoolean("DefeatedBoss");
 			Intelligence = nbt.getDouble("Intelligence");
 			Agility = nbt.getDouble("Agility");
-			MaxSense = nbt.getDouble("MaxSense");
 			Vitality = nbt.getDouble("Vitality");
 			Strength = nbt.getDouble("Strength");
 			Sense = nbt.getDouble("Sense");
@@ -703,7 +699,6 @@ public class SlsbModVariables {
 					variables.DefeatedBoss = message.data.DefeatedBoss;
 					variables.Intelligence = message.data.Intelligence;
 					variables.Agility = message.data.Agility;
-					variables.MaxSense = message.data.MaxSense;
 					variables.Vitality = message.data.Vitality;
 					variables.Strength = message.data.Strength;
 					variables.Sense = message.data.Sense;

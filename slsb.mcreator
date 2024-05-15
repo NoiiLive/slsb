@@ -1471,6 +1471,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -10912,38 +10928,6 @@
       "path": "~/Procedures/GUI/System"
     },
     {
-      "name": "ManaArrowDrop",
-      "type": "procedure",
-      "sortid": 512,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_arrow_drop",
-      "metadata": {
-        "files": [
-          "src/main/java/net/clozynoii/slsb/procedures/ManaArrowDropProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Procedures/Misc"
-    },
-    {
       "name": "SystemReturnTitle",
       "type": "procedure",
       "sortid": 517,
@@ -11914,13 +11898,960 @@
         ]
       },
       "path": "~/Procedures/Mobs"
+    },
+    {
+      "name": "DoubleDungeonAltar",
+      "type": "animatedblock",
+      "sortid": 557,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "double_dungeon_altar",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/block/renderer/DoubleDungeonAltarDisplayItemRenderer.java",
+          "src/main/resources/assets/slsb/blockstates/double_dungeon_altar.json",
+          "src/main/java/net/clozynoii/slsb/block/model/DoubleDungeonAltarBlockModel.java",
+          "src/main/resources/assets/slsb/models/custom/double_dungeon_altar_particle.json",
+          "src/main/java/net/clozynoii/slsb/block/renderer/DoubleDungeonAltarTileRenderer.java",
+          "src/main/java/net/clozynoii/slsb/block/entity/DoubleDungeonAltarTileEntity.java",
+          "src/main/resources/assets/slsb/models/item/double_dungeon_altar.json",
+          "src/main/java/net/clozynoii/slsb/block/display/DoubleDungeonAltarDisplayItem.java",
+          "src/main/java/net/clozynoii/slsb/block/model/DoubleDungeonAltarDisplayModel.java",
+          "src/main/java/net/clozynoii/slsb/block/DoubleDungeonAltarBlock.java"
+        ]
+      },
+      "path": "~/Blocks/Dungeon Blocks"
+    },
+    {
+      "name": "ReturnStatStrength",
+      "type": "procedure",
+      "sortid": 558,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_stat_strength",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnStatStrengthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ReturnStatAgility",
+      "type": "procedure",
+      "sortid": 559,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_stat_agility",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnStatAgilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ReturnStatVitality",
+      "type": "procedure",
+      "sortid": 560,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_stat_vitality",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnStatVitalityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ReturnStatSense",
+      "type": "procedure",
+      "sortid": 561,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_stat_sense",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnStatSenseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "ReturnStatIntelligence",
+      "type": "procedure",
+      "sortid": 562,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_stat_intelligence",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ReturnStatIntelligenceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "StatAddStrength",
+      "type": "procedure",
+      "sortid": 563,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_add_strength",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/StatAddStrengthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "StatAddAgility",
+      "type": "procedure",
+      "sortid": 564,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_add_agility",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/StatAddAgilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "StatAddVitality",
+      "type": "procedure",
+      "sortid": 565,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_add_vitality",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/StatAddVitalityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "StatAddIntelligence",
+      "type": "procedure",
+      "sortid": 566,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_add_intelligence",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/StatAddIntelligenceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "StatAddSense",
+      "type": "procedure",
+      "sortid": 567,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_add_sense",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/StatAddSenseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/System"
+    },
+    {
+      "name": "HealthOverlay",
+      "type": "procedure",
+      "sortid": 568,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_overlay",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthOverlayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Overlay"
+    },
+    {
+      "name": "HealthBar1",
+      "type": "procedure",
+      "sortid": 569,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar2",
+      "type": "procedure",
+      "sortid": 570,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar3",
+      "type": "procedure",
+      "sortid": 571,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar4",
+      "type": "procedure",
+      "sortid": 572,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar5",
+      "type": "procedure",
+      "sortid": 573,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar6",
+      "type": "procedure",
+      "sortid": 574,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar7",
+      "type": "procedure",
+      "sortid": 575,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar8",
+      "type": "procedure",
+      "sortid": 576,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar9",
+      "type": "procedure",
+      "sortid": 577,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar10",
+      "type": "procedure",
+      "sortid": 578,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar11",
+      "type": "procedure",
+      "sortid": 579,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar12",
+      "type": "procedure",
+      "sortid": 580,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar13",
+      "type": "procedure",
+      "sortid": 581,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_13",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar13Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "HealthBar14",
+      "type": "procedure",
+      "sortid": 582,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_bar_14",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/HealthBar14Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/GUI/Health Bar"
+    },
+    {
+      "name": "EssenceArrowRecipe",
+      "type": "recipe",
+      "sortid": 583,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_arrow_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/essence_arrow_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankSwordRecipe",
+      "type": "recipe",
+      "sortid": 584,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_sword_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_sword_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankAxeRecipe",
+      "type": "recipe",
+      "sortid": 585,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_axe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_axe_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankShieldRecipe",
+      "type": "recipe",
+      "sortid": 586,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_shield_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_shield_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankDaggerRecipe",
+      "type": "recipe",
+      "sortid": 587,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_dagger_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_dagger_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankStaffRecipe",
+      "type": "recipe",
+      "sortid": 588,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_staff_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_staff_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankSpellbookRecipe",
+      "type": "recipe",
+      "sortid": 589,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_spellbook_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_spellbook_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ERankBowRecipe",
+      "type": "recipe",
+      "sortid": 590,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_rank_bow_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/recipes/e_rank_bow_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ManaArrowsUse",
+      "type": "procedure",
+      "sortid": 591,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrows_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ManaArrowsUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Skills/Ranger/Moves"
+    },
+    {
+      "name": "TrackingEffect",
+      "type": "procedure",
+      "sortid": 592,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tracking_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/TrackingEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "Tracked",
+      "type": "potioneffect",
+      "sortid": 593,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tracked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/potion/TrackedMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "TrackingUse",
+      "type": "procedure",
+      "sortid": 594,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tracking_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/TrackingUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Skills/Ranger/Moves"
+    },
+    {
+      "name": "Rotating",
+      "type": "potioneffect",
+      "sortid": 595,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotating",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/potion/RotatingMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "RotatingShotsEffect",
+      "type": "procedure",
+      "sortid": 596,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotating_shots_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/RotatingShotsEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "RotatingShotsUse",
+      "type": "procedure",
+      "sortid": 597,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotating_shots_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/RotatingShotsUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Skills/Ranger/Moves"
+    },
+    {
+      "name": "ManaArrowTrail",
+      "type": "procedure",
+      "sortid": 598,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mana_arrow_trail",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ManaArrowTrailProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Misc"
     }
   ],
   "variable_elements": [
     {
       "name": "AbilitySelected",
       "type": "string",
-      "scope": "player_lifetime",
+      "scope": "player_persistent",
       "value": "None"
     },
     {
@@ -12052,7 +12983,7 @@
     {
       "name": "SwitcherSlot",
       "type": "number",
-      "scope": "player_lifetime",
+      "scope": "player_persistent",
       "value": "1.0"
     },
     {
@@ -12278,12 +13209,6 @@
       "value": "0.0"
     },
     {
-      "name": "MaxSense",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
       "name": "Vitality",
       "type": "number",
       "scope": "player_persistent",
@@ -12479,8 +13404,8 @@
       "item.slsb.e_rank_dagger": "E-Rank Dagger",
       "block.slsb.naga_dungeon_boss": "Naga Dungeon Boss",
       "block.slsb.sand_dungeon_south": "Sand Dungeon South",
-      "block.slsb.forest_dungeon_boss": "Forest Dungeon Boss",
       "gui.slsb.hunter_info_menu.label_as_a_verified_hunter": "§8As A Verified Hunter",
+      "block.slsb.forest_dungeon_boss": "Forest Dungeon Boss",
       "block.slsb.dragon_dungeon_south": "Dragon Dungeon South",
       "block.slsb.subway_dungeon_north": "Subway Dungeon North",
       "block.slsb.mine_dungeon_south": "Mine Dungeon South",
@@ -12495,8 +13420,8 @@
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
-      "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
       "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
+      "gui.slsb.hunter_phone_claim.label_gaterank": "GateRank",
       "block.slsb.cathedral_dungeon_south": "Cathedral Dungeon South",
       "gui.slsb.hunter_info_menu.label_the_hunters_assocation": "§8The Hunters Assocation",
       "block.slsb.sunken_dungeon_south": "Sunken Dungeon South",
@@ -12562,6 +13487,7 @@
       "item.slsb.kasakas_venom_fang": "§eKasaka\u0027s Venom Fang",
       "block.slsb.maze_dungeon_north": "Maze Dungeon North",
       "item.slsb.undead_soldier_spawn_egg": "Undead Soldier (D-Rank) Spawn Egg",
+      "block.slsb.double_dungeon_altar": "Double Dungeon Altar",
       "block.slsb.maze_dungeon_enemies": "Maze Dungeon Enemies",
       "block.slsb.dragon_dungeon_east": "Dragon Dungeon East",
       "item.slsb.e_rank_tanker_armor_chestplate": "E-Rank Tanker Chestplate",
@@ -12622,6 +13548,7 @@
       "gui.slsb.hunter_phone_new_price.button_set": "Set",
       "advancements.healer_class.title": "Healer",
       "block.slsb.mine_dungeon_enemies": "Mine Dungeon Enemies",
+      "effect.slsb.tracked": "Tracked",
       "block.slsb.mine_dungeon_west": "Mine Dungeon West",
       "block.slsb.goblin_dungeon_east": "Goblin Dungeon East",
       "block.slsb.cathedral_dungeon_enemies": "Cathedral Dungeon Enemies",
@@ -12680,6 +13607,7 @@
       "item.slsb.knight_killer": "§cKnight Killer",
       "block.slsb.goblin_dungeon_enemies": "Goblin Dungeon Enemies",
       "key.slsb.switch_skill": "Switch Skill",
+      "effect.slsb.rotating": "Rotating Shots",
       "block.slsb.rat_dungeon_south": "Rat Dungeon South",
       "block.slsb.forest_dungeon_south": "Forest Dungeon South",
       "block.slsb.subway_dungeon_south": "Subway Dungeon South",
@@ -12826,6 +13754,10 @@
               },
               {
                 "name": "Phone",
+                "children": []
+              },
+              {
+                "name": "Health Bar",
                 "children": []
               }
             ]

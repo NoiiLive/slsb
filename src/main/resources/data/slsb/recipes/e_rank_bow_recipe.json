@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " ab",
+    "c b",
+    " ab"
+  ],
+  "key": {
+    "a": {
+      "item": "slsb:e_rank_essence_stone"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "c": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "slsb:e_rank_bow",
+    "count": 1
+  }
+}

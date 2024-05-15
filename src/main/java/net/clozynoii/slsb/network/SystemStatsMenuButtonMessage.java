@@ -13,6 +13,11 @@ import net.minecraft.core.BlockPos;
 
 import net.clozynoii.slsb.world.inventory.SystemStatsMenuMenu;
 import net.clozynoii.slsb.procedures.SystemDailyQuestOpenProcedure;
+import net.clozynoii.slsb.procedures.StatAddVitalityProcedure;
+import net.clozynoii.slsb.procedures.StatAddStrengthProcedure;
+import net.clozynoii.slsb.procedures.StatAddSenseProcedure;
+import net.clozynoii.slsb.procedures.StatAddIntelligenceProcedure;
+import net.clozynoii.slsb.procedures.StatAddAgilityProcedure;
 import net.clozynoii.slsb.SlsbMod;
 
 import java.util.function.Supplier;
@@ -65,6 +70,26 @@ public class SystemStatsMenuButtonMessage {
 		if (buttonID == 0) {
 
 			SystemDailyQuestOpenProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			StatAddStrengthProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
+
+			StatAddAgilityProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 3) {
+
+			StatAddSenseProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 4) {
+
+			StatAddVitalityProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 5) {
+
+			StatAddIntelligenceProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

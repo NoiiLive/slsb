@@ -100,12 +100,14 @@ public class TrainOnKeyPressedProcedure {
 							}
 						}
 					}
-					{
-						double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups + 1;
-						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Pushups = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups < 50) {
+						{
+							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Pushups + 1;
+							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Pushups = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 47, 0, false, false));
@@ -124,12 +126,14 @@ public class TrainOnKeyPressedProcedure {
 							}
 						}
 					}
-					{
-						double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps + 1;
-						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Situps = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps < 50) {
+						{
+							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Situps + 1;
+							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Situps = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 47, 0, false, false));
@@ -148,12 +152,14 @@ public class TrainOnKeyPressedProcedure {
 							}
 						}
 					}
-					{
-						double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats + 1;
-						entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Squats = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats < 50) {
+						{
+							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Squats + 1;
+							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Squats = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(SlsbModMobEffects.TRAINING_COOLDOWN.get(), 22, 0, false, false));

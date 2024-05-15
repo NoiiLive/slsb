@@ -58,7 +58,7 @@ public class ERankBowUseProcedure {
 											entityToSpawn.pickup = AbstractArrow.Pickup.ALLOWED;
 											return entityToSpawn;
 										}
-									}.getArrow(projectileLevel, entity, (float) (5 + Math.round((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Strength * 0.2)), 1,
+									}.getArrow(projectileLevel, entity, (float) (5 + Math.round((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Strength * 0.8)), 1,
 											(byte) 0.1);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 2, (float) 0.2);
@@ -92,7 +92,7 @@ public class ERankBowUseProcedure {
 											entityToSpawn.pickup = AbstractArrow.Pickup.ALLOWED;
 											return entityToSpawn;
 										}
-									}.getArrow(projectileLevel, entity, (float) (8 + Math.round((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Strength * 0.22)), 1,
+									}.getArrow(projectileLevel, entity, (float) (8 + Math.round((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Strength * 0.82)), 1,
 											(byte) 0.1);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 2, (float) 0.2);

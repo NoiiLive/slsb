@@ -19,6 +19,7 @@ import net.clozynoii.slsb.block.entity.ManaCrystalBlockGraniteTileEntity;
 import net.clozynoii.slsb.block.entity.ManaCrystalBlockDripstoneTileEntity;
 import net.clozynoii.slsb.block.entity.ManaCrystalBlockDioriteTileEntity;
 import net.clozynoii.slsb.block.entity.ManaCrystalBlockDeepslateTileEntity;
+import net.clozynoii.slsb.block.entity.DoubleDungeonAltarTileEntity;
 import net.clozynoii.slsb.block.entity.BlueGateSmallTileEntity;
 import net.clozynoii.slsb.block.entity.BlueGateMediumTileEntity;
 import net.clozynoii.slsb.block.entity.AwakeningOrbTileEntity;
@@ -44,6 +45,8 @@ public class SlsbModBlockEntities {
 			() -> BlockEntityType.Builder.of(ManaCrystalBlockDripstoneTileEntity::new, SlsbModBlocks.MANA_CRYSTAL_BLOCK_DRIPSTONE.get()).build(null));
 	public static final RegistryObject<BlockEntityType<AwakeningOrbTileEntity>> AWAKENING_ORB = REGISTRY.register("awakening_orb", () -> BlockEntityType.Builder.of(AwakeningOrbTileEntity::new, SlsbModBlocks.AWAKENING_ORB.get()).build(null));
 	public static final RegistryObject<BlockEntityType<RedGateMediumTileEntity>> RED_GATE_MEDIUM = REGISTRY.register("red_gate_medium", () -> BlockEntityType.Builder.of(RedGateMediumTileEntity::new, SlsbModBlocks.RED_GATE_MEDIUM.get()).build(null));
+	public static final RegistryObject<BlockEntityType<DoubleDungeonAltarTileEntity>> DOUBLE_DUNGEON_ALTAR = REGISTRY.register("double_dungeon_altar",
+			() -> BlockEntityType.Builder.of(DoubleDungeonAltarTileEntity::new, SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get()).build(null));
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

@@ -8026,6 +8026,22 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -9900,8 +9916,8 @@
       "registry_name": "phone",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slsb/models/item/phone.json",
-          "src/main/java/net/clozynoii/slsb/item/PhoneItem.java"
+          "src/main/java/net/clozynoii/slsb/item/PhoneItem.java",
+          "src/main/resources/assets/slsb/models/item/phone.json"
         ]
       },
       "path": "~/Items"
@@ -12845,6 +12861,397 @@
         ]
       },
       "path": "~/Procedures/Misc"
+    },
+    {
+      "name": "GiantRatShadow",
+      "type": "animatedentity",
+      "sortid": 602,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "giant_rat_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatShadowModel.java",
+          "src/main/java/net/clozynoii/slsb/entity/GiantRatShadowEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatShadowRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/E Rank"
+    },
+    {
+      "name": "EntityShadow",
+      "type": "livingentity",
+      "sortid": 603,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/EntityShadowEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/EntityShadowRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Misc"
+    },
+    {
+      "name": "EntityShadowActive",
+      "type": "procedure",
+      "sortid": 604,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_shadow_active",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/EntityShadowActiveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures"
+    },
+    {
+      "name": "SetShadowMonarch",
+      "type": "procedure",
+      "sortid": 605,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_shadow_monarch",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/SetShadowMonarchProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands/Classes"
+    },
+    {
+      "name": "EntityShadowRightClick",
+      "type": "procedure",
+      "sortid": 606,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_shadow_right_click",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/EntityShadowRightClickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Misc/Procedures"
+    },
+    {
+      "name": "GiantRatBossShadow",
+      "type": "animatedentity",
+      "sortid": 607,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "giant_rat_boss_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/GiantRatBossShadowEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/GiantRatBossShadowRenderer.java",
+          "src/main/java/net/clozynoii/slsb/entity/model/GiantRatBossShadowModel.java"
+        ]
+      },
+      "path": "~/Mobs/D Rank"
+    },
+    {
+      "name": "UndeadSoldierShadow",
+      "type": "animatedentity",
+      "sortid": 608,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undead_soldier_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/model/UndeadSoldierShadowModel.java",
+          "src/main/java/net/clozynoii/slsb/entity/UndeadSoldierShadowEntity.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadSoldierShadowRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/D Rank"
+    },
+    {
+      "name": "UndeadKnightBossShadow",
+      "type": "animatedentity",
+      "sortid": 609,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undead_knight_boss_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/entity/UndeadKnightBossShadowEntity.java",
+          "src/main/java/net/clozynoii/slsb/entity/model/UndeadKnightBossShadowModel.java",
+          "src/main/java/net/clozynoii/slsb/client/renderer/UndeadKnightBossShadowRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/C Rank"
+    },
+    {
+      "name": "EntityShadowSpawn",
+      "type": "procedure",
+      "sortid": 610,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_shadow_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/EntityShadowSpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Mobs"
+    },
+    {
+      "name": "ShadowSummon",
+      "type": "procedure",
+      "sortid": 611,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_summon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ShadowSummonProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/System"
+    },
+    {
+      "name": "ShadowReturn",
+      "type": "procedure",
+      "sortid": 612,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_return",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ShadowReturnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/System"
+    },
+    {
+      "name": "ShadowMob",
+      "type": "tag",
+      "sortid": 613,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_mob",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slsb/tags/entity_types/shadow_mob.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ShadowList",
+      "type": "procedure",
+      "sortid": 614,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_list",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ShadowListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
+    },
+    {
+      "name": "SLSB",
+      "type": "command",
+      "sortid": 615,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slsb",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/command/SLSBCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "ShadowDeath",
+      "type": "procedure",
+      "sortid": 616,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ShadowDeathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Mobs"
+    },
+    {
+      "name": "ShadowRelease",
+      "type": "procedure",
+      "sortid": 617,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_release",
+      "metadata": {
+        "files": [
+          "src/main/java/net/clozynoii/slsb/procedures/ShadowReleaseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Commands"
     }
   ],
   "variable_elements": [
@@ -13296,7 +13703,7 @@
       "name": "SystemMaxEXP",
       "type": "number",
       "scope": "player_persistent",
-      "value": "100.0"
+      "value": "0.0"
     },
     {
       "name": "SummonAid",
@@ -13375,6 +13782,24 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0.0"
+    },
+    {
+      "name": "ShadowStorage",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "ShadowAmount",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "ShadowCommand",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Arise"
     }
   ],
   "sound_elements": [
@@ -13418,6 +13843,7 @@
       "effect.slsb.disguise": "Disguised",
       "block.slsb.orc_dungeon_west": "Orc Dungeon West",
       "block.slsb.dragon_dungeon_boss": "Dragon Dungeon Boss",
+      "entity.slsb.entity_shadow": "Entity Shadow",
       "subtitles.cave_sound": "",
       "block.slsb.ice_dungeon_east": "Ice Dungeon East",
       "block.slsb.rat_dungeon_boss": "Rat Dungeon Boss",
@@ -13440,6 +13866,7 @@
       "block.slsb.double_dungeon_boss": "Double Dungeon Boss",
       "block.slsb.catacomb_dungeon_west": "Catacomb Dungeon West",
       "gui.slsb.system_daily_quest.label_ssnssbsslgoal": "§n§b§lGoal",
+      "entity.slsb.giant_rat_shadow": "Giant Rat (E-Rank)",
       "block.slsb.dragon_dungeon_enemies": "Dragon Dungeon Enemies",
       "advancements.healer_class.descr": "Become the Healer Class.",
       "block.slsb.dragon_dungeon_west": "Dragon Dungeon West",
@@ -13457,6 +13884,7 @@
       "block.slsb.lich_dungeon_boss": "Lich Dungeon Boss",
       "entity.slsb.wind_barrier_mob": "Wind Barrier Mob",
       "block.slsb.maze_dungeon_west": "Maze Dungeon West",
+      "item.slsb.undead_knight_boss_shadow_spawn_egg": "Undead Knight (C-Rank) Spawn Egg",
       "block.slsb.ice_dungeon_north": "Ice Dungeon North",
       "block.slsb.crystal_dungeon_west": "Crystal Dungeon West",
       "block.slsb.orc_dungeon_east": "Orc Dungeon East",
@@ -13472,6 +13900,7 @@
       "block.slsb.coliseum_dungeon_boss": "Coliseum Dungeon Boss",
       "block.slsb.ice_dungeon_boss": "Ice Dungeon Boss",
       "block.slsb.giant_dungeon_enemies": "Giant Dungeon Enemies",
+      "item.slsb.undead_soldier_shadow_spawn_egg": "Undead Soldier (D-Rank) Spawn Egg",
       "block.slsb.double_dungeon_east": "Double Dungeon East",
       "block.slsb.red_gate_medium": "Red Gate Medium",
       "item.slsb.a_rank_essence_stone": "§cA-Rank Essence Stone",
@@ -13530,16 +13959,19 @@
       "advancements.haste_skill.descr": "Unlock Haste Skill [§lA skill that temporarily increases the user\u0027s speed§r]",
       "block.slsb.naga_dungeon_south": "Naga Dungeon South",
       "block.slsb.cathedral_dungeon_east": "Cathedral Dungeon East",
+      "entity.slsb.undead_knight_boss_shadow": "Undead Knight (C-Rank)",
       "effect.slsb.wind_pull_active": "Wind Pull",
       "advancements.strength_skill.title": "Strength Skill",
       "entity.slsb.giant_rat": "Giant Rat (E-Rank)",
       "block.slsb.rat_dungeon_north": "Rat Dungeon North",
       "block.slsb.lich_dungeon_east": "Lich Dungeon East",
+      "entity.slsb.undead_soldier_shadow": "Undead Soldier (D-Rank)",
       "block.slsb.double_dungeon_enemies": "Double Dungeon Enemies",
       "block.slsb.coliseum_dungeon_north": "Coliseum Dungeon North",
       "item.slsb.jinwoos_clothes_boots": "Jinwoo\u0027s Shoes",
       "block.slsb.mana_crystal_block_diorite": "Mana Crystal (Diorite)",
       "item.slsb.e_rank_tanker_armor_helmet": "E-Rank Tanker Helmet",
+      "entity.slsb.giant_rat_boss_shadow": "Giant Rat Boss (D-Rank)",
       "gui.slsb.hunter_phone_backup.label_request_hunter_aid": "Request Hunter Aid?",
       "item.slsb.jinwoos_clothes_leggings": "Jinwoo\u0027s Pants",
       "item.slsb.test": "Test",
@@ -13628,6 +14060,8 @@
       "gui.slsb.hunter_phone_purchase.label_gateguild": "GateGuild",
       "entity.slsb.hunter_npc": "Hunter NPC",
       "block.slsb.sand_dungeon_enemies": "Sand Dungeon Enemies",
+      "item.slsb.giant_rat_shadow_spawn_egg": "Giant Rat (E-Rank) Spawn Egg",
+      "item.slsb.giant_rat_boss_shadow_spawn_egg": "Giant Rat Boss (D-Rank) Spawn Egg",
       "block.slsb.spider_dungeon_south": "Spider Dungeon South",
       "block.slsb.spider_dungeon_boss": "Spider Dungeon Boss",
       "block.slsb.mana_crystal_block_dripstone": "Mana Crystal (Dripstone)",

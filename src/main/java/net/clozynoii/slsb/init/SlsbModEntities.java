@@ -19,14 +19,19 @@ import net.minecraft.world.entity.Entity;
 import net.clozynoii.slsb.entity.WindSliceProjectileEntity;
 import net.clozynoii.slsb.entity.WindBarrierMobEntity;
 import net.clozynoii.slsb.entity.WhirlwindEntityEntity;
+import net.clozynoii.slsb.entity.UndeadSoldierShadowEntity;
 import net.clozynoii.slsb.entity.UndeadSoldierEntity;
+import net.clozynoii.slsb.entity.UndeadKnightBossShadowEntity;
 import net.clozynoii.slsb.entity.UndeadKnightBossEntity;
 import net.clozynoii.slsb.entity.SwordSliceProjectileEntity;
 import net.clozynoii.slsb.entity.ManaArrowProjectileEntity;
 import net.clozynoii.slsb.entity.HunterNPCEntity;
+import net.clozynoii.slsb.entity.GiantRatShadowEntity;
 import net.clozynoii.slsb.entity.GiantRatEntity;
+import net.clozynoii.slsb.entity.GiantRatBossShadowEntity;
 import net.clozynoii.slsb.entity.GiantRatBossEntity;
 import net.clozynoii.slsb.entity.EssenceStoneArrowProjectileEntity;
+import net.clozynoii.slsb.entity.EntityShadowEntity;
 import net.clozynoii.slsb.entity.AfterImageEntity;
 import net.clozynoii.slsb.SlsbMod;
 
@@ -68,6 +73,25 @@ public class SlsbModEntities {
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<ManaArrowProjectileEntity>> MANA_ARROW_PROJECTILE = register("projectile_mana_arrow_projectile", EntityType.Builder.<ManaArrowProjectileEntity>of(ManaArrowProjectileEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ManaArrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<GiantRatShadowEntity>> GIANT_RAT_SHADOW = register("giant_rat_shadow",
+			EntityType.Builder.<GiantRatShadowEntity>of(GiantRatShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GiantRatShadowEntity::new)
+
+					.sized(1.5f, 1f));
+	public static final RegistryObject<EntityType<EntityShadowEntity>> ENTITY_SHADOW = register("entity_shadow", EntityType.Builder.<EntityShadowEntity>of(EntityShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EntityShadowEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GiantRatBossShadowEntity>> GIANT_RAT_BOSS_SHADOW = register("giant_rat_boss_shadow",
+			EntityType.Builder.<GiantRatBossShadowEntity>of(GiantRatBossShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GiantRatBossShadowEntity::new)
+
+					.sized(1.7f, 1.2f));
+	public static final RegistryObject<EntityType<UndeadSoldierShadowEntity>> UNDEAD_SOLDIER_SHADOW = register("undead_soldier_shadow",
+			EntityType.Builder.<UndeadSoldierShadowEntity>of(UndeadSoldierShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UndeadSoldierShadowEntity::new)
+
+					.sized(0.6f, 2.2f));
+	public static final RegistryObject<EntityType<UndeadKnightBossShadowEntity>> UNDEAD_KNIGHT_BOSS_SHADOW = register("undead_knight_boss_shadow",
+			EntityType.Builder.<UndeadKnightBossShadowEntity>of(UndeadKnightBossShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(UndeadKnightBossShadowEntity::new)
+
+					.sized(0.8f, 2.4f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -84,6 +108,11 @@ public class SlsbModEntities {
 			WhirlwindEntityEntity.init();
 			UndeadKnightBossEntity.init();
 			HunterNPCEntity.init();
+			GiantRatShadowEntity.init();
+			EntityShadowEntity.init();
+			GiantRatBossShadowEntity.init();
+			UndeadSoldierShadowEntity.init();
+			UndeadKnightBossShadowEntity.init();
 		});
 	}
 
@@ -97,5 +126,10 @@ public class SlsbModEntities {
 		event.put(WHIRLWIND_ENTITY.get(), WhirlwindEntityEntity.createAttributes().build());
 		event.put(UNDEAD_KNIGHT_BOSS.get(), UndeadKnightBossEntity.createAttributes().build());
 		event.put(HUNTER_NPC.get(), HunterNPCEntity.createAttributes().build());
+		event.put(GIANT_RAT_SHADOW.get(), GiantRatShadowEntity.createAttributes().build());
+		event.put(ENTITY_SHADOW.get(), EntityShadowEntity.createAttributes().build());
+		event.put(GIANT_RAT_BOSS_SHADOW.get(), GiantRatBossShadowEntity.createAttributes().build());
+		event.put(UNDEAD_SOLDIER_SHADOW.get(), UndeadSoldierShadowEntity.createAttributes().build());
+		event.put(UNDEAD_KNIGHT_BOSS_SHADOW.get(), UndeadKnightBossShadowEntity.createAttributes().build());
 	}
 }

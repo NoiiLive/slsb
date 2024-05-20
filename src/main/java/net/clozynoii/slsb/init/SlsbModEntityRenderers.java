@@ -13,13 +13,18 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 import net.clozynoii.slsb.client.renderer.WindBarrierMobRenderer;
 import net.clozynoii.slsb.client.renderer.WhirlwindEntityRenderer;
+import net.clozynoii.slsb.client.renderer.UndeadSoldierShadowRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadSoldierRenderer;
+import net.clozynoii.slsb.client.renderer.UndeadKnightBossShadowRenderer;
 import net.clozynoii.slsb.client.renderer.UndeadKnightBossRenderer;
 import net.clozynoii.slsb.client.renderer.ManaArrowProjectileRenderer;
 import net.clozynoii.slsb.client.renderer.HunterNPCRenderer;
+import net.clozynoii.slsb.client.renderer.GiantRatShadowRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatRenderer;
+import net.clozynoii.slsb.client.renderer.GiantRatBossShadowRenderer;
 import net.clozynoii.slsb.client.renderer.GiantRatBossRenderer;
 import net.clozynoii.slsb.client.renderer.EssenceStoneArrowProjectileRenderer;
+import net.clozynoii.slsb.client.renderer.EntityShadowRenderer;
 import net.clozynoii.slsb.client.renderer.AfterImageRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -38,5 +43,10 @@ public class SlsbModEntityRenderers {
 		event.registerEntityRenderer(SlsbModEntities.HUNTER_NPC.get(), HunterNPCRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.ESSENCE_STONE_ARROW_PROJECTILE.get(), EssenceStoneArrowProjectileRenderer::new);
 		event.registerEntityRenderer(SlsbModEntities.MANA_ARROW_PROJECTILE.get(), ManaArrowProjectileRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.GIANT_RAT_SHADOW.get(), GiantRatShadowRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.ENTITY_SHADOW.get(), EntityShadowRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.GIANT_RAT_BOSS_SHADOW.get(), GiantRatBossShadowRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.UNDEAD_SOLDIER_SHADOW.get(), UndeadSoldierShadowRenderer::new);
+		event.registerEntityRenderer(SlsbModEntities.UNDEAD_KNIGHT_BOSS_SHADOW.get(), UndeadKnightBossShadowRenderer::new);
 	}
 }

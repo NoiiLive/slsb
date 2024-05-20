@@ -60,7 +60,7 @@ public class SetFighterProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getDisplayName().getString() + " Is Now an Fighter")), false);
+				}.getEntity()).getDisplayName().getString() + " Is Now a Fighter")), false);
 			if ((new Object() {
 				public Entity getEntity() {
 					try {
@@ -71,7 +71,7 @@ public class SetFighterProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Fighter"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Fighter"), false);
 		} else {
 			if ((new Object() {
 				public Entity getEntity() {
@@ -83,7 +83,7 @@ public class SetFighterProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Fighter"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Fighter"), false);
 		}
 	}
 }

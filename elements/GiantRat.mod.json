@@ -106,6 +106,9 @@
     "stepSound": {
       "value": ""
     },
+    "whenMobDies": {
+      "name": "EntityShadowSpawn"
+    },
     "onInitialSpawn": {
       "name": "GiantRatOnSpawn"
     },

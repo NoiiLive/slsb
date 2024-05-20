@@ -150,6 +150,9 @@ public class SlsbModVariables {
 			clone.TrainingType = original.TrainingType;
 			clone.DailyRewardClaimed = original.DailyRewardClaimed;
 			clone.PlayerMaxHealth = original.PlayerMaxHealth;
+			clone.ShadowStorage = original.ShadowStorage;
+			clone.ShadowAmount = original.ShadowAmount;
+			clone.ShadowCommand = original.ShadowCommand;
 			if (!event.isWasDeath()) {
 				clone.ActiveSkills = original.ActiveSkills;
 				clone.AbilityCooldown1 = original.AbilityCooldown1;
@@ -423,7 +426,7 @@ public class SlsbModVariables {
 		public double SystemLevel = 1.0;
 		public double DungeonsCleared = 0.0;
 		public String GuildRank = "";
-		public double SystemMaxEXP = 100.0;
+		public double SystemMaxEXP = 0.0;
 		public boolean SummonAid = true;
 		public boolean SpeedToggle = true;
 		public String Quest = "";
@@ -437,6 +440,9 @@ public class SlsbModVariables {
 		public double PlayerHealth = 20.0;
 		public double PlayerMaxHealth = 20.0;
 		public double HealTimer = 0.0;
+		public String ShadowStorage = "";
+		public double ShadowAmount = 0;
+		public String ShadowCommand = "Arise";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -526,6 +532,9 @@ public class SlsbModVariables {
 			nbt.putDouble("PlayerHealth", PlayerHealth);
 			nbt.putDouble("PlayerMaxHealth", PlayerMaxHealth);
 			nbt.putDouble("HealTimer", HealTimer);
+			nbt.putString("ShadowStorage", ShadowStorage);
+			nbt.putDouble("ShadowAmount", ShadowAmount);
+			nbt.putString("ShadowCommand", ShadowCommand);
 			return nbt;
 		}
 
@@ -612,6 +621,9 @@ public class SlsbModVariables {
 			PlayerHealth = nbt.getDouble("PlayerHealth");
 			PlayerMaxHealth = nbt.getDouble("PlayerMaxHealth");
 			HealTimer = nbt.getDouble("HealTimer");
+			ShadowStorage = nbt.getString("ShadowStorage");
+			ShadowAmount = nbt.getDouble("ShadowAmount");
+			ShadowCommand = nbt.getString("ShadowCommand");
 		}
 	}
 
@@ -726,6 +738,9 @@ public class SlsbModVariables {
 					variables.PlayerHealth = message.data.PlayerHealth;
 					variables.PlayerMaxHealth = message.data.PlayerMaxHealth;
 					variables.HealTimer = message.data.HealTimer;
+					variables.ShadowStorage = message.data.ShadowStorage;
+					variables.ShadowAmount = message.data.ShadowAmount;
+					variables.ShadowCommand = message.data.ShadowCommand;
 				}
 			});
 			context.setPacketHandled(true);

@@ -106,5 +106,10 @@ public class StatEffectsProcedure {
 				});
 			}
 		}
+		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Shadow Monarch")) {
+			entity.getPersistentData().putString("class", "shadowmonarch");
+		} else {
+			entity.getPersistentData().putString("class", "");
+		}
 	}
 }

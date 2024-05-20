@@ -26,6 +26,7 @@ import net.clozynoii.slsb.procedures.SetStatStrengthProcedure;
 import net.clozynoii.slsb.procedures.SetStatSenseProcedure;
 import net.clozynoii.slsb.procedures.SetStatIntelligenceProcedure;
 import net.clozynoii.slsb.procedures.SetStatAgilityProcedure;
+import net.clozynoii.slsb.procedures.SetShadowMonarchProcedure;
 import net.clozynoii.slsb.procedures.SetRankSProcedure;
 import net.clozynoii.slsb.procedures.SetRankEProcedure;
 import net.clozynoii.slsb.procedures.SetRankDProcedure;
@@ -242,6 +243,20 @@ public class SLSBAdminCommand {
 				direction = entity.getDirection();
 
 			SetHealerProcedure.execute(arguments, entity);
+			return 0;
+		})).then(Commands.literal("shadowmonarch").executes(arguments -> {
+			Level world = arguments.getSource().getUnsidedLevel();
+			double x = arguments.getSource().getPosition().x();
+			double y = arguments.getSource().getPosition().y();
+			double z = arguments.getSource().getPosition().z();
+			Entity entity = arguments.getSource().getEntity();
+			if (entity == null && world instanceof ServerLevel _servLevel)
+				entity = FakePlayerFactory.getMinecraft(_servLevel);
+			Direction direction = Direction.DOWN;
+			if (entity != null)
+				direction = entity.getDirection();
+
+			SetShadowMonarchProcedure.execute(arguments, entity);
 			return 0;
 		}))).then(Commands.literal("random").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();

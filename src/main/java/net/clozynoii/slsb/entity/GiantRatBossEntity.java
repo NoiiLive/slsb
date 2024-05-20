@@ -157,7 +157,7 @@ public class GiantRatBossEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		DungeonBossKilledProcedure.execute(this.level());
+		DungeonBossKilledProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

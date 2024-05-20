@@ -60,7 +60,7 @@ public class SetMageProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getDisplayName().getString() + " Is Now an Mage")), false);
+				}.getEntity()).getDisplayName().getString() + " Is Now a Mage")), false);
 			if ((new Object() {
 				public Entity getEntity() {
 					try {
@@ -71,7 +71,7 @@ public class SetMageProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Mage"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Mage"), false);
 		} else {
 			if ((new Object() {
 				public Entity getEntity() {
@@ -83,7 +83,7 @@ public class SetMageProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Mage"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Mage"), false);
 		}
 	}
 }

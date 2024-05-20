@@ -48,6 +48,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.clozynoii.slsb.procedures.GiantRatOnSpawnProcedure;
+import net.clozynoii.slsb.procedures.EntityShadowSpawnProcedure;
 import net.clozynoii.slsb.init.SlsbModItems;
 import net.clozynoii.slsb.init.SlsbModEntities;
 
@@ -149,6 +150,12 @@ public class GiantRatEntity extends Monster implements GeoEntity {
 		if (source.is(DamageTypes.FALL))
 			return false;
 		return super.hurt(source, amount);
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		EntityShadowSpawnProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

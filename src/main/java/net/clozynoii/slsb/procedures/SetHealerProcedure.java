@@ -60,7 +60,7 @@ public class SetHealerProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getDisplayName().getString() + " Is Now an Healer")), false);
+				}.getEntity()).getDisplayName().getString() + " Is Now a Healer")), false);
 			if ((new Object() {
 				public Entity getEntity() {
 					try {
@@ -71,7 +71,7 @@ public class SetHealerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Healer"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Healer"), false);
 		} else {
 			if ((new Object() {
 				public Entity getEntity() {
@@ -83,7 +83,7 @@ public class SetHealerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Healer"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Healer"), false);
 		}
 	}
 }

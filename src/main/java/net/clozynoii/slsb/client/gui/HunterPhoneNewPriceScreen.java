@@ -97,11 +97,6 @@ public class HunterPhoneNewPriceScreen extends AbstractContainerScreen<HunterPho
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		GateNewPrice = new EditBox(this.font, this.leftPos + -54, this.topPos + -3, 107, 18, Component.translatable("gui.slsb.hunter_phone_new_price.GateNewPrice")) {

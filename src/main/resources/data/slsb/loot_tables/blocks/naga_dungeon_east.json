@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "slsb:blocks/naga_dungeon_east",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "slsb:naga_dungeon_east"
+        }
+      ]
+    }
+  ]
+}

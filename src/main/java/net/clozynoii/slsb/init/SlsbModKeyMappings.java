@@ -24,19 +24,6 @@ import net.clozynoii.slsb.SlsbMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class SlsbModKeyMappings {
-	public static final KeyMapping SWITCH_SKILL = new KeyMapping("key.slsb.switch_skill", GLFW.GLFW_KEY_X, "key.categories.slsb") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				SlsbMod.PACKET_HANDLER.sendToServer(new SwitchSkillMessage(0, 0));
-				SwitchSkillMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	public static final KeyMapping USE_SKILL = new KeyMapping("key.slsb.use_skill", GLFW.GLFW_KEY_C, "key.categories.slsb") {
 		private boolean isDownOld = false;
 
@@ -46,6 +33,19 @@ public class SlsbModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				SlsbMod.PACKET_HANDLER.sendToServer(new UseSkillMessage(0, 0));
 				UseSkillMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
+	public static final KeyMapping SWITCH_SKILL = new KeyMapping("key.slsb.switch_skill", GLFW.GLFW_KEY_X, "key.categories.slsb") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SwitchSkillMessage(0, 0));
+				SwitchSkillMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
 		}
@@ -92,8 +92,8 @@ public class SlsbModKeyMappings {
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
-		event.register(SWITCH_SKILL);
 		event.register(USE_SKILL);
+		event.register(SWITCH_SKILL);
 		event.register(INFO_MENU);
 		event.register(SPEED_TOGGLE);
 		event.register(TRAIN);
@@ -104,8 +104,8 @@ public class SlsbModKeyMappings {
 		@SubscribeEvent
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
-				SWITCH_SKILL.consumeClick();
 				USE_SKILL.consumeClick();
+				SWITCH_SKILL.consumeClick();
 				INFO_MENU.consumeClick();
 				SPEED_TOGGLE.consumeClick();
 				TRAIN.consumeClick();

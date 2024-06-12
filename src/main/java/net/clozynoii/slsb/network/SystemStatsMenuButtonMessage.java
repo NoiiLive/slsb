@@ -73,23 +73,23 @@ public class SystemStatsMenuButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			StatAddStrengthProcedure.execute(world, x, y, z, entity);
+			StatAddStrengthProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			StatAddAgilityProcedure.execute(world, x, y, z, entity);
+			StatAddAgilityProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			StatAddSenseProcedure.execute(world, x, y, z, entity);
+			StatAddSenseProcedure.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			StatAddVitalityProcedure.execute(world, x, y, z, entity);
+			StatAddVitalityProcedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			StatAddIntelligenceProcedure.execute(world, x, y, z, entity);
+			StatAddIntelligenceProcedure.execute(entity);
 		}
 	}
 

@@ -15,11 +15,6 @@ public class WindPullActiveMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.wind_pull_active";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		WindPullActiveOnEffectActiveTickProcedure.execute(entity.getX(), entity.getY(), entity.getZ(), entity);
 	}

@@ -103,11 +103,6 @@ public class HunterInfoMenuScreen extends AbstractContainerScreen<HunterInfoMenu
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 	}

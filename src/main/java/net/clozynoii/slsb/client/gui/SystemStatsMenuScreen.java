@@ -131,11 +131,6 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		imagebutton_button_daily = new ImageButton(this.leftPos + 131, this.topPos + -70, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_daily.png"), 28, 56, e -> {

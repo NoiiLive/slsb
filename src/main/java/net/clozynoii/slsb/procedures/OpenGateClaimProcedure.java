@@ -3,6 +3,7 @@ package net.clozynoii.slsb.procedures;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -27,7 +28,7 @@ public class OpenGateClaimProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == Level.OVERWORLD) {
+		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlsbModBlocks.BLUE_GATE_SMALL.get() || (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlsbModBlocks.BLUE_GATE_MEDIUM.get()
 					|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlsbModBlocks.RED_GATE_SMALL.get() || (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlsbModBlocks.RED_GATE_MEDIUM.get()) {
 				if ((new Object() {

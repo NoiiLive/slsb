@@ -13,11 +13,6 @@ public class RotatingMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.rotating";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		RotatingShotsEffectProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
 	}

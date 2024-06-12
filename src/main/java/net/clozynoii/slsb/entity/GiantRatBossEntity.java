@@ -74,6 +74,7 @@ public class GiantRatBossEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setCustomName(Component.literal("Lupin, The Scarred"));
 		setCustomNameVisible(true);
 		setPersistenceRequired();

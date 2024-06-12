@@ -23,7 +23,7 @@ public class ManaArrowsUseProcedure {
 			return;
 		double cooldown = 0;
 		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(SlsbModItems.MANA_ARROW.get());
+			ItemStack _setstack = new ItemStack(SlsbModItems.MANA_ARROW.get()).copy();
 			_setstack.setCount(10);
 			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 		}

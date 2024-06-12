@@ -103,11 +103,6 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		imagebutton_button_stats = new ImageButton(this.leftPos + 105, this.topPos + -103, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_stats.png"), 28, 56, e -> {

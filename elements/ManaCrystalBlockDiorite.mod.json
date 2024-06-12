@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "animatedblock",
   "definition": {
     "texture": "manacrystal_diorite",
@@ -101,13 +101,6 @@
     "luminance": 10,
     "unbreakable": false,
     "breakHarvestLevel": 2,
-    "spawnParticles": true,
-    "particleToSpawn": {
-      "value": "GLOW"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 3.0,
-    "particleAmount": 1,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,

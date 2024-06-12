@@ -74,7 +74,12 @@ public class ShadowSummonProcedure {
 				}
 			}.convert(textconvert) <= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowAmount) {
 				if (!((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage).isEmpty()) {
-					convert = (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage)).split("\u00B6")[(Mth.nextInt(RandomSource.create(), (int) (new Object() {
+					convert = new Object() {
+						private String split(String text, String space, int index) {
+							String s = text.split(space)[index];
+							return s;
+						}
+					}.split(((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage), "\u00B6", (int) (Mth.nextInt(RandomSource.create(), (int) (new Object() {
 						double convert(String s) {
 							try {
 								return Double.parseDouble(s.trim());
@@ -90,10 +95,20 @@ public class ShadowSummonProcedure {
 							}
 							return 0;
 						}
-					}.convert(textconvert) - 1)))];
+					}.convert(textconvert) - 1))));
 					SlsbMod.LOGGER.info(convert);
-					entitytype = (convert).split("\u00A4")[0];
-					entityname = (convert).split("\u00A4")[1];
+					entitytype = new Object() {
+						private String split(String text, String space, int index) {
+							String s = text.split(space)[index];
+							return s;
+						}
+					}.split(convert, "\u00A4", (int) 0);
+					entityname = new Object() {
+						private String split(String text, String space, int index) {
+							String s = text.split(space)[index];
+							return s;
+						}
+					}.split(convert, "\u00A4", (int) 1);
 					SlsbMod.LOGGER.info(entitytype);
 					SlsbMod.LOGGER.info(entityname);
 					if (world instanceof ServerLevel _level)

@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "haste_skill": {
+    "haste_skill_0": {
       "trigger": "minecraft:impossible"
     }
   },

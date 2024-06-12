@@ -13,11 +13,6 @@ public class TrackedMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.tracked";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		TrackingEffectProcedure.execute(entity);
 	}

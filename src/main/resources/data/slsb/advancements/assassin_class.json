@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "assassin_class": {
+    "assassin_class_0": {
       "trigger": "minecraft:impossible"
     }
   },

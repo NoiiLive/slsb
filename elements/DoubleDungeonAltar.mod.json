@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "animatedblock",
   "definition": {
     "texture": "altartexture",
@@ -110,13 +110,6 @@
     "luminance": 1,
     "unbreakable": true,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "CUSTOM:HealEffect"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
@@ -143,6 +136,7 @@
     "minGenerateHeight": 0,
     "maxGenerateHeight": 64,
     "normal": "dungeonaltar.geo.json",
-    "displaySettings": "dungeonaltar.item.json"
+    "displaySettings": "dungeonaltar.item.json",
+    "blockstateList": []
   }
 }

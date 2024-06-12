@@ -80,6 +80,7 @@ public class UndeadSoldierShadowEntity extends TamableAnimal implements GeoEntit
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setPersistenceRequired();
 	}
 

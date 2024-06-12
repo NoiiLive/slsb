@@ -157,9 +157,9 @@ public class SlsbModBlocks {
 	public static final RegistryObject<Block> BLUE_GATE_MEDIUM = REGISTRY.register("blue_gate_medium", () -> new BlueGateMediumBlock());
 	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_STONE = REGISTRY.register("mana_crystal_block_stone", () -> new ManaCrystalBlockStoneBlock());
 	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_PURE = REGISTRY.register("mana_crystal_block_pure", () -> new ManaCrystalBlockPureBlock());
-	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_DEEPSLATE = REGISTRY.register("mana_crystal_block_deepslate", () -> new ManaCrystalBlockDeepslateBlock());
-	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_DIORITE = REGISTRY.register("mana_crystal_block_diorite", () -> new ManaCrystalBlockDioriteBlock());
 	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_GRANITE = REGISTRY.register("mana_crystal_block_granite", () -> new ManaCrystalBlockGraniteBlock());
+	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_DIORITE = REGISTRY.register("mana_crystal_block_diorite", () -> new ManaCrystalBlockDioriteBlock());
+	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_DEEPSLATE = REGISTRY.register("mana_crystal_block_deepslate", () -> new ManaCrystalBlockDeepslateBlock());
 	public static final RegistryObject<Block> MANA_CRYSTAL_BLOCK_DRIPSTONE = REGISTRY.register("mana_crystal_block_dripstone", () -> new ManaCrystalBlockDripstoneBlock());
 	public static final RegistryObject<Block> AWAKENING_ORB = REGISTRY.register("awakening_orb", () -> new AwakeningOrbBlock());
 	public static final RegistryObject<Block> RAT_DUNGEON_NORTH = REGISTRY.register("rat_dungeon_north", () -> new RatDungeonNorthBlock());
@@ -290,4 +290,6 @@ public class SlsbModBlocks {
 	public static final RegistryObject<Block> CATHEDRAL_DUNGEON_BOSS = REGISTRY.register("cathedral_dungeon_boss", () -> new CathedralDungeonBossBlock());
 	public static final RegistryObject<Block> RED_GATE_MEDIUM = REGISTRY.register("red_gate_medium", () -> new RedGateMediumBlock());
 	public static final RegistryObject<Block> DOUBLE_DUNGEON_ALTAR = REGISTRY.register("double_dungeon_altar", () -> new DoubleDungeonAltarBlock());
+	// Start of user code block custom blocks
+	// End of user code block custom blocks
 }

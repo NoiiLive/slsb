@@ -73,6 +73,7 @@ public class GiantRatEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setPersistenceRequired();
 	}
 

@@ -11,13 +11,15 @@ logoFile="logo.png"
 credits="Clozy, Noii, Chugong"
 authors="sushiclozy, NoiiLive"
 
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
 [[dependencies.slsb]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
-
 
 
 [[dependencies.slsb]]

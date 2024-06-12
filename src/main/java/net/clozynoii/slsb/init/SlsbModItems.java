@@ -64,20 +64,20 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> BLUE_GATE_SMALL = REGISTRY.register(SlsbModBlocks.BLUE_GATE_SMALL.getId().getPath(), () -> new BlueGateSmallDisplayItem(SlsbModBlocks.BLUE_GATE_SMALL.get(), new Item.Properties()));
 	public static final RegistryObject<Item> RED_GATE_SMALL = REGISTRY.register(SlsbModBlocks.RED_GATE_SMALL.getId().getPath(), () -> new RedGateSmallDisplayItem(SlsbModBlocks.RED_GATE_SMALL.get(), new Item.Properties()));
 	public static final RegistryObject<Item> BLUE_GATE_MEDIUM = REGISTRY.register(SlsbModBlocks.BLUE_GATE_MEDIUM.getId().getPath(), () -> new BlueGateMediumDisplayItem(SlsbModBlocks.BLUE_GATE_MEDIUM.get(), new Item.Properties()));
-	public static final RegistryObject<Item> MANA_CRYSTAL = REGISTRY.register("mana_crystal", () -> new ManaCrystalItem());
+	public static final RegistryObject<Item> KNIGHT_KILLER = REGISTRY.register("knight_killer", () -> new KnightKillerItem());
 	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_STONE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_STONE.getId().getPath(),
 			() -> new ManaCrystalBlockStoneDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_STONE.get(), new Item.Properties()));
 	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_PURE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_PURE.getId().getPath(),
 			() -> new ManaCrystalBlockPureDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_PURE.get(), new Item.Properties()));
-	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_DEEPSLATE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DEEPSLATE.getId().getPath(),
-			() -> new ManaCrystalBlockDeepslateDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DEEPSLATE.get(), new Item.Properties()));
-	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_DIORITE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DIORITE.getId().getPath(),
-			() -> new ManaCrystalBlockDioriteDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DIORITE.get(), new Item.Properties()));
 	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_GRANITE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_GRANITE.getId().getPath(),
 			() -> new ManaCrystalBlockGraniteDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_GRANITE.get(), new Item.Properties()));
+	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_DIORITE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DIORITE.getId().getPath(),
+			() -> new ManaCrystalBlockDioriteDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DIORITE.get(), new Item.Properties()));
+	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_DEEPSLATE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DEEPSLATE.getId().getPath(),
+			() -> new ManaCrystalBlockDeepslateDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DEEPSLATE.get(), new Item.Properties()));
+	public static final RegistryObject<Item> MANA_CRYSTAL = REGISTRY.register("mana_crystal", () -> new ManaCrystalItem());
 	public static final RegistryObject<Item> MANA_CRYSTAL_BLOCK_DRIPSTONE = REGISTRY.register(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DRIPSTONE.getId().getPath(),
 			() -> new ManaCrystalBlockDripstoneDisplayItem(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DRIPSTONE.get(), new Item.Properties()));
-	public static final RegistryObject<Item> KNIGHT_KILLER = REGISTRY.register("knight_killer", () -> new KnightKillerItem());
 	public static final RegistryObject<Item> AWAKENING_ORB = REGISTRY.register(SlsbModBlocks.AWAKENING_ORB.getId().getPath(), () -> new AwakeningOrbDisplayItem(SlsbModBlocks.AWAKENING_ORB.get(), new Item.Properties()));
 	public static final RegistryObject<Item> RAT_DUNGEON_NORTH = block(SlsbModBlocks.RAT_DUNGEON_NORTH);
 	public static final RegistryObject<Item> RAT_DUNGEON_EAST = block(SlsbModBlocks.RAT_DUNGEON_EAST);
@@ -206,12 +206,12 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> CATHEDRAL_DUNGEON_ENEMIES = block(SlsbModBlocks.CATHEDRAL_DUNGEON_ENEMIES);
 	public static final RegistryObject<Item> CATHEDRAL_DUNGEON_BOSS = block(SlsbModBlocks.CATHEDRAL_DUNGEON_BOSS);
 	public static final RegistryObject<Item> RED_GATE_MEDIUM = REGISTRY.register(SlsbModBlocks.RED_GATE_MEDIUM.getId().getPath(), () -> new RedGateMediumDisplayItem(SlsbModBlocks.RED_GATE_MEDIUM.get(), new Item.Properties()));
-	public static final RegistryObject<Item> E_RANK_ESSENCE_STONE = REGISTRY.register("e_rank_essence_stone", () -> new ERankEssenceStoneItem());
-	public static final RegistryObject<Item> D_RANK_ESSENCE_STONE = REGISTRY.register("d_rank_essence_stone", () -> new DRankEssenceStoneItem());
 	public static final RegistryObject<Item> C_RANK_ESSENCE_STONE = REGISTRY.register("c_rank_essence_stone", () -> new CRankEssenceStoneItem());
-	public static final RegistryObject<Item> B_RANK_ESSENCE_STONE = REGISTRY.register("b_rank_essence_stone", () -> new BRankEssenceStoneItem());
-	public static final RegistryObject<Item> A_RANK_ESSENCE_STONE = REGISTRY.register("a_rank_essence_stone", () -> new ARankEssenceStoneItem());
 	public static final RegistryObject<Item> S_RANK_ESSENCE_STONE = REGISTRY.register("s_rank_essence_stone", () -> new SRankEssenceStoneItem());
+	public static final RegistryObject<Item> D_RANK_ESSENCE_STONE = REGISTRY.register("d_rank_essence_stone", () -> new DRankEssenceStoneItem());
+	public static final RegistryObject<Item> A_RANK_ESSENCE_STONE = REGISTRY.register("a_rank_essence_stone", () -> new ARankEssenceStoneItem());
+	public static final RegistryObject<Item> E_RANK_ESSENCE_STONE = REGISTRY.register("e_rank_essence_stone", () -> new ERankEssenceStoneItem());
+	public static final RegistryObject<Item> B_RANK_ESSENCE_STONE = REGISTRY.register("b_rank_essence_stone", () -> new BRankEssenceStoneItem());
 	public static final RegistryObject<Item> GIANT_RAT_SPAWN_EGG = REGISTRY.register("giant_rat_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.GIANT_RAT, -6710887, -10066330, new Item.Properties()));
 	public static final RegistryObject<Item> GIANT_RAT_BOSS_SPAWN_EGG = REGISTRY.register("giant_rat_boss_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.GIANT_RAT_BOSS, -6710887, -10066330, new Item.Properties()));
 	public static final RegistryObject<Item> UNDEAD_SOLDIER_SPAWN_EGG = REGISTRY.register("undead_soldier_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.UNDEAD_SOLDIER, -3355444, -8171736, new Item.Properties()));
@@ -221,25 +221,27 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> UNDEAD_KNIGHT_BOSS_SPAWN_EGG = REGISTRY.register("undead_knight_boss_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.UNDEAD_KNIGHT_BOSS, -3355444, -8512991, new Item.Properties()));
 	public static final RegistryObject<Item> PHONE = REGISTRY.register("phone", () -> new PhoneItem());
 	public static final RegistryObject<Item> HUNTER_NPC_SPAWN_EGG = REGISTRY.register("hunter_npc_spawn_egg", () -> new ForgeSpawnEggItem(SlsbModEntities.HUNTER_NPC, -6710887, -10669019, new Item.Properties()));
-	public static final RegistryObject<Item> E_RANK_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_armor_chestplate", () -> new ERankArmorItem.Chestplate());
-	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
-	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
-	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
+	public static final RegistryObject<Item> MANA_ARROW = REGISTRY.register("mana_arrow", () -> new ManaArrowItem());
 	public static final RegistryObject<Item> E_RANK_AXE = REGISTRY.register("e_rank_axe", () -> new ERankAxeItem());
-	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
-	public static final RegistryObject<Item> E_RANK_DAGGER = REGISTRY.register("e_rank_dagger", () -> new ERankDaggerItem());
-	public static final RegistryObject<Item> E_RANK_STAFF = REGISTRY.register("e_rank_staff", () -> new ERankStaffItem());
 	public static final RegistryObject<Item> E_RANK_SPELL_BOOK = REGISTRY.register("e_rank_spell_book", () -> new ERankSpellBookItem());
 	public static final RegistryObject<Item> E_RANK_BOW = REGISTRY.register("e_rank_bow", () -> new ERankBowItem());
+	public static final RegistryObject<Item> E_RANK_STAFF = REGISTRY.register("e_rank_staff", () -> new ERankStaffItem());
+	public static final RegistryObject<Item> E_RANK_DAGGER = REGISTRY.register("e_rank_dagger", () -> new ERankDaggerItem());
 	public static final RegistryObject<Item> ESSENCE_STONE_ARROW = REGISTRY.register("essence_stone_arrow", () -> new EssenceStoneArrowItem());
-	public static final RegistryObject<Item> MANA_ARROW = REGISTRY.register("mana_arrow", () -> new ManaArrowItem());
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_HELMET = REGISTRY.register("e_rank_tanker_armor_helmet", () -> new ERankTankerArmorItem.Helmet());
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_tanker_armor_chestplate", () -> new ERankTankerArmorItem.Chestplate());
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_LEGGINGS = REGISTRY.register("e_rank_tanker_armor_leggings", () -> new ERankTankerArmorItem.Leggings());
 	public static final RegistryObject<Item> E_RANK_TANKER_ARMOR_BOOTS = REGISTRY.register("e_rank_tanker_armor_boots", () -> new ERankTankerArmorItem.Boots());
+	public static final RegistryObject<Item> E_RANK_ARMOR_CHESTPLATE = REGISTRY.register("e_rank_armor_chestplate", () -> new ERankArmorItem.Chestplate());
+	public static final RegistryObject<Item> E_RANK_ARMOR_LEGGINGS = REGISTRY.register("e_rank_armor_leggings", () -> new ERankArmorItem.Leggings());
+	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
+	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
+	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
 	public static final RegistryObject<Item> RANDOM_LOOT_BOX = REGISTRY.register("random_loot_box", () -> new RandomLootBoxItem());
 	public static final RegistryObject<Item> DOUBLE_DUNGEON_ALTAR = REGISTRY.register(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.getId().getPath(), () -> new DoubleDungeonAltarDisplayItem(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get(), new Item.Properties()));
 
+	// Start of user code block custom items
+	// End of user code block custom items
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
 	}

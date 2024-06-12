@@ -1,5 +1,7 @@
 package net.clozynoii.slsb.procedures;
 
+import org.checkerframework.checker.units.qual.s;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
@@ -20,9 +22,19 @@ public class ShadowReleaseProcedure {
 		String entitytype = "";
 		String entityname = "";
 		if (DoubleArgumentType.getDouble(arguments, "position") <= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowAmount) {
-			convert = (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage))
-					.split("\u00B6")[(Mth.nextInt(RandomSource.create(), (int) (DoubleArgumentType.getDouble(arguments, "position") - 1), (int) (DoubleArgumentType.getDouble(arguments, "position") - 1)))];
-			entityname = (convert).split("\u00A4")[1];
+			convert = new Object() {
+				private String split(String text, String space, int index) {
+					String s = text.split(space)[index];
+					return s;
+				}
+			}.split(((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage), "\u00B6",
+					(int) (Mth.nextInt(RandomSource.create(), (int) (DoubleArgumentType.getDouble(arguments, "position") - 1), (int) (DoubleArgumentType.getDouble(arguments, "position") - 1))));
+			entityname = new Object() {
+				private String split(String text, String space, int index) {
+					String s = text.split(space)[index];
+					return s;
+				}
+			}.split(convert, "\u00A4", (int) 1);
 			{
 				String _setval = ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ShadowStorage).replace(convert + "\u00B6", "");
 				entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

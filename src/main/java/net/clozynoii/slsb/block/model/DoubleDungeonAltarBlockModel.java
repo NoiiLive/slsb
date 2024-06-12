@@ -18,7 +18,7 @@ public class DoubleDungeonAltarBlockModel extends GeoModel<DoubleDungeonAltarTil
 	}
 
 	@Override
-	public ResourceLocation getTextureResource(DoubleDungeonAltarTileEntity entity) {
+	public ResourceLocation getTextureResource(DoubleDungeonAltarTileEntity animatable) {
 		return new ResourceLocation("slsb", "textures/block/altartexture.png");
 	}
 }

@@ -12,7 +12,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 import net.clozynoii.slsb.network.SlsbModVariables;
 import net.clozynoii.slsb.init.SlsbModEntities;
@@ -24,7 +23,7 @@ public class RotatingShotsEffectProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			_ent.setYRot((float) (entity.getViewYRot(Minecraft.getInstance().getPartialTick()) + 24));
+			_ent.setYRot((float) (+24));
 			_ent.setXRot(entity.getXRot());
 			_ent.setYBodyRot(_ent.getYRot());
 			_ent.setYHeadRot(_ent.getYRot());

@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "stealth_skill": {
+    "stealth_skill_0": {
       "trigger": "minecraft:impossible"
     }
   },

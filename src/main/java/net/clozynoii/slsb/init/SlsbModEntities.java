@@ -40,7 +40,7 @@ public class SlsbModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SlsbMod.MODID);
 	public static final RegistryObject<EntityType<AfterImageEntity>> AFTER_IMAGE = register("after_image", EntityType.Builder.<AfterImageEntity>of(AfterImageEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(AfterImageEntity::new).fireImmune().sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<WindSliceProjectileEntity>> WIND_SLICE_PROJECTILE = register("projectile_wind_slice_projectile", EntityType.Builder.<WindSliceProjectileEntity>of(WindSliceProjectileEntity::new, MobCategory.MISC)
+	public static final RegistryObject<EntityType<WindSliceProjectileEntity>> WIND_SLICE_PROJECTILE = register("wind_slice_projectile", EntityType.Builder.<WindSliceProjectileEntity>of(WindSliceProjectileEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(WindSliceProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<WindBarrierMobEntity>> WIND_BARRIER_MOB = register("wind_barrier_mob", EntityType.Builder.<WindBarrierMobEntity>of(WindBarrierMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WindBarrierMobEntity::new).fireImmune().sized(0.6f, 1.8f));
@@ -52,7 +52,7 @@ public class SlsbModEntities {
 			EntityType.Builder.<GiantRatBossEntity>of(GiantRatBossEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GiantRatBossEntity::new)
 
 					.sized(1.7f, 1.2f));
-	public static final RegistryObject<EntityType<SwordSliceProjectileEntity>> SWORD_SLICE_PROJECTILE = register("projectile_sword_slice_projectile", EntityType.Builder.<SwordSliceProjectileEntity>of(SwordSliceProjectileEntity::new, MobCategory.MISC)
+	public static final RegistryObject<EntityType<SwordSliceProjectileEntity>> SWORD_SLICE_PROJECTILE = register("sword_slice_projectile", EntityType.Builder.<SwordSliceProjectileEntity>of(SwordSliceProjectileEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(SwordSliceProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<UndeadSoldierEntity>> UNDEAD_SOLDIER = register("undead_soldier",
 			EntityType.Builder.<UndeadSoldierEntity>of(UndeadSoldierEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UndeadSoldierEntity::new)
@@ -68,10 +68,10 @@ public class SlsbModEntities {
 			EntityType.Builder.<HunterNPCEntity>of(HunterNPCEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HunterNPCEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EssenceStoneArrowProjectileEntity>> ESSENCE_STONE_ARROW_PROJECTILE = register("projectile_essence_stone_arrow_projectile",
+	public static final RegistryObject<EntityType<EssenceStoneArrowProjectileEntity>> ESSENCE_STONE_ARROW_PROJECTILE = register("essence_stone_arrow_projectile",
 			EntityType.Builder.<EssenceStoneArrowProjectileEntity>of(EssenceStoneArrowProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(EssenceStoneArrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<ManaArrowProjectileEntity>> MANA_ARROW_PROJECTILE = register("projectile_mana_arrow_projectile", EntityType.Builder.<ManaArrowProjectileEntity>of(ManaArrowProjectileEntity::new, MobCategory.MISC)
+	public static final RegistryObject<EntityType<ManaArrowProjectileEntity>> MANA_ARROW_PROJECTILE = register("mana_arrow_projectile", EntityType.Builder.<ManaArrowProjectileEntity>of(ManaArrowProjectileEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ManaArrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<GiantRatShadowEntity>> GIANT_RAT_SHADOW = register("giant_rat_shadow",
 			EntityType.Builder.<GiantRatShadowEntity>of(GiantRatShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GiantRatShadowEntity::new)

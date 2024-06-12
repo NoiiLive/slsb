@@ -54,7 +54,7 @@ public class DungeonGenerationProcedure {
 		if (entity == null)
 			return;
 		if (entity.getPersistentData().getBoolean("GenerateDungeon") == true) {
-			if ((entity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:rat_dungeon")))) {
+			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:rat_dungeon"))) {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("slsb", "rat_dungeon_entrance"));
 					if (template != null) {
@@ -150,7 +150,7 @@ public class DungeonGenerationProcedure {
 					});
 				}
 			}
-			if ((entity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:catacomb_dungeon")))) {
+			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:catacomb_dungeon"))) {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("slsb", "catacomb_dungeon_entrance"));
 					if (template != null) {

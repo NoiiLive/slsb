@@ -74,6 +74,7 @@ public class GiantRatBossEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setCustomName(Component.literal("Lupin, The Scarred"));
 		setCustomNameVisible(true);
 		setPersistenceRequired();
@@ -157,7 +158,7 @@ public class GiantRatBossEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		DungeonBossKilledProcedure.execute(this.level());
+		DungeonBossKilledProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -200,9 +201,9 @@ public class GiantRatBossEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 100);
+		builder = builder.add(Attributes.MAX_HEALTH, 800);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 75);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}

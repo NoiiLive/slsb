@@ -13,11 +13,6 @@ public class ClearMindMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.clear_mind";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		ClearMindTickProcedure.execute(entity);
 	}

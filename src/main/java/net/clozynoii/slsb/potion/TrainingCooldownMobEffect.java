@@ -19,11 +19,6 @@ public class TrainingCooldownMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.training_cooldown";
-	}
-
-	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
 		TrainingCooldownEffectExpiresProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ());

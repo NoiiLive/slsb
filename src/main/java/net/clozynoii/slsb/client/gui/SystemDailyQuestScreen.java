@@ -28,6 +28,7 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	private final int x, y, z;
 	private final Player entity;
 	ImageButton imagebutton_button_stats;
+	ImageButton imagebutton_button_complete_h;
 
 	public SystemDailyQuestScreen(SystemDailyQuestMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -101,11 +102,6 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		imagebutton_button_stats = new ImageButton(this.leftPos + 105, this.topPos + -103, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_stats.png"), 28, 56, e -> {
@@ -116,5 +112,19 @@ public class SystemDailyQuestScreen extends AbstractContainerScreen<SystemDailyQ
 		});
 		guistate.put("button:imagebutton_button_stats", imagebutton_button_stats);
 		this.addRenderableWidget(imagebutton_button_stats);
+		imagebutton_button_complete_h = new ImageButton(this.leftPos + 45, this.topPos + 67, 16, 16, 0, 0, 16, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_complete_h.png"), 16, 32, e -> {
+			if (ReturnQuestCompleteProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemDailyQuestButtonMessage(1, x, y, z));
+				SystemDailyQuestButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnQuestCompleteProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_complete_h", imagebutton_button_complete_h);
+		this.addRenderableWidget(imagebutton_button_complete_h);
 	}
 }

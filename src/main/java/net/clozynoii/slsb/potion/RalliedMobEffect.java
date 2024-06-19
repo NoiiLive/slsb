@@ -13,11 +13,6 @@ public class RalliedMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.rallied";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		RalliedEffectTickProcedure.execute(entity);
 	}

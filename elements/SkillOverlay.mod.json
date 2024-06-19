@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "overlay",
   "definition": {
     "priority": "NORMAL",
@@ -21,7 +21,7 @@
           },
           "anchorPoint": "TOP_LEFT",
           "x": 8,
-          "y": 40
+          "y": 48
         }
       },
       {
@@ -40,8 +40,8 @@
             "name": "ManaDisplayCondition"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 143,
-          "y": 9
+          "x": 159,
+          "y": 22
         }
       },
       {
@@ -61,20 +61,20 @@
           },
           "anchorPoint": "TOP_LEFT",
           "x": 8,
-          "y": 52
+          "y": 60
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "abilityoveerlay.png",
+          "image": "abilityoverlay.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "ReturnOverlayActivate"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 5,
+          "y": 5
         }
       },
       {
@@ -86,8 +86,8 @@
             "name": "ReturnAbilitySlots1"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -99,8 +99,8 @@
             "name": "ReturnAbilitySlots2"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -112,8 +112,8 @@
             "name": "ReturnAbilitySlots3"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -125,8 +125,8 @@
             "name": "ReturnAbilitySlots4"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -138,8 +138,8 @@
             "name": "ReturnAbilitySlots5"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -151,8 +151,8 @@
             "name": "ManaBar1"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -164,8 +164,8 @@
             "name": "ManaBar2"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -177,8 +177,8 @@
             "name": "ManaBar3"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -190,8 +190,8 @@
             "name": "ManaBar4"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -203,8 +203,8 @@
             "name": "ManaBar5"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -216,8 +216,8 @@
             "name": "ManaBar6"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -229,8 +229,8 @@
             "name": "ManaBar7"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -242,8 +242,8 @@
             "name": "ManaBar8"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -255,8 +255,8 @@
             "name": "ManaBar9"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -268,8 +268,8 @@
             "name": "ManaBar10"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -281,8 +281,8 @@
             "name": "ManaBar11"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -294,8 +294,8 @@
             "name": "ManaBar12"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -307,8 +307,8 @@
             "name": "ManaBar13"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -320,8 +320,8 @@
             "name": "ManaBar14"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -333,8 +333,8 @@
             "name": "ManaBar15"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 4,
-          "y": 4
+          "x": 12,
+          "y": 11
         }
       },
       {
@@ -346,8 +346,8 @@
             "name": "ReturnAbilitySelected1"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 32,
-          "y": 12
+          "x": 40,
+          "y": 19
         }
       },
       {
@@ -359,8 +359,8 @@
             "name": "ReturnAbilitySelected2"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 51,
-          "y": 12
+          "x": 59,
+          "y": 19
         }
       },
       {
@@ -372,8 +372,8 @@
             "name": "ReturnAbilitySelected3"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 70,
-          "y": 12
+          "x": 78,
+          "y": 19
         }
       },
       {
@@ -385,8 +385,8 @@
             "name": "ReturnAbilitySelected4"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 89,
-          "y": 12
+          "x": 97,
+          "y": 19
         }
       },
       {
@@ -398,8 +398,8 @@
             "name": "ReturnAbilitySelected5"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 108,
-          "y": 12
+          "x": 116,
+          "y": 19
         }
       },
       {
@@ -411,8 +411,8 @@
             "name": "ReturnAbilityCooldown1"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 37,
-          "y": 16
+          "x": 45,
+          "y": 23
         }
       },
       {
@@ -424,8 +424,8 @@
             "name": "ReturnAbilityCooldown2"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 56,
-          "y": 16
+          "x": 64,
+          "y": 23
         }
       },
       {
@@ -437,8 +437,8 @@
             "name": "ReturnAbilityCooldown3"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 75,
-          "y": 16
+          "x": 83,
+          "y": 23
         }
       },
       {
@@ -450,8 +450,8 @@
             "name": "ReturnAbilityCooldown4"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 94,
-          "y": 16
+          "x": 102,
+          "y": 23
         }
       },
       {
@@ -463,8 +463,207 @@
             "name": "ReturnAbilityCooldown5"
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 113,
-          "y": 16
+          "x": 121,
+          "y": 23
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_health_overlay",
+          "text": {
+            "fixedValue": "",
+            "name": "HealthOverlay"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 159,
+          "y": 9
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_1.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar1"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar2"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_3.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar3"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar4"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_5.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar5"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_6.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar6"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_7.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar7"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_8.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar8"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_9.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar9"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_10.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar10"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_11.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar11"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_12.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar12"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_13.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar13"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityoverlay_health_14.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HealthBar14"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 5,
+          "y": 5
         }
       }
     ],

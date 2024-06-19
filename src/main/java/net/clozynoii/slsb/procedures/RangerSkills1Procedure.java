@@ -13,7 +13,7 @@ public class RangerSkills1Procedure {
 		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCooldown1 == 0) {
 			if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilitySelected).equals("Magic Arrows")) {
 				{
-					double _setval = 0;
+					double _setval = 100;
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.AbilityCost1 = _setval;
 						capability.syncPlayerVariables(entity);
@@ -85,22 +85,20 @@ public class RangerSkills1Procedure {
 			}
 			if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilitySelected).equals("Tracking")) {
 				{
-					double _setval = 0;
+					double _setval = 100;
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.AbilityCost1 = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).ActiveSkills).contains("Tracking") == false) {
-					if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Mana >= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) {
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal(("\u00A7fYou Need \u00A7b\u00A7l"
-									+ new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) + " \u00A7fMana to Use This")),
-									true);
-					}
+				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Mana >= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) {
 				} else {
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(
+								Component.literal(("\u00A7fYou Need \u00A7b\u00A7l"
+										+ new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) + " \u00A7fMana to Use This")),
+								true);
 				}
 			}
 			if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilitySelected).equals("Snare Trap")) {
@@ -123,7 +121,7 @@ public class RangerSkills1Procedure {
 			}
 			if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilitySelected).equals("Rotating Shots")) {
 				{
-					double _setval = 0;
+					double _setval = 100;
 					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.AbilityCost1 = _setval;
 						capability.syncPlayerVariables(entity);
@@ -142,7 +140,7 @@ public class RangerSkills1Procedure {
 		} else {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7fAbility on Cooldown For \u00A7c\u00A7l"
-						+ new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCooldown1) + " \u00A7fSeconds")), true);
+						+ new java.text.DecimalFormat("##").format((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCooldown1 / 20) + " \u00A7fSeconds")), true);
 		}
 	}
 }

@@ -66,6 +66,26 @@ public class SystemStatsMenuButtonMessage {
 
 			SystemDailyQuestOpenProcedure.execute(world, x, y, z, entity);
 		}
+		if (buttonID == 1) {
+
+			StatAddStrengthProcedure.execute();
+		}
+		if (buttonID == 2) {
+
+			StatAddAgilityProcedure.execute();
+		}
+		if (buttonID == 3) {
+
+			StatAddSenseProcedure.execute();
+		}
+		if (buttonID == 4) {
+
+			StatAddVitalityProcedure.execute();
+		}
+		if (buttonID == 5) {
+
+			StatAddIntelligenceProcedure.execute();
+		}
 	}
 
 	@SubscribeEvent

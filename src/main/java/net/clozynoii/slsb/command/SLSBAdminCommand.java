@@ -243,7 +243,7 @@ public class SLSBAdminCommand {
 
 			SetHealerProcedure.execute(arguments, entity);
 			return 0;
-		}))).then(Commands.literal("random").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
+		})).then(Commands.literal("shadowmonarch"))).then(Commands.literal("random").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();

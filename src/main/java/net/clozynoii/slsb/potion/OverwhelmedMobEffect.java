@@ -13,11 +13,6 @@ public class OverwhelmedMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.slsb.overwhelmed";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		OverwhelmedTickProcedure.execute(entity);
 	}

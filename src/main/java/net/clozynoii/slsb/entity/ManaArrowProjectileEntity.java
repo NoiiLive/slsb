@@ -7,7 +7,6 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.ItemSupplier;
@@ -20,7 +19,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
-import net.clozynoii.slsb.procedures.ManaArrowDropProcedure;
 import net.clozynoii.slsb.init.SlsbModItems;
 import net.clozynoii.slsb.init.SlsbModEntities;
 
@@ -67,14 +65,9 @@ public class ManaArrowProjectileEntity extends AbstractArrow implements ItemSupp
 	}
 
 	@Override
-	public void onHitBlock(BlockHitResult blockHitResult) {
-		super.onHitBlock(blockHitResult);
-		ManaArrowDropProcedure.execute(this.level(), blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
-	}
-
-	@Override
 	public void tick() {
 		super.tick();
+		ManaArrowTrailProcedure.execute();
 		if (this.inGround)
 			this.discard();
 	}

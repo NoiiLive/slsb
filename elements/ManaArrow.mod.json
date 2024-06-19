@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -10,7 +10,7 @@
     "name": "Mana Arrow",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:SoloLevelingWeapons"
     },
     "stackSize": 64,
     "enchantability": 0,

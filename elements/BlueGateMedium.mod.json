@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "animatedblock",
   "definition": {
     "texture": "mediumbluegatetexture",
@@ -101,13 +101,6 @@
     "luminance": 14,
     "unbreakable": true,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "ENCHANTMENT_TABLE"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 3.0,
-    "particleAmount": 3,
     "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,

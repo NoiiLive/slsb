@@ -66,6 +66,10 @@ public class SystemDailyQuestButtonMessage {
 
 			OpenInfoMenuProcedure.execute(world, x, y, z, entity);
 		}
+		if (buttonID == 1) {
+
+			FinisheDailyQuestProcedure.execute();
+		}
 	}
 
 	@SubscribeEvent

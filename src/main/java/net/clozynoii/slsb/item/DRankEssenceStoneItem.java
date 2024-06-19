@@ -16,8 +16,8 @@ public class DRankEssenceStoneItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.literal("\u00A77Found within an \u00A7eD-Rank \u00A77magic beast, a proof of your effort."));
 		list.add(Component.literal("\u00A77\u00A7oCan be sold for a decent price, or turned into armor and weapons"));
 	}

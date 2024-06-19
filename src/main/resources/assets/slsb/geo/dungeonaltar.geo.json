@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.DungeonAltar",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "altar",
+					"pivot": [0, -8, 0],
+					"cubes": [
+						{"origin": [-16, 8, -16], "size": [32, 8, 32], "uv": [0, 104]},
+						{"origin": [-22, 1, -22], "size": [44, 7, 44], "uv": [0, 53]},
+						{"origin": [-26, 0, -26], "size": [52, 1, 52], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

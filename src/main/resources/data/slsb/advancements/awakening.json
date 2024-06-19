@@ -16,7 +16,7 @@
     "hidden": false
   },
   "criteria": {
-    "awakening": {
+    "awakening_0": {
       "trigger": "minecraft:impossible"
     }
   },

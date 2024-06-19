@@ -1,0 +1,6 @@
+{
+  "parent": "slsb:displaysettings/dungeonaltar.item",
+  "textures": {
+    "particle": "slsb:block/altartexture"
+  }
+}

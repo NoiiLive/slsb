@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "slsb:blocks/crystal_dungeon_west",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "slsb:crystal_dungeon_west"
+        }
+      ]
+    }
+  ]
+}

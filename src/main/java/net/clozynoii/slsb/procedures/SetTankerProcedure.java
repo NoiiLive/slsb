@@ -60,7 +60,7 @@ public class SetTankerProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getDisplayName().getString() + " Is Now an Tanker")), false);
+				}.getEntity()).getDisplayName().getString() + " Is Now a Tanker")), false);
 			if ((new Object() {
 				public Entity getEntity() {
 					try {
@@ -71,7 +71,7 @@ public class SetTankerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Tanker"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Tanker"), false);
 		} else {
 			if ((new Object() {
 				public Entity getEntity() {
@@ -83,7 +83,7 @@ public class SetTankerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Tanker"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Tanker"), false);
 		}
 	}
 }

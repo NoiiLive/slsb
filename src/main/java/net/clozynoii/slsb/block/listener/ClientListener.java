@@ -30,9 +30,9 @@ public class ClientListener {
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.BLUE_GATE_MEDIUM.get(), context -> new BlueGateMediumTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_STONE.get(), context -> new ManaCrystalBlockStoneTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_PURE.get(), context -> new ManaCrystalBlockPureTileRenderer());
-		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DEEPSLATE.get(), context -> new ManaCrystalBlockDeepslateTileRenderer());
-		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DIORITE.get(), context -> new ManaCrystalBlockDioriteTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_GRANITE.get(), context -> new ManaCrystalBlockGraniteTileRenderer());
+		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DIORITE.get(), context -> new ManaCrystalBlockDioriteTileRenderer());
+		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DEEPSLATE.get(), context -> new ManaCrystalBlockDeepslateTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DRIPSTONE.get(), context -> new ManaCrystalBlockDripstoneTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.AWAKENING_ORB.get(), context -> new AwakeningOrbTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.RED_GATE_MEDIUM.get(), context -> new RedGateMediumTileRenderer());

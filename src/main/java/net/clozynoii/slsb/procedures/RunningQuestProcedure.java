@@ -27,15 +27,23 @@ public class RunningQuestProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Running < 100) {
-			if (entity.getDeltaMovement().x() > 0 || entity.getDeltaMovement().z() > 0) {
-				{
-					double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Running + 1;
-					entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Running = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).SystemPlayer == true) {
+			if (entity.isSprinting()) {
+				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Running < 2000) {
+					if (entity.getPersistentData().getDouble("RunCD") == 0) {
+						{
+							double _setval = (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Running + 1;
+							entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Running = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						entity.getPersistentData().putDouble("RunCD", 2);
+					}
 				}
+			}
+			if (entity.getPersistentData().getDouble("RunCD") > 0) {
+				entity.getPersistentData().putDouble("RunCD", (entity.getPersistentData().getDouble("RunCD") - 1));
 			}
 		}
 	}

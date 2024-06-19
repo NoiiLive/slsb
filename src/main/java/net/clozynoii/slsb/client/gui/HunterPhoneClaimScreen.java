@@ -97,11 +97,6 @@ public class HunterPhoneClaimScreen extends AbstractContainerScreen<HunterPhoneC
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		GatePrice = new EditBox(this.font, this.leftPos + -54, this.topPos + -3, 107, 18, Component.translatable("gui.slsb.hunter_phone_claim.GatePrice")) {

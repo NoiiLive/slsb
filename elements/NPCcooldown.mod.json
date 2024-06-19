@@ -1,9 +1,9 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Cooldown",
-    "icon": "suffocation_active.png",
+    "icon": "cooldown.png",
     "color": {
       "value": -1,
       "falpha": 0.0

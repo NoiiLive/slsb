@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "healer_class": {
+    "healer_class_0": {
       "trigger": "minecraft:impossible"
     }
   },

@@ -67,6 +67,7 @@ public class UndeadSoldierEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(SlsbModItems.E_RANK_SWORD.get()));
 		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(SlsbModItems.E_RANK_ARMOR_CHESTPLATE.get()));
@@ -155,6 +156,12 @@ public class UndeadSoldierEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		EntityShadowSpawnProcedure.execute();
+	}
+
+	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
@@ -184,9 +191,9 @@ public class UndeadSoldierEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 100);
+		builder = builder.add(Attributes.MAX_HEALTH, 800);
 		builder = builder.add(Attributes.ARMOR, 3);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 75);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}

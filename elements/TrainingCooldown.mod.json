@@ -1,9 +1,9 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Training Cooldown",
-    "icon": "np_ccooldown.png",
+    "icon": "cooldown.png",
     "color": {
       "value": -1,
       "falpha": 0.0

@@ -34,6 +34,11 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	private final int x, y, z;
 	private final Player entity;
 	ImageButton imagebutton_button_daily;
+	ImageButton imagebutton_button_add;
+	ImageButton imagebutton_button_add1;
+	ImageButton imagebutton_button_add2;
+	ImageButton imagebutton_button_add3;
+	ImageButton imagebutton_button_add4;
 
 	public SystemStatsMenuScreen(SystemStatsMenuMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -96,7 +101,7 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 				SystemReturnTitleProcedure.execute(entity), 35, -18, -722689, false);
 		guiGraphics.drawString(this.font,
 
-				SystemReturnHPProcedure.execute(entity), -55, 4, -722689, false);
+				SystemReturnHPProcedure.execute(), -55, 4, -722689, false);
 		guiGraphics.drawString(this.font,
 
 				SystemReturnMPProcedure.execute(entity), 19, 4, -722689, false);
@@ -121,11 +126,6 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		imagebutton_button_daily = new ImageButton(this.leftPos + 131, this.topPos + -70, 28, 28, 0, 0, 28, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_daily.png"), 28, 56, e -> {
@@ -136,5 +136,75 @@ public class SystemStatsMenuScreen extends AbstractContainerScreen<SystemStatsMe
 		});
 		guistate.put("button:imagebutton_button_daily", imagebutton_button_daily);
 		this.addRenderableWidget(imagebutton_button_daily);
+		imagebutton_button_add = new ImageButton(this.leftPos + -8, this.topPos + 21, 11, 11, 0, 0, 11, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_add.png"), 11, 22, e -> {
+			if (ReturnStatStrengthProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(1, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnStatStrengthProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_add", imagebutton_button_add);
+		this.addRenderableWidget(imagebutton_button_add);
+		imagebutton_button_add1 = new ImageButton(this.leftPos + -8, this.topPos + 33, 11, 11, 0, 0, 11, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_add1.png"), 11, 22, e -> {
+			if (ReturnStatAgilityProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(2, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnStatAgilityProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_add1", imagebutton_button_add1);
+		this.addRenderableWidget(imagebutton_button_add1);
+		imagebutton_button_add2 = new ImageButton(this.leftPos + -8, this.topPos + 45, 11, 11, 0, 0, 11, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_add2.png"), 11, 22, e -> {
+			if (ReturnStatSenseProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(3, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnStatSenseProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_add2", imagebutton_button_add2);
+		this.addRenderableWidget(imagebutton_button_add2);
+		imagebutton_button_add3 = new ImageButton(this.leftPos + 59, this.topPos + 21, 11, 11, 0, 0, 11, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_add3.png"), 11, 22, e -> {
+			if (ReturnStatVitalityProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(4, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 4, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnStatVitalityProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_add3", imagebutton_button_add3);
+		this.addRenderableWidget(imagebutton_button_add3);
+		imagebutton_button_add4 = new ImageButton(this.leftPos + 59, this.topPos + 33, 11, 11, 0, 0, 11, new ResourceLocation("slsb:textures/screens/atlas/imagebutton_button_add4.png"), 11, 22, e -> {
+			if (ReturnStatIntelligenceProcedure.execute()) {
+				SlsbMod.PACKET_HANDLER.sendToServer(new SystemStatsMenuButtonMessage(5, x, y, z));
+				SystemStatsMenuButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (ReturnStatIntelligenceProcedure.execute())
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_button_add4", imagebutton_button_add4);
+		this.addRenderableWidget(imagebutton_button_add4);
 	}
 }

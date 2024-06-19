@@ -75,11 +75,6 @@ public class HunterPhoneBackupScreen extends AbstractContainerScreen<HunterPhone
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_request = Button.builder(Component.translatable("gui.slsb.hunter_phone_backup.button_request"), e -> {

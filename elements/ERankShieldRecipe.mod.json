@@ -1,0 +1,48 @@
+{
+  "_fv": 60,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": "CUSTOM:ERankEssenceStone"
+      },
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:minecraft:planks"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ERankShield"
+    },
+    "name": "e_rank_shield_recipe",
+    "namespace": "mod"
+  }
+}

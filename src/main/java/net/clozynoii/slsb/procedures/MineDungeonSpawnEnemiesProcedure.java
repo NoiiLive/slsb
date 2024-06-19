@@ -1,6 +1,7 @@
 package net.clozynoii.slsb.procedures;
 
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.MobSpawnType;
@@ -19,7 +20,7 @@ import net.clozynoii.slsb.init.SlsbModBlocks;
 public class MineDungeonSpawnEnemiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		double random = 0;
-		if ((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:rat_dungeon")))) {
+		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("slsb:rat_dungeon"))) {
 			world.setBlock(BlockPos.containing(x, y, z), SlsbModBlocks.RAT_DUNGEON_ENEMIES.get().defaultBlockState(), 3);
 		} else {
 			random = Mth.nextInt(RandomSource.create(), 1, 5);

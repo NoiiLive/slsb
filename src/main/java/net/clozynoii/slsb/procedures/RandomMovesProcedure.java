@@ -38,10 +38,10 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Fighter")) {
 			abilitylist = "SwordSlash,Berserker,SwordDance,Shatter,Adrenaline,Whirlwind,Precision,Prediction,ManaBlade,Zone,";
-			abilitycount = 8;
+			abilitycount = 10;
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Mage")) {
-			magemagic = Mth.nextInt(RandomSource.create(), 3, 3);
+			magemagic = Mth.nextInt(RandomSource.create(), 1, 10);
 			if (magemagic == 1) {
 				{
 					String _setval = "Flame";
@@ -73,7 +73,7 @@ public class RandomMovesProcedure {
 					});
 				}
 				abilitylist = "WindSlice,Turbulence,WindBurst,WindPull,Suffocation,Tornado,WindBarrier,";
-				abilitycount = 5;
+				abilitycount = 7;
 			}
 			if (magemagic == 4) {
 				{
@@ -155,7 +155,7 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Assassin")) {
 			abilitylist = "Stealth,Quickstep,Backstab,Evasion,Mark,Smokescreen,Clone,Flurry,";
-			abilitycount = 5;
+			abilitycount = 8;
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Ranger")) {
 			abilitylist = "MagicArrows,RapidShot,ArrowRain,PiercingShot,Tracking,SnareTrap,RotatingShots,";
@@ -167,7 +167,7 @@ public class RandomMovesProcedure {
 		}
 		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).HunterClass).equals("Healer")) {
 			abilitylist = "Healing,HasteBuff,StrengthBuff,Disguise,Purify,Fortify,SacredBarrier,";
-			abilitycount = 6;
+			abilitycount = 7;
 		}
 		for (int index0 = 0; index0 < (int) totalabilities; index0++) {
 			if (!(abilitylist).isEmpty()) {

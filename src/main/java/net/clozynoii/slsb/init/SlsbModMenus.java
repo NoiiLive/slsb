@@ -27,6 +27,6 @@ public class SlsbModMenus {
 	public static final RegistryObject<MenuType<HunterPhoneClaimMenu>> HUNTER_PHONE_CLAIM = REGISTRY.register("hunter_phone_claim", () -> IForgeMenuType.create(HunterPhoneClaimMenu::new));
 	public static final RegistryObject<MenuType<HunterPhonePurchaseMenu>> HUNTER_PHONE_PURCHASE = REGISTRY.register("hunter_phone_purchase", () -> IForgeMenuType.create(HunterPhonePurchaseMenu::new));
 	public static final RegistryObject<MenuType<HunterPhoneNewPriceMenu>> HUNTER_PHONE_NEW_PRICE = REGISTRY.register("hunter_phone_new_price", () -> IForgeMenuType.create(HunterPhoneNewPriceMenu::new));
-	public static final RegistryObject<MenuType<SystemStatsMenuMenu>> SYSTEM_STATS_MENU = REGISTRY.register("system_stats_menu", () -> IForgeMenuType.create(SystemStatsMenuMenu::new));
 	public static final RegistryObject<MenuType<SystemDailyQuestMenu>> SYSTEM_DAILY_QUEST = REGISTRY.register("system_daily_quest", () -> IForgeMenuType.create(SystemDailyQuestMenu::new));
+	public static final RegistryObject<MenuType<SystemStatsMenuMenu>> SYSTEM_STATS_MENU = REGISTRY.register("system_stats_menu", () -> IForgeMenuType.create(SystemStatsMenuMenu::new));
 }

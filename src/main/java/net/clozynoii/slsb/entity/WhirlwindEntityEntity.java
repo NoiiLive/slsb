@@ -61,6 +61,7 @@ public class WhirlwindEntityEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		this.moveControl = new FlyingMoveControl(this, 10, true);
 	}
 

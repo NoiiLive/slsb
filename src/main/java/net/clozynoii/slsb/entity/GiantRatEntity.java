@@ -72,6 +72,7 @@ public class GiantRatEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 10;
 		setNoAi(false);
+		setMaxUpStep(0.6f);
 		setPersistenceRequired();
 	}
 
@@ -152,6 +153,12 @@ public class GiantRatEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		EntityShadowSpawnProcedure.execute();
+	}
+
+	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		GiantRatOnSpawnProcedure.execute(this);
@@ -191,9 +198,9 @@ public class GiantRatEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 50);
+		builder = builder.add(Attributes.MAX_HEALTH, 300);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 30);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}

@@ -24,7 +24,7 @@ public class KasakasVenomFangItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 21f;
+				return 19f;
 			}
 
 			public int getLevel() {
@@ -42,8 +42,8 @@ public class KasakasVenomFangItem extends SwordItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.literal("\u00A7f-Effect \"\u00A7eParalyze\u00A7f\":"));
 		list.add(Component.literal("\u00A7fThe Opponent Will Be Paralyzed At A Certain Rate."));
 		list.add(Component.literal("\u00A7f-Effect \"\u00A7eBleed\u00A7f\":"));

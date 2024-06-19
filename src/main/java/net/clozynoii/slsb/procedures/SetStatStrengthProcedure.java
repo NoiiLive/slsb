@@ -24,40 +24,6 @@ public class SetStatStrengthProcedure {
 					}
 				}
 			}.getEntity()).getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.MaxStrength = _setval;
-				capability.syncPlayerVariables((new Object() {
-					public Entity getEntity() {
-						try {
-							return EntityArgument.getEntity(arguments, "name");
-						} catch (CommandSyntaxException e) {
-							e.printStackTrace();
-							return null;
-						}
-					}
-				}.getEntity()));
-			});
-		}
-		{
-			double _setval = ((new Object() {
-				public Entity getEntity() {
-					try {
-						return EntityArgument.getEntity(arguments, "name");
-					} catch (CommandSyntaxException e) {
-						e.printStackTrace();
-						return null;
-					}
-				}
-			}.getEntity()).getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).MaxStrength;
-			(new Object() {
-				public Entity getEntity() {
-					try {
-						return EntityArgument.getEntity(arguments, "name");
-					} catch (CommandSyntaxException e) {
-						e.printStackTrace();
-						return null;
-					}
-				}
-			}.getEntity()).getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Strength = _setval;
 				capability.syncPlayerVariables((new Object() {
 					public Entity getEntity() {

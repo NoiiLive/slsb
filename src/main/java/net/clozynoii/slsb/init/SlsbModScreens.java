@@ -29,8 +29,8 @@ public class SlsbModScreens {
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_CLAIM.get(), HunterPhoneClaimScreen::new);
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_PURCHASE.get(), HunterPhonePurchaseScreen::new);
 			MenuScreens.register(SlsbModMenus.HUNTER_PHONE_NEW_PRICE.get(), HunterPhoneNewPriceScreen::new);
-			MenuScreens.register(SlsbModMenus.SYSTEM_STATS_MENU.get(), SystemStatsMenuScreen::new);
 			MenuScreens.register(SlsbModMenus.SYSTEM_DAILY_QUEST.get(), SystemDailyQuestScreen::new);
+			MenuScreens.register(SlsbModMenus.SYSTEM_STATS_MENU.get(), SystemStatsMenuScreen::new);
 		});
 	}
 }

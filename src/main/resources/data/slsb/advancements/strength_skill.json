@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "strength_skill": {
+    "strength_skill_0": {
       "trigger": "minecraft:impossible"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "projectile",
   "definition": {
     "projectileItem": {
@@ -15,8 +15,8 @@
     "knockback": 0,
     "entityModel": "ModelCustomArrow",
     "customModelTexture": "manaarrowtexture.png",
-    "onHitsBlock": {
-      "name": "ManaArrowDrop"
+    "onFlyingTick": {
+      "name": "ManaArrowTrail"
     }
   }
 }

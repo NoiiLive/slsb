@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aaa",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "tag": "minecraft:planks"
+    },
+    "b": {
+      "item": "slsb:e_rank_essence_stone"
+    }
+  },
+  "result": {
+    "item": "slsb:e_rank_shield",
+    "count": 1
+  }
+}

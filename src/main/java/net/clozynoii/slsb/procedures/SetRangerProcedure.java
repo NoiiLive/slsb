@@ -60,7 +60,7 @@ public class SetRangerProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getDisplayName().getString() + " Is Now an Ranger")), false);
+				}.getEntity()).getDisplayName().getString() + " Is Now a Ranger")), false);
 			if ((new Object() {
 				public Entity getEntity() {
 					try {
@@ -71,7 +71,7 @@ public class SetRangerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Ranger"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Ranger"), false);
 		} else {
 			if ((new Object() {
 				public Entity getEntity() {
@@ -83,7 +83,7 @@ public class SetRangerProcedure {
 					}
 				}
 			}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("You Are Now an Ranger"), false);
+				_player.displayClientMessage(Component.literal("You Are Now a Ranger"), false);
 		}
 	}
 }

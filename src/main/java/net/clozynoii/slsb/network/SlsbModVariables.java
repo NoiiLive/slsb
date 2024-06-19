@@ -122,13 +122,8 @@ public class SlsbModVariables {
 			clone.Awakened = original.Awakened;
 			clone.DungeonGenerate = original.DungeonGenerate;
 			clone.DungeonEnterTimerPlayer = original.DungeonEnterTimerPlayer;
-			clone.MaxStrength = original.MaxStrength;
 			clone.Intelligence = original.Intelligence;
-			clone.MaxAgility = original.MaxAgility;
-			clone.MaxVitality = original.MaxVitality;
 			clone.Agility = original.Agility;
-			clone.MaxSense = original.MaxSense;
-			clone.MaxIntelligence = original.MaxIntelligence;
 			clone.Vitality = original.Vitality;
 			clone.Strength = original.Strength;
 			clone.Sense = original.Sense;
@@ -152,6 +147,10 @@ public class SlsbModVariables {
 			clone.Crouched = original.Crouched;
 			clone.TrainingType = original.TrainingType;
 			clone.DailyRewardClaimed = original.DailyRewardClaimed;
+			clone.ShadowStorage = original.ShadowStorage;
+			clone.PlayerMaxHealth = original.PlayerMaxHealth;
+			clone.ShadowAmount = original.ShadowAmount;
+			clone.ShadowCommand = original.ShadowCommand;
 			if (!event.isWasDeath()) {
 				clone.AbilitySelected = original.AbilitySelected;
 				clone.ActiveSkills = original.ActiveSkills;
@@ -167,6 +166,8 @@ public class SlsbModVariables {
 				clone.AbilityCooldown9 = original.AbilityCooldown9;
 				clone.DefeatedBoss = original.DefeatedBoss;
 				clone.SummonAid = original.SummonAid;
+				clone.HealTimer = original.HealTimer;
+				clone.PlayerHealth = original.PlayerHealth;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -410,13 +411,8 @@ public class SlsbModVariables {
 		public boolean DungeonGenerate = false;
 		public double DungeonEnterTimerPlayer = 0;
 		public boolean DefeatedBoss = false;
-		public double MaxStrength = 0.0;
 		public double Intelligence = 0.0;
-		public double MaxAgility = 0.0;
-		public double MaxVitality = 0.0;
 		public double Agility = 0.0;
-		public double MaxSense = 0.0;
-		public double MaxIntelligence = 0.0;
 		public double Vitality = 0.0;
 		public double Strength = 0.0;
 		public double Sense = 0.0;
@@ -441,6 +437,12 @@ public class SlsbModVariables {
 		public boolean Crouched = false;
 		public double TrainingType = 0;
 		public boolean DailyRewardClaimed = false;
+		public double HealTimer = 0.0;
+		public String ShadowStorage = "";
+		public double PlayerMaxHealth = 20.0;
+		public double PlayerHealth = 20.0;
+		public double ShadowAmount = 0;
+		public String ShadowCommand = "Arise";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -501,13 +503,8 @@ public class SlsbModVariables {
 			nbt.putBoolean("DungeonGenerate", DungeonGenerate);
 			nbt.putDouble("DungeonEnterTimerPlayer", DungeonEnterTimerPlayer);
 			nbt.putBoolean("DefeatedBoss", DefeatedBoss);
-			nbt.putDouble("MaxStrength", MaxStrength);
 			nbt.putDouble("Intelligence", Intelligence);
-			nbt.putDouble("MaxAgility", MaxAgility);
-			nbt.putDouble("MaxVitality", MaxVitality);
 			nbt.putDouble("Agility", Agility);
-			nbt.putDouble("MaxSense", MaxSense);
-			nbt.putDouble("MaxIntelligence", MaxIntelligence);
 			nbt.putDouble("Vitality", Vitality);
 			nbt.putDouble("Strength", Strength);
 			nbt.putDouble("Sense", Sense);
@@ -532,6 +529,12 @@ public class SlsbModVariables {
 			nbt.putBoolean("Crouched", Crouched);
 			nbt.putDouble("TrainingType", TrainingType);
 			nbt.putBoolean("DailyRewardClaimed", DailyRewardClaimed);
+			nbt.putDouble("HealTimer", HealTimer);
+			nbt.putString("ShadowStorage", ShadowStorage);
+			nbt.putDouble("PlayerMaxHealth", PlayerMaxHealth);
+			nbt.putDouble("PlayerHealth", PlayerHealth);
+			nbt.putDouble("ShadowAmount", ShadowAmount);
+			nbt.putString("ShadowCommand", ShadowCommand);
 			return nbt;
 		}
 
@@ -589,13 +592,8 @@ public class SlsbModVariables {
 			DungeonGenerate = nbt.getBoolean("DungeonGenerate");
 			DungeonEnterTimerPlayer = nbt.getDouble("DungeonEnterTimerPlayer");
 			DefeatedBoss = nbt.getBoolean("DefeatedBoss");
-			MaxStrength = nbt.getDouble("MaxStrength");
 			Intelligence = nbt.getDouble("Intelligence");
-			MaxAgility = nbt.getDouble("MaxAgility");
-			MaxVitality = nbt.getDouble("MaxVitality");
 			Agility = nbt.getDouble("Agility");
-			MaxSense = nbt.getDouble("MaxSense");
-			MaxIntelligence = nbt.getDouble("MaxIntelligence");
 			Vitality = nbt.getDouble("Vitality");
 			Strength = nbt.getDouble("Strength");
 			Sense = nbt.getDouble("Sense");
@@ -620,6 +618,12 @@ public class SlsbModVariables {
 			Crouched = nbt.getBoolean("Crouched");
 			TrainingType = nbt.getDouble("TrainingType");
 			DailyRewardClaimed = nbt.getBoolean("DailyRewardClaimed");
+			HealTimer = nbt.getDouble("HealTimer");
+			ShadowStorage = nbt.getString("ShadowStorage");
+			PlayerMaxHealth = nbt.getDouble("PlayerMaxHealth");
+			PlayerHealth = nbt.getDouble("PlayerHealth");
+			ShadowAmount = nbt.getDouble("ShadowAmount");
+			ShadowCommand = nbt.getString("ShadowCommand");
 		}
 	}
 
@@ -705,13 +709,8 @@ public class SlsbModVariables {
 					variables.DungeonGenerate = message.data.DungeonGenerate;
 					variables.DungeonEnterTimerPlayer = message.data.DungeonEnterTimerPlayer;
 					variables.DefeatedBoss = message.data.DefeatedBoss;
-					variables.MaxStrength = message.data.MaxStrength;
 					variables.Intelligence = message.data.Intelligence;
-					variables.MaxAgility = message.data.MaxAgility;
-					variables.MaxVitality = message.data.MaxVitality;
 					variables.Agility = message.data.Agility;
-					variables.MaxSense = message.data.MaxSense;
-					variables.MaxIntelligence = message.data.MaxIntelligence;
 					variables.Vitality = message.data.Vitality;
 					variables.Strength = message.data.Strength;
 					variables.Sense = message.data.Sense;
@@ -736,6 +735,12 @@ public class SlsbModVariables {
 					variables.Crouched = message.data.Crouched;
 					variables.TrainingType = message.data.TrainingType;
 					variables.DailyRewardClaimed = message.data.DailyRewardClaimed;
+					variables.HealTimer = message.data.HealTimer;
+					variables.ShadowStorage = message.data.ShadowStorage;
+					variables.PlayerMaxHealth = message.data.PlayerMaxHealth;
+					variables.PlayerHealth = message.data.PlayerHealth;
+					variables.ShadowAmount = message.data.ShadowAmount;
+					variables.ShadowCommand = message.data.ShadowCommand;
 				}
 			});
 			context.setPacketHandled(true);

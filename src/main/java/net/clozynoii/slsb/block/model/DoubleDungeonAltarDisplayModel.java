@@ -1,11 +1,5 @@
 package net.clozynoii.slsb.block.model;
 
-import software.bernie.geckolib.model.GeoModel;
-
-import net.minecraft.resources.ResourceLocation;
-
-import net.clozynoii.slsb.block.display.DoubleDungeonAltarDisplayItem;
-
 public class DoubleDungeonAltarDisplayModel extends GeoModel<DoubleDungeonAltarDisplayItem> {
 	@Override
 	public ResourceLocation getAnimationResource(DoubleDungeonAltarDisplayItem animatable) {

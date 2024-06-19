@@ -1,19 +1,12 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.clozynoii.slsb.network.SlsbModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class HealthBar2Procedure {
-	public static boolean execute(Entity entity) {
-		if (entity == null)
-			return false;
-		if (((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth
-				/ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerMaxHealth) * 100 <= 14
-				&& ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerHealth
-						/ (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).PlayerMaxHealth) * 100 > 7) {
-			return true;
-		}
-		return false;
-	}
+public static boolean execute(
+) {
+if ((/ )*100<=14&&(/ )*100>7) {return
+true;}return
+false;
+}
 }

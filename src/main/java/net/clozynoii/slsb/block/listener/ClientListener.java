@@ -15,6 +15,7 @@ import net.clozynoii.slsb.block.renderer.ManaCrystalBlockGraniteTileRenderer;
 import net.clozynoii.slsb.block.renderer.ManaCrystalBlockDripstoneTileRenderer;
 import net.clozynoii.slsb.block.renderer.ManaCrystalBlockDioriteTileRenderer;
 import net.clozynoii.slsb.block.renderer.ManaCrystalBlockDeepslateTileRenderer;
+import net.clozynoii.slsb.block.renderer.DoubleDungeonAltarTileRenderer;
 import net.clozynoii.slsb.block.renderer.BlueGateSmallTileRenderer;
 import net.clozynoii.slsb.block.renderer.BlueGateMediumTileRenderer;
 import net.clozynoii.slsb.block.renderer.AwakeningOrbTileRenderer;
@@ -36,5 +37,6 @@ public class ClientListener {
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.MANA_CRYSTAL_BLOCK_DRIPSTONE.get(), context -> new ManaCrystalBlockDripstoneTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.AWAKENING_ORB.get(), context -> new AwakeningOrbTileRenderer());
 		event.registerBlockEntityRenderer(SlsbModBlockEntities.RED_GATE_MEDIUM.get(), context -> new RedGateMediumTileRenderer());
+		event.registerBlockEntityRenderer(SlsbModBlockEntities.DOUBLE_DUNGEON_ALTAR.get(), context -> new DoubleDungeonAltarTileRenderer());
 	}
 }

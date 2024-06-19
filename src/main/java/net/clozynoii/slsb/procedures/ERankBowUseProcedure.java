@@ -1,23 +1,6 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-
-import net.clozynoii.slsb.network.SlsbModVariables;
-import net.clozynoii.slsb.init.SlsbModItems;
-import net.clozynoii.slsb.init.SlsbModEntities;
-import net.clozynoii.slsb.entity.ManaArrowProjectileEntity;
-import net.clozynoii.slsb.entity.EssenceStoneArrowProjectileEntity;
-
-import java.util.concurrent.atomic.AtomicReference;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ERankBowUseProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {

@@ -21,6 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.clozynoii.slsb.item.SRankEssenceStoneItem;
+import net.clozynoii.slsb.item.RandomLootBoxItem;
 import net.clozynoii.slsb.item.PhoneItem;
 import net.clozynoii.slsb.item.ManaCrystalItem;
 import net.clozynoii.slsb.item.ManaArrowItem;
@@ -50,6 +51,7 @@ import net.clozynoii.slsb.block.display.ManaCrystalBlockGraniteDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDripstoneDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDioriteDisplayItem;
 import net.clozynoii.slsb.block.display.ManaCrystalBlockDeepslateDisplayItem;
+import net.clozynoii.slsb.block.display.DoubleDungeonAltarDisplayItem;
 import net.clozynoii.slsb.block.display.BlueGateSmallDisplayItem;
 import net.clozynoii.slsb.block.display.BlueGateMediumDisplayItem;
 import net.clozynoii.slsb.block.display.AwakeningOrbDisplayItem;
@@ -235,6 +237,8 @@ public class SlsbModItems {
 	public static final RegistryObject<Item> E_RANK_ARMOR_BOOTS = REGISTRY.register("e_rank_armor_boots", () -> new ERankArmorItem.Boots());
 	public static final RegistryObject<Item> E_RANK_SWORD = REGISTRY.register("e_rank_sword", () -> new ERankSwordItem());
 	public static final RegistryObject<Item> E_RANK_SHIELD = REGISTRY.register("e_rank_shield", () -> new ERankShieldItem());
+	public static final RegistryObject<Item> DOUBLE_DUNGEON_ALTAR = REGISTRY.register(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.getId().getPath(), () -> new DoubleDungeonAltarDisplayItem(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get(), new Item.Properties()));
+	public static final RegistryObject<Item> RANDOM_LOOT_BOX = REGISTRY.register("random_loot_box", () -> new RandomLootBoxItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

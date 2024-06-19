@@ -120,6 +120,7 @@ import net.clozynoii.slsb.block.DoubleDungeonNorthBlock;
 import net.clozynoii.slsb.block.DoubleDungeonEnemiesBlock;
 import net.clozynoii.slsb.block.DoubleDungeonEastBlock;
 import net.clozynoii.slsb.block.DoubleDungeonBossBlock;
+import net.clozynoii.slsb.block.DoubleDungeonAltarBlock;
 import net.clozynoii.slsb.block.CrystalDungeonWestBlock;
 import net.clozynoii.slsb.block.CrystalDungeonSouthBlock;
 import net.clozynoii.slsb.block.CrystalDungeonNorthBlock;
@@ -288,6 +289,7 @@ public class SlsbModBlocks {
 	public static final RegistryObject<Block> CATHEDRAL_DUNGEON_ENEMIES = REGISTRY.register("cathedral_dungeon_enemies", () -> new CathedralDungeonEnemiesBlock());
 	public static final RegistryObject<Block> CATHEDRAL_DUNGEON_BOSS = REGISTRY.register("cathedral_dungeon_boss", () -> new CathedralDungeonBossBlock());
 	public static final RegistryObject<Block> RED_GATE_MEDIUM = REGISTRY.register("red_gate_medium", () -> new RedGateMediumBlock());
+	public static final RegistryObject<Block> DOUBLE_DUNGEON_ALTAR = REGISTRY.register("double_dungeon_altar", () -> new DoubleDungeonAltarBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

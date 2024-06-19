@@ -56,6 +56,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModItems.A_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.S_RANK_ESSENCE_STONE.get());
 				tabData.accept(SlsbModItems.PHONE.get());
+				tabData.accept(SlsbModItems.RANDOM_LOOT_BOX.get());
 			})
 
 					.build());
@@ -84,6 +85,7 @@ public class SlsbModTabs {
 				tabData.accept(SlsbModBlocks.MANA_CRYSTAL_BLOCK_GRANITE.get().asItem());
 				tabData.accept(SlsbModBlocks.MANA_CRYSTAL_BLOCK_DRIPSTONE.get().asItem());
 				tabData.accept(SlsbModBlocks.AWAKENING_ORB.get().asItem());
+				tabData.accept(SlsbModBlocks.DOUBLE_DUNGEON_ALTAR.get().asItem());
 			})
 
 					.build());

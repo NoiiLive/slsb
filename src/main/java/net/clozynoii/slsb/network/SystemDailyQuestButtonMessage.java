@@ -1,25 +1,9 @@
 
 package net.clozynoii.slsb.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.BlockPos;
-
-import net.clozynoii.slsb.world.inventory.SystemDailyQuestMenu;
-import net.clozynoii.slsb.procedures.OpenInfoMenuProcedure;
-import net.clozynoii.slsb.SlsbMod;
-
-import java.util.function.Supplier;
-import java.util.HashMap;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SystemDailyQuestButtonMessage {
+
 	private final int buttonID, x, y, z;
 
 	public SystemDailyQuestButtonMessage(FriendlyByteBuf buffer) {
@@ -51,6 +35,7 @@ public class SystemDailyQuestButtonMessage {
 			int x = message.x;
 			int y = message.y;
 			int z = message.z;
+
 			handleButtonAction(entity, buttonID, x, y, z);
 		});
 		context.setPacketHandled(true);
@@ -59,16 +44,18 @@ public class SystemDailyQuestButtonMessage {
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level();
 		HashMap guistate = SystemDailyQuestMenu.guistate;
+
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
+
 		if (buttonID == 0) {
 
 			OpenInfoMenuProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			FinisheDailyQuestProcedure.execute();
+			FinisheDailyQuestProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
@@ -76,4 +63,5 @@ public class SystemDailyQuestButtonMessage {
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		SlsbMod.addNetworkMessage(SystemDailyQuestButtonMessage.class, SystemDailyQuestButtonMessage::buffer, SystemDailyQuestButtonMessage::new, SystemDailyQuestButtonMessage::handler);
 	}
+
 }

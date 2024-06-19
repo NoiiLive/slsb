@@ -1,8 +1,6 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.clozynoii.slsb.network.SlsbModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ReturnStatSenseProcedure {
 	public static boolean execute(Entity entity) {

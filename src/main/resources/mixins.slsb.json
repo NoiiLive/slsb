@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "net.clozynoii.slsb.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.slsb.refmap.json",
+  "mixins": [],
+  "client": [],
+  "minVersion": "0.8"
+}

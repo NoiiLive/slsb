@@ -1,5 +1,23 @@
 package net.clozynoii.slsb.item.renderer;
 
+import software.bernie.geckolib.renderer.GeoItemRenderer;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
+
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.MultiBufferSource;
+
+import net.clozynoii.slsb.item.model.RandomLootBoxItemModel;
+import net.clozynoii.slsb.item.RandomLootBoxItem;
+
+import java.util.Set;
+import java.util.HashSet;
+
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class RandomLootBoxItemRenderer extends GeoItemRenderer<RandomLootBoxItem> {
 	public RandomLootBoxItemRenderer() {
 		super(new RandomLootBoxItemModel());
@@ -43,5 +61,4 @@ public class RandomLootBoxItemRenderer extends GeoItemRenderer<RandomLootBoxItem
 	public ResourceLocation getTextureLocation(RandomLootBoxItem instance) {
 		return super.getTextureLocation(instance);
 	}
-
 }

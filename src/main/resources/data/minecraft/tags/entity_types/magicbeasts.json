@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "slsb:giant_rat",
+    "slsb:giant_rat_boss",
+    "slsb:giant_rat_boss_shadow",
+    "slsb:giant_rat_shadow",
+    "slsb:undead_knight_boss",
+    "slsb:undead_knight_boss_shadow",
+    "slsb:undead_soldier",
+    "slsb:undead_soldier_shadow"
+  ]
+}

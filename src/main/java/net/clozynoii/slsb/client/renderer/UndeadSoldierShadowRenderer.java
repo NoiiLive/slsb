@@ -1,6 +1,20 @@
 
 package net.clozynoii.slsb.client.renderer;
 
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.MultiBufferSource;
+
+import net.clozynoii.slsb.entity.model.UndeadSoldierShadowModel;
+import net.clozynoii.slsb.entity.UndeadSoldierShadowEntity;
+
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class UndeadSoldierShadowRenderer extends GeoEntityRenderer<UndeadSoldierShadowEntity> {
 	public UndeadSoldierShadowRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new UndeadSoldierShadowModel());
@@ -20,5 +34,4 @@ public class UndeadSoldierShadowRenderer extends GeoEntityRenderer<UndeadSoldier
 		this.scaleWidth = scale;
 		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
 	}
-
 }

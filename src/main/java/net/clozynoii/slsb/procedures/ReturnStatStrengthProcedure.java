@@ -1,6 +1,8 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
+
+import net.clozynoii.slsb.network.SlsbModVariables;
 
 public class ReturnStatStrengthProcedure {
 	public static boolean execute(Entity entity) {

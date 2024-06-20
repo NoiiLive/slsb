@@ -1,9 +1,14 @@
 package net.clozynoii.slsb.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+
+import net.clozynoii.slsb.network.SlsbModVariables;
 
 public class RangerSkills1Procedure {
-	public static void execute(Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).AbilityCooldown1 == 0) {
@@ -17,6 +22,7 @@ public class RangerSkills1Procedure {
 				}
 				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Mana >= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) {
+					ManaArrowsUseProcedure.execute(world, x, y, z, entity);
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(
@@ -89,6 +95,7 @@ public class RangerSkills1Procedure {
 				}
 				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Mana >= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) {
+					TrackingUseProcedure.execute(world, entity);
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(
@@ -125,6 +132,7 @@ public class RangerSkills1Procedure {
 				}
 				if ((entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SlsbModVariables.PlayerVariables())).Mana >= (entity.getCapability(SlsbModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new SlsbModVariables.PlayerVariables())).AbilityCost1) {
+					RotatingShotsUseProcedure.execute(world, x, y, z, entity);
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(
